@@ -22,6 +22,7 @@ const mainWorker :Workerd.Worker = (
     (name = "python.asm.mjs", esModule = embed "./dist/python.asm.mjs"),
     (name = "python.asm.wasm", wasm = embed "./dist/python.asm.wasm"),
     (name = "python_stdlib.zip", data = embed "./dist/python_stdlib.zip"),
+    (name = "memory.dat", data = embed "./dist/memory.dat"),
   ],
   compatibilityDate = "2023-02-28",
   compatibilityFlags = ["nodejs_compat"]

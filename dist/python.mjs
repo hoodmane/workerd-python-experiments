@@ -1,6 +1,7 @@
 import { createPython } from "./python.asm.mjs";
 import module from "./python.asm.wasm";
 import stdlib from "./python_stdlib.zip"
+import memory from "./memory.dat"
 
 // import * as fs from "fs";
 export async function doStuff(code) {
@@ -31,6 +32,7 @@ export async function doStuff(code) {
   }
 
   const Module = {
+    noInitialRun: true,
     instantiateWasm(info, receiveInstance) {
       (async function () {
         const instance = await WebAssembly.instantiate(module, info);
@@ -63,6 +65,7 @@ export async function doStuff(code) {
     logError(e);
     return;
   }
+  Module.HEAP8.set(new Uint8Array(memory));
   const ptr = res.stringToNewUTF8(code);
   capture_stdout(res);
   res._PyRun_SimpleString(ptr);
