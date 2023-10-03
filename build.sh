@@ -60,4 +60,5 @@ cp artifacts/python_stdlib.zip dist
 cp artifacts/memory.dat dist
 cp build/python.asm.* dist
 cd dist
+node --import ../register-hooks.mjs python.mjs
 # npx prettier -w python.asm.mjs
