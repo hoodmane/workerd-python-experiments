@@ -1,10 +1,11 @@
 import { createPython } from "./python.asm.mjs";
 import module from "./python.asm.wasm";
 import stdlib from "./python_stdlib.zip"
+import memory from "./memory.dat"
 
 function logError(e){
   for(let line of e.stack.split("\n")) {
-    orig_log("!!!", line);
+    console.log("!!!", line);
   }
 }
 
@@ -126,6 +127,7 @@ export async function doStuff(code) {
   const API = {};
   const config = {jsglobals: globalThis};
   const Module = {
+    noInitialRun: true,
     API,
     instantiateWasm(info, receiveInstance) {
       (async function () {
@@ -160,6 +162,7 @@ export async function doStuff(code) {
     return;
   }
 
+  Module.HEAP8.set(new Uint8Array(memory));
   let [err, captured_stderr] = API.rawRun("import _pyodide_core");
   if (err) {
     Module.API.fatal_loading_error(

@@ -40,6 +40,7 @@ sed -i 's/var createPython/export var createPython/' build/python.asm.js && mv b
 
 cp src/*.mjs dist
 cp artifacts/python_stdlib.zip dist
+cp artifacts/memory.dat dist
 cp build/python.asm.* dist
 cd dist
 # npx prettier -w python.asm.mjs
