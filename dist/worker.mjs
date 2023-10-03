@@ -1,4 +1,4 @@
-import { doStuff } from "./python.mjs";
+import { loadPyodide } from "./python.mjs";
 
 // await doStuff();
 
@@ -10,7 +10,7 @@ export default {
       // favicon?
       return new Response("");
     }
-    const res = await doStuff(code);
-    return new Response(res);
+    const res = await loadPyodide();
+    return new Response("xyz");
   },
 };

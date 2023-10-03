@@ -3,12 +3,6 @@ import module from "./python.asm.wasm";
 import stdlib from "./python_stdlib.zip"
 import memory from "./memory.dat"
 
-function logError(e){
-  for(let line of e.stack.split("\n")) {
-    orig_log("!!!", line);
-  }
-}
-
 function wrapPythonGlobals(globals_dict, builtins_dict) {
   return new Proxy(globals_dict, {
     get(target, symbol) {
@@ -33,8 +27,10 @@ function finalizeBootstrap(API, config) {
   // First make internal dict so that we can use runPythonInternal.
   // runPythonInternal uses a separate namespace, so we don't pollute the main
   // environment with variables from our setup.
+  const t1 = performance.now();
   API.runPythonInternal_dict = API._pyodide._base.eval_code("{}");
   API.importlib = API.runPythonInternal("import importlib; importlib");
+  const t2 = performance.now();
   let import_module = API.importlib.import_module;
 
   API.sys = import_module("sys");
@@ -70,16 +66,28 @@ function finalizeBootstrap(API, config) {
 
   let pyodide = API.makePublicAPI();
   importhook.register_js_module("pyodide_js", pyodide);
+  const t3 = performance.now();
 
   // import pyodide_py. We want to ensure that as much stuff as possible is
   // already set up before importing pyodide_py to simplify development of
   // pyodide_py code (Otherwise it's very hard to keep track of which things
   // aren't set up yet.)
   API.pyodide_py = import_module("pyodide");
+  const t4 = performance.now();
   API.pyodide_code = import_module("pyodide.code");
+  const t5 = performance.now();
   API.pyodide_ffi = import_module("pyodide.ffi");
+  const t6 = performance.now();
   API.package_loader = import_module("pyodide._package_loader");
-
+  const t7 = performance.now();
+  console.log("");
+  console.log("importlib", t2 - t1);
+  console.log("tasks", t3 - t2);
+  console.log("pyodide ", t4 - t3);
+  console.log("pyodide.code ", t5 - t4);
+  console.log("pyodide.ffi ", t6 - t5);
+  console.log("_package_loader ", t7 - t6);
+  console.log("");
   API.sitepackages = API.package_loader.SITE_PACKAGES.__str__();
   API.dsodir = API.package_loader.DSO_DIR.__str__();
   API.defaultLdLibraryPath = [API.dsodir, API.sitepackages];
@@ -95,39 +103,12 @@ function finalizeBootstrap(API, config) {
   return pyodide;
 }
 
-// import * as fs from "fs";
-export async function doStuff(code) {
-  const orig_log = console.log.bind(console);
-  console.log = function(...args) {
-    // logError(new Error());
-    orig_log(...args);
-  }
-
-  let stdout_chars;
-  function capture_stdout(Module) {
-    stdout_chars = [];
-    const FS = Module.FS;
-    FS.createDevice("/dev", "capture_stdout", null, (e) => stdout_chars.push(e));
-    FS.closeStream(1 /* stderr */);
-    // open takes the lowest available file descriptor. Since 0 is occupied by stdin it takes 1.
-    FS.open("/dev/capture_stdout", 1 /* O_WRONLY */);
-  }
-
-  function restore_stdout(Module) {
-    const FS = Module.FS;
-    FS.closeStream(2 /* stderr */);
-    FS.unlink("/dev/capture_stdout");
-    // open takes the lowest available file descriptor. Since 0 and 1 are occupied by stdin and stdout it takes 2.
-    FS.open("/dev/stdout", 1 /* O_WRONLY */);
-    return new TextDecoder().decode(new Uint8Array(stdout_chars));
-  }
-
-
+export async function loadPyodide() {
 
   const API = {};
   const config = {jsglobals: globalThis};
   const Module = {
-    noInitialRun: true,
+    noInitialRun: !!memory,
     API,
     instantiateWasm(info, receiveInstance) {
       (async function () {
@@ -142,25 +123,14 @@ export async function doStuff(code) {
         const pymajor = 3;
         /* @ts-ignore */
         const pyminor = 11;
-        
-        try {
-          Module.FS.mkdirTree("/lib");
-          Module.FS.mkdirTree(`/lib/python${pymajor}.${pyminor}/site-packages`);
-          Module.FS.writeFile(`/lib/python${pymajor}${pyminor}.zip`, new Uint8Array(stdlib));
-        } catch(e) {
-          logError(e);
-        }
+        Module.FS.mkdirTree("/lib");
+        Module.FS.mkdirTree(`/lib/python${pymajor}.${pyminor}/site-packages`);
+        Module.FS.writeFile(`/lib/python${pymajor}${pyminor}.zip`, new Uint8Array(stdlib));
       }
     ]
   };
 
-  let res;
-  try {
-    res = await createPython(Module);
-  } catch(e) {
-    logError(e);
-    return;
-  }
+  await createPython(Module);
 
 
   Module.HEAP8.set(new Uint8Array(memory));
@@ -173,9 +143,5 @@ export async function doStuff(code) {
   }
   finalizeBootstrap(API, config);
 
-
-  const ptr = res.stringToNewUTF8(code);
-  capture_stdout(res);
-  res._PyRun_SimpleString(ptr);
-  return restore_stdout(res);
+  return API.public_api;
 }

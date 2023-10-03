@@ -17,6 +17,7 @@ emcc -Lartifacts/ -lpython3.11 -lpyodide -lhiwire -lffi ./build/main.o -o ./buil
 _main,\
 _pyodide_export,\
 _PyRun_SimpleString,\
+_PyLong_FromDouble,\
 __PyTraceback_Add,\
 _PyErr_Occurred,\
 _PyUnicode_New,\
@@ -37,6 +38,18 @@ _check_gil\
     -sENVIRONMENT=web -s TOTAL_MEMORY=20971520 -s ALLOW_MEMORY_GROWTH=1  -s USE_ZLIB \
     -sLZ4=1 -sUSE_BZIP2 -s STACK_SIZE=5MB
 sed -i 's/var createPython/export var createPython/' build/python.asm.js && mv build/python.asm.js build/python.asm.mjs
+
+cat << 'END' >> build/python.asm.mjs
+let require, __dirname;
+if (typeof process === "object") {
+  const { createRequire } = await import("node:module");
+  const { dirname } = await import('path');
+  const { fileURLToPath } = await import('url');
+
+  require = createRequire(import.meta.url);
+  __dirname = dirname(fileURLToPath(import.meta.url));
+}
+END
 
 cp src/*.mjs dist
 cp artifacts/python_stdlib.zip dist
