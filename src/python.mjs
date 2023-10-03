@@ -130,11 +130,40 @@ export async function loadPyodide() {
     ]
   };
 
-  await createPython(Module);
-
+  const t1 = performance.now();
+  try {
+    await createPython(Module);
+  } catch(e) {
+    e.stack.split("\n").forEach(console.log.bind(console));
+  }
+  const t2 = performance.now();
+  if (!memory) {
+    const imports = [
+      "_pyodide.docstring", "_pyodide._core_docs", "traceback", "collections.abc", "asyncio", "inspect",
+      "tarfile", "importlib.metadata", "re", 
+      "shutil",
+      "sysconfig",
+      "importlib.machinery",
+      "pathlib",
+      "site",
+      "tempfile",
+      "typing",
+      "zipfile"
+    ];
+    const to_import = imports.join(',');
+    const to_delete = imports.map(x => x.split(".")[0]).join(',');
+    API.rawRun(`import ${to_import}; del ${to_delete}`);
+    API.rawRun("sysconfig.get_config_vars()")
+    const {writeFile} = await import("fs/promises");
+    await writeFile("memory.dat", Module.HEAP8);
+    return;
+  }
 
   Module.HEAP8.set(new Uint8Array(memory));
+  API.rawRun("import _pyodide.docstring, _pyodide._core_docs, traceback, collections.abc, asyncio, inspect");
+  // API.rawRun("import importlib, re, shutil, sysconfig, importlib.machinery, pathlib, site, tempfile, typing, zipfile");
   let [err, captured_stderr] = API.rawRun("import _pyodide_core");
+  const t3 = performance.now();
   if (err) {
     Module.API.fatal_loading_error(
       "Failed to import _pyodide_core\n",
@@ -142,6 +171,13 @@ export async function loadPyodide() {
     );
   }
   finalizeBootstrap(API, config);
-
+  const t4 = performance.now();
+  console.log("createPython", t2 - t1);
+  console.log("import _pyodide_core", t3 - t2);
+  console.log("finalizeBootstrap ", t4 - t3);
   return API.public_api;
+}
+
+if (!memory) {
+  loadPyodide();
 }

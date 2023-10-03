@@ -35,9 +35,13 @@ _check_gil\
     -sMODULARIZE=1 -sWASM_BIGINT \
     -sEXPORT_NAME="createPython" \
     -sEXPORTED_RUNTIME_METHODS=stringToNewUTF8,FS,wasmMemory,STACK_SIZE,preloadPlugins,PATH,ERRNO_CODES \
-    -sENVIRONMENT=web -s TOTAL_MEMORY=20971520 -s ALLOW_MEMORY_GROWTH=1  -s USE_ZLIB \
+    -sENVIRONMENT=web,node -s TOTAL_MEMORY=20971520  -s USE_ZLIB \
     -sLZ4=1 -sUSE_BZIP2 -s STACK_SIZE=5MB
-sed -i 's/var createPython/export var createPython/' build/python.asm.js && mv build/python.asm.js build/python.asm.mjs
+sed -i 's/var createPython/export var createPython/' build/python.asm.js
+sed -i 's/var ENVIRONMENT_IS_WORKER =.*;/var ENVIRONMENT_IS_WORKER = false;/' build/python.asm.js
+sed -i 's/var ENVIRONMENT_IS_SHELL =.*;/var ENVIRONMENT_IS_SHELL = false; ENVIRONMENT_IS_WEB=!ENVIRONMENT_IS_NODE;/' build/python.asm.js
+mv build/python.asm.js build/python.asm.mjs
+
 
 cat << 'END' >> build/python.asm.mjs
 let require, __dirname;
