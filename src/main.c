@@ -46,22 +46,12 @@ finally:
 PyObject*
 PyInit__pyodide_core(void);
 
-/**
- * Bootstrap steps here:
- *  1. Import _pyodide package (we depend on this in _pyodide_core)
- *  2. Initialize the different ffi components and create the _pyodide_core
- *     module
- *  3. Create a PyProxy wrapper around _pyodide package so that JavaScript can
- *     call into _pyodide._base.eval_code and
- *     _pyodide._import_hook.register_js_finder (this happens in loadPyodide in
- *     pyodide.js)
- */
 int
 main(int argc, char** argv)
 {
   // This exits and prints a message to stderr on failure,
   // no status code to check.
-  // PyImport_AppendInittab("_pyodide_core", PyInit__pyodide_core);
+  PyImport_AppendInittab("_pyodide_core", PyInit__pyodide_core);
   initialize_python(argc, argv);
   emscripten_exit_with_live_runtime();
   return 0;

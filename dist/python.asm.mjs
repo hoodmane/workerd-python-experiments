@@ -27,7 +27,7 @@ Module['ready'] = new Promise((resolve, reject) => {
   readyPromiseResolve = resolve;
   readyPromiseReject = reject;
 });
-["_main","_PyRun_SimpleString","_memory","_descr_set_trampoline_call","_descr_get_trampoline_call","__PyCFunctionWithKeywords_TrampolineCall","__PyImport_InitFunc_TrampolineCall","__Py_emscripten_runtime","_Py_EMSCRIPTEN_SIGNAL_HANDLING","__Py_CheckEmscriptenSignals_Helper","___em_lib_deps_libffi","_unbox_small_structs","_ffi_call_js","_ffi_closure_alloc_js","_ffi_closure_free_js","_ffi_prep_closure_loc_js","___indirect_function_table","_fflush","___start_em_js","___stop_em_js","___start_em_lib_deps","___stop_em_lib_deps","onRuntimeInitialized"].forEach((prop) => {
+["_main","_pyodide_export","_PyRun_SimpleString","__PyTraceback_Add","_PyErr_Occurred","_PyUnicode_New","_hiwire_intern","_hiwire_num_refs","_hiwire_get","_hiwire_new","_hiwire_incref","_hiwire_decref","_hiwire_pop","_Py_IncRef","_Py_DecRef","_free","_check_gil","_memory","_descr_set_trampoline_call","_descr_get_trampoline_call","__PyCFunctionWithKeywords_TrampolineCall","__PyImport_InitFunc_TrampolineCall","__Py_emscripten_runtime","_Py_EMSCRIPTEN_SIGNAL_HANDLING","__Py_CheckEmscriptenSignals_Helper","_dump_traceback","_set_error","_pythonexc2js","_console_error","_console_error_obj","_new_error","_fail_test","_JsString_FromId","_hiwire_init_js","_hiwire_invalid_ref","_Js_true","_Js_false","_hiwire_to_bool","_hiwire_int","_hiwire_int_from_digits","_hiwire_double","_hiwire_string_utf8","_hiwire_throw_error","_hiwire_call","_hiwire_call_OneArg","_hiwire_call_bound","_hiwire_HasMethod","_hiwire_CallMethodString","_hiwire_CallMethod","_hiwire_CallMethod_NoArgs","_hiwire_CallMethod_OneArg","_hiwire_construct","_hiwire_has_length","_hiwire_get_length_helper","_hiwire_get_length_string","_hiwire_get_bool","_hiwire_is_function","_hiwire_is_generator","_hiwire_is_async_generator","_hiwire_is_comlink_proxy","_hiwire_is_error","_hiwire_is_promise","_hiwire_resolve_promise","_hiwire_to_string","_hiwire_typeof","_hiwire_constructor_name","_hiwire_less_than","_hiwire_less_than_equal","_hiwire_equal","_hiwire_not_equal","_hiwire_greater_than","_hiwire_greater_than_equal","_hiwire_reversed_iterator","_hiwire_assign_to_ptr","_hiwire_assign_from_ptr","_hiwire_read_from_file","_hiwire_write_to_file","_hiwire_into_file","_hiwire_get_buffer_info","_hiwire_subarray","_JsArray_Check","_JsArray_New","_JsArray_Push","_JsArray_Push_unchecked","_JsArray_Extend","_JsArray_Get","_JsArray_Set","_JsArray_Delete","_JsArray_Splice","_JsArray_slice","_JsArray_slice_assign","_JsArray_Clear","_JsArray_ShallowCopy","_JsObject_New","_isReservedWord","_normalizeReservedWords","_JsObject_GetString","_JsObject_SetString","_JsObject_DeleteString","_JsObject_Dir","_JsObject_Entries","_JsObject_Keys","_JsObject_Values","_JsString_InternFromCString","_JsMap_New","_JsMap_Set","_JsSet_New","_JsSet_Add","_Js_undefined","_Js_null","_PyUnicode_Data","__js2python_none","__js2python_true","__js2python_false","__js2python_pyproxy","_js2python_immutable","_js2python","_js2python_immutable_js","_js2python_js","_js2python_convert","_js2python_init","_JsProxy_create","_JsProxy_GetIter_js","_handle_next_result_js","_JsException_new_helper","_JsProxy_GetAsyncIter_js","__agen_handle_result_js","_destroy_jsarray_entries","_JsArray_repeat_js","_JsArray_inplace_repeat_js","_JsArray_index_helper","_JsArray_count_helper","_JsArray_reverse_helper","_JsProxy_subscript_js","_JsMap_GetIter_js","_JsMap_clear_js","_JsObjMap_GetIter_js","_JsObjMap_length_js","_JsObjMap_subscript_js","_JsObjMap_ass_subscript_js","_JsObjMap_contains_js","_get_async_js_call_done_callback","_wrap_generator","_wrap_async_generator","_JsBuffer_DecodeString_js","_JsDoubleProxy_unwrap_helper","_JsProxy_compute_typeflags","_pyproxy_getflags","__pyproxy_repr","__pyproxy_type","__pyproxy_hasattr","__pyproxy_getattr","__pyproxy_setattr","__pyproxy_delattr","__pyproxy_getitem","__pyproxy_setitem","__pyproxy_delitem","__pyproxy_slice_assign","__pyproxy_pop","__pyproxy_contains","__pyproxy_ownKeys","__pyproxy_apply","__iscoroutinefunction","__pyproxy_iter_next","__pyproxyGen_Send","__pyproxyGen_return","__pyproxyGen_throw","__pyproxyGen_asend","__pyproxyGen_athrow","__pyproxy_aiter_next","__pyproxy_ensure_future","__pyproxy_get_buffer","_throw_no_gil","_pyproxy_Check","_pyproxy_AsPyObject","_destroy_proxies","_gc_register_proxies","_destroy_proxy","_proxy_cache_get","_proxy_cache_set","_array_to_js","_pyproxy_new_ex","_pyproxy_new","_create_once_callable","_create_promise_handles","__python2js_buffer_inner","_python2js_buffer_init","__python2js_addto_postprocess_list","__python2js_handle_postprocess_list","__python2js_ucs1","__python2js_ucs2","__python2js_ucs4","__python2js_add_to_cache","__python2js_destroy_cache","__python2js_cache_lookup","__JsArray_PushEntry_helper","__JsArray_PostProcess_helper","_python2js__default_converter_js","_python2js_custom__create_jscontext","_destroy_proxies_js","_pyodide_js_init","___hiwire_deduplicate_new","___hiwire_deduplicate_get","___hiwire_deduplicate_set","___hiwire_deduplicate_delete","___em_lib_deps_libffi","_unbox_small_structs","_ffi_call_js","_ffi_closure_alloc_js","_ffi_closure_free_js","_ffi_prep_closure_loc_js","_fflush","___indirect_function_table","___start_em_js","___stop_em_js","___start_em_lib_deps","___stop_em_lib_deps","___start_em_asm","___stop_em_asm","onRuntimeInitialized"].forEach((prop) => {
   if (!Object.getOwnPropertyDescriptor(Module['ready'], prop)) {
     Object.defineProperty(Module['ready'], prop, {
       get: () => abort('You are getting ' + prop + ' on the Promise object, instead of the instance. Use .then() to get called back with the instance, see the MODULARIZE docs in src/settings.js'),
@@ -327,10 +327,6 @@ function assert(condition, text) {
 
 // We used to include malloc/free by default in the past. Show a helpful error in
 // builds with assertions.
-function _free() {
-  // Show a helpful error since we used to include free by default in the past.
-  abort("free() called but not included in the build - add '_free' to EXPORTED_FUNCTIONS");
-}
 
 // Memory management
 
@@ -937,12 +933,240 @@ function dbg(text) {
 // end include: runtime_debug.js
 // === Body ===
 
+var ASM_CONSTS = {
+  8770578: () => { throw new Error("intentionally triggered fatal error!"); },  
+ 8770635: ($0) => { Hiwire.get_value($0)() },  
+ 8770658: () => { wasmImports["open64"] = wasmImports["open"]; },  
+ 8770707: ($0) => { API._pyodide = Hiwire.pop_value($0); }
+};
 function descr_set_trampoline_call(set,obj,value,closure) { return wasmTable.get(set)(obj, value, closure); }
 function descr_get_trampoline_call(get,obj,closure) { return wasmTable.get(get)(obj, closure); }
 function _PyCFunctionWithKeywords_TrampolineCall(func,self,args,kw) { return wasmTable.get(func)(self, args, kw); }
 function _PyImport_InitFunc_TrampolineCall(func) { return wasmTable.get(func)(); }
 function _Py_emscripten_runtime() { var info; if (typeof navigator == 'object') { info = navigator.userAgent; } else if (typeof process == 'object') { info = "Node.js ".concat(process.version); } else { info = "UNKNOWN"; } var len = lengthBytesUTF8(info) + 1; var res = _malloc(len); if (res) stringToUTF8(info, res, len); return res; }
 function _Py_CheckEmscriptenSignals_Helper() { if (!Module.Py_EmscriptenSignalBuffer) { return 0; } try { let result = Module.Py_EmscriptenSignalBuffer[0]; Module.Py_EmscriptenSignalBuffer[0] = 0; return result; } catch(e) { return 0; } }
+function console_error(msg) { let jsmsg = UTF8ToString(msg); console.error(jsmsg); }
+function console_error_obj(obj) { console.error(Hiwire.get_value(obj)); }
+function new_error(type,msg,err) { try { return Hiwire.new_value( new API.PythonError(UTF8ToString(type), UTF8ToString(msg), err)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function fail_test() { API.fail_test = true; }
+function hiwire_init_js() { try { HEAP32[_Js_undefined / 4] = _hiwire_intern(undefined); HEAP32[_Js_null / 4] = _hiwire_intern(null); HEAP32[_Js_true / 4] = _hiwire_intern((!!1)); HEAP32[_Js_false / 4] = _hiwire_intern((!!0));; Hiwire.new_value = _hiwire_new; Hiwire.new_stack = _hiwire_new; Hiwire.intern_object = _hiwire_intern; Hiwire.num_keys = _hiwire_num_refs; Hiwire.stack_length = () => 0; Hiwire.get_value = _hiwire_get; Hiwire.incref = (x) => { _hiwire_incref(x); return x; }; Hiwire.decref = _hiwire_decref; Hiwire.pop_value = _hiwire_pop; Hiwire.isPromise = function(obj) { try { return !!obj && typeof obj.then === "function"; } catch (e) { return (!!0); } }; API.typedArrayAsUint8Array = function(arg) { if (ArrayBuffer.isView(arg)) { return new Uint8Array(arg.buffer, arg.byteOffset, arg.byteLength); } else { return new Uint8Array(arg); } }; { let dtypes_str = [ "b", "B", "h", "H", "i", "I", "f", "d" ].join(String.fromCharCode(0), ); let dtypes_ptr = stringToNewUTF8(dtypes_str); let dtypes_map = {}; for (let[idx, val] of Object.entries(dtypes_str)) { dtypes_map[val] = dtypes_ptr + Number(idx); } let buffer_datatype_map = new Map([ [ "Int8Array", [ dtypes_map["b"], 1, (!!1) ] ], [ "Uint8Array", [ dtypes_map["B"], 1, (!!1) ] ], [ "Uint8ClampedArray", [ dtypes_map["B"], 1, (!!1) ] ], [ "Int16Array", [ dtypes_map["h"], 2, (!!1) ] ], [ "Uint16Array", [ dtypes_map["H"], 2, (!!1) ] ], [ "Int32Array", [ dtypes_map["i"], 4, (!!1) ] ], [ "Uint32Array", [ dtypes_map["I"], 4, (!!1) ] ], [ "Float32Array", [ dtypes_map["f"], 4, (!!1) ] ], [ "Float64Array", [ dtypes_map["d"], 8, (!!1) ] ], [ "DataView", [ dtypes_map["B"], 1, (!!0) ] ], [ "ArrayBuffer", [ dtypes_map["B"], 1, (!!0) ] ], ]); Module.get_buffer_datatype = function(jsobj) { return buffer_datatype_map.get(jsobj.constructor.name) || [ 0, 0, (!!0) ]; }; } Module.iterObject = function * (object) { for (let k in object) { if (Object.prototype.hasOwnProperty.call(object, k)) { yield k; } } }; return 0; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function hiwire_invalid_ref(type,ref) { API.fail_test = (!!1); if (type === 1 && !ref) { if (_PyErr_Occurred()) { let exc = _wrap_exception(); let e = Hiwire.pop_value(exc); console.error( "Pyodide internal error: Argument to hiwire_get is falsy. This was " + "probably because the Python error indicator was set when get_value was " + "called. The Python error that caused this was:", e ); throw e; } else { const msg = ( "Pyodide internal error: Argument to hiwire_get is falsy (but error " + "indicator is not set)." ); console.error(msg); throw new Error(msg); } } const typestr = { [1]: "get", [2]: "incref", [3]: "decref", }[type]; const msg = ( `hiwire_${typestr} on invalid reference ${ref}. This is most likely due ` + "to use after free. It may also be due to memory corruption." ); console.error(msg); throw new Error(msg); }
+function hiwire_to_bool(val) { return !!Hiwire.get_value(val); }
+function hiwire_int(val) { try { return Hiwire.new_stack(val); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_int_from_digits(digits,ndigits) { try { let result = BigInt(0); for (let i = 0; i < ndigits; i++) { result += BigInt(HEAPU32[(digits >> 2) + i]) << BigInt(32 * i); } result += BigInt(HEAPU32[(digits >> 2) + ndigits - 1] & 0x80000000) << BigInt(1 + 32 * (ndigits - 1)); if (-Number.MAX_SAFE_INTEGER < result && result < Number.MAX_SAFE_INTEGER) { result = Number(result); } return Hiwire.new_stack(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_double(val) { try { return Hiwire.new_stack(val); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_string_utf8(ptr) { try { return Hiwire.new_stack(UTF8ToString(ptr)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_throw_error(iderr) { throw Hiwire.pop_value(iderr); }
+function hiwire_call(idfunc,idargs) { try { let jsfunc = Hiwire.get_value(idfunc); let jsargs = Hiwire.get_value(idargs); return Hiwire.new_value(jsfunc(... jsargs)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_call_OneArg(idfunc,idarg) { try { let jsfunc = Hiwire.get_value(idfunc); let jsarg = Hiwire.get_value(idarg); return Hiwire.new_value(jsfunc(jsarg)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_call_bound(idfunc,idthis,idargs) { try { let func = Hiwire.get_value(idfunc); let this_; if (idthis === 0) { this_ = null; } else { this_ = Hiwire.get_value(idthis); } let args = Hiwire.get_value(idargs); return Hiwire.new_value(func.apply(this_, args)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_HasMethod(obj_id,name) { try { let obj = Hiwire.get_value(obj_id); return obj && typeof obj[Hiwire.get_value(name)] === "function"; } catch (e) { ; return (!!0); } }
+function hiwire_CallMethodString(idobj,name,idargs) { try { let jsobj = Hiwire.get_value(idobj); let jsname = UTF8ToString(name); let jsargs = Hiwire.get_value(idargs); return Hiwire.new_value(jsobj[jsname](...jsargs)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_CallMethod(idobj,name,idargs) { try { let jsobj = Hiwire.get_value(idobj); let jsname = Hiwire.get_value(name); let jsargs = Hiwire.get_value(idargs); return Hiwire.new_value(jsobj[jsname](... jsargs)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_CallMethod_NoArgs(idobj,name) { try { let jsobj = Hiwire.get_value(idobj); let jsname = Hiwire.get_value(name); return Hiwire.new_value(jsobj[jsname]()); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_CallMethod_OneArg(idobj,name,idarg) { try { let jsobj = Hiwire.get_value(idobj); let jsname = Hiwire.get_value(name); let jsarg = Hiwire.get_value(idarg); return Hiwire.new_value(jsobj[jsname](jsarg)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_construct(idobj,idargs) { try { let jsobj = Hiwire.get_value(idobj); let jsargs = Hiwire.get_value(idargs); return Hiwire.new_value(Reflect.construct(jsobj, jsargs)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_has_length(idobj) { try { let val = Hiwire.get_value(idobj); return (typeof val.size === "number") || (typeof val.length === "number" && typeof val !== "function"); } catch (e) { ; return (!!0); } }
+function hiwire_get_length_helper(idobj) { try { let val = Hiwire.get_value(idobj); let result; if (typeof val.size === "number") { result = val.size; } else if (typeof val.length === "number") { result = val.length; } else { return -2; } if(result < 0){ return -3; } if(result > 2147483647){ return -4; } return result; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function hiwire_get_length_string(idobj) { try { const val = Hiwire.get_value(idobj); let result; if (typeof val.size === "number") { result = val.size; } else if (typeof val.length === "number") { result = val.length; } return stringToNewUTF8(" " + result.toString()) } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_get_bool(idobj) { try { let val = Hiwire.get_value(idobj); if (!val) { return (!!0); } if (val.size === 0) { if(/HTML[A-Za-z]*Element/.test(getTypeTag(val))){ return (!!1); } return (!!0); } if (val.length === 0 && JsArray_Check(idobj)) { return (!!0); } if (val.byteLength === 0) { return (!!0); } return (!!1); } catch (e) { ; return (!!0); } }
+function hiwire_is_function(idobj) { try { return typeof Hiwire.get_value(idobj) === 'function'; } catch (e) { ; return (!!0); } }
+function hiwire_is_generator(idobj) { try { return getTypeTag(Hiwire.get_value(idobj)) === "[object Generator]"; } catch (e) { ; return (!!0); } }
+function hiwire_is_async_generator(idobj) { try { return getTypeTag(Hiwire.get_value(idobj)) === "[object AsyncGenerator]"; } catch (e) { ; return (!!0); } }
+function hiwire_is_comlink_proxy(idobj) { try { let value = Hiwire.get_value(idobj); return !!(API.Comlink && value[API.Comlink.createEndpoint]); } catch (e) { ; return (!!0); } }
+function hiwire_is_error(idobj) { try { let value = Hiwire.get_value(idobj); return !!(value && typeof value.stack === "string" && typeof value.message === "string"); } catch (e) { ; return (!!0); } }
+function hiwire_is_promise(idobj) { try { let obj = Hiwire.get_value(idobj); return Hiwire.isPromise(obj); } catch (e) { ; return (!!0); } }
+function hiwire_resolve_promise(idobj) { try { let obj = Hiwire.get_value(idobj); let result = Promise.resolve(obj); return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_to_string(idobj) { try { return Hiwire.new_value(Hiwire.get_value(idobj).toString()); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_typeof(idobj) { return Hiwire.new_value(typeof Hiwire.get_value(idobj)); }
+function hiwire_constructor_name(idobj) { try { return stringToNewUTF8(Hiwire.get_value(idobj).constructor.name); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_less_than(ida,idb) { try { return !!(Hiwire.get_value(ida) < Hiwire.get_value(idb)); } catch (e) { ; return (!!0); } }
+function hiwire_less_than_equal(ida,idb) { try { return !!(Hiwire.get_value(ida) <= Hiwire.get_value(idb)); } catch (e) { ; return (!!0); } }
+function hiwire_equal(ida,idb) { try { return !!(Hiwire.get_value(ida) === Hiwire.get_value(idb)); } catch (e) { ; return (!!0); } }
+function hiwire_not_equal(ida,idb) { try { return !!(Hiwire.get_value(ida) !== Hiwire.get_value(idb)); } catch (e) { ; return (!!0); } }
+function hiwire_greater_than(ida,idb) { try { return !!(Hiwire.get_value(ida) > Hiwire.get_value(idb)); } catch (e) { ; return (!!0); } }
+function hiwire_greater_than_equal(ida,idb) { try { return !!(Hiwire.get_value(ida) >= Hiwire.get_value(idb)); } catch (e) { ; return (!!0); } }
+function hiwire_reversed_iterator(idarray) { try { if (!Module._reversedIterator) { Module._reversedIterator = class ReversedIterator { constructor(array) { this._array = array; this._i = array.length - 1; } __length_hint__() { return this._array.length; } [Symbol.toStringTag]() { return "ReverseIterator"; } next() { const i = this._i; const a = this._array; const done = i < 0; const value = done ? undefined : a[i]; this._i--; return { done, value }; } }; } let array = Hiwire.get_value(idarray); return Hiwire.new_value(new Module._reversedIterator(array)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function hiwire_assign_to_ptr(idobj,ptr) { try { let jsobj = Hiwire.get_value(idobj); Module.HEAPU8.set(API.typedArrayAsUint8Array(jsobj), ptr); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function hiwire_assign_from_ptr(idobj,ptr) { try { let jsobj = Hiwire.get_value(idobj); API.typedArrayAsUint8Array(jsobj).set( Module.HEAPU8.subarray(ptr, ptr + jsobj.byteLength)); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function hiwire_read_from_file(idobj,fd) { try { let jsobj = Hiwire.get_value(idobj); let uint8_buffer = API.typedArrayAsUint8Array(jsobj); let stream = Module.FS.streams[fd]; Module.FS.read(stream, uint8_buffer, 0, uint8_buffer.byteLength); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function hiwire_write_to_file(idobj,fd) { try { let jsobj = Hiwire.get_value(idobj); let uint8_buffer = API.typedArrayAsUint8Array(jsobj); let stream = Module.FS.streams[fd]; Module.FS.write(stream, uint8_buffer, 0, uint8_buffer.byteLength); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function hiwire_into_file(idobj,fd) { try { let jsobj = Hiwire.get_value(idobj); let uint8_buffer = API.typedArrayAsUint8Array(jsobj); let stream = Module.FS.streams[fd]; Module.FS.write( stream, uint8_buffer, 0, uint8_buffer.byteLength, undefined, (!!1)); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function hiwire_get_buffer_info(idobj,byteLength_ptr,format_ptr,size_ptr,checked_ptr) { let jsobj = Hiwire.get_value(idobj); let byteLength = jsobj.byteLength; let [format_utf8, size, checked] = Module.get_buffer_datatype(jsobj); HEAPU32[(byteLength_ptr >> 2) + 0] = byteLength; HEAPU32[(format_ptr >> 2) + 0] = format_utf8; HEAPU32[(size_ptr >> 2) + 0] = size; HEAPU8[checked_ptr + 0] = checked; }
+function hiwire_subarray(idarr,start,end) { try { let jsarr = Hiwire.get_value(idarr); let jssub = jsarr.subarray(start, end); return Hiwire.new_value(jssub); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsArray_Check(idobj) { try { let obj = Hiwire.get_value(idobj); if (Array.isArray(obj)) { return (!!1); } let typeTag = getTypeTag(obj); if(typeTag === "[object HTMLCollection]" || typeTag === "[object NodeList]"){ return (!!1); } if (ArrayBuffer.isView(obj) && obj.constructor.name !== "DataView") { return (!!1); } return (!!0); } catch (e) { ; return (!!0); } }
+function JsArray_New() { try { return Hiwire.new_value([]); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsArray_Push(idarr,idval) { try { Hiwire.get_value(idarr).push(Hiwire.get_value(idval)); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsArray_Push_unchecked(idarr,idval) { const arr = Hiwire.get_value(idarr); arr.push(Hiwire.get_value(idval)); return arr.length - 1; }
+function JsArray_Extend(idarr,idvals) { try { Hiwire.get_value(idarr).push(... Hiwire.get_value(idvals)); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsArray_Get(idobj,idx) { try { let obj = Hiwire.get_value(idobj); let result = obj[idx]; if (result === undefined && !(idx in obj)) { return (0); } return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsArray_Set(idobj,idx,idval) { try { Hiwire.get_value(idobj)[idx] = Hiwire.get_value(idval); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsArray_Delete(idobj,idx) { try { let obj = Hiwire.get_value(idobj); if (idx < 0 || idx >= obj.length) { return (-1); } obj.splice(idx, 1); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsArray_Splice(idobj,idx) { try { let obj = Hiwire.get_value(idobj); if (idx < 0 || idx >= obj.length) { return 0; } return Hiwire.new_value(obj.splice(idx, 1)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsArray_slice(idobj,length,start,stop,step) { try { let obj = Hiwire.get_value(idobj); let result; if (step === 1) { result = obj.slice(start, stop); } else { result = Array.from({ length }, (_, i) => obj[start + i * step]); } return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsArray_slice_assign(idobj,slicelength,start,stop,step,values_length,values) { try { let obj = Hiwire.get_value(idobj); let jsvalues = []; for(let i = 0; i < values_length; i++){ let ref = _python2js(HEAPU32[(values >> 2) + i]); if(ref === 0){ return -1; } jsvalues.push(Hiwire.pop_value(ref)); } if (step === 1) { obj.splice(start, slicelength, ...jsvalues); } else { if(values !== 0) { for(let i = 0; i < slicelength; i ++){ obj.splice(start + i * step, 1, jsvalues[i]); } } else { for(let i = slicelength - 1; i >= 0; i --){ obj.splice(start + i * step, 1); } } } } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsArray_Clear(idobj) { try { let obj = Hiwire.get_value(idobj); obj.splice(0, obj.length); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsArray_ShallowCopy(idobj) { try { const obj = Hiwire.get_value(idobj); const res = ("slice" in obj) ? obj.slice() : Array.from(obj); return Hiwire.new_value(res); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsObject_New() { try { return Hiwire.new_value({}); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function isReservedWord(word) { if (!Module.pythonReservedWords) { Module.pythonReservedWords = new Set([ "False", "await", "else", "import", "pass", "None", "break", "except", "in", "raise", "True", "class", "finally", "is", "return", "and", "continue", "for", "lambda", "try", "as", "def", "from", "nonlocal", "while", "assert", "del", "global", "not", "with", "async", "elif", "if", "or", "yield", ]) } return Module.pythonReservedWords.has(word); }
+function normalizeReservedWords(word) { const noTrailing_ = word.replace(/_*$/, ""); if (!isReservedWord(noTrailing_)) { return word; } if (noTrailing_ !== word) { return word.slice(0, -1); } return word; }
+function JsObject_GetString(idobj,ptrkey) { try { const jsobj = Hiwire.get_value(idobj); const jskey = normalizeReservedWords(UTF8ToString(ptrkey)); const result = jsobj[jskey]; if (result === undefined && !(jskey in jsobj)) { return (0); } return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsObject_SetString(idobj,ptrkey,idval) { try { let jsobj = Hiwire.get_value(idobj); let jskey = normalizeReservedWords(UTF8ToString(ptrkey)); let jsval = Hiwire.get_value(idval); jsobj[jskey] = jsval; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsObject_DeleteString(idobj,ptrkey) { try { let jsobj = Hiwire.get_value(idobj); let jskey = normalizeReservedWords(UTF8ToString(ptrkey)); delete jsobj[jskey]; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsObject_Dir(idobj) { try { let jsobj = Hiwire.get_value(idobj); let result = []; do { const names = Object.getOwnPropertyNames(jsobj); result.push(...names.filter( s => { let c = s.charCodeAt(0); return c < 48 || c > 57; } ) .map(word => isReservedWord(word.replace(/_*$/, "")) ? word + "_" : word)); } while (jsobj = Object.getPrototypeOf(jsobj)); return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsObject_Entries(idobj) { try { let jsobj = Hiwire.get_value(idobj); return Hiwire.new_value(Object.entries(jsobj)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsObject_Keys(idobj) { try { let jsobj = Hiwire.get_value(idobj); return Hiwire.new_value(Object.keys(jsobj)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsObject_Values(idobj) { try { let jsobj = Hiwire.get_value(idobj); return Hiwire.new_value(Object.values(jsobj)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsString_InternFromCString(str) { try { let jsstring = UTF8ToString(str); return Hiwire.intern_object(jsstring); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsMap_New() { try { return Hiwire.new_value(new Map()); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsMap_Set(mapid,keyid,valueid) { try { let map = Hiwire.get_value(mapid); let key = Hiwire.get_value(keyid); let value = Hiwire.get_value(valueid); map.set(key, value); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsSet_New() { try { return Hiwire.new_value(new Set()); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsSet_Add(mapid,keyid) { try { let set = Hiwire.get_value(mapid); let key = Hiwire.get_value(keyid); set.add(key); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function js2python_immutable_js(id) { try { let value = Hiwire.get_value(id); let result = Module.js2python_convertImmutable(value, id); if (result !== undefined) { return result; } return 0; } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function js2python_js(id) { try { let value = Hiwire.get_value(id); let result = Module.js2python_convertImmutable(value, id); if (result !== undefined) { return result; } return _JsProxy_create(id); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function js2python_convert(id,depth,default_converter) { try { let defaultConverter = default_converter ? Module.hiwire.get_value(default_converter) : undefined; return Module.js2python_convert(id, { depth, defaultConverter }); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function js2python_init() { try { { 0; let PropagateError = Module._PropagatePythonError; function js2python_string(value) { let max_code_point = 0; let num_code_points = 0; for (let c of value) { num_code_points++; let code_point = c.codePointAt(0); max_code_point = code_point > max_code_point ? code_point : max_code_point; } let result = _PyUnicode_New(num_code_points, max_code_point); if (result === 0) { throw new PropagateError(); } let ptr = _PyUnicode_Data(result); if (max_code_point > 0xffff) { for (let c of value) { HEAPU32[ptr / 4] = c.codePointAt(0); ptr += 4; } } else if (max_code_point > 0xff) { for (let c of value) { HEAPU16[ptr / 2] = c.codePointAt(0); ptr += 2; } } else { for (let c of value) { HEAPU8[ptr] = c.codePointAt(0); ptr += 1; } } return result; } function js2python_bigint(value) { let value_orig = value; let length = 0; if (value < 0) { value = -value; } value <<= BigInt(1); while (value) { length++; value >>= BigInt(32); } let stackTop = stackSave(); let ptr = stackAlloc(length * 4); value = value_orig; for (let i = 0; i < length; i++) { HEAPU32[(ptr >> 2) + i] = Number(value & BigInt(0xffffffff)); value >>= BigInt(32); } let result = __PyLong_FromByteArray( ptr, length * 4 , (!!1) , (!!1) , ); stackRestore(stackTop); return result; } function js2python_convertImmutable(value, id) { let result = js2python_convertImmutableInner(value, id); if (result === 0) { throw new PropagateError(); } return result; } Module.js2python_convertImmutable = js2python_convertImmutable; function js2python_convertImmutableInner(value, id) { let type = typeof value; if (type === "string") { return js2python_string(value); } else if (type === "number") { if (Number.isSafeInteger(value)) { return _PyLong_FromDouble(value); } else { return _PyFloat_FromDouble(value); } } else if (type === "bigint") { return js2python_bigint(value); } else if (value === undefined || value === null) { return __js2python_none(); } else if (value === (!!1)) { return __js2python_true(); } else if (value === (!!0)) { return __js2python_false(); } else if (API.isPyProxy(value)) { const { props, shared } = Module.PyProxy_getAttrs(value); if (props.roundtrip) { if (id === undefined) { id = Hiwire.new_value(value); } return _JsProxy_create(id); } else { return __js2python_pyproxy(shared.ptr); } } return undefined; } function js2python_convertList(obj, context) { let list = _PyList_New(obj.length); if (list === 0) { return 0; } let entryid = 0; let item = 0; try { context.cache.set(obj, list); for (let i = 0; i < obj.length; i++) { entryid = Hiwire.new_value(obj[i]); item = js2python_convert_with_context(entryid, context); _Py_IncRef(item); if (_PyList_SetItem(list, i, item) === -1) { throw new PropagateError(); } Hiwire.decref(entryid); entryid = 0; _Py_DecRef(item); item = 0; } } catch (e) { Hiwire.decref(entryid); _Py_DecRef(item); _Py_DecRef(list); throw e; } return list; } function js2python_convertMap(obj, entries, context) { let dict = _PyDict_New(); if (dict === 0) { return 0; } let key_py = 0; let value_id = 0; let value_py = 0; try { context.cache.set(obj, dict); for (let [key_js, value_js] of entries) { key_py = js2python_convertImmutable(key_js); if (key_py === undefined) { let key_type = (key_js.constructor && key_js.constructor.name) || typeof key_js; throw new Error( `Cannot use key of type ${key_type} as a key to a Python dict`, ); } value_id = Hiwire.new_value(value_js); value_py = js2python_convert_with_context(value_id, context); if (_PyDict_SetItem(dict, key_py, value_py) === -1) { throw new PropagateError(); } _Py_DecRef(key_py); key_py = 0; Hiwire.decref(value_id); value_id = 0; _Py_DecRef(value_py); value_py = 0; } } catch (e) { _Py_DecRef(key_py); Hiwire.decref(value_id); _Py_DecRef(value_py); _Py_DecRef(dict); throw e; } return dict; } function js2python_convertSet(obj, context) { let set = _PySet_New(0); if (set === 0) { return 0; } let key_py = 0; try { context.cache.set(obj, set); for (let key_js of obj) { key_py = js2python_convertImmutable(key_js); if (key_py === undefined) { let key_type = (key_js.constructor && key_js.constructor.name) || typeof key_js; throw new Error( `Cannot use key of type ${key_type} as a key to a Python set`, ); } let errcode = _PySet_Add(set, key_py); if (errcode === -1) { throw new PropagateError(); } _Py_DecRef(key_py); key_py = 0; } } catch (e) { _Py_DecRef(key_py); _Py_DecRef(set); throw e; } return set; } function checkBoolIntCollision(obj, ty) { if (obj.has(1) && obj.has((!!1))) { throw new Error( `Cannot faithfully convert ${ty} into Python since it ` + "contains both 1 and true as keys.", ); } if (obj.has(0) && obj.has((!!0))) { throw new Error( `Cannot faithfully convert ${ty} into Python since it ` + "contains both 0 and false as keys.", ); } } function js2python_convertOther(id, value, context) { let typeTag = getTypeTag(value); if ( Array.isArray(value) || value === "[object HTMLCollection]" || value === "[object NodeList]" ) { return js2python_convertList(value, context); } if (typeTag === "[object Map]" || value instanceof Map) { checkBoolIntCollision(value, "Map"); return js2python_convertMap(value, value.entries(), context); } if (typeTag === "[object Set]" || value instanceof Set) { checkBoolIntCollision(value, "Set"); return js2python_convertSet(value, context); } if ( typeTag === "[object Object]" && (value.constructor === undefined || value.constructor.name === "Object") ) { return js2python_convertMap(value, Object.entries(value), context); } if (typeTag === "[object ArrayBuffer]" || ArrayBuffer.isView(value)) { let [format_utf8, itemsize] = Module.get_buffer_datatype(value); return _JsBuffer_CopyIntoMemoryView( id, value.byteLength, format_utf8, itemsize, ); } return undefined; } function js2python_convert_with_context(id, context) { let value = Hiwire.get_value(id); let result; result = js2python_convertImmutable(value, id); if (result !== undefined) { return result; } if (context.depth === 0) { return _JsProxy_create(id); } result = context.cache.get(value); if (result !== undefined) { return result; } context.depth--; try { result = js2python_convertOther(id, value, context); if (result !== undefined) { return result; } if (context.defaultConverter === undefined) { return _JsProxy_create(id); } let result_js = context.defaultConverter( value, context.converter, context.cacheConversion, ); result = js2python_convertImmutable(result_js); if (API.isPyProxy(result_js)) { Module.pyproxy_destroy(result_js, "", (!!0)); } if (result !== undefined) { return result; } let result_id = Module.hiwire.new_value(result_js); result = _JsProxy_create(result_id); Module.hiwire.decref(result_id); return result; } finally { context.depth++; } } function js2python_convert(id, { depth, defaultConverter }) { let context = { cache: new Map(), depth, defaultConverter, converter(x) { let id = Module.hiwire.new_value(x); try { return Module.pyproxy_new( js2python_convert_with_context(id, context), ); } finally { Module.hiwire.decref(id); } }, cacheConversion(input, output) { if (API.isPyProxy(output)) { context.cache.set(input, Module.PyProxy_getPtr(output)); } else { throw new Error("Second argument should be a PyProxy!"); } }, }; return js2python_convert_with_context(id, context); } Module.js2python_convert = js2python_convert; } return 0; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsProxy_GetIter_js(idobj) { try { let jsobj = Hiwire.get_value(idobj); return Hiwire.new_value(jsobj[Symbol.iterator]()); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function handle_next_result_js(resid,result_ptr,msg) { try { let errmsg; const res = Hiwire.get_value(resid); if(typeof res !== "object") { errmsg = `Result should have type "object" not "${typeof res}"`; } else if(typeof res.done === "undefined") { if (typeof res.then === "function") { errmsg = `Result was a promise, use anext() / asend() / athrow() instead.`; } else { errmsg = `Result has no "done" field.`; } } if (errmsg) { HEAPU32[(msg >> 2) + 0] = stringToNewUTF8(errmsg); return -1; } let result_id = Hiwire.new_value(res.value); HEAPU32[(result_ptr >> 2) + 0] = result_id; return res.done; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsException_new_helper(name_ptr,message_ptr,stack_ptr) { try { let name = UTF8ToString(name_ptr); let message = UTF8ToString(message_ptr); let stack = UTF8ToString(stack_ptr); return Hiwire.new_value(API.deserializeError(name, message, stack)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsProxy_GetAsyncIter_js(idobj) { try { let jsobj = Hiwire.get_value(idobj); return Hiwire.new_value(jsobj[Symbol.asyncIterator]()); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function _agen_handle_result_js(promiseid,msg,set_result,set_exception,closing) { try { let p = Hiwire.get_value(promiseid); let errmsg; if(typeof p !== "object") { errmsg = `Result of anext() should be object not ${typeof p}`; } else if(typeof p.then !== "function") { if (typeof p.done === "boolean") { errmsg = `Result of anext() was not a promise, use next() instead.`; } else { errmsg = `Result of anext() was not a promise.`; } } if (errmsg) { HEAPU32[(msg >> 2) + 0] = stringToNewUTF8(errmsg); return -1; } _Py_IncRef(set_result); _Py_IncRef(set_exception); p.then(({done, value}) => { let id = Hiwire.new_value(value); __agen_handle_result_js_c(set_result, set_exception, done, id, closing); Hiwire.decref(id); }, (err) => { let id = Hiwire.new_value(err); __agen_handle_result_js_c(set_result, set_exception, -1, id, closing); Hiwire.decref(id); }).finally(() => { _Py_DecRef(set_result); _Py_DecRef(set_exception); }); return 0; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function destroy_jsarray_entries(idarray) { for (let v of Hiwire.get_value(idarray)) { try { if(typeof v.destroy === "function"){ v.destroy(); } } catch(e) { console.warn("Weird error:", e); } } }
+function JsArray_repeat_js(oid,count) { try { const o = Hiwire.get_value(oid); return Hiwire.new_value(Array.from({ length : count }, () => o).flat()) } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsArray_inplace_repeat_js(oid,count) { try { const o = Hiwire.get_value(oid); o.splice(0, o.length, ... Array.from({ length : count }, () => o).flat()); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsArray_index_helper(list,value,start,stop) { try { let o = Hiwire.get_value(list); let v = Hiwire.get_value(value); for (let i = start; i < stop; i++) { if (o[i] === v) { return i; } } return -1; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsArray_count_helper(list,value) { try { let o = Hiwire.get_value(list); let v = Hiwire.get_value(value); let result = 0; for (let i = 0; i < o.length; i++) { if (o[i] === v) { result++; } } return result; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsArray_reverse_helper(arrayid) { try { Hiwire.get_value(arrayid).reverse(); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsProxy_subscript_js(idobj,idkey) { try { let obj = Hiwire.get_value(idobj); let key = Hiwire.get_value(idkey); let result = obj.get(key); if (result === undefined) { if (obj.has && typeof obj.has === "function" && !obj.has(key)) { return 0; } } return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsMap_GetIter_js(idobj) { try { let jsobj = Hiwire.get_value(idobj); let result; if(typeof jsobj.keys === 'function') { result = jsobj.keys(); } else { result = jsobj[Symbol.iterator](); } return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsMap_clear_js(idmap) { try { const map = Hiwire.get_value(idmap); if(idmap && typeof idmap.clear === "function") { idmap.clear(); return 1; } return 0; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsObjMap_GetIter_js(idobj) { try { let jsobj = Hiwire.get_value(idobj); return Hiwire.new_value(Module.iterObject(jsobj)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsObjMap_length_js(idobj) { try { let jsobj = Hiwire.get_value(idobj); let length = 0; for (let _ of Module.iterObject(jsobj)) { length++; } return length; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsObjMap_subscript_js(idobj,idkey) { try { let obj = Hiwire.get_value(idobj); let key = Hiwire.get_value(idkey); if (!Object.prototype.hasOwnProperty.call(obj, key)) { return 0; } return Hiwire.new_value(obj[key]); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsObjMap_ass_subscript_js(idobj,idkey,idvalue) { try { let obj = Hiwire.get_value(idobj); let key = Hiwire.get_value(idkey); if(idvalue === 0) { if (!Object.prototype.hasOwnProperty.call(obj, key)) { return -1; } delete obj[key]; } else { obj[key] = Hiwire.get_value(idvalue); } return 0; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function JsObjMap_contains_js(idobj,idkey) { try { let obj = Hiwire.get_value(idobj); let key = Hiwire.get_value(idkey); return Object.prototype.hasOwnProperty.call(obj, key); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function get_async_js_call_done_callback(proxies_id) { try { let proxies = Hiwire.get_value(proxies_id); return Hiwire.new_value(function(result) { let msg = "This borrowed proxy was automatically destroyed " + "at the end of an asynchronous function call. Try " + "using create_proxy or create_once_callable."; for (let px of proxies) { Module.pyproxy_destroy(px, msg, (!!0)); } if (API.isPyProxy(result)) { Module.pyproxy_destroy(result, msg, (!!0)); } }); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function wrap_generator(genid,proxiesid) { try { const proxies = new Set(Hiwire.get_value(proxiesid)); const gen = Hiwire.get_value(genid); const msg = "This borrowed proxy was automatically destroyed " + "when a generator completed execution. Try " + "using create_proxy or create_once_callable."; function cleanup() { proxies.forEach((px) => Module.pyproxy_destroy(px, msg)); } function wrap(funcname) { return function (val) { if(API.isPyProxy(val)) { val = val.copy(); proxies.add(val); } let res; try { res = gen[funcname](val); } catch (e) { cleanup(); throw e; } if (res.done) { proxies.delete(res.value); cleanup(); } return res; }; } return Hiwire.new_value({ get [Symbol.toStringTag]() { return "Generator"; }, [Symbol.iterator]() { return this; }, next: wrap("next"), throw: wrap("throw"), return: wrap("return"), }); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function wrap_async_generator(genid,proxiesid) { try { const proxies = new Set(Hiwire.get_value(proxiesid)); const gen = Hiwire.get_value(genid); const msg = "This borrowed proxy was automatically destroyed " + "when an asynchronous generator completed execution. Try " + "using create_proxy or create_once_callable."; function cleanup() { proxies.forEach((px) => Module.pyproxy_destroy(px, msg)); } function wrap(funcname) { return async function (val) { if(API.isPyProxy(val)) { val = val.copy(); proxies.add(val); } let res; try { res = await gen[funcname](val); } catch (e) { cleanup(); throw e; } if (res.done) { proxies.delete(res.value); cleanup(); } return res; }; } return Hiwire.new_value({ get [Symbol.toStringTag]() { return "AsyncGenerator"; }, [Symbol.asyncIterator]() { return this; }, next: wrap("next"), throw: wrap("throw"), return: wrap("return"), }); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsBuffer_DecodeString_js(jsbuffer_id,encoding) { try { let buffer = Hiwire.get_value(jsbuffer_id); let encoding_js; if (encoding) { encoding_js = UTF8ToString(encoding); } let decoder = new TextDecoder(encoding_js, {fatal : (!!1), ignoreBOM: (!!1)}); let res; try { res = decoder.decode(buffer); } catch(e){ if(e instanceof TypeError) { return 0; } throw e; } return Hiwire.new_value(res); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsDoubleProxy_unwrap_helper(id) { try { return Module.PyProxy_getPtr(Hiwire.get_value(id)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function JsProxy_compute_typeflags(idobj) { try { let obj = Hiwire.get_value(idobj); let type_flags = 0; if (API.isPyProxy(obj) && !pyproxyIsAlive(obj)) { return 0; } const typeTag = getTypeTag(obj); function safeBool(cb) { try { return cb(); } catch(e) { return (!!0); } } const isBufferView = safeBool(() => ArrayBuffer.isView(obj)); const isArray = safeBool(() => Array.isArray(obj)); const constructorName = safeBool(() => obj.constructor.name) || ""; if (typeof obj === "function") { type_flags |= (1 << 9); }; if (hasMethod(obj, "then")) { type_flags |= (1 << 7); }; if (hasMethod(obj, Symbol.iterator)) { type_flags |= (1 << 0); }; if (hasMethod(obj, Symbol.asyncIterator)) { type_flags |= (1 << 15); }; if (hasMethod(obj, "next") && (hasMethod(obj, Symbol.iterator) || !hasMethod(obj, Symbol.asyncIterator))) { type_flags |= (1 << 1); }; if (hasMethod(obj, "next") && (!hasMethod(obj, Symbol.iterator) || hasMethod(obj, Symbol.asyncIterator))) { type_flags |= (1 << 18); }; if ((hasProperty(obj, "size")) || (hasProperty(obj, "length") && typeof obj !== "function")) { type_flags |= (1 << 2); }; if (hasMethod(obj, "get")) { type_flags |= (1 << 3); }; if (hasMethod(obj, "set")) { type_flags |= (1 << 4); }; if (hasMethod(obj, "has")) { type_flags |= (1 << 5); }; if (hasMethod(obj, "includes")) { type_flags |= (1 << 6); }; if ((isBufferView || (typeTag === '[object ArrayBuffer]')) && !(type_flags & (1 << 9))) { type_flags |= (1 << 8); }; if (API.isPyProxy(obj)) { type_flags |= (1 << 13); }; if (isArray) { type_flags |= (1 << 10); }; if (typeTag === "[object HTMLCollection]" || typeTag === "[object NodeList]") { type_flags |= (1 << 11); }; if (isBufferView && typeTag !== '[object DataView]') { type_flags |= (1 << 12); }; if (typeTag === "[object Generator]") { type_flags |= (1 << 16); }; if (typeTag === "[object AsyncGenerator]") { type_flags |= (1 << 17); }; if (( hasProperty(obj, "name") && hasProperty(obj, "message") && ( hasProperty(obj, "stack") || constructorName === "DOMException" ) ) && !(type_flags & ((1 << 9) | (1 << 8)))) { type_flags |= (1 << 19); }; return type_flags; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function throw_no_gil() { throw new API.NoGilError("Attempted to use PyProxy when Python GIL not held"); }
+function pyproxy_Check(x) { if (x == 0) { return false; } let val = Hiwire.get_value(x); return API.isPyProxy(val); }
+function pyproxy_AsPyObject(x) { if (x == 0) { return 0; } let val = Hiwire.get_value(x); if (!API.isPyProxy(val)) { return 0; } return Module.PyProxy_getPtr(val); }
+function destroy_proxies(proxies_id,msg_ptr) { let msg = undefined; if (msg_ptr) { msg = Hiwire.get_value(_JsString_FromId(msg_ptr)); } let proxies = Hiwire.get_value(proxies_id); for (let px of proxies) { Module.pyproxy_destroy(px, msg, false); } }
+function gc_register_proxies(proxies_id) { let proxies = Hiwire.get_value(proxies_id); for (let px of proxies) { Module.gc_register_proxy(Module.PyProxy_getAttrs(px).shared); } }
+function destroy_proxy(proxy_id,msg_ptr) { const px = Module.hiwire.get_value(proxy_id); const { shared, props } = Module.PyProxy_getAttrsQuiet(px); if (!shared.ptr) { return; } if (props.roundtrip) { return; } let msg = undefined; if (msg_ptr) { msg = Hiwire.get_value(_JsString_FromId(msg_ptr)); } Module.pyproxy_destroy(px, msg, false); }
+function proxy_cache_get(proxyCacheId,descr) { let proxyCache = Hiwire.get_value(proxyCacheId); let proxyId = proxyCache.get(descr); if (!proxyId) { return undefined; } if (pyproxyIsAlive(Hiwire.get_value(proxyId))) { return proxyId; } else { proxyCache.delete(descr); Hiwire.decref(proxyId); return undefined; } }
+function proxy_cache_set(proxyCacheId,descr,proxy) { let proxyCache = Hiwire.get_value(proxyCacheId); proxyCache.set(descr, proxy); }
+function array_to_js(array,len) { return Hiwire.new_value( Array.from(HEAP32.subarray(array / 4, array / 4 + len))); }
+function pyproxy_new_ex(ptrobj,capture_this,roundtrip,gcRegister) { try { return Hiwire.new_value( Module.pyproxy_new(ptrobj, { props: { captureThis: !!capture_this, roundtrip: !!roundtrip }, gcRegister, }) ); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function pyproxy_new(ptrobj) { try { return Hiwire.new_value(Module.pyproxy_new(ptrobj)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function create_once_callable(obj) { try { _Py_IncRef(obj); let alreadyCalled = (!!0); function wrapper(... args) { if (alreadyCalled) { throw new Error("OnceProxy can only be called once"); } try { return Module.callPyObject(obj, args); } finally { wrapper.destroy(); } } wrapper.destroy = function() { if (alreadyCalled) { throw new Error("OnceProxy has already been destroyed"); } alreadyCalled = (!!1); Module.finalizationRegistry.unregister(wrapper); _Py_DecRef(obj); }; Module.finalizationRegistry.register(wrapper, [ obj, undefined ], wrapper); return Hiwire.new_value(wrapper); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function create_promise_handles(handle_result,handle_exception,done_callback_id) { try { if (handle_result) { _Py_IncRef(handle_result); } if (handle_exception) { _Py_IncRef(handle_exception); } let done_callback = (x) => {}; if(done_callback_id){ done_callback = Hiwire.get_value(done_callback_id); } let used = (!!0); function checkUsed(){ if (used) { throw new Error("One of the promise handles has already been called."); } } function destroy(){ checkUsed(); used = (!!1); if(handle_result){ _Py_DecRef(handle_result); } if(handle_exception){ _Py_DecRef(handle_exception) } } function onFulfilled(res) { checkUsed(); try { if(handle_result){ return Module.callPyObject(handle_result, [res]); } } finally { done_callback(res); destroy(); } } function onRejected(err) { checkUsed(); try { if(handle_exception){ return Module.callPyObject(handle_exception, [err]); } } finally { done_callback(undefined); destroy(); } } onFulfilled.destroy = destroy; onRejected.destroy = destroy; return Hiwire.new_value( [onFulfilled, onRejected] ); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function _python2js_buffer_inner(buf,itemsize,ndim,format,shape,strides,suboffsets) { try { let converter = Module.get_converter(format, itemsize); let result = Module._python2js_buffer_recursive(buf, 0, { ndim, format, itemsize, shape, strides, suboffsets, converter, }); return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function python2js_buffer_init() { try { { 0; Module.processBufferFormatString = function (formatStr, errorMessage = "") { if (formatStr.length > 2) { throw new Error( "Expected format string to have length <= 2, " + `got '${formatStr}'.` + errorMessage, ); } let formatChar = formatStr.slice(-1); let alignChar = formatStr.slice(0, -1); let bigEndian; switch (alignChar) { case "!": case ">": bigEndian = (!!1); break; case "<": case "@": case "=": case "": bigEndian = (!!0); break; default: throw new Error( `Unrecognized alignment character ${alignChar}.` + errorMessage, ); } let arrayType; switch (formatChar) { case "b": arrayType = Int8Array; break; case "s": case "p": case "c": case "B": case "?": arrayType = Uint8Array; break; case "h": arrayType = Int16Array; break; case "H": arrayType = Uint16Array; break; case "i": case "l": case "n": arrayType = Int32Array; break; case "I": case "L": case "N": case "P": arrayType = Uint32Array; break; case "q": if (globalThis.BigInt64Array === undefined) { throw new Error( "BigInt64Array is not supported on this browser." + errorMessage, ); } arrayType = BigInt64Array; break; case "Q": if (globalThis.BigUint64Array === undefined) { throw new Error( "BigUint64Array is not supported on this browser." + errorMessage, ); } arrayType = BigUint64Array; break; case "f": arrayType = Float32Array; break; case "d": arrayType = Float64Array; break; case "e": throw new Error("Javascript has no Float16 support."); default: throw new Error( `Unrecognized format character '${formatChar}'.` + errorMessage, ); } return [arrayType, bigEndian]; }; Module.python2js_buffer_1d_contiguous = function (ptr, stride, n) { let byteLength = stride * n; return HEAP8.slice(ptr, ptr + byteLength).buffer; }; Module.python2js_buffer_1d_noncontiguous = function ( ptr, stride, suboffset, n, itemsize, ) { let byteLength = itemsize * n; let buffer = new Uint8Array(byteLength); for (let i = 0; i < n; ++i) { let curptr = ptr + i * stride; if (suboffset >= 0) { curptr = HEAPU32[(curptr >> 2) + 0] + suboffset; } buffer.set(HEAP8.subarray(curptr, curptr + itemsize), i * itemsize); } return buffer.buffer; }; Module._python2js_buffer_recursive = function (ptr, curdim, bufferData) { let n = HEAPU32[(bufferData.shape >> 2) + curdim]; let stride = HEAP32[(bufferData.strides >> 2) + curdim]; let suboffset = -1; if (bufferData.suboffsets !== 0) { suboffset = HEAP32[(bufferData.suboffsets >> 2) + curdim]; } if (curdim === bufferData.ndim - 1) { let arraybuffer; if (stride === bufferData.itemsize && suboffset < 0) { arraybuffer = Module.python2js_buffer_1d_contiguous(ptr, stride, n); } else { arraybuffer = Module.python2js_buffer_1d_noncontiguous( ptr, stride, suboffset, n, bufferData.itemsize, ); } return bufferData.converter(arraybuffer); } let result = []; for (let i = 0; i < n; ++i) { let curPtr = ptr + i * stride; if (suboffset >= 0) { curptr = HEAPU32[(curptr >> 2) + 0] + suboffset; } result.push( Module._python2js_buffer_recursive(curPtr, curdim + 1, bufferData), ); } return result; }; Module.get_converter = function (format, itemsize) { let formatStr = UTF8ToString(format); let [ArrayType, bigEndian] = Module.processBufferFormatString(formatStr); let formatChar = formatStr.slice(-1); switch (formatChar) { case "s": let decoder = new TextDecoder("utf8", { ignoreBOM: (!!1) }); return (buff) => decoder.decode(buff); case "?": return (buff) => Array.from(new Uint8Array(buff), (x) => !!x); } if (!bigEndian) { return (buff) => new ArrayType(buff); } let getFuncName; let setFuncName; switch (itemsize) { case 2: getFuncName = "getUint16"; setFuncName = "setUint16"; break; case 4: getFuncName = "getUint32"; setFuncName = "setUint32"; break; case 8: getFuncName = "getFloat64"; setFuncName = "setFloat64"; break; default: throw new Error(`Unexpected size ${itemsize}`); } function swapFunc(buff) { let dataview = new DataView(buff); let getFunc = dataview[getFuncName].bind(dataview); let setFunc = dataview[setFuncName].bind(dataview); for (let byte = 0; byte < dataview.byteLength; byte += itemsize) { setFunc(byte, getFunc(byte, (!!1)), (!!0)); } return buff; } return (buff) => new ArrayType(swapFunc(buff)); }; } return 0; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function _python2js_addto_postprocess_list(idlist,idparent,idkey,value) { const list = Hiwire.get_value(idlist); const parent = Hiwire.get_value(idparent); const key = Hiwire.get_value(idkey); list.push([ parent, key, value ]); }
+function _python2js_handle_postprocess_list(idlist,idcache) { const list = Hiwire.get_value(idlist); const cache = Hiwire.get_value(idcache); for (const[parent, key, value] of list) { let out_value = Hiwire.get_value(cache.get(value)); if(parent.constructor.name === "Map"){ parent.set(key, out_value) } else { parent[key] = out_value; } } }
+function _python2js_ucs1(ptr,len) { try { let jsstr = ""; for (let i = 0; i < len; ++i) { jsstr += String.fromCharCode(HEAPU8[ptr + i]); } return Hiwire.new_value(jsstr); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function _python2js_ucs2(ptr,len) { try { let jsstr = ""; for (let i = 0; i < len; ++i) { jsstr += String.fromCharCode(HEAPU16[(ptr >> 1) + i]); } return Hiwire.new_value(jsstr); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function _python2js_ucs4(ptr,len) { try { let jsstr = ""; for (let i = 0; i < len; ++i) { jsstr += String.fromCodePoint(HEAPU32[(ptr >> 2) + i]); } return Hiwire.new_value(jsstr); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function _python2js_add_to_cache(cacheid,pyparent,jsparent) { try { const cache = Hiwire.get_value(cacheid); const old_value = cache.get(pyparent); if (old_value !== undefined) { Hiwire.decref(old_value); } cache.set(pyparent, Hiwire.incref(jsparent)); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function _python2js_destroy_cache(cacheid) { const cache = Hiwire.get_value(cacheid); for (const[k, v] of cache.entries()) { Hiwire.decref(v); } }
+function _python2js_cache_lookup(cacheid,pyparent) { return Hiwire.get_value(cacheid).get(pyparent); }
+function _JsArray_PushEntry_helper(array,key,value) { try { Hiwire.get_value(array).push( [ Hiwire.get_value(key), Hiwire.get_value(value) ]); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function _JsArray_PostProcess_helper(jscontext,array) { try { return Hiwire.new_value( Hiwire.get_value(jscontext).dict_converter(Hiwire.get_value(array))); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function python2js__default_converter_js(jscontext,object) { try { let context = Hiwire.get_value(jscontext); let proxy = Module.pyproxy_new(object); let result = context.default_converter( proxy, context.converter, context.cacheConversion ); proxy.destroy(); return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function python2js_custom__create_jscontext(context,idcache,dict_converter,default_converter) { try { let jscontext = {}; if (dict_converter !== 0) { jscontext.dict_converter = Hiwire.get_value(dict_converter); } if (default_converter !== 0) { jscontext.default_converter = Hiwire.get_value(default_converter); jscontext.cacheConversion = function (input, output) { if (!API.isPyProxy(input)) { throw new TypeError("The first argument to cacheConversion must be a PyProxy."); } let input_ptr = Module.PyProxy_getPtr(input); let output_key = Hiwire.new_value(output); Hiwire.get_value(idcache).set(input_ptr, output_key); }; jscontext.converter = function (x) { if (!API.isPyProxy(x)) { return x; } let ptr = Module.PyProxy_getPtr(x); let res = __python2js(context, ptr); return Hiwire.pop_value(res); }; } return Hiwire.new_value(jscontext); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
+function destroy_proxies_js(proxies_id) { try { for (let proxy of Hiwire.get_value(proxies_id)) { proxy.destroy(); } } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
+function pyodide_js_init() {
+"use strict";(()=>{var Vt=Object.create;var ue=Object.defineProperty;var it=Object.getOwnPropertyDescriptor;var Kt=Object.getOwnPropertyNames;var qt=Object.getPrototypeOf,Jt=Object.prototype.hasOwnProperty;var i=(t,e)=>ue(t,"name",{value:e,configurable:!0}),Be=(t=>typeof require<"u"?require:typeof Proxy<"u"?new Proxy(t,{get:(e,r)=>(typeof require<"u"?require:e)[r]}):t)(function(t){if(typeof require<"u")return require.apply(this,arguments);throw new Error('Dynamic require of "'+t+'" is not supported')});var st=(t,e)=>()=>(e||t((e={exports:{}}).exports,e),e.exports);var Yt=(t,e,r,n)=>{if(e&&typeof e=="object"||typeof e=="function")for(let a of Kt(e))!Jt.call(t,a)&&a!==r&&ue(t,a,{get:()=>e[a],enumerable:!(n=it(e,a))||n.enumerable});return t};var Xt=(t,e,r)=>(r=t!=null?Vt(qt(t)):{},Yt(e||!t||!t.__esModule?ue(r,"default",{value:t,enumerable:!0}):r,t));var A=(t,e,r,n)=>{for(var a=n>1?void 0:n?it(e,r):e,s=t.length-1,o;s>=0;s--)(o=t[s])&&(a=(n?o(e,r,a):o(a))||a);return n&&a&&ue(e,r,a),a};var wt=st((Je,Pt)=>{(function(t,e){"use strict";typeof define=="function"&&define.amd?define("stackframe",[],e):typeof Je=="object"?Pt.exports=e():t.StackFrame=e()})(Je,function(){"use strict";function t(d){return!isNaN(parseFloat(d))&&isFinite(d)}i(t,"_isNumber");function e(d){return d.charAt(0).toUpperCase()+d.substring(1)}i(e,"_capitalize");function r(d){return function(){return this[d]}}i(r,"_getter");var n=["isConstructor","isEval","isNative","isToplevel"],a=["columnNumber","lineNumber"],s=["fileName","functionName","source"],o=["args"],u=["evalOrigin"],l=n.concat(a,s,o,u);function c(d){if(d)for(var m=0;m<l.length;m++)d[l[m]]!==void 0&&this["set"+e(l[m])](d[l[m]])}i(c,"StackFrame"),c.prototype={getArgs:function(){return this.args},setArgs:function(d){if(Object.prototype.toString.call(d)!=="[object Array]")throw new TypeError("Args must be an Array");this.args=d},getEvalOrigin:function(){return this.evalOrigin},setEvalOrigin:function(d){if(d instanceof c)this.evalOrigin=d;else if(d instanceof Object)this.evalOrigin=new c(d);else throw new TypeError("Eval Origin must be an Object or StackFrame")},toString:function(){var d=this.getFileName()||"",m=this.getLineNumber()||"",v=this.getColumnNumber()||"",O=this.getFunctionName()||"";return this.getIsEval()?d?"[eval] ("+d+":"+m+":"+v+")":"[eval]:"+m+":"+v:O?O+" ("+d+":"+m+":"+v+")":d+":"+m+":"+v}},c.fromString=i(function(m){var v=m.indexOf("("),O=m.lastIndexOf(")"),Le=m.substring(0,v),ce=m.substring(v+1,O).split(","),C=m.substring(O+1);if(C.indexOf("@")===0)var x=/@(.+?)(?::(\d+))?(?::(\d+))?$/.exec(C,""),I=x[1],D=x[2],Ce=x[3];return new c({functionName:Le,args:ce||void 0,fileName:I,lineNumber:D||void 0,columnNumber:Ce||void 0})},"StackFrame$$fromString");for(var y=0;y<n.length;y++)c.prototype["get"+e(n[y])]=r(n[y]),c.prototype["set"+e(n[y])]=function(d){return function(m){this[d]=!!m}}(n[y]);for(var f=0;f<a.length;f++)c.prototype["get"+e(a[f])]=r(a[f]),c.prototype["set"+e(a[f])]=function(d){return function(m){if(!t(m))throw new TypeError(d+" must be a Number");this[d]=Number(m)}}(a[f]);for(var h=0;h<s.length;h++)c.prototype["get"+e(s[h])]=r(s[h]),c.prototype["set"+e(s[h])]=function(d){return function(m){this[d]=String(m)}}(s[h]);return c})});var xt=st((Ye,vt)=>{(function(t,e){"use strict";typeof define=="function"&&define.amd?define("error-stack-parser",["stackframe"],e):typeof Ye=="object"?vt.exports=e(wt()):t.ErrorStackParser=e(t.StackFrame)})(Ye,i(function(e){"use strict";var r=/(^|@)\S+:\d+/,n=/^\s*at .*(\S+:\d+|\(native\))/m,a=/^(eval@)?(\[native code])?$/;return{parse:i(function(o){if(typeof o.stacktrace<"u"||typeof o["opera#sourceloc"]<"u")return this.parseOpera(o);if(o.stack&&o.stack.match(n))return this.parseV8OrIE(o);if(o.stack)return this.parseFFOrSafari(o);throw new Error("Cannot parse given Error object")},"ErrorStackParser$$parse"),extractLocation:i(function(o){if(o.indexOf(":")===-1)return[o];var u=/(.+?)(?::(\d+))?(?::(\d+))?$/,l=u.exec(o.replace(/[()]/g,""));return[l[1],l[2]||void 0,l[3]||void 0]},"ErrorStackParser$$extractLocation"),parseV8OrIE:i(function(o){var u=o.stack.split(`
+`).filter(function(l){return!!l.match(n)},this);return u.map(function(l){l.indexOf("(eval ")>-1&&(l=l.replace(/eval code/g,"eval").replace(/(\(eval at [^()]*)|(,.*$)/g,""));var c=l.replace(/^\s+/,"").replace(/\(eval code/g,"(").replace(/^.*?\s+/,""),y=c.match(/ (\(.+\)$)/);c=y?c.replace(y[0],""):c;var f=this.extractLocation(y?y[1]:c),h=y&&c||void 0,d=["eval","<anonymous>"].indexOf(f[0])>-1?void 0:f[0];return new e({functionName:h,fileName:d,lineNumber:f[1],columnNumber:f[2],source:l})},this)},"ErrorStackParser$$parseV8OrIE"),parseFFOrSafari:i(function(o){var u=o.stack.split(`
+`).filter(function(l){return!l.match(a)},this);return u.map(function(l){if(l.indexOf(" > eval")>-1&&(l=l.replace(/ line (\d+)(?: > eval line \d+)* > eval:\d+:\d+/g,":$1")),l.indexOf("@")===-1&&l.indexOf(":")===-1)return new e({functionName:l});var c=/((.*".+"[^@]*)?[^@]*)(?:@)/,y=l.match(c),f=y&&y[1]?y[1]:void 0,h=this.extractLocation(l.replace(c,""));return new e({functionName:f,fileName:h[0],lineNumber:h[1],columnNumber:h[2],source:l})},this)},"ErrorStackParser$$parseFFOrSafari"),parseOpera:i(function(o){return!o.stacktrace||o.message.indexOf(`
+`)>-1&&o.message.split(`
+`).length>o.stacktrace.split(`
+`).length?this.parseOpera9(o):o.stack?this.parseOpera11(o):this.parseOpera10(o)},"ErrorStackParser$$parseOpera"),parseOpera9:i(function(o){for(var u=/Line (\d+).*script (?:in )?(\S+)/i,l=o.message.split(`
+`),c=[],y=2,f=l.length;y<f;y+=2){var h=u.exec(l[y]);h&&c.push(new e({fileName:h[2],lineNumber:h[1],source:l[y]}))}return c},"ErrorStackParser$$parseOpera9"),parseOpera10:i(function(o){for(var u=/Line (\d+).*script (?:in )?(\S+)(?:: In function (\S+))?$/i,l=o.stacktrace.split(`
+`),c=[],y=0,f=l.length;y<f;y+=2){var h=u.exec(l[y]);h&&c.push(new e({functionName:h[3]||void 0,fileName:h[2],lineNumber:h[1],source:l[y]}))}return c},"ErrorStackParser$$parseOpera10"),parseOpera11:i(function(o){var u=o.stack.split(`
+`).filter(function(l){return!!l.match(r)&&!l.match(/^Error created at/)},this);return u.map(function(l){var c=l.split("@"),y=this.extractLocation(c.pop()),f=c.shift()||"",h=f.replace(/<anonymous function(: (\w+))?>/,"$2").replace(/\([^)]*\)/g,"")||void 0,d;f.match(/\(([^)]*)\)/)&&(d=f.replace(/^[^(]+\(([^)]*)\)$/,"$1"));var m=d===void 0||d==="[arguments not available]"?void 0:d.split(",");return new e({functionName:h,args:m,fileName:y[0],lineNumber:y[1],columnNumber:y[2],source:l})},this)},"ErrorStackParser$$parseOpera11")}},"ErrorStackParser"))});var P=typeof process=="object"&&typeof process.versions=="object"&&typeof process.versions.node=="string"&&typeof process.browser=="undefined",Qt,lt,Zt,er,fe;function tr(t,e){return Zt.resolve(e||".",t)}i(tr,"node_resolvePath");function rr(t,e){return e===void 0&&(e=location),new URL(t,e).toString()}i(rr,"browser_resolvePath");var ye;P?ye=tr:ye=rr;var nr;P||(nr="/");function ar(t,e){return t.startsWith("file://")&&(t=t.slice(7)),t.includes("://")?{response:lt(t)}:{binary:fe.readFile(t).then(r=>new Uint8Array(r.buffer,r.byteOffset,r.byteLength))}}i(ar,"node_getBinaryResponse");function or(t,e){let r=new URL(t,location);return{response:fetch(r,e?{integrity:e}:{})}}i(or,"browser_getBinaryResponse");var de;P?de=ar:de=or;async function H(t,e){let{response:r,binary:n}=de(t,e);if(n)return n;let a=await r;if(!a.ok)throw new Error(`Failed to load '${t}': request failed.`);return new Uint8Array(await a.arrayBuffer())}i(H,"loadBinaryFile");var je;if(globalThis.document)je=i(async t=>await import(t),"loadScript");else if(globalThis.importScripts)je=i(async t=>{try{globalThis.importScripts(t)}catch(e){if(e instanceof TypeError)await import(t);else throw e}},"loadScript");else if(P)je=ir;else throw new Error("Cannot determine runtime environment");async function ir(t){t.startsWith("file://")&&(t=t.slice(7)),t.includes("://")?er.runInThisContext(await(await lt(t)).text()):await import(Qt.pathToFileURL(t).href)}i(ir,"nodeLoadScript");function sr(t){return Buffer.from(t,"hex").toString("base64")}i(sr,"nodeBase16ToBase64");function lr(t){return btoa(t.match(/\w{2}/g).map(function(e){return String.fromCharCode(parseInt(e,16))}).join(""))}i(lr,"browserBase16ToBase64");var ct=P?sr:lr;var ut=i(t=>{let e={};return(...r)=>{let n=r[0];if(n in e)return e[n];{let a=t(n);return e[n]=a,a}}},"memoize");function yt(t){let e=!1;return function(){e||(e=!0,console.warn(t))}}i(yt,"makeWarnOnce");function S(t){let e=!1;return function(r,n,a){let s=a.value?"value":"get",o=a[s];return a[s]=function(...u){return e||(e=!0,console.warn(t)),o.call(this,...u)},a}}i(S,"warnOnce");function cr(t){try{return t instanceof p}catch(e){return!1}}i(cr,"isPyProxy");API.isPyProxy=cr;globalThis.FinalizationRegistry?Module.finalizationRegistry=new FinalizationRegistry(({ptr:t,cache:e})=>{e&&(e.leaked=!0,gt(e));try{_check_gil(),Module._Py_DecRef(t)}catch(r){API.fatal_error(r)}}):Module.finalizationRegistry={register(){},unregister(){}};var Ge=new Map;Module.pyproxy_alloc_map=Ge;var ze,Ve;Module.enable_pyproxy_allocation_tracing=function(){ze=i(function(t){Ge.set(t,Error().stack)},"trace_pyproxy_alloc"),Ve=i(function(t){Ge.delete(t)},"trace_pyproxy_dealloc")};Module.disable_pyproxy_allocation_tracing=function(){ze=i(function(t){},"trace_pyproxy_alloc"),Ve=i(function(t){},"trace_pyproxy_dealloc")};Module.disable_pyproxy_allocation_tracing();var mt=Symbol("pyproxy.attrs");function Ie(t,{flags:e,cache:r,props:n,shared:a,gcRegister:s}={}){s===void 0&&(s=!0);let o=e!==void 0?e:Module._pyproxy_getflags(t);o===-1&&Module._pythonexc2js();let u=o&1<<13,l=Module.getPyProxyClass(o),c;o&1<<8?(c=i(function(){},"target"),Object.setPrototypeOf(c,l.prototype),delete c.length,delete c.name,c.prototype=void 0):c=Object.create(l.prototype);let y=!!a;a||(r||(r={cacheId:Hiwire.new_value(new Map),refcnt:0}),r.refcnt++,a={ptr:t,cache:r,flags:o,promise:void 0,destroyed_msg:void 0,gcRegistered:!1},Module._Py_IncRef(t)),n=Object.assign({isBound:!1,captureThis:!1,boundArgs:[],roundtrip:!1},n);let f=new Proxy(c,u?Pr:R);!y&&s&&ht(a),y||ze(f);let h={shared:a,props:n};return c[mt]=h,f}i(Ie,"pyproxy_new");Module.pyproxy_new=Ie;function ht(t){let e=Object.assign({},t);t.gcRegistered=!0,Module.finalizationRegistry.register(t,e,t)}i(ht,"gc_register_proxy");Module.gc_register_proxy=ht;function ke(t){return t[mt]}i(ke,"_getAttrsQuiet");Module.PyProxy_getAttrsQuiet=ke;function F(t){let e=ke(t);if(!e.shared.ptr)throw new Error(e.shared.destroyed_msg);return e}i(F,"_getAttrs");Module.PyProxy_getAttrs=F;function _(t){return F(t).shared.ptr}i(_,"_getPtr");function g(t){return Object.getPrototypeOf(t).$$flags}i(g,"_getFlags");function dt(t,e,r){let{captureThis:n,boundArgs:a,boundThis:s,isBound:o}=F(t).props;return n?o?[s].concat(a,r):[e].concat(r):o?a.concat(r):r}i(dt,"_adjustArgs");var ft=new Map;Module.getPyProxyClass=function(t){let e=[[1,me],[2,j],[4,N],[8,he],[16,ge],[32,be],[2048,Pe],[512,_e],[1024,we],[4096,ve],[64,Se],[128,Ee],[256,te],[8192,xe],[16384,Ae]],r=ft.get(t);if(r)return r;let n={};for(let[u,l]of e)t&u&&Object.assign(n,Object.getOwnPropertyDescriptors(l.prototype));n.constructor=Object.getOwnPropertyDescriptor(p.prototype,"constructor"),Object.assign(n,Object.getOwnPropertyDescriptors({$$flags:t}));let a=t&1<<8?bt:_t,s=Object.create(a,n);function o(){}return i(o,"NewPyProxyClass"),o.prototype=s,ft.set(t,o),o};Module.PyProxy_getPtr=_;var ur="This borrowed attribute proxy was automatically destroyed in the process of destroying the proxy it was borrowed from. Try using the 'copy' method.";function gt(t){if(t&&(t.refcnt--,t.refcnt===0)){let e=Hiwire.pop_value(t.cacheId);for(let r of e.values()){let n=Hiwire.pop_value(r);t.leaked||Module.pyproxy_destroy(n,ur,!0)}}}i(gt,"pyproxy_decref_cache");function yr(t,e){if(e=e||"Object has already been destroyed",API.debug_ffi){let r=t.type,n;try{n=t.toString()}catch(a){if(a.pyodide_fatal_error)throw a}e+=`
+The object was of type "${r}" and `,n?e+=`had repr "${n}"`:e+="an error was raised when trying to generate its repr"}else e+="\nFor more information about the cause of this error, use `pyodide.setDebug(true)`";return e}i(yr,"generateDestroyedMessage");Module.pyproxy_destroy=function(t,e,r){let{shared:n,props:a}=ke(t);if(!n.ptr||!r&&a.roundtrip)return;n.destroyed_msg=yr(t,e);let s=n.ptr;n.ptr=0,n.gcRegistered&&Module.finalizationRegistry.unregister(n),gt(n.cache);try{_check_gil(),Module._Py_DecRef(s),Ve(t)}catch(o){API.fatal_error(o)}};Module.callPyObjectKwargs=function(t,e,r){let n=e.length,a=Object.keys(r),s=Object.values(r),o=a.length;e.push(...s);let u=Hiwire.new_value(e),l=Hiwire.new_value(a),c;try{_check_gil(),c=Module.__pyproxy_apply(t,u,n,l,o)}catch(f){API.maybe_fatal_error(f);return}finally{Hiwire.decref(u),Hiwire.decref(l)}c===0&&Module._pythonexc2js();let y=Hiwire.pop_value(c);return y&&y.type==="coroutine"&&y._ensure_future&&(_check_gil(),Module.__iscoroutinefunction(t)&&y._ensure_future()),y};Module.callPyObject=function(t,e){return Module.callPyObjectKwargs(t,e,{})};var qe=class{static[Symbol.hasInstance](e){return[qe,Ke].some(r=>Function.prototype[Symbol.hasInstance].call(r,e))}constructor(){throw new TypeError("PyProxy is not a constructor")}get[Symbol.toStringTag](){return"PyProxy"}get type(){let e=_(this);return Hiwire.pop_value(Module.__pyproxy_type(e))}toString(){let e=_(this),r;try{_check_gil(),r=Module.__pyproxy_repr(e)}catch(n){API.fatal_error(n)}return r===0&&Module._pythonexc2js(),Hiwire.pop_value(r)}destroy(e={}){e=Object.assign({message:"",destroyRoundtrip:!0},e);let{message:r,destroyRoundtrip:n}=e;Module.pyproxy_destroy(this,r,n)}copy(){let e=F(this);return Ie(e.shared.ptr,{flags:g(this),cache:e.shared.cache,props:e.props})}toJs({depth:e=-1,pyproxies:r=void 0,create_pyproxies:n=!0,dict_converter:a=void 0,default_converter:s=void 0}={}){let o=_(this),u,l,c=0,y=0;n?r?l=Hiwire.new_value(r):l=Hiwire.new_value([]):l=0,a&&(c=Hiwire.new_value(a)),s&&(y=Hiwire.new_value(s));try{_check_gil(),u=Module._python2js_custom(o,e,l,c,y)}catch(f){API.fatal_error(f)}finally{Hiwire.decref(l),Hiwire.decref(c),Hiwire.decref(y)}return u===0&&Module._pythonexc2js(),Hiwire.pop_value(u)}supportsLength(){return!!(g(this)&1<<0)}supportsGet(){return!!(g(this)&1<<1)}supportsSet(){return!!(g(this)&1<<2)}supportsHas(){return!!(g(this)&1<<3)}isIterable(){return!!(g(this)&(1<<4|1<<5))}isIterator(){return!!(g(this)&1<<5)}isAwaitable(){return!!(g(this)&1<<6)}isBuffer(){return!!(g(this)&1<<7)}isCallable(){return!!(g(this)&1<<8)}},p=qe;i(p,"PyProxy"),A([S("supportsLength() is deprecated. Use `instanceof pyodide.ffi.PyProxyWithLength` instead.")],p.prototype,"supportsLength",1),A([S("supportsGet() is deprecated. Use `instanceof pyodide.ffi.PyProxyWithGet` instead.")],p.prototype,"supportsGet",1),A([S("supportsSet() is deprecated. Use `instanceof pyodide.ffi.PyProxyWithSet` instead.")],p.prototype,"supportsSet",1),A([S("supportsHas() is deprecated. Use `instanceof pyodide.ffi.PyProxyWithHas` instead.")],p.prototype,"supportsHas",1),A([S("isIterable() is deprecated. Use `instanceof pyodide.ffi.PyIterable` instead.")],p.prototype,"isIterable",1),A([S("isIterator() is deprecated. Use `instanceof pyodide.ffi.PyIterator` instead.")],p.prototype,"isIterator",1),A([S("isAwaitable() is deprecated. Use `instanceof pyodide.ffi.PyAwaitable` instead.")],p.prototype,"isAwaitable",1),A([S("isBuffer() is deprecated. Use `instanceof pyodide.ffi.PyBuffer` instead.")],p.prototype,"isBuffer",1),A([S("isCallable() is deprecated. Use `instanceof pyodide.ffi.PyCallable` instead.")],p.prototype,"isCallable",1);var _t=p.prototype;Tests.Function=Function;var bt=Object.create(Function.prototype,Object.getOwnPropertyDescriptors(_t));function Ke(){}i(Ke,"PyProxyFunction");Ke.prototype=bt;globalThis.PyProxyFunction=Ke;var $=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<0)}};i($,"PyProxyWithLength");var me=class{get length(){let e=_(this),r;try{_check_gil(),r=Module._PyObject_Size(e)}catch(n){API.fatal_error(n)}return r===-1&&Module._pythonexc2js(),r}};i(me,"PyLengthMethods");var B=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<1)}};i(B,"PyProxyWithGet");var j=class{get(e){let r=_(this),n=Hiwire.new_value(e),a;try{_check_gil(),a=Module.__pyproxy_getitem(r,n)}catch(s){API.fatal_error(s)}finally{Hiwire.decref(n)}if(a===0)if(Module._PyErr_Occurred())Module._pythonexc2js();else return;return Hiwire.pop_value(a)}};i(j,"PyGetItemMethods");var W=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<2)}};i(W,"PyProxyWithSet");var N=class{set(e,r){let n=_(this),a=Hiwire.new_value(e),s=Hiwire.new_value(r),o;try{_check_gil(),o=Module.__pyproxy_setitem(n,a,s)}catch(u){API.fatal_error(u)}finally{Hiwire.decref(a),Hiwire.decref(s)}o===-1&&Module._pythonexc2js()}delete(e){let r=_(this),n=Hiwire.new_value(e),a;try{_check_gil(),a=Module.__pyproxy_delitem(r,n)}catch(s){API.fatal_error(s)}finally{Hiwire.decref(n)}a===-1&&Module._pythonexc2js()}};i(N,"PySetItemMethods");var G=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<3)}};i(G,"PyProxyWithHas");var he=class{has(e){let r=_(this),n=Hiwire.new_value(e),a;try{_check_gil(),a=Module.__pyproxy_contains(r,n)}catch(s){API.fatal_error(s)}finally{Hiwire.decref(n)}return a===-1&&Module._pythonexc2js(),a===1}};i(he,"PyContainsMethods");function*dr(t,e){try{for(;;){_check_gil();let r=Module.__pyproxy_iter_next(t);if(r===0)break;yield Hiwire.pop_value(r)}}catch(r){API.fatal_error(r)}finally{Module.finalizationRegistry.unregister(e),Module._Py_DecRef(t)}Module._PyErr_Occurred()&&Module._pythonexc2js()}i(dr,"iter_helper");var z=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&(1<<4|1<<5))}};i(z,"PyIterable");var ge=class{[Symbol.iterator](){let e=_(this),r={},n;try{_check_gil(),n=Module._PyObject_GetIter(e)}catch(s){API.fatal_error(s)}n===0&&Module._pythonexc2js();let a=dr(n,r);return Module.finalizationRegistry.register(a,[n,void 0],r),a}};i(ge,"PyIterableMethods");async function*fr(t,e){try{for(;;){let r,n;try{if(_check_gil(),r=Module.__pyproxy_aiter_next(t),r===0)break;n=Hiwire.pop_value(r)}catch(a){API.fatal_error(a)}try{yield await n}catch(a){if(a&&typeof a=="object"&&a.type==="StopAsyncIteration")return;throw a}finally{n.destroy()}}}finally{Module.finalizationRegistry.unregister(e),Module._Py_DecRef(t)}Module._PyErr_Occurred()&&Module._pythonexc2js()}i(fr,"aiter_helper");var V=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&(1<<9|1<<10))}};i(V,"PyAsyncIterable");var _e=class{[Symbol.asyncIterator](){let e=_(this),r={},n;try{_check_gil(),n=Module._PyObject_GetAIter(e)}catch(s){API.fatal_error(s)}n===0&&Module._pythonexc2js();let a=fr(n,r);return Module.finalizationRegistry.register(a,[n,void 0],r),a}};i(_e,"PyAsyncIterableMethods");var K=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<5)}};i(K,"PyIterator");var be=class{[Symbol.iterator](){return this}next(e=void 0){let r=Hiwire.new_value(e),n,a,s=stackSave(),o=stackAlloc(4);try{_check_gil(),n=Module.__pyproxyGen_Send(_(this),r,o)}catch(c){API.fatal_error(c)}finally{Hiwire.decref(r)}let u=HEAPU32[(o>>2)+0];stackRestore(s),n===-1&&Module._pythonexc2js();let l=Hiwire.pop_value(u);return a=n===0,{done:a,value:l}}};i(be,"PyIteratorMethods");var q=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<11)}};i(q,"PyGenerator");var Pe=class{throw(e){let r=Hiwire.new_value(e),n,a,s=stackSave(),o=stackAlloc(4);try{_check_gil(),n=Module.__pyproxyGen_throw(_(this),r,o)}catch(c){API.fatal_error(c)}finally{Hiwire.decref(r)}let u=HEAPU32[(o>>2)+0];stackRestore(s),n===-1&&Module._pythonexc2js();let l=Hiwire.pop_value(u);return a=n===0,{done:a,value:l}}return(e){let r=Hiwire.new_value(e),n,a,s=stackSave(),o=stackAlloc(4);try{_check_gil(),n=Module.__pyproxyGen_return(_(this),r,o)}catch(c){API.fatal_error(c)}finally{Hiwire.decref(r)}let u=HEAPU32[(o>>2)+0];stackRestore(s),n===-1&&Module._pythonexc2js();let l=Hiwire.pop_value(u);return a=n===0,{done:a,value:l}}};i(Pe,"PyGeneratorMethods");var J=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<10)}};i(J,"PyAsyncIterator");var we=class{[Symbol.asyncIterator](){return this}async next(e=void 0){let r=Hiwire.new_value(e),n;try{_check_gil(),n=Module.__pyproxyGen_asend(_(this),r)}catch(o){API.fatal_error(o)}finally{Hiwire.decref(r)}n===0&&Module._pythonexc2js();let a=Hiwire.pop_value(n),s;try{s=await a}catch(o){if(o&&typeof o=="object"&&o.type==="StopAsyncIteration")return{done:!0,value:s};throw o}finally{a.destroy()}return{done:!1,value:s}}};i(we,"PyAsyncIteratorMethods");var Y=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<12)}};i(Y,"PyAsyncGenerator");var ve=class{async throw(e){let r=Hiwire.new_value(e),n;try{_check_gil(),n=Module.__pyproxyGen_athrow(_(this),r)}catch(o){API.fatal_error(o)}finally{Hiwire.decref(r)}n===0&&Module._pythonexc2js();let a=Hiwire.pop_value(n),s;try{s=await a}catch(o){if(o&&typeof o=="object"){if(o.type==="StopAsyncIteration")return{done:!0,value:s};if(o.type==="GeneratorExit")return{done:!0,value:s}}throw o}finally{a.destroy()}return{done:!1,value:s}}async return(e){let r;try{_check_gil(),r=Module.__pyproxyGen_areturn(_(this))}catch(s){API.fatal_error(s)}r===0&&Module._pythonexc2js();let n=Hiwire.pop_value(r),a;try{a=await n}catch(s){if(s&&typeof s=="object"){if(s.type==="StopAsyncIteration")return{done:!0,value:a};if(s.type==="GeneratorExit")return{done:!0,value:e}}throw s}finally{n.destroy()}return{done:!1,value:a}}};i(ve,"PyAsyncGeneratorMethods");var X=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<13)}};i(X,"PySequence");function pr(t,e){let r=t.toString(),n=e.toString();return r===n?0:r<n?-1:1}i(pr,"defaultCompareFunc");var xe=class{get[Symbol.isConcatSpreadable](){return!0}join(e){return Array.prototype.join.call(this,e)}slice(e,r){return Array.prototype.slice.call(this,e,r)}lastIndexOf(e,r){return r===void 0&&(r=this.length),Array.prototype.lastIndexOf.call(this,e,r)}indexOf(e,r){return Array.prototype.indexOf.call(this,e,r)}forEach(e,r){Array.prototype.forEach.call(this,e,r)}map(e,r){return Array.prototype.map.call(this,e,r)}filter(e,r){return Array.prototype.filter.call(this,e,r)}some(e,r){return Array.prototype.some.call(this,e,r)}every(e,r){return Array.prototype.every.call(this,e,r)}reduce(...e){return Array.prototype.reduce.apply(this,e)}reduceRight(...e){return Array.prototype.reduceRight.apply(this,e)}at(e){return Array.prototype.at.call(this,e)}concat(...e){return Array.prototype.concat.apply(this,e)}includes(e){return this.has(e)}entries(){return Array.prototype.entries.call(this)}keys(){return Array.prototype.keys.call(this)}values(){return Array.prototype.values.call(this)}find(e,r){return Array.prototype.find.call(this,e,r)}findIndex(e,r){return Array.prototype.findIndex.call(this,e,r)}};i(xe,"PySequenceMethods");var Q=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<13)}};i(Q,"PyMutableSequence");var Ae=class{reverse(){return this.$reverse(),this}sort(e){let r=API.public_api.pyimport("functools"),n=r.cmp_to_key,a;e?a=e:a=pr;function s(u,l){return u===void 0&&l===void 0?0:u===void 0?1:l===void 0?-1:a(u,l)}i(s,"wrapper");let o;try{o=n(s),this.$sort.callKwargs({key:o})}finally{o==null||o.destroy(),n.destroy(),r.destroy()}return this}splice(e,r,...n){return r===void 0&&(r=1<<31-1),br(this,e,e+r,n)}push(...e){for(let r of e)this.append(r);return this.length}pop(){return pt(this,!1)}shift(){return pt(this,!0)}unshift(...e){return e.forEach((r,n)=>{this.insert(n,r)}),this.length}copyWithin(...e){return Array.prototype.copyWithin.apply(this,e),this}fill(...e){return Array.prototype.fill.apply(this,e),this}};i(Ae,"PyMutableSequenceMethods");function mr(t,e){let r=_(t),n=Hiwire.new_value(e),a;try{_check_gil(),a=Module.__pyproxy_hasattr(r,n)}catch(s){API.fatal_error(s)}finally{Hiwire.decref(n)}return a===-1&&Module._pythonexc2js(),a!==0}i(mr,"python_hasattr");function hr(t,e){let{shared:r}=F(t),n=Hiwire.new_value(e),a,s=r.cache.cacheId;try{_check_gil(),a=Module.__pyproxy_getattr(r.ptr,n,s)}catch(o){API.fatal_error(o)}finally{Hiwire.decref(n)}return a===0&&Module._PyErr_Occurred()&&Module._pythonexc2js(),a}i(hr,"python_getattr");function gr(t,e,r){let n=_(t),a=Hiwire.new_value(e),s=Hiwire.new_value(r),o;try{_check_gil(),o=Module.__pyproxy_setattr(n,a,s)}catch(u){API.fatal_error(u)}finally{Hiwire.decref(a),Hiwire.decref(s)}o===-1&&Module._pythonexc2js()}i(gr,"python_setattr");function _r(t,e){let r=_(t),n=Hiwire.new_value(e),a;try{_check_gil(),a=Module.__pyproxy_delattr(r,n)}catch(s){API.fatal_error(s)}finally{Hiwire.decref(n)}a===-1&&Module._pythonexc2js()}i(_r,"python_delattr");function br(t,e,r,n){let a=_(t),s=Hiwire.new_value(n),o;try{_check_gil(),o=Module.__pyproxy_slice_assign(a,e,r,s)}catch(u){API.fatal_error(u)}finally{Hiwire.decref(s)}return o===0&&Module._pythonexc2js(),Hiwire.pop_value(o)}i(br,"python_slice_assign");function pt(t,e){let r=_(t),n;try{_check_gil(),n=Module.__pyproxy_pop(r,e)}catch(a){API.fatal_error(a)}return n===0&&Module._pythonexc2js(),Hiwire.pop_value(n)}i(pt,"python_pop");function pe(t,e,r){return t instanceof Function?e in t&&!["name","length","caller","arguments",r?"prototype":void 0].includes(e):e in t}i(pe,"filteredHasKey");var R={isExtensible(){return!0},has(t,e){return pe(t,e,!1)?!0:typeof e=="symbol"?!1:(e.startsWith("$")&&(e=e.slice(1)),mr(t,e))},get(t,e){if(typeof e=="symbol"||pe(t,e,!0))return Reflect.get(t,e);e.startsWith("$")&&(e=e.slice(1));let r=hr(t,e);if(r!==0)return Hiwire.pop_value(r)},set(t,e,r){let n=Object.getOwnPropertyDescriptor(t,e);return n&&!n.writable&&!n.set?!1:typeof e=="symbol"||pe(t,e,!0)?Reflect.set(t,e,r):(e.startsWith("$")&&(e=e.slice(1)),gr(t,e,r),!0)},deleteProperty(t,e){let r=Object.getOwnPropertyDescriptor(t,e);return r&&!r.configurable?!1:typeof e=="symbol"||pe(t,e,!0)?Reflect.deleteProperty(t,e):(e.startsWith("$")&&(e=e.slice(1)),_r(t,e),!0)},ownKeys(t){let e=_(t),r;try{_check_gil(),r=Module.__pyproxy_ownKeys(e)}catch(a){API.fatal_error(a)}r===0&&Module._pythonexc2js();let n=Hiwire.pop_value(r);return n.push(...Reflect.ownKeys(t)),n},apply(t,e,r){return t.apply(e,r)}};function We(t){return t&&typeof t=="object"&&t.constructor&&t.constructor.name==="PythonError"}i(We,"isPythonError");var Pr={isExtensible(){return!0},has(t,e){return typeof e=="string"&&/^[0-9]*$/.test(e)?Number(e)<t.length:R.has(t,e)},get(t,e){if(e==="length")return t.length;if(typeof e=="string"&&/^[0-9]*$/.test(e))try{return j.prototype.get.call(t,Number(e))}catch(r){if(We(r))return;throw r}return R.get(t,e)},set(t,e,r){if(typeof e=="string"&&/^[0-9]*$/.test(e))try{return N.prototype.set.call(t,Number(e),r),!0}catch(n){if(We(n))return!1;throw n}return R.set(t,e,r)},deleteProperty(t,e){if(typeof e=="string"&&/^[0-9]*$/.test(e))try{return N.prototype.delete.call(t,Number(e)),!0}catch(r){if(We(r))return!1;throw r}return R.deleteProperty(t,e)},ownKeys(t){let e=R.ownKeys(t);return e.push(...Array.from({length:t.length},(r,n)=>n.toString())),e.push("length"),e}},Z=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<6)}};i(Z,"PyAwaitable");var Se=class{_ensure_future(){let{shared:e}=ke(this);if(e.promise)return e.promise;let r=e.ptr;r||F(this);let n,a,s=new Promise((c,y)=>{n=c,a=y}),o=Hiwire.new_value(n),u=Hiwire.new_value(a),l;try{_check_gil(),l=Module.__pyproxy_ensure_future(r,o,u)}catch(c){API.fatal_error(c)}finally{Hiwire.decref(u),Hiwire.decref(o)}return l===-1&&Module._pythonexc2js(),e.promise=s,this.destroy(),s}then(e,r){return this._ensure_future().then(e,r)}catch(e){return this._ensure_future().catch(e)}finally(e){return this._ensure_future().finally(e)}};i(Se,"PyAwaitableMethods");var ee=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<8)}};i(ee,"PyCallable");var te=class{apply(e,r){return r=function(...n){return n}.apply(void 0,r),r=dt(this,e,r),Module.callPyObject(_(this),r)}call(e,...r){return r=dt(this,e,r),Module.callPyObject(_(this),r)}callKwargs(...e){if(e.length===0)throw new TypeError("callKwargs requires at least one argument (the key word argument object)");let r=e.pop();if(r.constructor!==void 0&&r.constructor.name!=="Object")throw new TypeError("kwargs argument is not an object");return Module.callPyObjectKwargs(_(this),e,r)}bind(e,...r){let{shared:n,props:a}=F(this),{boundArgs:s,boundThis:o,isBound:u}=a,l=e;u&&(l=o);let c=s.concat(r);return a=Object.assign({},a,{boundArgs:c,isBound:!0,boundThis:l}),Ie(n.ptr,{shared:n,flags:g(this),props:a})}captureThis(){let{props:e,shared:r}=F(this);return e=Object.assign({},e,{captureThis:!0}),Ie(r.ptr,{shared:r,flags:g(this),props:e})}};i(te,"PyCallableMethods");te.prototype.prototype=Function.prototype;var wr=new Map([["i8",Int8Array],["u8",Uint8Array],["u8clamped",Uint8ClampedArray],["i16",Int16Array],["u16",Uint16Array],["i32",Int32Array],["u32",Uint32Array],["i32",Int32Array],["u32",Uint32Array],["i64",globalThis.BigInt64Array],["u64",globalThis.BigUint64Array],["f32",Float32Array],["f64",Float64Array],["dataview",DataView]]),M=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&!!(g(e)&1<<7)}};i(M,"PyBuffer");var Ee=class{getBuffer(e){let r;if(e&&(r=wr.get(e),r===void 0))throw new Error(`Unknown type ${e}`);let n=stackSave(),a=stackAlloc(HEAPU32[(Module._buffer_struct_size>>2)+0]),s=_(this),o;try{_check_gil(),o=Module.__pyproxy_get_buffer(a,s)}catch(x){API.fatal_error(x)}o===-1&&Module._pythonexc2js();let u=HEAPU32[(a>>2)+0],l=HEAPU32[(a>>2)+1],c=HEAPU32[(a>>2)+2],y=!!HEAPU32[(a>>2)+3],f=HEAPU32[(a>>2)+4],h=HEAPU32[(a>>2)+5],d=Hiwire.pop_value(HEAPU32[(a>>2)+6]),m=Hiwire.pop_value(HEAPU32[(a>>2)+7]),v=HEAPU32[(a>>2)+8],O=!!HEAPU32[(a>>2)+9],Le=!!HEAPU32[(a>>2)+10],ce=Module.UTF8ToString(f);stackRestore(n);let C=!1;try{let x=!1;r===void 0&&([r,x]=Module.processBufferFormatString(ce," In this case, you can pass an explicit type argument."));let I=parseInt(r.name.replace(/[^0-9]/g,""))/8||1;if(x&&I>1)throw new Error("Javascript has no native support for big endian buffers. In this case, you can pass an explicit type argument. For instance, `getBuffer('dataview')` will return a `DataView`which has native support for reading big endian data. Alternatively, toJs will automatically convert the buffer to little endian.");let D=c-l;if(D!==0&&(u%I!==0||l%I!==0||c%I!==0))throw new Error(`Buffer does not have valid alignment for a ${r.name}`);let Ce=D/I,Gt=(u-l)/I,$e;D===0?$e=new r:$e=new r(HEAPU32.buffer,l,Ce);for(let zt of m.keys())m[zt]/=I;return C=!0,Object.create(k.prototype,Object.getOwnPropertyDescriptors({offset:Gt,readonly:y,format:ce,itemsize:h,ndim:d.length,nbytes:D,shape:d,strides:m,data:$e,c_contiguous:O,f_contiguous:Le,_view_ptr:v,_released:!1}))}finally{if(!C)try{_check_gil(),Module._PyBuffer_Release(v),Module._PyMem_Free(v)}catch(x){API.fatal_error(x)}}}};i(Ee,"PyBufferMethods");var re=class extends p{static[Symbol.hasInstance](e){return API.isPyProxy(e)&&e.type==="dict"}};i(re,"PyDict");var k=class{constructor(){throw new TypeError("PyBufferView is not a constructor")}release(){if(!this._released){try{_check_gil(),Module._PyBuffer_Release(this._view_ptr),Module._PyMem_Free(this._view_ptr)}catch(e){API.fatal_error(e)}this._released=!0,this.data=null}}};i(k,"PyBufferView");var Et=Xt(xt());function It(t){if(typeof t=="string")t=new Error(t);else if(t&&typeof t=="object"&&t.name==="ExitStatus"){let e=t.status;t=new U(t.message),t.status=e}else if(typeof t!="object"||t===null||typeof t.stack!="string"||typeof t.message!="string"){let e=API.getTypeTag(t),r=`A value of type ${typeof t} with tag ${e} was thrown as an error!`;try{r+=`
+String interpolation of the thrown value gives """${t}""".`}catch(n){r+=`
+String interpolation of the thrown value fails.`}try{r+=`
+The thrown value's toString method returns """${t.toString()}""".`}catch(n){r+=`
+The thrown value's toString method fails.`}t=new Error(r)}return t}i(It,"ensureCaughtObjectIsError");var ne=class extends Error{constructor(r,n,a){n||(n=`The exception is an object of type ${r} at address ${a} which does not inherit from std::exception`);super(n);this.ty=r}};i(ne,"CppException");Object.defineProperty(ne.prototype,"name",{get(){return`${this.constructor.name} ${this.ty}`}});function kt(t){let[e,r]=Module.getExceptionMessage(t);return new ne(e,r,t)}i(kt,"convertCppException");Tests.convertCppException=kt;var At=!1;API.fatal_error=function(t){if(t&&t.pyodide_fatal_error)return;if(At){console.error("Recursive call to fatal_error. Inner error was:"),console.error(t);return}if(t instanceof L)throw t;typeof t=="number"?t=kt(t):t=It(t),t.pyodide_fatal_error=!0,At=!0;let e=t instanceof U;e||(console.error("Pyodide has suffered a fatal error. Please report this to the Pyodide maintainers."),console.error("The cause of the fatal error was:"),API.inTestHoist?(console.error(t.toString()),console.error(t.stack)):console.error(t));try{e||Module._dump_traceback();let n=`Pyodide already ${e?"exited":"fatally failed"} and can no longer be used.`;for(let a of Reflect.ownKeys(API.public_api))typeof a=="string"&&a.startsWith("_")||a==="version"||Object.defineProperty(API.public_api,a,{enumerable:!0,configurable:!0,get:()=>{throw new Error(n)}});API.on_fatal&&API.on_fatal(t)}catch(r){console.error("Another error occurred while handling the fatal error:"),console.error(r)}throw t};API.maybe_fatal_error=function(t){API._skip_unwind_fatal_error&&t==="unwind"||API.fatal_error(t)};var Xe=[];API.capture_stderr=function(){Xe=[];let t=Module.FS;t.createDevice("/dev","capture_stderr",null,e=>Xe.push(e)),t.closeStream(2),t.open("/dev/capture_stderr",1)};API.restore_stderr=function(){let t=Module.FS;return t.closeStream(2),t.unlink("/dev/capture_stderr"),t.open("/dev/stderr",1),new TextDecoder().decode(new Uint8Array(Xe))};API.fatal_loading_error=function(...t){let e=t.join(" ");if(Module._PyErr_Occurred()){API.capture_stderr(),Module._PyErr_Print();let r=API.restore_stderr();e+=`
+`+r}throw new oe(e)};function Qe(t){if(!t)return!1;let e=t.fileName||"";if(e.includes("wasm-function"))return!0;if(!e.includes("pyodide.asm.js"))return!1;let r=t.functionName||"";return r.startsWith("Object.")&&(r=r.slice(7)),r in API.public_api&&r!=="PythonError"?(t.functionName=r,!1):!0}i(Qe,"isPyodideFrame");function St(t){return Qe(t)&&t.functionName==="new_error"}i(St,"isErrorStart");Module.handle_js_error=function(t){if(t&&t.pyodide_fatal_error)throw t;if(t instanceof Module._PropagatePythonError)return;let e=!1;t instanceof API.PythonError&&(e=Module._restore_sys_last_exception(t.__error_address));let r,n;try{r=Et.default.parse(t)}catch(a){n=!0}if(n&&(t=It(t)),!e){let a=Hiwire.new_value(t),s=Module._JsProxy_create(a);Module._set_error(s),Module._Py_DecRef(s),Hiwire.decref(a)}if(!n){if(St(r[0])||St(r[1]))for(;Qe(r[0]);)r.shift();for(let a of r){if(Qe(a))break;let s=Module.stringToNewUTF8(a.functionName||"???"),o=Module.stringToNewUTF8(a.fileName||"???.js");Module.__PyTraceback_Add(s,o,a.lineNumber),Module._free(s),Module._free(o)}}};var E=class extends Error{constructor(r,n,a){let s=Error.stackTraceLimit;Error.stackTraceLimit=1/0;super(n);Error.stackTraceLimit=s,this.type=r,this.__error_address=a}};i(E,"PythonError");API.PythonError=E;var ae=class extends Error{constructor(){super("If you are seeing this message, an internal Pyodide error has occurred. Please report it to the Pyodide maintainers.")}};i(ae,"_PropagatePythonError");function vr(t){Object.defineProperty(t.prototype,"name",{value:t.name})}i(vr,"setName");var oe=class extends Error{};i(oe,"FatalPyodideError");var U=class extends Error{};i(U,"Exit");var L=class extends Error{};i(L,"NoGilError");[ae,oe,U,E,L].forEach(vr);API.NoGilError=L;Module._PropagatePythonError=ae;API.errorConstructors=new Map([EvalError,RangeError,ReferenceError,SyntaxError,TypeError,URIError,globalThis.DOMException,globalThis.AssertionError,globalThis.SystemError].filter(t=>t).map(t=>[t.constructor.name,t]));API.deserializeError=function(t,e,r){let n=API.errorConstructors.get(t)||Error,a=new n(e);return API.errorConstructors.has(t)||(a.name=t),a.message=e,a.stack=r,a};var Mt={PyProxy:p,PyProxyWithLength:$,PyProxyWithGet:B,PyProxyWithSet:W,PyProxyWithHas:G,PyDict:re,PyIterable:z,PyAsyncIterable:V,PyIterator:K,PyAsyncIterator:J,PyGenerator:q,PyAsyncGenerator:Y,PyAwaitable:Z,PyCallable:ee,PyBuffer:M,PyBufferView:k,PythonError:E,PySequence:X,PyMutableSequence:Q};var Ft=i(t=>{t.id!=="canvas"&&console.warn("If you are using canvas element for SDL library, it should have id 'canvas' to work properly."),Module.canvas=t},"setCanvas2D"),Ot=i(()=>Module.canvas,"getCanvas2D"),xr=i(t=>{Ft(t)},"setCanvas3D"),Ar=i(()=>Ot(),"getCanvas3D"),Tt={setCanvas2D:Ft,getCanvas2D:Ot,setCanvas3D:xr,getCanvas3D:Ar};function Me(){let t=Promise.resolve();async function e(){let r=t,n;return t=new Promise(a=>n=a),await r,n}return i(e,"acquireLock"),e}i(Me,"createLock");function Sr(t,e,r){let n=t.substring(0,t.lastIndexOf("/")),a=e||[];a=a.concat(API.defaultLdLibraryPath,[n]);let s=i(l=>{for(let c of a){let y=Module.PATH.join2(c,l);if(Module.FS.findObject(y)!==null)return y}return l},"resolvePath"),o=i(l=>Module.FS.readFile(s(l)),"readFile");return r!==void 0&&(o=i(l=>r(s(l)),"readFile")),{findObject:(l,c)=>Module.FS.findObject(s(l),c),readFile:o}}i(Sr,"createDynlibFS");var Er=Me();async function Dt(t,e,r,n){let a=await Er(),s=Sr(t,r,n);try{if(await Module.loadDynamicLibrary(t,{loadAsync:!0,nodelete:!0,allowUndefined:!0,global:e,fs:s}),e&&Module.PATH.isAbs(t)){let o=Module.PATH.basename(t);Module.LDSO.loadedLibsByName[o]||(Module.LDSO.loadedLibsByName[o]=Module.LDSO.loadedLibsByName[t])}}catch(o){if(o&&o.message&&o.message.includes("need to see wasm magic number")){console.warn(`Failed to load dynlib ${t}. We probably just tried to load a linux .so file or something.`);return}throw o}finally{a()}}i(Dt,"loadDynlib");async function Ze(t,e){let r=`${API.sitepackages}/${t.file_name.split("-")[0]}.libs`,n=ut(Module.FS.readFile),a=!!t.shared_library,s;if(a)s=e.map(o=>({path:o,global:!0}));else{let o=Ir(e,n);s=e.map(u=>{let l=o.has(Module.PATH.basename(u));return{path:u,global:l||!!t.shared_library}})}s.sort((o,u)=>Number(u.global)-Number(o.global));for(let{path:o,global:u}of s)await Dt(o,u,[r],n)}i(Ze,"loadDynlibsFromPackage");function Ir(t,e){let r=Module.FS.readFile;e!==void 0&&(r=e);let n=new Set;return t.forEach(a=>{let s=r(a);Module.getDylinkMetadata(s).neededDynlibs.forEach(u=>{n.add(u)})}),n}i(Ir,"calculateGlobalLibs");API.loadDynlib=Dt;API.loadDynlibsFromPackage=Ze;var Fe;API.setCdnUrl=function(t){Fe=t};var ie="default channel",kr=/^.*?([^\/]*)\.whl$/;function Mr(t){let e=kr.exec(t);if(e)return e[1].toLowerCase().split("-").slice(0,-4).join("-")}i(Mr,"_uri_to_package_name");function Ht(){let t=i(()=>{},"_resolve"),e=i(()=>{},"_reject"),r=new Promise((n,a)=>{t=n,e=a});return r.resolve=t,r.reject=e,r}i(Ht,"createDonePromise");function Rt(t,e){if(t=t.toLowerCase(),e.has(t))return;let r=API.lockfile_packages[t];if(!r)throw new Error(`No known package with name '${t}'`);if(e.set(t,{name:t,channel:ie,depends:r.depends,installPromise:void 0,done:Ht()}),T[t]===void 0)for(let n of r.depends)Rt(n,e)}i(Rt,"addPackageToLoad");function Fr(t,e){let r=new Map;for(let n of t){let a=Mr(n);if(a===void 0){Rt(n,r);continue}let s=n;if(r.has(a)&&r.get(a).channel!==s){e(`Loading same package ${a} from ${s} and ${r.get(a).channel}`);continue}r.set(a,{name:a,channel:s,depends:[],installPromise:void 0,done:Ht()})}return r}i(Fr,"recursiveDependencies");async function Or(t,e,r=!0){let n;P?(n=API.config.packageCacheDir,await fe.mkdir(API.config.packageCacheDir,{recursive:!0})):n=API.config.indexURL;let a,s,o;if(e===ie){if(!(t in API.lockfile_packages))throw new Error(`Internal error: no entry for package named ${t}`);a=API.lockfile_packages[t].file_name,s=ye(a,n),o="sha256-"+ct(API.lockfile_packages[t].sha256)}else s=e,o=void 0;r||(o=void 0);try{return await H(s,o)}catch(l){if(!P||e!==ie)throw l}console.log(`Didn't find package ${a} locally, attempting to load from ${Fe}`);let u=await H(Fe+a);return console.log(`Package ${a} loaded from ${Fe}, caching the wheel in node_modules for future use.`),await fe.writeFile(s,u),u}i(Or,"downloadPackage");async function Tr(t,e,r){let n=API.lockfile_packages[t];n||(n={file_name:".whl",shared_library:!1,depends:[],imports:[],install_dir:"site"});let a=n.file_name,s=API.package_loader.unpack_buffer.callKwargs({buffer:e,filename:a,target:n.install_dir,calculate_dynlibs:!0,installer:"pyodide.loadPackage",source:r===ie?"pyodide":r});await Ze(n,s)}i(Tr,"installPackage");async function Dr(t,e,r,n,a=!0){if(T[t]!==void 0)return;let s=e.get(t);try{let o=await Or(s.name,s.channel,a),u=s.depends.map(l=>e.has(l)?e.get(l).done:Promise.resolve());await API.bootstrapFinalizedPromise,await Promise.all(u),await Tr(s.name,o,s.channel),r.add(s.name),T[s.name]=s.channel}catch(o){n.set(t,o)}finally{s.done.resolve()}}i(Dr,"downloadAndInstall");var Hr=Me(),Fn=yt(`Passing a messageCallback (resp. errorCallback) as the second (resp. third) argument to loadPackage is deprecated and will be removed in v0.24. Instead use:
+   { messageCallback : callbackFunc }`);async function et(t,e={checkIntegrity:!0}){let r=e.messageCallback||console.log,n=e.errorCallback||console.error;t instanceof p&&(t=t.toJs()),Array.isArray(t)||(t=[t]);let a=Fr(t,n);for(let[c,y]of a){let f=T[c];f!==void 0&&(a.delete(c),f===y.channel||y.channel===ie?r(`${c} already loaded from ${f}`):n(`URI mismatch, attempting to load package ${c} from ${y.channel} while it is already loaded from ${f}. To override a dependency, load the custom package first.`))}if(a.size===0){r("No new packages to load");return}let s=[...a.keys()].join(", "),o=new Set,u=new Map,l=await Hr();try{r(`Loading ${s}`);for(let[c]of a){if(T[c]){a.delete(c);continue}a.get(c).installPromise=Dr(c,a,o,u,e.checkIntegrity)}if(await Promise.all(Array.from(a.values()).map(({installPromise:c})=>c)),Module.reportUndefinedSymbols(),o.size>0){let c=Array.from(o).join(", ");r(`Loaded ${c}`)}if(u.size>0){let c=Array.from(u.keys()).join(", ");r(`Failed to load ${c}`);for(let[y,f]of u)n(`The following error occurred while loading ${y}:`),n(f.message)}API.importlib.invalidate_caches()}finally{l()}}i(et,"loadPackage");var T={};var Nt="0.25.0.dev0";var nt=P?Be("fs"):void 0,$t=P?Be("tty"):void 0;function Bt(t){try{nt.fsyncSync(t)}catch(e){if(e&&e.code==="EINVAL")return;throw e}}i(Bt,"nodeFsync");var jt=!1,Ne={},w={};function rt(t){Ne[w.stdin]=t}i(rt,"_setStdinOps");function Rr(t){Ne[w.stdout]=t}i(Rr,"_setStdoutOps");function Nr(t){Ne[w.stderr]=t}i(Nr,"_setStderrOps");function Ur(t){return t&&typeof t=="object"&&"errno"in t}i(Ur,"isErrnoError");var Lr=new Int32Array(new WebAssembly.Memory({shared:!0,initial:1,maximum:1}).buffer);function Cr(t){try{return Atomics.wait(Lr,0,0,t),!0}catch(e){return!1}}i(Cr,"syncSleep");function $r(t){for(;;)try{return t()}catch(e){if(e&&e.code==="EAGAIN"&&Cr(100))continue;throw e}}i($r,"handleEAGAIN");function Ut(t,e,r){let n;try{n=$r(e)}catch(a){throw a&&a.code&&Module.ERRNO_CODES[a.code]?new FS.ErrnoError(Module.ERRNO_CODES[a.code]):Ur(a)?a:(console.error("Error thrown in read:"),console.error(a),new FS.ErrnoError(29))}if(n===void 0)throw console.warn(`${r} returned undefined; a correct implementation must return a number`),new FS.ErrnoError(29);return n!==0&&(t.node.timestamp=Date.now()),n}i(Ut,"readWriteHelper");var Lt=i((t,e,r)=>API.typedArrayAsUint8Array(t).subarray(e,e+r),"prepareBuffer"),tt={open:function(t){let e=Ne[t.node.rdev];if(!e)throw new FS.ErrnoError(43);t.devops=e,t.tty=t.devops.isatty,t.seekable=!1},close:function(t){t.stream_ops.fsync(t)},fsync:function(t){let e=t.devops;e.fsync&&e.fsync()},read:function(t,e,r,n,a){return e=Lt(e,r,n),Ut(t,()=>t.devops.read(e),"read")},write:function(t,e,r,n,a){return e=Lt(e,r,n),Ut(t,()=>t.devops.write(e),"write")}};function Ue(){jt&&(FS.closeStream(0),FS.closeStream(1),FS.closeStream(2),FS.open("/dev/stdin",0),FS.open("/dev/stdout",1),FS.open("/dev/stderr",1))}i(Ue,"refreshStreams");API.initializeStreams=function(t,e,r){let n=FS.createDevice.major++;w.stdin=FS.makedev(n,0),w.stdout=FS.makedev(n,1),w.stderr=FS.makedev(n,2),FS.registerDevice(w.stdin,tt),FS.registerDevice(w.stdout,tt),FS.registerDevice(w.stderr,tt),FS.unlink("/dev/stdin"),FS.unlink("/dev/stdout"),FS.unlink("/dev/stderr"),FS.mkdev("/dev/stdin",w.stdin),FS.mkdev("/dev/stdout",w.stdout),FS.mkdev("/dev/stderr",w.stderr),le({stdin:t}),at({batched:e}),ot({batched:r}),jt=!0,Ue()};function Br(){le(P?new Te(process.stdin.fd):{stdin:()=>prompt()})}i(Br,"setDefaultStdin");function jr(){rt(new Oe),Ue()}i(jr,"setStdinError");function le(t={}){let{stdin:e,error:r,isatty:n,autoEOF:a,read:s}=t,o=+!!e+ +!!r+ +!!s;if(o>1)throw new TypeError("At most one of stdin, read, and error must be provided.");if(!e&&a!==void 0)throw new TypeError("The 'autoEOF' option can only be used with the 'stdin' option");if(o===0){Br();return}r&&jr(),e&&(a=a===void 0?!0:a,rt(new De(e.bind(t),!!n,a))),s&&rt(t),Ue()}i(le,"setStdin");function Wt(t,e,r){let{raw:n,isatty:a,batched:s,write:o}=t,u=+!!n+ +!!s+ +!!o;if(u===0&&(t=r(),{raw:n,isatty:a,batched:s,write:o}=t),u>1)throw new TypeError("At most one of 'raw', 'batched', and 'write' must be passed");if(!n&&!o&&a)throw new TypeError("Cannot set 'isatty' to true unless 'raw' or 'write' is provided");n&&e(new He(n.bind(t),!!a)),s&&e(new Re(s.bind(t))),o&&e(t),Ue()}i(Wt,"_setStdwrite");function Wr(){return P?new se(process.stdout.fd):{batched:t=>console.log(t)}}i(Wr,"_getStdoutDefaults");function Gr(){return P?new se(process.stderr.fd):{batched:t=>console.warn(t)}}i(Gr,"_getStderrDefaults");function at(t={}){Wt(t,Rr,Wr)}i(at,"setStdout");function ot(t={}){Wt(t,Nr,Gr)}i(ot,"setStderr");var zr=new TextEncoder,Ct=new TextDecoder,Oe=class{read(e){throw new FS.ErrnoError(29)}};i(Oe,"ErrorReader");var Te=class{constructor(e){this.fd=e,this.isatty=$t.isatty(e)}read(e){try{return nt.readSync(this.fd,e)}catch(r){if(r.toString().includes("EOF"))return 0;throw r}}fsync(){Bt(this.fd)}};i(Te,"NodeReader");var De=class{constructor(e,r,n){this.infunc=e,this.isatty=r,this.autoEOF=n,this.index=0,this.saved=void 0,this.insertEOF=!1}_getInput(){if(this.saved)return this.saved;let e=this.infunc();if(typeof e=="number")return e;if(e){if(ArrayBuffer.isView(e)){if(e.BYTES_PER_ELEMENT!==1)throw console.warn(`Expected BYTES_PER_ELEMENT to be 1, infunc gave ${e.constructor}`),new FS.ErrnoError(29);return e}if(typeof e=="string")return e.endsWith(`
+`)||(e+=`
+`),e;if(Object.prototype.toString.call(e)==="[object ArrayBuffer]")return new Uint8Array(e);throw console.warn("Expected result to be undefined, null, string, array buffer, or array buffer view"),new FS.ErrnoError(29)}}read(e){if(this.insertEOF)return this.insertEOF=!1,0;let r=0;for(;;){let n=this._getInput();if(typeof n=="number"){e[0]=n,e=e.subarray(1),r++;continue}let a;if(n&&n.length>0)if(typeof n=="string"){let{read:s,written:o}=zr.encodeInto(n,e);this.saved=n.slice(s),r+=o,a=e[o-1],e=e.subarray(o)}else{let s;n.length>e.length?(e.set(n.subarray(0,e.length)),this.saved=n.subarray(e.length),s=e.length):(e.set(n),this.saved=void 0,s=n.length),r+=s,a=e[s-1],e=e.subarray(s)}if(!(n&&n.length>0)||this.autoEOF||e.length===0)return this.insertEOF=r>0&&this.autoEOF&&a!==10,r}}fsync(){}};i(De,"LegacyReader");var He=class{constructor(e,r){this.out=e,this.isatty=r}write(e){for(let r of e)this.out(r);return e.length}};i(He,"CharacterCodeWriter");var Re=class{constructor(e){this.isatty=!1;this.out=e,this.output=[]}write(e){for(let r of e)r===10?(this.out(Ct.decode(new Uint8Array(this.output))),this.output=[]):r!==0&&this.output.push(r);return e.length}fsync(){this.output&&this.output.length>0&&(this.out(Ct.decode(new Uint8Array(this.output))),this.output=[])}};i(Re,"StringWriter");var se=class{constructor(e){this.fd=e,this.isatty=$t.isatty(e)}write(e){return nt.writeSync(this.fd,e)}fsync(){Bt(this.fd)}};i(se,"NodeWriter");API.loadBinaryFile=H;API.rawRun=i(function(e){let r=Module.stringToNewUTF8(e);Module.API.capture_stderr();let n=Module._PyRun_SimpleString(r);Module._free(r);let a=Module.API.restore_stderr().trim();return[n,a]},"rawRun");API.runPythonInternal=function(t){return API._pyodide._base.eval_code(t,API.runPythonInternal_dict)};API.saveState=()=>API.pyodide_py._state.save_state();API.restoreState=t=>API.pyodide_py._state.restore_state(t);var b=class{static async loadPackagesFromImports(e,r={checkIntegrity:!0}){let n=API.pyodide_code.find_imports(e),a;try{a=n.toJs()}finally{n.destroy()}if(a.length===0)return;let s=API._import_name_to_package_name,o=new Set;for(let u of a)s.has(u)&&o.add(s.get(u));o.size&&await et(Array.from(o),r)}static runPython(e,r={}){return r.globals||(r.globals=API.globals),API.pyodide_code.eval_code.callKwargs(e,r)}static async runPythonAsync(e,r={}){return r.globals||(r.globals=API.globals),await API.pyodide_code.eval_code_async.callKwargs(e,r)}static registerJsModule(e,r){API.pyodide_ffi.register_js_module(e,r)}static unregisterJsModule(e){API.pyodide_ffi.unregister_js_module(e)}static toPy(e,{depth:r,defaultConverter:n}={depth:-1}){switch(typeof e){case"string":case"number":case"boolean":case"bigint":case"undefined":return e}if(!e||API.isPyProxy(e))return e;let a=0,s=0,o=0;try{a=Hiwire.new_value(e);try{s=Module.js2python_convert(a,{depth:r,defaultConverter:n})}catch(u){throw u instanceof Module._PropagatePythonError&&Module._pythonexc2js(),u}if(Module._JsProxy_Check(s))return e;o=Module._python2js(s),o===0&&Module._pythonexc2js()}finally{Hiwire.decref(a),Module._Py_DecRef(s)}return Hiwire.pop_value(o)}static pyimport(e){return API.importlib.import_module(e)}static unpackArchive(e,r,n={}){if(!ArrayBuffer.isView(e)&&API.getTypeTag(e)!=="[object ArrayBuffer]")throw new TypeError("Expected argument 'buffer' to be an ArrayBuffer or an ArrayBuffer view");API.typedArrayAsUint8Array(e);let a=n.extractDir;API.package_loader.unpack_buffer.callKwargs({buffer:e,format:r,extract_dir:a,installer:"pyodide.unpackArchive"})}static async mountNativeFS(e,r){if(r.constructor.name!=="FileSystemDirectoryHandle")throw new TypeError("Expected argument 'fileSystemHandle' to be a FileSystemDirectoryHandle");return Module.FS.findObject(e)==null&&Module.FS.mkdirTree(e),Module.FS.mount(Module.FS.filesystems.NATIVEFS_ASYNC,{fileSystemHandle:r},e),await new Promise((n,a)=>Module.FS.syncfs(!0,n)),{syncfs:async()=>new Promise((n,a)=>Module.FS.syncfs(!1,n))}}static registerComlink(e){API._Comlink=e}static setInterruptBuffer(e){Module.HEAP8[Module._Py_EMSCRIPTEN_SIGNAL_HANDLING]=!!e,Module.Py_EmscriptenSignalBuffer=e}static checkInterrupt(){if(Module._PyGILState_Check()){Module.__PyErr_CheckSignals()&&Module._pythonexc2js();return}else{let e=Module.Py_EmscriptenSignalBuffer;if(e&&e[0]===2)throw new Module.FS.ErrnoError(27)}}static isPyProxy(e){return console.warn("pyodide.isPyProxy() is deprecated. Use `instanceof pyodide.ffi.PyProxy` instead."),this.isPyProxy=API.isPyProxy,API.isPyProxy(e)}static get PyBuffer(){return console.warn("pyodide.PyBuffer is deprecated. Use `pyodide.ffi.PyBufferView` instead."),Object.defineProperty(this,"PyBuffer",{value:k}),k}static get PyProxyBuffer(){return console.warn("pyodide.PyProxyBuffer is deprecated. Use `pyodide.ffi.PyBuffer` instead."),Object.defineProperty(this,"PyProxyBuffer",{value:M}),M}static get PythonError(){return console.warn("pyodide.PythonError is deprecated. Use `pyodide.ffi.PythonError` instead."),Object.defineProperty(this,"PythonError",{value:E}),E}static setDebug(e){let r=!!API.debug_ffi;return API.debug_ffi=e,r}};i(b,"PyodideAPI"),b.version=Nt,b.loadPackage=et,b.loadedPackages=T,b.ffi=Mt,b.setStdin=le,b.setStdout=at,b.setStderr=ot,b.globals={},b.FS={},b.PATH={},b.canvas=Tt,b.ERRNO_CODES={},b.pyodide_py={};API.makePublicAPI=function(){let t=Object.getOwnPropertyDescriptors(b);delete t.prototype;let e=Object.create({},t);return API.public_api=e,e.FS=Module.FS,e.PATH=Module.PATH,e.ERRNO_CODES=Module.ERRNO_CODES,e._module=Module,e._api=API,e};})();
+//# sourceMappingURL=_pyodide.out.js.map
+}
+const API = Module.API;
+const Hiwire = {};
+const Tests = {};
+API.tests = Tests;
+API.version = "0.25.0.dev0";
+Module.hiwire = Hiwire;
+function getTypeTag(x) {
+  try {
+    return Object.prototype.toString.call(x);
+  } catch (e) {
+    return "";
+  }
+}
+API.getTypeTag = getTypeTag;
+
+/**
+ * Safe property check
+ *
+ * Observe whether a property exists or not without invoking getters.
+ * Should never throw as long as arguments have the correct types.
+ *
+ * obj: an object
+ * prop: a string or symbol
+ */
+function hasProperty(obj, prop) {
+  try {
+    while (obj) {
+      if (Object.getOwnPropertyDescriptor(obj, prop)) {
+        return true;
+      }
+      obj = Object.getPrototypeOf(obj);
+    }
+  } catch (e) {}
+  return false;
+}
+
+/**
+ * Observe whether a method exists or not
+ *
+ * Invokes getters but catches any error produced by a getter and throws it away.
+ * Never throws an error
+ *
+ * obj: an object
+ * prop: a string or symbol
+ */
+function hasMethod(obj, prop) {
+  try {
+    return typeof obj[prop] === "function";
+  } catch (e) {
+    return false;
+  }
+}
+
+const pyproxyIsAlive = (px) => !!Module.PyProxy_getAttrsQuiet(px).shared.ptr;
+API.pyproxyIsAlive = pyproxyIsAlive;
+
+const errNoRet = () => {
+  throw new Error(
+    "Assertion error: control reached end of function without return",
+  );
+};
+pyodide_js_init();
+
+function __hiwire_deduplicate_new() { return new Map(); }
+function __hiwire_deduplicate_get(map,value) { return map.get(value); }
+function __hiwire_deduplicate_set(map,value,ref) { map.set(value, ref); }
+function __hiwire_deduplicate_delete(map,value) { map.delete(value); }
 function unbox_small_structs(type_ptr) { var type_id = HEAPU16[(type_ptr + 6 >> 1) + 0]; while (type_id === 13) { var elements = HEAPU32[(type_ptr + 8 >> 2) + 0]; var first_element = HEAPU32[(elements >> 2) + 0]; if (first_element === 0) { type_id = 0; break; } else if (HEAPU32[(elements >> 2) + 1] === 0) { type_ptr = first_element; type_id = HEAPU16[(first_element + 6 >> 1) + 0]; } else { break; } } return [type_ptr, type_id]; }
 function ffi_call_js(cif,fn,rvalue,avalue) { var abi = HEAPU32[(cif >> 2) + 0]; var nargs = HEAPU32[(cif >> 2) + 1]; var nfixedargs = HEAPU32[(cif >> 2) + 6]; var arg_types_ptr = HEAPU32[(cif >> 2) + 2]; var rtype_unboxed = unbox_small_structs(HEAPU32[(cif >> 2) + 3]); var rtype_ptr = rtype_unboxed[0]; var rtype_id = rtype_unboxed[1]; var orig_stack_ptr = stackSave(); var cur_stack_ptr = orig_stack_ptr; var args = []; var ret_by_arg = false; if (rtype_id === 15) { throw new Error('complex ret marshalling nyi'); } if (rtype_id < 0 || rtype_id > 15) { throw new Error('Unexpected rtype ' + rtype_id); } if (rtype_id === 4 || rtype_id === 13) { args.push(rvalue); ret_by_arg = true; } ; for (var i = 0; i < nfixedargs; i++) { var arg_ptr = HEAPU32[(avalue >> 2) + i]; var arg_unboxed = unbox_small_structs(HEAPU32[(arg_types_ptr >> 2) + i]); var arg_type_ptr = arg_unboxed[0]; var arg_type_id = arg_unboxed[1]; switch (arg_type_id) { case 1: case 10: case 9: case 14: args.push(HEAPU32[(arg_ptr >> 2) + 0]); ; break; case 2: args.push(HEAPF32[(arg_ptr >> 2) + 0]); ; break; case 3: args.push(HEAPF64[(arg_ptr >> 3) + 0]); ; break; case 5: args.push(HEAPU8[arg_ptr + 0]); ; break; case 6: args.push(HEAP8[arg_ptr + 0]); ; break; case 7: args.push(HEAPU16[(arg_ptr >> 1) + 0]); ; break; case 8: args.push(HEAP16[(arg_ptr >> 1) + 0]); ; break; case 11: case 12: args.push(HEAPU64[(arg_ptr >> 3) + 0]); ; break; case 4: args.push(HEAPU64[(arg_ptr >> 3) + 0]); args.push(HEAPU64[(arg_ptr >> 3) + 1]); ; break; case 13: var size = HEAPU32[(arg_type_ptr >> 2) + 0]; var align = HEAPU16[(arg_type_ptr + 4 >> 1) + 0]; ((cur_stack_ptr -= (size)), (cur_stack_ptr &= (~((align) - 1)))); HEAP8.subarray(cur_stack_ptr, cur_stack_ptr+size).set(HEAP8.subarray(arg_ptr, arg_ptr + size)); args.push(cur_stack_ptr); ; break; case 15: throw new Error('complex marshalling nyi'); default: throw new Error('Unexpected type ' + arg_type_id); } } if (nfixedargs != nargs) { ; var struct_arg_info = []; for (var i = nargs - 1; i >= nfixedargs; i--) { var arg_ptr = HEAPU32[(avalue >> 2) + i]; var arg_unboxed = unbox_small_structs(HEAPU32[(arg_types_ptr >> 2) + i]); var arg_type_ptr = arg_unboxed[0]; var arg_type_id = arg_unboxed[1]; switch (arg_type_id) { case 5: case 6: ((cur_stack_ptr -= (1)), (cur_stack_ptr &= (~((1) - 1)))); HEAPU8[cur_stack_ptr + 0] = HEAPU8[arg_ptr + 0]; break; case 7: case 8: ((cur_stack_ptr -= (2)), (cur_stack_ptr &= (~((2) - 1)))); HEAPU16[(cur_stack_ptr >> 1) + 0] = HEAPU16[(arg_ptr >> 1) + 0]; break; case 1: case 9: case 10: case 14: case 2: ((cur_stack_ptr -= (4)), (cur_stack_ptr &= (~((4) - 1)))); HEAPU32[(cur_stack_ptr >> 2) + 0] = HEAPU32[(arg_ptr >> 2) + 0]; break; case 3: case 11: case 12: ((cur_stack_ptr -= (8)), (cur_stack_ptr &= (~((8) - 1)))); HEAPU32[(cur_stack_ptr >> 2) + 0] = HEAPU32[(arg_ptr >> 2) + 0]; HEAPU32[(cur_stack_ptr >> 2) + 1] = HEAPU32[(arg_ptr >> 2) + 1]; break; case 4: ((cur_stack_ptr -= (16)), (cur_stack_ptr &= (~((8) - 1)))); HEAPU32[(cur_stack_ptr >> 2) + 0] = HEAPU32[(arg_ptr >> 2) + 0]; HEAPU32[(cur_stack_ptr >> 2) + 1] = HEAPU32[(arg_ptr >> 2) + 1]; HEAPU32[(cur_stack_ptr >> 2) + 2] = HEAPU32[(arg_ptr >> 2) + 2]; HEAPU32[(cur_stack_ptr >> 2) + 3] = HEAPU32[(arg_ptr >> 2) + 3]; break; case 13: ((cur_stack_ptr -= (4)), (cur_stack_ptr &= (~((4) - 1)))); struct_arg_info.push([cur_stack_ptr, arg_ptr, HEAPU32[(arg_type_ptr >> 2) + 0], HEAPU16[(arg_type_ptr + 4 >> 1) + 0]]); break; case 15: throw new Error('complex arg marshalling nyi'); default: throw new Error('Unexpected argtype ' + arg_type_id); } } args.push(cur_stack_ptr); for (var i = 0; i < struct_arg_info.length; i++) { var struct_info = struct_arg_info[i]; var arg_target = struct_info[0]; var arg_ptr = struct_info[1]; var size = struct_info[2]; var align = struct_info[3]; ((cur_stack_ptr -= (size)), (cur_stack_ptr &= (~((align) - 1)))); HEAP8.subarray(cur_stack_ptr, cur_stack_ptr+size).set(HEAP8.subarray(arg_ptr, arg_ptr + size)); HEAPU32[(arg_target >> 2) + 0] = cur_stack_ptr; } } stackRestore(cur_stack_ptr); stackAlloc(0); var result = (0, getWasmTableEntry(fn).apply(null, args)); stackRestore(orig_stack_ptr); if (ret_by_arg) { return; } switch (rtype_id) { case 0: break; case 1: case 9: case 10: case 14: HEAPU32[(rvalue >> 2) + 0] = result; break; case 2: HEAPF32[(rvalue >> 2) + 0] = result; break; case 3: HEAPF64[(rvalue >> 3) + 0] = result; break; case 5: case 6: HEAPU8[rvalue + 0] = result; break; case 7: case 8: HEAPU16[(rvalue >> 1) + 0] = result; break; case 11: case 12: HEAPU64[(rvalue >> 3) + 0] = result; break; case 15: throw new Error('complex ret marshalling nyi'); default: throw new Error('Unexpected rtype ' + rtype_id); } }
 function ffi_closure_alloc_js(size,code) { var closure = _malloc(size); var index = getEmptyTableSlot(); HEAPU32[(code >> 2) + 0] = index; HEAPU32[(closure >> 2) + 0] = index; return closure; }
@@ -1020,6 +1244,83 @@ function ffi_prep_closure_loc_js(closure,cif,fun,user_data,codeloc) { var abi = 
         warnOnce.shown[text] = 1;
         err(text);
       }
+    };
+
+  var UTF8Decoder = typeof TextDecoder != 'undefined' ? new TextDecoder('utf8') : undefined;
+  
+    /**
+     * Given a pointer 'idx' to a null-terminated UTF8-encoded string in the given
+     * array that contains uint8 values, returns a copy of that string as a
+     * Javascript String object.
+     * heapOrArray is either a regular array, or a JavaScript typed array view.
+     * @param {number} idx
+     * @param {number=} maxBytesToRead
+     * @return {string}
+     */
+  var UTF8ArrayToString = (heapOrArray, idx, maxBytesToRead) => {
+      var endIdx = idx + maxBytesToRead;
+      var endPtr = idx;
+      // TextDecoder needs to know the byte length in advance, it doesn't stop on
+      // null terminator by itself.  Also, use the length info to avoid running tiny
+      // strings through TextDecoder, since .subarray() allocates garbage.
+      // (As a tiny code save trick, compare endPtr against endIdx using a negation,
+      // so that undefined means Infinity)
+      while (heapOrArray[endPtr] && !(endPtr >= endIdx)) ++endPtr;
+  
+      if (endPtr - idx > 16 && heapOrArray.buffer && UTF8Decoder) {
+        return UTF8Decoder.decode(heapOrArray.subarray(idx, endPtr));
+      }
+      var str = '';
+      // If building with TextDecoder, we have already computed the string length
+      // above, so test loop end condition against that
+      while (idx < endPtr) {
+        // For UTF8 byte structure, see:
+        // http://en.wikipedia.org/wiki/UTF-8#Description
+        // https://www.ietf.org/rfc/rfc2279.txt
+        // https://tools.ietf.org/html/rfc3629
+        var u0 = heapOrArray[idx++];
+        if (!(u0 & 0x80)) { str += String.fromCharCode(u0); continue; }
+        var u1 = heapOrArray[idx++] & 63;
+        if ((u0 & 0xE0) == 0xC0) { str += String.fromCharCode(((u0 & 31) << 6) | u1); continue; }
+        var u2 = heapOrArray[idx++] & 63;
+        if ((u0 & 0xF0) == 0xE0) {
+          u0 = ((u0 & 15) << 12) | (u1 << 6) | u2;
+        } else {
+          if ((u0 & 0xF8) != 0xF0) warnOnce('Invalid UTF-8 leading byte ' + ptrToString(u0) + ' encountered when deserializing a UTF-8 string in wasm memory to a JS string!');
+          u0 = ((u0 & 7) << 18) | (u1 << 12) | (u2 << 6) | (heapOrArray[idx++] & 63);
+        }
+  
+        if (u0 < 0x10000) {
+          str += String.fromCharCode(u0);
+        } else {
+          var ch = u0 - 0x10000;
+          str += String.fromCharCode(0xD800 | (ch >> 10), 0xDC00 | (ch & 0x3FF));
+        }
+      }
+      return str;
+    };
+  
+    /**
+     * Given a pointer 'ptr' to a null-terminated UTF8-encoded string in the
+     * emscripten HEAP, returns a copy of that string as a Javascript String object.
+     *
+     * @param {number} ptr
+     * @param {number=} maxBytesToRead - An optional length that specifies the
+     *   maximum number of bytes to read. You can omit this parameter to scan the
+     *   string until the first 0 byte. If maxBytesToRead is passed, and the string
+     *   at [ptr, ptr+maxBytesToReadr[ contains a null byte in the middle, then the
+     *   string will cut short at that byte index (i.e. maxBytesToRead will not
+     *   produce a string of exact length [ptr, ptr+maxBytesToRead[) N.B. mixing
+     *   frequent uses of UTF8ToString() with and without maxBytesToRead may throw
+     *   JS JIT optimizations off, so it is worth to consider consistently using one
+     * @return {string}
+     */
+  var UTF8ToString = (ptr, maxBytesToRead) => {
+      assert(typeof ptr == 'number');
+      return ptr ? UTF8ArrayToString(HEAPU8, ptr, maxBytesToRead) : '';
+    };
+  var ___assert_fail = (condition, filename, line, func) => {
+      abort(`Assertion failed: ${UTF8ToString(condition)}, at: ` + [filename ? UTF8ToString(filename) : 'unknown filename', line, func ? UTF8ToString(func) : 'unknown function']);
     };
 
   var wasmTableMirror = [];
@@ -1178,59 +1479,6 @@ function ffi_prep_closure_loc_js(closure,cif,fun,user_data,codeloc) { var abi = 
   };
   
   
-  var UTF8Decoder = typeof TextDecoder != 'undefined' ? new TextDecoder('utf8') : undefined;
-  
-    /**
-     * Given a pointer 'idx' to a null-terminated UTF8-encoded string in the given
-     * array that contains uint8 values, returns a copy of that string as a
-     * Javascript String object.
-     * heapOrArray is either a regular array, or a JavaScript typed array view.
-     * @param {number} idx
-     * @param {number=} maxBytesToRead
-     * @return {string}
-     */
-  var UTF8ArrayToString = (heapOrArray, idx, maxBytesToRead) => {
-      var endIdx = idx + maxBytesToRead;
-      var endPtr = idx;
-      // TextDecoder needs to know the byte length in advance, it doesn't stop on
-      // null terminator by itself.  Also, use the length info to avoid running tiny
-      // strings through TextDecoder, since .subarray() allocates garbage.
-      // (As a tiny code save trick, compare endPtr against endIdx using a negation,
-      // so that undefined means Infinity)
-      while (heapOrArray[endPtr] && !(endPtr >= endIdx)) ++endPtr;
-  
-      if (endPtr - idx > 16 && heapOrArray.buffer && UTF8Decoder) {
-        return UTF8Decoder.decode(heapOrArray.subarray(idx, endPtr));
-      }
-      var str = '';
-      // If building with TextDecoder, we have already computed the string length
-      // above, so test loop end condition against that
-      while (idx < endPtr) {
-        // For UTF8 byte structure, see:
-        // http://en.wikipedia.org/wiki/UTF-8#Description
-        // https://www.ietf.org/rfc/rfc2279.txt
-        // https://tools.ietf.org/html/rfc3629
-        var u0 = heapOrArray[idx++];
-        if (!(u0 & 0x80)) { str += String.fromCharCode(u0); continue; }
-        var u1 = heapOrArray[idx++] & 63;
-        if ((u0 & 0xE0) == 0xC0) { str += String.fromCharCode(((u0 & 31) << 6) | u1); continue; }
-        var u2 = heapOrArray[idx++] & 63;
-        if ((u0 & 0xF0) == 0xE0) {
-          u0 = ((u0 & 15) << 12) | (u1 << 6) | u2;
-        } else {
-          if ((u0 & 0xF8) != 0xF0) warnOnce('Invalid UTF-8 leading byte ' + ptrToString(u0) + ' encountered when deserializing a UTF-8 string in wasm memory to a JS string!');
-          u0 = ((u0 & 7) << 18) | (u1 << 12) | (u2 << 6) | (heapOrArray[idx++] & 63);
-        }
-  
-        if (u0 < 0x10000) {
-          str += String.fromCharCode(u0);
-        } else {
-          var ch = u0 - 0x10000;
-          str += String.fromCharCode(0xD800 | (ch >> 10), 0xDC00 | (ch & 0x3FF));
-        }
-      }
-      return str;
-    };
   
   var FS_stdin_getChar_buffer = [];
   
@@ -4182,26 +4430,6 @@ function ffi_prep_closure_loc_js(closure,cif,fun,user_data,codeloc) { var abi = 
       },
   };
   
-  
-    /**
-     * Given a pointer 'ptr' to a null-terminated UTF8-encoded string in the
-     * emscripten HEAP, returns a copy of that string as a Javascript String object.
-     *
-     * @param {number} ptr
-     * @param {number=} maxBytesToRead - An optional length that specifies the
-     *   maximum number of bytes to read. You can omit this parameter to scan the
-     *   string until the first 0 byte. If maxBytesToRead is passed, and the string
-     *   at [ptr, ptr+maxBytesToReadr[ contains a null byte in the middle, then the
-     *   string will cut short at that byte index (i.e. maxBytesToRead will not
-     *   produce a string of exact length [ptr, ptr+maxBytesToRead[) N.B. mixing
-     *   frequent uses of UTF8ToString() with and without maxBytesToRead may throw
-     *   JS JIT optimizations off, so it is worth to consider consistently using one
-     * @return {string}
-     */
-  var UTF8ToString = (ptr, maxBytesToRead) => {
-      assert(typeof ptr == 'number');
-      return ptr ? UTF8ArrayToString(HEAPU8, ptr, maxBytesToRead) : '';
-    };
   var SYSCALLS = {
   DEFAULT_POLLMASK:5,
   calculateAt(dirfd, path, allowEmpty) {
@@ -6784,6 +7012,44 @@ function ffi_prep_closure_loc_js(closure,cif,fun,user_data,codeloc) { var abi = 
       abort('native code called abort()');
     };
 
+  var readEmAsmArgsArray = [];
+  var readEmAsmArgs = (sigPtr, buf) => {
+      // Nobody should have mutated _readEmAsmArgsArray underneath us to be something else than an array.
+      assert(Array.isArray(readEmAsmArgsArray));
+      // The input buffer is allocated on the stack, so it must be stack-aligned.
+      assert(buf % 16 == 0);
+      readEmAsmArgsArray.length = 0;
+      var ch;
+      // Most arguments are i32s, so shift the buffer pointer so it is a plain
+      // index into HEAP32.
+      while (ch = HEAPU8[sigPtr++]) {
+        var chr = String.fromCharCode(ch);
+        var validChars = ['d', 'f', 'i'];
+        // In WASM_BIGINT mode we support passing i64 values as bigint.
+        validChars.push('j');
+        assert(validChars.includes(chr), `Invalid character ${ch}("${chr}") in readEmAsmArgs! Use only [${validChars}], and do not specify "v" for void return argument.`);
+        // Floats are always passed as doubles, so all types except for 'i'
+        // are 8 bytes and require alignment.
+        buf += (ch != 105) && buf % 8 ? 4 : 0;
+        readEmAsmArgsArray.push(
+          ch == 106 ?  HEAP64[((buf)>>3)] :
+          ch == 105 ?
+            HEAP32[((buf)>>2)] :
+            HEAPF64[((buf)>>3)]
+        );
+        buf += ch == 105 ? 4 : 8;
+      }
+      return readEmAsmArgsArray;
+    };
+  var runEmAsmFunction = (code, sigPtr, argbuf) => {
+      var args = readEmAsmArgs(sigPtr, argbuf);
+      if (!ASM_CONSTS.hasOwnProperty(code)) abort(`No EM_ASM constant found at address ${code}`);
+      return ASM_CONSTS[code].apply(null, args);
+    };
+  var _emscripten_asm_const_int = (code, sigPtr, argbuf) => {
+      return runEmAsmFunction(code, sigPtr, argbuf);
+    };
+
   var _emscripten_date_now = () => Date.now();
 
   var _emscripten_err = (str) => err(UTF8ToString(str));
@@ -7907,6 +8173,8 @@ function ffi_prep_closure_loc_js(closure,cif,fun,user_data,codeloc) { var abi = 
 
 
 
+
+
   var FSNode = /** @constructor */ function(parent, name, mode, rdev) {
     if (!parent) {
       parent = this;  // root node sets parent to itself
@@ -8081,11 +8349,62 @@ function checkIncomingModuleAPI() {
   ignoredModuleProp('fetchSettings');
 }
 var wasmImports = {
+  JsArray_Check: JsArray_Check,
+  JsArray_Delete: JsArray_Delete,
+  JsArray_Extend: JsArray_Extend,
+  JsArray_Get: JsArray_Get,
+  JsArray_New: JsArray_New,
+  JsArray_Push: JsArray_Push,
+  JsArray_Push_unchecked: JsArray_Push_unchecked,
+  JsArray_Set: JsArray_Set,
+  JsArray_ShallowCopy: JsArray_ShallowCopy,
+  JsArray_Splice: JsArray_Splice,
+  JsArray_count_helper: JsArray_count_helper,
+  JsArray_index_helper: JsArray_index_helper,
+  JsArray_inplace_repeat_js: JsArray_inplace_repeat_js,
+  JsArray_repeat_js: JsArray_repeat_js,
+  JsArray_reverse_helper: JsArray_reverse_helper,
+  JsArray_slice: JsArray_slice,
+  JsArray_slice_assign: JsArray_slice_assign,
+  JsBuffer_DecodeString_js: JsBuffer_DecodeString_js,
+  JsDoubleProxy_unwrap_helper: JsDoubleProxy_unwrap_helper,
+  JsException_new_helper: JsException_new_helper,
+  JsMap_GetIter_js: JsMap_GetIter_js,
+  JsMap_New: JsMap_New,
+  JsMap_Set: JsMap_Set,
+  JsMap_clear_js: JsMap_clear_js,
+  JsObjMap_GetIter_js: JsObjMap_GetIter_js,
+  JsObjMap_ass_subscript_js: JsObjMap_ass_subscript_js,
+  JsObjMap_contains_js: JsObjMap_contains_js,
+  JsObjMap_length_js: JsObjMap_length_js,
+  JsObjMap_subscript_js: JsObjMap_subscript_js,
+  JsObject_DeleteString: JsObject_DeleteString,
+  JsObject_Dir: JsObject_Dir,
+  JsObject_Entries: JsObject_Entries,
+  JsObject_GetString: JsObject_GetString,
+  JsObject_Keys: JsObject_Keys,
+  JsObject_New: JsObject_New,
+  JsObject_SetString: JsObject_SetString,
+  JsObject_Values: JsObject_Values,
+  JsProxy_GetAsyncIter_js: JsProxy_GetAsyncIter_js,
+  JsProxy_GetIter_js: JsProxy_GetIter_js,
+  JsProxy_compute_typeflags: JsProxy_compute_typeflags,
+  JsProxy_subscript_js: JsProxy_subscript_js,
+  JsSet_Add: JsSet_Add,
+  JsSet_New: JsSet_New,
+  JsString_InternFromCString: JsString_InternFromCString,
+  _JsArray_PostProcess_helper: _JsArray_PostProcess_helper,
+  _JsArray_PushEntry_helper: _JsArray_PushEntry_helper,
   _PyCFunctionWithKeywords_TrampolineCall: _PyCFunctionWithKeywords_TrampolineCall,
   _PyImport_InitFunc_TrampolineCall: _PyImport_InitFunc_TrampolineCall,
   _Py_CheckEmscriptenSignals_Helper: _Py_CheckEmscriptenSignals_Helper,
   _Py_emscripten_runtime: _Py_emscripten_runtime,
+  __assert_fail: ___assert_fail,
   __call_sighandler: ___call_sighandler,
+  __hiwire_deduplicate_delete: __hiwire_deduplicate_delete,
+  __hiwire_deduplicate_get: __hiwire_deduplicate_get,
+  __hiwire_deduplicate_new: __hiwire_deduplicate_new,
+  __hiwire_deduplicate_set: __hiwire_deduplicate_set,
   __syscall__newselect: ___syscall__newselect,
   __syscall_accept4: ___syscall_accept4,
   __syscall_bind: ___syscall_bind,
@@ -8133,6 +8452,7 @@ var wasmImports = {
   __syscall_truncate64: ___syscall_truncate64,
   __syscall_unlinkat: ___syscall_unlinkat,
   __syscall_utimensat: ___syscall_utimensat,
+  _agen_handle_result_js: _agen_handle_result_js,
   _emscripten_get_now_is_monotonic: __emscripten_get_now_is_monotonic,
   _gmtime_js: __gmtime_js,
   _localtime_js: __localtime_js,
@@ -8140,11 +8460,29 @@ var wasmImports = {
   _mmap_js: __mmap_js,
   _msync_js: __msync_js,
   _munmap_js: __munmap_js,
+  _python2js_add_to_cache: _python2js_add_to_cache,
+  _python2js_addto_postprocess_list: _python2js_addto_postprocess_list,
+  _python2js_buffer_inner: _python2js_buffer_inner,
+  _python2js_cache_lookup: _python2js_cache_lookup,
+  _python2js_destroy_cache: _python2js_destroy_cache,
+  _python2js_handle_postprocess_list: _python2js_handle_postprocess_list,
+  _python2js_ucs1: _python2js_ucs1,
+  _python2js_ucs2: _python2js_ucs2,
+  _python2js_ucs4: _python2js_ucs4,
   _setitimer_js: __setitimer_js,
   _tzset_js: __tzset_js,
   abort: _abort,
+  array_to_js: array_to_js,
+  console_error_obj: console_error_obj,
+  create_once_callable: create_once_callable,
+  create_promise_handles: create_promise_handles,
   descr_get_trampoline_call: descr_get_trampoline_call,
   descr_set_trampoline_call: descr_set_trampoline_call,
+  destroy_jsarray_entries: destroy_jsarray_entries,
+  destroy_proxies: destroy_proxies,
+  destroy_proxies_js: destroy_proxies_js,
+  destroy_proxy: destroy_proxy,
+  emscripten_asm_const_int: _emscripten_asm_const_int,
   emscripten_date_now: _emscripten_date_now,
   emscripten_err: _emscripten_err,
   emscripten_exit_with_live_runtime: _emscripten_exit_with_live_runtime,
@@ -8156,6 +8494,7 @@ var wasmImports = {
   environ_get: _environ_get,
   environ_sizes_get: _environ_sizes_get,
   exit: _exit,
+  fail_test: fail_test,
   fd_close: _fd_close,
   fd_fdstat_get: _fd_fdstat_get,
   fd_pread: _fd_pread,
@@ -8168,23 +8507,135 @@ var wasmImports = {
   ffi_closure_alloc_js: ffi_closure_alloc_js,
   ffi_closure_free_js: ffi_closure_free_js,
   ffi_prep_closure_loc_js: ffi_prep_closure_loc_js,
+  gc_register_proxies: gc_register_proxies,
+  get_async_js_call_done_callback: get_async_js_call_done_callback,
   getaddrinfo: _getaddrinfo,
   getentropy: _getentropy,
   gethostbyaddr: _gethostbyaddr,
   gethostbyname: _gethostbyname,
   getnameinfo: _getnameinfo,
   getprotobyname: _getprotobyname,
+  handle_next_result_js: handle_next_result_js,
+  hiwire_CallMethod: hiwire_CallMethod,
+  hiwire_CallMethod_NoArgs: hiwire_CallMethod_NoArgs,
+  hiwire_CallMethod_OneArg: hiwire_CallMethod_OneArg,
+  hiwire_assign_from_ptr: hiwire_assign_from_ptr,
+  hiwire_assign_to_ptr: hiwire_assign_to_ptr,
+  hiwire_call_OneArg: hiwire_call_OneArg,
+  hiwire_call_bound: hiwire_call_bound,
+  hiwire_construct: hiwire_construct,
+  hiwire_constructor_name: hiwire_constructor_name,
+  hiwire_double: hiwire_double,
+  hiwire_equal: hiwire_equal,
+  hiwire_get_bool: hiwire_get_bool,
+  hiwire_get_buffer_info: hiwire_get_buffer_info,
+  hiwire_get_length_helper: hiwire_get_length_helper,
+  hiwire_get_length_string: hiwire_get_length_string,
+  hiwire_greater_than: hiwire_greater_than,
+  hiwire_greater_than_equal: hiwire_greater_than_equal,
+  hiwire_init_js: hiwire_init_js,
+  hiwire_int: hiwire_int,
+  hiwire_int_from_digits: hiwire_int_from_digits,
+  hiwire_into_file: hiwire_into_file,
+  hiwire_invalid_ref: hiwire_invalid_ref,
+  hiwire_is_async_generator: hiwire_is_async_generator,
+  hiwire_is_comlink_proxy: hiwire_is_comlink_proxy,
+  hiwire_is_function: hiwire_is_function,
+  hiwire_is_generator: hiwire_is_generator,
+  hiwire_is_promise: hiwire_is_promise,
+  hiwire_less_than: hiwire_less_than,
+  hiwire_less_than_equal: hiwire_less_than_equal,
+  hiwire_not_equal: hiwire_not_equal,
+  hiwire_read_from_file: hiwire_read_from_file,
+  hiwire_resolve_promise: hiwire_resolve_promise,
+  hiwire_reversed_iterator: hiwire_reversed_iterator,
+  hiwire_string_utf8: hiwire_string_utf8,
+  hiwire_throw_error: hiwire_throw_error,
+  hiwire_to_bool: hiwire_to_bool,
+  hiwire_to_string: hiwire_to_string,
+  hiwire_typeof: hiwire_typeof,
+  hiwire_write_to_file: hiwire_write_to_file,
+  js2python_convert: js2python_convert,
+  js2python_immutable_js: js2python_immutable_js,
+  js2python_init: js2python_init,
+  js2python_js: js2python_js,
+  new_error: new_error,
   proc_exit: _proc_exit,
+  proxy_cache_get: proxy_cache_get,
+  proxy_cache_set: proxy_cache_set,
+  pyodide_js_init: pyodide_js_init,
+  pyproxy_AsPyObject: pyproxy_AsPyObject,
+  pyproxy_Check: pyproxy_Check,
+  pyproxy_new: pyproxy_new,
+  pyproxy_new_ex: pyproxy_new_ex,
+  python2js__default_converter_js: python2js__default_converter_js,
+  python2js_buffer_init: python2js_buffer_init,
+  python2js_custom__create_jscontext: python2js_custom__create_jscontext,
   strftime: _strftime,
-  system: _system
+  system: _system,
+  throw_no_gil: throw_no_gil,
+  wrap_async_generator: wrap_async_generator,
+  wrap_generator: wrap_generator
 };
 var wasmExports = createWasm();
 var ___wasm_call_ctors = createExportWrapper('__wasm_call_ctors');
+var _Py_IncRef = Module['_Py_IncRef'] = createExportWrapper('Py_IncRef');
+var _Py_DecRef = Module['_Py_DecRef'] = createExportWrapper('Py_DecRef');
+var _PyUnicode_New = Module['_PyUnicode_New'] = createExportWrapper('PyUnicode_New');
+var _PyErr_Occurred = Module['_PyErr_Occurred'] = createExportWrapper('PyErr_Occurred');
 var _PyRun_SimpleString = Module['_PyRun_SimpleString'] = createExportWrapper('PyRun_SimpleString');
+var __PyTraceback_Add = Module['__PyTraceback_Add'] = createExportWrapper('_PyTraceback_Add');
+var _dump_traceback = Module['_dump_traceback'] = createExportWrapper('dump_traceback');
+var _set_error = Module['_set_error'] = createExportWrapper('set_error');
+var _pythonexc2js = Module['_pythonexc2js'] = createExportWrapper('pythonexc2js');
+var _JsString_FromId = Module['_JsString_FromId'] = createExportWrapper('JsString_FromId');
+var _PyUnicode_Data = Module['_PyUnicode_Data'] = createExportWrapper('PyUnicode_Data');
+var __js2python_none = Module['__js2python_none'] = createExportWrapper('_js2python_none');
+var __js2python_true = Module['__js2python_true'] = createExportWrapper('_js2python_true');
+var __js2python_false = Module['__js2python_false'] = createExportWrapper('_js2python_false');
+var __js2python_pyproxy = Module['__js2python_pyproxy'] = createExportWrapper('_js2python_pyproxy');
+var _js2python_immutable = Module['_js2python_immutable'] = createExportWrapper('js2python_immutable');
+var _js2python = Module['_js2python'] = createExportWrapper('js2python');
+var _JsProxy_create = Module['_JsProxy_create'] = createExportWrapper('JsProxy_create');
+var _check_gil = Module['_check_gil'] = createExportWrapper('check_gil');
+var _pyproxy_getflags = Module['_pyproxy_getflags'] = createExportWrapper('pyproxy_getflags');
+var __pyproxy_repr = Module['__pyproxy_repr'] = createExportWrapper('_pyproxy_repr');
+var __pyproxy_type = Module['__pyproxy_type'] = createExportWrapper('_pyproxy_type');
+var __pyproxy_hasattr = Module['__pyproxy_hasattr'] = createExportWrapper('_pyproxy_hasattr');
+var __pyproxy_getattr = Module['__pyproxy_getattr'] = createExportWrapper('_pyproxy_getattr');
+var __pyproxy_setattr = Module['__pyproxy_setattr'] = createExportWrapper('_pyproxy_setattr');
+var __pyproxy_delattr = Module['__pyproxy_delattr'] = createExportWrapper('_pyproxy_delattr');
+var __pyproxy_getitem = Module['__pyproxy_getitem'] = createExportWrapper('_pyproxy_getitem');
+var __pyproxy_setitem = Module['__pyproxy_setitem'] = createExportWrapper('_pyproxy_setitem');
+var __pyproxy_delitem = Module['__pyproxy_delitem'] = createExportWrapper('_pyproxy_delitem');
+var __pyproxy_slice_assign = Module['__pyproxy_slice_assign'] = createExportWrapper('_pyproxy_slice_assign');
+var __pyproxy_pop = Module['__pyproxy_pop'] = createExportWrapper('_pyproxy_pop');
+var __pyproxy_contains = Module['__pyproxy_contains'] = createExportWrapper('_pyproxy_contains');
+var __pyproxy_ownKeys = Module['__pyproxy_ownKeys'] = createExportWrapper('_pyproxy_ownKeys');
+var __pyproxy_apply = Module['__pyproxy_apply'] = createExportWrapper('_pyproxy_apply');
+var __iscoroutinefunction = Module['__iscoroutinefunction'] = createExportWrapper('_iscoroutinefunction');
+var __pyproxy_iter_next = Module['__pyproxy_iter_next'] = createExportWrapper('_pyproxy_iter_next');
+var __pyproxyGen_Send = Module['__pyproxyGen_Send'] = createExportWrapper('_pyproxyGen_Send');
+var __pyproxyGen_return = Module['__pyproxyGen_return'] = createExportWrapper('_pyproxyGen_return');
+var __pyproxyGen_throw = Module['__pyproxyGen_throw'] = createExportWrapper('_pyproxyGen_throw');
+var __pyproxyGen_asend = Module['__pyproxyGen_asend'] = createExportWrapper('_pyproxyGen_asend');
+var __pyproxyGen_athrow = Module['__pyproxyGen_athrow'] = createExportWrapper('_pyproxyGen_athrow');
+var __pyproxy_aiter_next = Module['__pyproxy_aiter_next'] = createExportWrapper('_pyproxy_aiter_next');
+var __pyproxy_ensure_future = Module['__pyproxy_ensure_future'] = createExportWrapper('_pyproxy_ensure_future');
+var __pyproxy_get_buffer = Module['__pyproxy_get_buffer'] = createExportWrapper('_pyproxy_get_buffer');
+var _pyodide_export = Module['_pyodide_export'] = createExportWrapper('pyodide_export');
+var _hiwire_get = Module['_hiwire_get'] = createExportWrapper('hiwire_get');
+var _hiwire_incref = Module['_hiwire_incref'] = createExportWrapper('hiwire_incref');
+var _hiwire_intern = Module['_hiwire_intern'] = createExportWrapper('hiwire_intern');
+var _hiwire_new = Module['_hiwire_new'] = createExportWrapper('hiwire_new');
+var _hiwire_num_refs = Module['_hiwire_num_refs'] = createExportWrapper('hiwire_num_refs');
+var _hiwire_decref = Module['_hiwire_decref'] = createExportWrapper('hiwire_decref');
+var _hiwire_pop = Module['_hiwire_pop'] = createExportWrapper('hiwire_pop');
 var _main = Module['_main'] = createExportWrapper('__main_argc_argv');
 var _malloc = createExportWrapper('malloc');
-var ___errno_location = createExportWrapper('__errno_location');
+var _free = Module['_free'] = createExportWrapper('free');
 var _fflush = Module['_fflush'] = createExportWrapper('fflush');
+var ___errno_location = createExportWrapper('__errno_location');
 var _ntohs = createExportWrapper('ntohs');
 var _htons = createExportWrapper('htons');
 var _htonl = createExportWrapper('htonl');
@@ -8198,15 +8649,21 @@ var stackSave = createExportWrapper('stackSave');
 var stackRestore = createExportWrapper('stackRestore');
 var stackAlloc = createExportWrapper('stackAlloc');
 var _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmExports['emscripten_stack_get_current'])();
-var _Py_EMSCRIPTEN_SIGNAL_HANDLING = Module['_Py_EMSCRIPTEN_SIGNAL_HANDLING'] = 8659536;
-var ___start_em_js = Module['___start_em_js'] = 8648144;
-var ___stop_em_js = Module['___stop_em_js'] = 8659442;
+var _Py_EMSCRIPTEN_SIGNAL_HANDLING = Module['_Py_EMSCRIPTEN_SIGNAL_HANDLING'] = 8770752;
+var _Js_true = Module['_Js_true'] = 7613056;
+var _Js_false = Module['_Js_false'] = 7613060;
+var _Js_undefined = Module['_Js_undefined'] = 7613064;
+var _Js_null = Module['_Js_null'] = 7613068;
+var ___start_em_js = Module['___start_em_js'] = 8655296;
+var ___stop_em_js = Module['___stop_em_js'] = 8770496;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
 
 Module['wasmMemory'] = wasmMemory;
+Module['ERRNO_CODES'] = ERRNO_CODES;
 Module['STACK_SIZE'] = STACK_SIZE;
+Module['PATH'] = PATH;
 Module['stringToNewUTF8'] = stringToNewUTF8;
 Module['preloadPlugins'] = preloadPlugins;
 Module['FS'] = FS;
@@ -8224,7 +8681,7 @@ var missingLibrarySymbols = [
   'getCallstack',
   'emscriptenLog',
   'convertPCtoSourceLocation',
-  'readEmAsmArgs',
+  'runMainThreadEmAsm',
   'jstoi_s',
   'listenOnce',
   'autoResumeAudioContext',
@@ -8400,7 +8857,6 @@ var unexportedSymbols = [
   'ydayFromDate',
   'arraySum',
   'addDays',
-  'ERRNO_CODES',
   'ERRNO_MESSAGES',
   'setErrNo',
   'inetPton4',
@@ -8419,6 +8875,8 @@ var unexportedSymbols = [
   'warnOnce',
   'UNWIND_CACHE',
   'readEmAsmArgsArray',
+  'readEmAsmArgs',
+  'runEmAsmFunction',
   'jstoi_q',
   'getExecutableName',
   'handleException',
@@ -8436,7 +8894,6 @@ var unexportedSymbols = [
   'getEmptyTableSlot',
   'setValue',
   'getValue',
-  'PATH',
   'PATH_FS',
   'UTF8Decoder',
   'UTF8ArrayToString',
