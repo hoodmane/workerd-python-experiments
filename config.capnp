@@ -19,8 +19,8 @@ const mainWorker :Workerd.Worker = (
   modules = [
     (name = "worker", esModule = embed "./dist/worker.mjs"),
     (name = "python.mjs", esModule = embed "./dist/python.mjs"),
-    (name = "a.out.mjs", esModule = embed "./dist/python.asm.mjs"),
-    (name = "a.out.wasm", wasm = embed "./dist/python.asm.wasm"),
+    (name = "python.asm.mjs", esModule = embed "./dist/python.asm.mjs"),
+    (name = "python.asm.wasm", wasm = embed "./dist/python.asm.wasm"),
     (name = "python_stdlib.zip", data = embed "./dist/python_stdlib.zip"),
   ],
   compatibilityDate = "2023-02-28",

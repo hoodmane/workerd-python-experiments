@@ -1,5 +1,5 @@
-import { createPython } from "./a.out.mjs";
-import module from "./a.out.wasm";
+import { createPython } from "./python.asm.mjs";
+import module from "./python.asm.wasm";
 import stdlib from "./python_stdlib.zip"
 
 // import * as fs from "fs";
