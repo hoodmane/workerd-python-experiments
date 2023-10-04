@@ -20,6 +20,7 @@ _PyRun_SimpleString,\
 _PyLong_FromDouble,\
 __PyTraceback_Add,\
 _PyErr_Occurred,\
+_PyObject_GetIter,\
 _PyUnicode_New,\
 _hiwire_intern,\
 _hiwire_num_refs,\

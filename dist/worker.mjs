@@ -15,9 +15,11 @@ export default {
 
     pyodide.runPython(`
       async def handle_request(req):
-          from js import fetch, Response
+          from js import fetch, Response, Object
           resp = await fetch("http://example.com")
-          return Response.new(await resp.arrayBuffer())
+          text = await resp.text()
+          text = text.replace("xample", "xample with Python in workerd")
+          return Response.new(text, headers=Object.fromEntries([["Content-Type", "html"]]))
     `);
     const handle_request = pyodide.globals.get("handle_request");
     const result = await handle_request(request);
