@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ex
 
 if [ $# -ne 0 ];  then
     pushd ~/Documents/programming/pyodide
@@ -11,33 +11,37 @@ rm -rf build
 rm -rf dist
 mkdir build
 mkdir dist
-emcc -c ./src/main.c -o ./build/main.o -O2 -Iartifacts/include
+
+MORE_EXPORTS=`cat exports.save.list`
+
+EXPORTS=`cat main_exports.list`
+
+
+readarray -d '' SO_FILES < <(find .venv-pyodide/ -name '*.so' -print0)
+
+emcc -c ./src/main.c -o ./build/main.o -O2 -Iartifacts/include -fPIC
 emcc -Lartifacts/ -lpython3.11 -lpyodide -lhiwire -lffi ./build/main.o -o ./build/python.asm.js \
-    -sEXPORTED_FUNCTIONS=\
-_main,\
-_pyodide_export,\
-_PyRun_SimpleString,\
-_PyLong_FromDouble,\
-__PyTraceback_Add,\
-_PyErr_Occurred,\
-_PyObject_GetIter,\
-_PyUnicode_New,\
-_hiwire_intern,\
-_hiwire_num_refs,\
-_hiwire_get,\
-_hiwire_new,\
-_hiwire_incref,\
-_hiwire_decref,\
-_hiwire_pop,\
-_Py_IncRef,\
-_Py_DecRef,\
-_free,\
-_check_gil\
+    -sEXPORTED_FUNCTIONS=_memcmp,$EXPORTS,$MORE_EXPORTS\
+ \
+-sEXPORTED_RUNTIME_METHODS=\
+stringToNewUTF8,\
+FS,\
+wasmMemory,\
+STACK_SIZE,\
+preloadPlugins,\
+PATH,\
+ERRNO_CODES,\
+loadWebAssemblyModule,\
+newDSO \
     -sMODULARIZE=1 -sWASM_BIGINT \
     -sEXPORT_NAME="createPython" \
-    -sEXPORTED_RUNTIME_METHODS=stringToNewUTF8,FS,wasmMemory,STACK_SIZE,preloadPlugins,PATH,ERRNO_CODES \
-    -sENVIRONMENT=web,node -s TOTAL_MEMORY=20971520  -s USE_ZLIB \
-    -sLZ4=1 -sUSE_BZIP2 -s STACK_SIZE=5MB
+    -sENVIRONMENT=web,node \
+    -s TOTAL_MEMORY=20971520  -s ALLOW_MEMORY_GROWTH=1 -s STACK_SIZE=5MB \
+    -s USE_ZLIB -sLZ4=1 -sUSE_BZIP2  \
+    -sMAIN_MODULE=2
+
+
+
 sed -i 's/var createPython/export var createPython/' build/python.asm.js
 sed -i 's/var ENVIRONMENT_IS_WORKER =.*;/var ENVIRONMENT_IS_WORKER = false;/' build/python.asm.js
 sed -i 's/var ENVIRONMENT_IS_SHELL =.*;/var ENVIRONMENT_IS_SHELL = false; ENVIRONMENT_IS_WEB=!ENVIRONMENT_IS_NODE;/' build/python.asm.js
@@ -59,8 +63,9 @@ END
 cp src/*.mjs dist
 cp src/*.py dist
 cp artifacts/python_stdlib.zip dist
-touch dist/memory.dat
 cp build/python.asm.* dist
+touch dist/memory.dat
+cp -r .venv-pyodide/lib/python3.11/site-packages/markupsafe dist
 cd dist
 node --import ../register-hooks.mjs python.mjs
 # npx prettier -w python.asm.mjs

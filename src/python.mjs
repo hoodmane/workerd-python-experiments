@@ -1,7 +1,9 @@
 import { createPython } from "./python.asm.mjs";
 import module from "./python.asm.wasm";
-import stdlib from "./python_stdlib.zip"
-import memory from "./memory.dat"
+import stdlib from "./python_stdlib.zip";
+import memory from "./memory.dat";
+import markupsafe_init from "./markupsafe/__init__.py";
+import markupsafe_speedups from "./markupsafe/_speedups.cpython-311-wasm32-emscripten.so";
 
 function wrapPythonGlobals(globals_dict, builtins_dict) {
   return new Proxy(globals_dict, {
@@ -136,6 +138,17 @@ export async function loadPyodide() {
   } catch (e) {
     e.stack.split("\n").forEach(console.log.bind(console));
   }
+  Module.FS.mkdir("/session/markupsafe");
+  console.log(1);
+  Module.FS.writeFile("/session/markupsafe/__init__.py",new Uint8Array(markupsafe_init),{canOwn: true});
+  console.log(2);
+  const speedups_path = "/session/markupsafe/_speedups.cpython-311-wasm32-emscripten.so";
+  console.log(3);
+  Module.FS.writeFile(speedups_path, "");
+  console.log(4);
+
+
+
   const t2 = performance.now();
   if (!memory) {
     const imports = [
@@ -167,8 +180,6 @@ export async function loadPyodide() {
   }
 
   Module.HEAP8.set(new Uint8Array(memory));
-  API.rawRun("import _pyodide.docstring, _pyodide._core_docs, traceback, collections.abc, asyncio, inspect");
-  // API.rawRun("import importlib, re, shutil, sysconfig, importlib.machinery, pathlib, site, tempfile, typing, zipfile");
   let [err, captured_stderr] = API.rawRun("import _pyodide_core");
   const t3 = performance.now();
   if (err) {
@@ -179,6 +190,15 @@ export async function loadPyodide() {
   }
   finalizeBootstrap(API, config);
   const t4 = performance.now();
+
+  const dso = Module.newDSO(speedups_path, undefined, "loading");
+  dso.refcount = Infinity;
+  dso.global = false;
+  dso.exports = await Module.loadWebAssemblyModule(
+    markupsafe_speedups,
+    { loadAsync: true },
+    speedups_path,
+  );
 
   console.log("createPython", t2 - t1);
   console.log("import _pyodide_core", t3 - t2);
