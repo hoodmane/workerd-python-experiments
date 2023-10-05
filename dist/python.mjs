@@ -34,16 +34,12 @@ function finalizeBootstrap(API, config) {
   let import_module = API.importlib.import_module;
 
   API.sys = import_module("sys");
-  // API.sys.path.insert(0, config.env.HOME);
+  API.sys.path.insert(0, "/session");
   API.os = import_module("os");
 
   // Set up globals
-  let globals = API.runPythonInternal(
-    "import __main__; __main__.__dict__",
-  );
-  let builtins = API.runPythonInternal(
-    "import builtins; builtins.__dict__",
-  );
+  let globals = API.runPythonInternal("import __main__; __main__.__dict__");
+  let builtins = API.runPythonInternal("import builtins; builtins.__dict__");
   API.globals = wrapPythonGlobals(globals, builtins);
 
   // Set up key Javascript modules.
@@ -104,9 +100,8 @@ function finalizeBootstrap(API, config) {
 }
 
 export async function loadPyodide() {
-
   const API = {};
-  const config = {jsglobals: globalThis};
+  const config = { jsglobals: globalThis };
   const Module = {
     noInitialRun: !!memory,
     API,
@@ -125,22 +120,34 @@ export async function loadPyodide() {
         const pyminor = 11;
         Module.FS.mkdirTree("/lib");
         Module.FS.mkdirTree(`/lib/python${pymajor}.${pyminor}/site-packages`);
-        Module.FS.writeFile(`/lib/python${pymajor}${pyminor}.zip`, new Uint8Array(stdlib));
-      }
-    ]
+        Module.FS.writeFile(
+          `/lib/python${pymajor}${pyminor}.zip`,
+          new Uint8Array(stdlib),
+          {canOwn: true}
+        );
+        Module.FS.mkdir("/session");
+      },
+    ],
   };
 
   const t1 = performance.now();
   try {
     await createPython(Module);
-  } catch(e) {
+  } catch (e) {
     e.stack.split("\n").forEach(console.log.bind(console));
   }
   const t2 = performance.now();
   if (!memory) {
     const imports = [
-      "_pyodide.docstring", "_pyodide._core_docs", "traceback", "collections.abc", "asyncio", "inspect",
-      "tarfile", "importlib.metadata", "re", 
+      "_pyodide.docstring",
+      "_pyodide._core_docs",
+      "traceback",
+      "collections.abc",
+      "asyncio",
+      "inspect",
+      "tarfile",
+      "importlib.metadata",
+      "re",
       "shutil",
       "sysconfig",
       "importlib.machinery",
@@ -148,13 +155,13 @@ export async function loadPyodide() {
       "site",
       "tempfile",
       "typing",
-      "zipfile"
+      "zipfile",
     ];
-    const to_import = imports.join(',');
-    const to_delete = imports.map(x => x.split(".")[0]).join(',');
+    const to_import = imports.join(",");
+    const to_delete = imports.map((x) => x.split(".")[0]).join(",");
     API.rawRun(`import ${to_import}; del ${to_delete}`);
-    API.rawRun("sysconfig.get_config_vars()")
-    const {writeFile} = await import("fs/promises");
+    API.rawRun("sysconfig.get_config_vars()");
+    const { writeFile } = await import("fs/promises");
     await writeFile("memory.dat", Module.HEAP8);
     return;
   }
@@ -172,6 +179,7 @@ export async function loadPyodide() {
   }
   finalizeBootstrap(API, config);
   const t4 = performance.now();
+
   console.log("createPython", t2 - t1);
   console.log("import _pyodide_core", t3 - t2);
   console.log("finalizeBootstrap ", t4 - t3);

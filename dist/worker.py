@@ -1,5 +1,4 @@
 from js import fetch, Response, Object
-import markupsafe
 
 async def onfetch(req):
     resp = await fetch("http://example.com")
