@@ -57,8 +57,9 @@ if (typeof process === "object") {
 END
 
 cp src/*.mjs dist
+cp src/*.py dist
 cp artifacts/python_stdlib.zip dist
-cp artifacts/memory.dat dist
+touch dist/memory.dat
 cp build/python.asm.* dist
 cd dist
 node --import ../register-hooks.mjs python.mjs

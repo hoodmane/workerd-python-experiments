@@ -1,5 +1,5 @@
 import { loadPyodide } from "./python.mjs";
-
+import worker from "./worker.py"
 
 export default {
   async fetch(request) {
@@ -13,16 +13,8 @@ export default {
     const pyodide = await loadPyodide();
     const t2 = performance.now();
 
-    pyodide.runPython(`
-      async def handle_request(req):
-          from js import fetch, Response, Object
-          resp = await fetch("http://example.com")
-          text = await resp.text()
-          text = text.replace("xample", "xample with Python in workerd")
-          return Response.new(text, headers=Object.fromEntries([["Content-Type", "html"]]))
-    `);
-    const handle_request = pyodide.globals.get("handle_request");
-    const result = await handle_request(request);
+    pyodide.FS.writeFile(`/session/worker.py`, new Uint8Array(worker), {canOwn: true});
+    const result = await pyodide.pyimport("worker").onfetch(request);
     const t3 = performance.now();
     console.log("bootstrap", t2-t1);
     console.log("handle", t3-t2);
