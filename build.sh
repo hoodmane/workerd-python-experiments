@@ -38,9 +38,10 @@ LDSO \
     -sMODULARIZE=1 -sWASM_BIGINT \
     -sEXPORT_NAME="createPython" \
     -sENVIRONMENT=web,node \
-    -s TOTAL_MEMORY=20971520  -s ALLOW_MEMORY_GROWTH=1 -s STACK_SIZE=5MB \
+    -s TOTAL_MEMORY=25165824 -s STACK_SIZE=5MB \
+    -s ALLOW_MEMORY_GROWTH=1 \
     -s USE_ZLIB -sLZ4=1 -sUSE_BZIP2  \
-    -sMAIN_MODULE=2
+    -sMAIN_MODULE=2 \
 
 
 
@@ -68,7 +69,13 @@ cp artifacts/python_stdlib.zip dist
 cp build/python.asm.* dist
 touch dist/memory.dat
 touch dist/dylinkInfo.json
-cp -r .venv-pyodide/lib/python3.11/site-packages/markupsafe dist
+
+pushd .venv-pyodide/lib/python3.11/site-packages/
+tree -Jf numpy > ../../../../dist/numpy.json
+popd
+
+
+cp -r .venv-pyodide/lib/python3.11/site-packages/{numpy,markupsafe} dist
 cd dist
 node --import ../register-hooks.mjs python.mjs
 # npx prettier -w python.asm.mjs

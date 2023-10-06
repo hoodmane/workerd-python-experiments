@@ -1,15 +1,46 @@
-from js import fetch, Response, Object
-from markupsafe import Markup
+import numpy as np
+
+def gradient():
+    x = np.ones((50, 50, 4))
+    x[:, :, 0:4] = [1, 1, 0, 1]
+
+    y = np.ones((50, 50, 4))
+    y[:, :, 0:4] = [0.3, 0, 1, 1]
+
+    c = np.linspace(0, 1, 50)[:, None, None]
+    gradient = x + (y - x) * c
+    return (255 * gradient).astype(np.uint8)
 
 
 async def onfetch(req):
-    resp = await fetch("http://example.com")
-    text = await resp.text()
-    text = text.replace("xample", "xample with Python in workerd")
-    template = Markup("<p>Hello <em>{name}</em></p>")
-    template.format(name='"World"')
+    from js import Response, Object
+    from pyodide.ffi import to_js
 
-    to_insert = f"<p>Request was: {req.url}, {req.method}</p>{template}"
-    insertion_point = "permission.</p>"
-    text = text.replace(insertion_point, insertion_point + to_insert)
-    return Response.new(text, headers=Object.fromEntries([["Content-Type", "html"]]))
+    print(req.url)
+    if req.url.endswith("gradient"):
+        a = gradient()
+        b = to_js(a.flatten())
+        return Response.new(b)
+    return Response.new(
+        """
+<html>
+    <head>
+        <title>Numpy example</title>
+    </head>
+    <body>
+        <canvas></canvas>
+        <script type="module">
+            let resp, img;
+            resp = await fetch("gradient");
+            globalThis.buf = new Uint8ClampedArray(await resp.arrayBuffer());
+            img = new ImageData(buf, 50, 50);
+            const ctx = document.querySelector("canvas").getContext("2d");
+            globalThis.ctx = ctx;
+            globalThis.img = img;
+            ctx.putImageData(img, 0, 0);
+        </script>
+    </body>
+</html>
+        """,
+        headers=Object.fromEntries([["Content-Type", "html"]]),
+    )

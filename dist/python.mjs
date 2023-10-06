@@ -3,8 +3,7 @@ import module from "./python.asm.wasm";
 import stdlib from "./python_stdlib.zip";
 import memory from "./memory.dat";
 import dylinkInfo from "./dylinkInfo.json";
-import markupsafe_init from "./markupsafe/__init__.py";
-import markupsafe_speedups from "./markupsafe/_speedups.cpython-311-wasm32-emscripten.so";
+import numpy from "./numpy.json";
 
 function wrapPythonGlobals(globals_dict, builtins_dict) {
   return new Proxy(globals_dict, {
@@ -86,8 +85,34 @@ function finalizeBootstrap(API, config) {
   return pyodide;
 }
 
-const speedups_path =
-  "/session/markupsafe/_speedups.cpython-311-wasm32-emscripten.so";
+async function makeDirs(Module, prefix, dir) {
+  Module.FS.mkdir(prefix + dir.name);
+  for (let entry of dir.contents) {
+    if (entry.type === "directory") {
+      await makeDirs(Module, prefix, entry);
+    } else {
+      let contents;
+      if (entry.name.endsWith(".so")) {
+        contents = new Uint8Array([0]);
+      } else {
+        contents = new Uint8Array((await import("./" + entry.name)).default);
+      }
+      Module.FS.writeFile(prefix + entry.name, contents);
+    }
+  }
+}
+
+function findSoFiles(dir) {
+  return dir.contents.flatMap((entry) => {
+    if (entry.type === "directory") {
+      return findSoFiles(entry);
+    }
+    if (entry.name.endsWith(".so")) {
+      return entry.name;
+    }
+    return [];
+  });
+}
 
 function prepareFileSystem(Module) {
   const pymajor = 3;
@@ -100,18 +125,10 @@ function prepareFileSystem(Module) {
     { canOwn: true },
   );
   Module.FS.mkdir("/session");
-
-  Module.FS.mkdir("/session/markupsafe");
-  Module.FS.writeFile(
-    "/session/markupsafe/__init__.py",
-    new Uint8Array(markupsafe_init),
-    { canOwn: true },
-  );
-  Module.FS.writeFile(speedups_path, "");
 }
 
 function loadDynlib(Module, path, wasmModule) {
-  const dso = Module.newDSO(speedups_path, undefined, "loading");
+  const dso = Module.newDSO(path, undefined, "loading");
   dso.refcount = Infinity;
   dso.global = false;
   dso.exports = Module.loadWebAssemblyModule(wasmModule, {}, path);
@@ -121,14 +138,8 @@ function loadDynlib(Module, path, wasmModule) {
   }
 }
 
-function loadDynlibs(Module) {
-  for (let [path, wasmModule] of [[speedups_path, markupsafe_speedups]]) {
-    loadDynlib(Module, path, wasmModule);
-  }
-}
-
 async function makeSnapshot(Module, run) {
-  run(`import sys; sys.path.append("/session"); del sys`);
+  run(`import sys; sys.path.append("/session/"); del sys`);
 
   const imports = [
     "_pyodide.docstring",
@@ -148,7 +159,7 @@ async function makeSnapshot(Module, run) {
     "tempfile",
     "typing",
     "zipfile",
-    "markupsafe._speedups",
+    "numpy",
   ];
   const to_import = imports.join(",");
   const to_delete = Array.from(
@@ -176,6 +187,12 @@ async function makeSnapshot(Module, run) {
 export async function loadPyodide() {
   const API = {};
   const config = { jsglobals: globalThis };
+  const soFiles = await Promise.all(
+    findSoFiles(numpy[0]).map(async (file) => [
+      "/session/" + file,
+      (await import("./" + file)).default,
+    ]),
+  );
 
   const Module = {
     noInitialRun: !!memory,
@@ -187,7 +204,19 @@ export async function loadPyodide() {
       })();
       return {};
     },
-    preRun: [prepareFileSystem, loadDynlibs],
+    preRun: [
+      prepareFileSystem,
+      () => {
+        soFiles.forEach(([path, wasmModule]) => {
+          try {
+            loadDynlib(Module, path, wasmModule);
+          } catch (e) {
+            console.log(path);
+            process.exit(1);
+          }
+        });
+      },
+    ],
   };
 
   const t1 = performance.now();
@@ -207,6 +236,7 @@ export async function loadPyodide() {
       throw new Error("Failed");
     }
   }
+  await makeDirs(Module, "/session/", numpy[0]);
 
   const t2 = performance.now();
 
@@ -215,8 +245,6 @@ export async function loadPyodide() {
     process.exit(0);
   }
   Module.HEAP8.set(new Uint8Array(memory));
-
-  run("import markupsafe._speedups");
 
   let [err, captured_stderr] = API.rawRun("import _pyodide_core");
   const t3 = performance.now();

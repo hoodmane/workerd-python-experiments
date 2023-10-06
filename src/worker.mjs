@@ -3,12 +3,6 @@ import worker from "./worker.py";
 
 export default {
   async fetch(request) {
-    const url = new URL(request.url);
-    const code = url.searchParams.get("code");
-    if (!code) {
-      // favicon?
-      return new Response("");
-    }
     const t1 = performance.now();
     const pyodide = await loadPyodide();
     const t2 = performance.now();
