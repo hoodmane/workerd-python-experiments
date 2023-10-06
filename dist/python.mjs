@@ -2,6 +2,7 @@ import { createPython } from "./python.asm.mjs";
 import module from "./python.asm.wasm";
 import stdlib from "./python_stdlib.zip";
 import memory from "./memory.dat";
+import libnameToSymbols from "./libNameToSymbols.json"
 import markupsafe_init from "./markupsafe/__init__.py";
 import markupsafe_speedups from "./markupsafe/_speedups.cpython-311-wasm32-emscripten.so";
 
@@ -36,7 +37,6 @@ function finalizeBootstrap(API, config) {
   let import_module = API.importlib.import_module;
 
   API.sys = import_module("sys");
-  API.sys.path.insert(0, "/session");
   API.os = import_module("os");
 
   // Set up globals
@@ -139,18 +139,32 @@ export async function loadPyodide() {
     e.stack.split("\n").forEach(console.log.bind(console));
   }
   Module.FS.mkdir("/session/markupsafe");
-  console.log(1);
   Module.FS.writeFile("/session/markupsafe/__init__.py",new Uint8Array(markupsafe_init),{canOwn: true});
-  console.log(2);
   const speedups_path = "/session/markupsafe/_speedups.cpython-311-wasm32-emscripten.so";
-  console.log(3);
   Module.FS.writeFile(speedups_path, "");
-  console.log(4);
-
-
 
   const t2 = performance.now();
+
   if (!memory) {
+
+    const dso = Module.newDSO(speedups_path, undefined, "loading");
+    dso.refcount = Infinity;
+    dso.global = false;
+    const mb = [];
+    dso.exports = await Module.loadWebAssemblyModule(
+      markupsafe_speedups,
+      { loadAsync: true },
+      speedups_path,
+      undefined,
+      undefined,
+      mb
+    );
+    dso.memoryBase = mb[0];
+  
+
+    console.log(API.rawRun(`import sys; sys.path.append("/session"); del sys`));
+
+
     const imports = [
       "_pyodide.docstring",
       "_pyodide._core_docs",
@@ -169,17 +183,41 @@ export async function loadPyodide() {
       "tempfile",
       "typing",
       "zipfile",
+      "markupsafe._speedups"
     ];
     const to_import = imports.join(",");
-    const to_delete = imports.map((x) => x.split(".")[0]).join(",");
-    API.rawRun(`import ${to_import}; del ${to_delete}`);
-    API.rawRun("sysconfig.get_config_vars()");
+    const to_delete = Array.from(new Set(imports.map((x) => x.split(".")[0]))).join(",");
+    console.log(API.rawRun(`import ${to_import}`));
+    console.log(API.rawRun("sysconfig.get_config_vars()"));
+    console.log(API.rawRun(`del ${to_delete}`))
+    console.log(Module.LDSO.libNameToSymbols);
+    console.log(Module.LDSO);
     const { writeFile } = await import("fs/promises");
+    await writeFile("libNameToSymbols.json", JSON.stringify(Module.LDSO.libNameToSymbols));
     await writeFile("memory.dat", Module.HEAP8);
     return;
   }
 
+  console.log(libnameToSymbols)
+  for(let [dso, syms] of []) {
+
+  }
+
+
+  const dso = Module.newDSO(speedups_path, undefined, "loading");
+  dso.refcount = Infinity;
+  dso.global = false;
+  dso.exports = await Module.loadWebAssemblyModule(
+    markupsafe_speedups,
+    { loadAsync: true },
+    speedups_path,
+  );
+  Module.LDSO.loadedLibsByHandle[15829568] = dso;
+  Module.setWasmTableEntry(5102, dso.exports.PyInit__speedups);
   Module.HEAP8.set(new Uint8Array(memory));
+  console.log(API.rawRun("import markupsafe._speedups"));
+
+
   let [err, captured_stderr] = API.rawRun("import _pyodide_core");
   const t3 = performance.now();
   if (err) {
@@ -190,16 +228,6 @@ export async function loadPyodide() {
   }
   finalizeBootstrap(API, config);
   const t4 = performance.now();
-
-  const dso = Module.newDSO(speedups_path, undefined, "loading");
-  dso.refcount = Infinity;
-  dso.global = false;
-  dso.exports = await Module.loadWebAssemblyModule(
-    markupsafe_speedups,
-    { loadAsync: true },
-    speedups_path,
-  );
-
   console.log("createPython", t2 - t1);
   console.log("import _pyodide_core", t3 - t2);
   console.log("finalizeBootstrap ", t4 - t3);
