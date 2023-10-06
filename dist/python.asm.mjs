@@ -1037,10 +1037,10 @@ function dbg(text) {
 // === Body ===
 
 var ASM_CONSTS = {
-  3529341: () => { throw new Error("intentionally triggered fatal error!"); },  
- 3529398: ($0) => { Hiwire.get_value($0)() },  
- 3529421: () => { wasmImports["open64"] = wasmImports["open"]; },  
- 3529470: ($0) => { API._pyodide = Hiwire.pop_value($0); }
+  3529333: () => { throw new Error("intentionally triggered fatal error!"); },  
+ 3529390: ($0) => { Hiwire.get_value($0)() },  
+ 3529413: () => { wasmImports["open64"] = wasmImports["open"]; },  
+ 3529462: ($0) => { API._pyodide = Hiwire.pop_value($0); }
 };
 function descr_set_trampoline_call(set,obj,value,closure) { return wasmTable.get(set)(obj, value, closure); }
 descr_set_trampoline_call.sig = 'iiiii';
@@ -1669,8 +1669,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   },
   loadedLibsByHandle:{
   },
-  libNameToSymbols:{
-  },
   init() {
         // This function needs to run after the initial wasmImports object
         // as been created.
@@ -1681,7 +1679,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   
   
   
-  var ___heap_base = 8801936;
+  var ___heap_base = 8801920;
   
   var zeroMemory = (address, size) => {
       HEAPU8.fill(0, address, address + size);
@@ -2044,7 +2042,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       * @param {Object=} localScope
       * @param {number=} handle
       */
-  var loadWebAssemblyModule = (binary, flags, libName, localScope, handle, dso) => {
+  var loadWebAssemblyModule = (binary, flags, libName, localScope, handle) => {
       var metadata = getDylinkMetadata(binary);
       currentModuleWeakSymbols = metadata.weakImports;
       var originalTable = wasmTable;
@@ -2064,15 +2062,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
           // alignments are powers of 2
           var memAlign = Math.pow(2, metadata.memoryAlign);
           // prepare memory
-          var memoryBase;
-          if (dso && dso.memoryBase) {
-            memoryBase = dso.memoryBase;
-          } else {
-            memoryBase = metadata.memorySize ? alignMemory(getMemory(metadata.memorySize + memAlign), memAlign) : 0; // TODO: add to cleanups
-          }
-          if (dso) {
-            dso.memoryBase = memoryBase;
-          }
+          var memoryBase = metadata.memorySize ? alignMemory(getMemory(metadata.memorySize + memAlign), memAlign) : 0; // TODO: add to cleanups
           var tableBase = metadata.tableSize ? wasmTable.length : 0;
           if (handle) {
             HEAP8[(((handle)+(8))>>0)] = 1;
@@ -2393,7 +2383,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       dso = newDSO(libName, handle, 'loading');
       dso.refcount = flags.nodelete ? Infinity : 1;
       dso.global = flags.global;
-      dso.memoryBase = flags.memoryBase;
   
       // libName -> libData
       function loadLibData() {
@@ -2432,10 +2421,10 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   
         // module not preloaded - load lib data and create new module from it
         if (flags.loadAsync) {
-          return loadLibData().then((libData) => loadWebAssemblyModule(libData, flags, libName, localScope, handle, dso));
+          return loadLibData().then((libData) => loadWebAssemblyModule(libData, flags, libName, localScope, handle));
         }
   
-        return loadWebAssemblyModule(loadLibData(), flags, libName, localScope, handle, dso);
+        return loadWebAssemblyModule(loadLibData(), flags, libName, localScope, handle);
       }
   
       // module for lib is loaded - update the dso & global namespace
@@ -2550,11 +2539,11 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
 
   var ___memory_base = new WebAssembly.Global({'value': 'i32', 'mutable': false}, 1024);
 
-  var ___stack_high = 8801936;
+  var ___stack_high = 8801920;
 
-  var ___stack_low = 3559056;
+  var ___stack_low = 3559040;
 
-  var ___stack_pointer = new WebAssembly.Global({'value': 'i32', 'mutable': true}, 8801936);
+  var ___stack_pointer = new WebAssembly.Global({'value': 'i32', 'mutable': true}, 8801920);
 
   var PATH = {
   isAbs:(path) => path.charAt(0) === '/',
@@ -10448,7 +10437,7 @@ var __Py_FalseStruct = Module['__Py_FalseStruct'] = 2451820;
 var __Py_TrueStruct = Module['__Py_TrueStruct'] = 2451804;
 var _PyBool_Type = Module['_PyBool_Type'] = 2451980;
 var _PyByteArray_Type = Module['_PyByteArray_Type'] = 2430500;
-var __PyByteArray_empty_string = Module['__PyByteArray_empty_string'] = 3532304;
+var __PyByteArray_empty_string = Module['__PyByteArray_empty_string'] = 3532288;
 var _PyBytes_Type = Module['_PyBytes_Type'] = 2432452;
 var _PyExc_TypeError = Module['_PyExc_TypeError'] = 2453420;
 var _PyExc_UnicodeDecodeError = Module['_PyExc_UnicodeDecodeError'] = 2461940;
@@ -10480,15 +10469,15 @@ var _PySlice_Type = Module['_PySlice_Type'] = 2416564;
 var _PyTuple_Type = Module['_PyTuple_Type'] = 2452184;
 var _PyUnicode_Type = Module['_PyUnicode_Type'] = 2468296;
 var __Py_ctype_tolower = Module['__Py_ctype_tolower'] = 2048;
-var _Py_EMSCRIPTEN_SIGNAL_HANDLING = Module['_Py_EMSCRIPTEN_SIGNAL_HANDLING'] = 3529520;
+var _Py_EMSCRIPTEN_SIGNAL_HANDLING = Module['_Py_EMSCRIPTEN_SIGNAL_HANDLING'] = 3529504;
 var _Js_true = Module['_Js_true'] = 2371424;
 var _Js_false = Module['_Js_false'] = 2371428;
 var _Js_undefined = Module['_Js_undefined'] = 2371432;
 var _Js_null = Module['_Js_null'] = 2371436;
 var _buffer_struct_size = Module['_buffer_struct_size'] = 3409392;
-var _stderr = Module['_stderr'] = 3413408;
-var ___start_em_js = Module['___start_em_js'] = 3413868;
-var ___stop_em_js = Module['___stop_em_js'] = 3529225;
+var _stderr = Module['_stderr'] = 3413400;
+var ___start_em_js = Module['___start_em_js'] = 3413860;
+var ___stop_em_js = Module['___stop_em_js'] = 3529217;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
@@ -10846,7 +10835,7 @@ function stackCheckInit() {
   // This is normally called automatically during __wasm_call_ctors but need to
   // get these values before even running any of the ctors so we call it redundantly
   // here.
-  _emscripten_stack_set_limits(8801936 , 3559056);
+  _emscripten_stack_set_limits(8801920 , 3559040);
   // TODO(sbc): Move writeStackCookie to native to to avoid this.
   writeStackCookie();
 }

@@ -86,9 +86,97 @@ function finalizeBootstrap(API, config) {
   return pyodide;
 }
 
+const speedups_path =
+  "/session/markupsafe/_speedups.cpython-311-wasm32-emscripten.so";
+
+function prepareFileSystem(Module) {
+  const pymajor = 3;
+  const pyminor = 11;
+  Module.FS.mkdirTree("/lib");
+  Module.FS.mkdirTree(`/lib/python${pymajor}.${pyminor}/site-packages`);
+  Module.FS.writeFile(
+    `/lib/python${pymajor}${pyminor}.zip`,
+    new Uint8Array(stdlib),
+    { canOwn: true },
+  );
+  Module.FS.mkdir("/session");
+
+  Module.FS.mkdir("/session/markupsafe");
+  Module.FS.writeFile(
+    "/session/markupsafe/__init__.py",
+    new Uint8Array(markupsafe_init),
+    { canOwn: true },
+  );
+  Module.FS.writeFile(speedups_path, "");
+}
+
+function loadDynlib(Module, path, wasmModule) {
+  const dso = Module.newDSO(speedups_path, undefined, "loading");
+  dso.refcount = Infinity;
+  dso.global = false;
+  dso.exports = Module.loadWebAssemblyModule(wasmModule, {}, path);
+  const { handles } = dylinkInfo[path] || { handles: [] };
+  for (let handle of handles) {
+    Module.LDSO.loadedLibsByHandle[handle] = dso;
+  }
+}
+
+function loadDynlibs(Module) {
+  for (let [path, wasmModule] of [[speedups_path, markupsafe_speedups]]) {
+    loadDynlib(Module, path, wasmModule);
+  }
+}
+
+async function makeSnapshot(Module, run) {
+  run(`import sys; sys.path.append("/session"); del sys`);
+
+  const imports = [
+    "_pyodide.docstring",
+    "_pyodide._core_docs",
+    "traceback",
+    "collections.abc",
+    "asyncio",
+    "inspect",
+    "tarfile",
+    "importlib.metadata",
+    "re",
+    "shutil",
+    "sysconfig",
+    "importlib.machinery",
+    "pathlib",
+    "site",
+    "tempfile",
+    "typing",
+    "zipfile",
+    "markupsafe._speedups",
+  ];
+  const to_import = imports.join(",");
+  const to_delete = Array.from(
+    new Set(imports.map((x) => x.split(".")[0])),
+  ).join(",");
+  run(`import ${to_import}`);
+  run("sysconfig.get_config_vars()");
+  run(`del ${to_delete}`);
+  for (let [handle, { name }] of Object.entries(
+    Module.LDSO.loadedLibsByHandle,
+  )) {
+    if (handle == 0) {
+      continue;
+    }
+    if (!(name in dylinkInfo)) {
+      dylinkInfo[name] = { handles: [] };
+    }
+    dylinkInfo[name].handles.push(handle);
+  }
+  const { writeFile } = await import("fs/promises");
+  await writeFile("dylinkInfo.json", JSON.stringify(dylinkInfo));
+  await writeFile("memory.dat", Module.HEAP8);
+}
+
 export async function loadPyodide() {
   const API = {};
   const config = { jsglobals: globalThis };
+
   const Module = {
     noInitialRun: !!memory,
     API,
@@ -99,22 +187,7 @@ export async function loadPyodide() {
       })();
       return {};
     },
-    preRun: [
-      () => {
-        /* @ts-ignore */
-        const pymajor = 3;
-        /* @ts-ignore */
-        const pyminor = 11;
-        Module.FS.mkdirTree("/lib");
-        Module.FS.mkdirTree(`/lib/python${pymajor}.${pyminor}/site-packages`);
-        Module.FS.writeFile(
-          `/lib/python${pymajor}${pyminor}.zip`,
-          new Uint8Array(stdlib),
-          { canOwn: true },
-        );
-        Module.FS.mkdir("/session");
-      },
-    ],
+    preRun: [prepareFileSystem, loadDynlibs],
   };
 
   const t1 = performance.now();
@@ -128,100 +201,21 @@ export async function loadPyodide() {
     if (status) {
       console.warn("Command failed:", code);
       console.warn("Error was:");
-      for(const line of err.split("\n")) {
+      for (const line of err.split("\n")) {
         console.warn(line);
       }
       throw new Error("Failed");
     }
   }
 
-
-  Module.FS.mkdir("/session/markupsafe");
-  Module.FS.writeFile(
-    "/session/markupsafe/__init__.py",
-    new Uint8Array(markupsafe_init),
-    { canOwn: true },
-  );
-  const speedups_path =
-    "/session/markupsafe/_speedups.cpython-311-wasm32-emscripten.so";
-  Module.FS.writeFile(speedups_path, "");
-
   const t2 = performance.now();
-  const LDSO = Module.LDSO;
-
-  for (let [path, module] of [[speedups_path, markupsafe_speedups]]) {
-    const { memoryBase, handles } = dylinkInfo[path] || { handles: [] };
-    const dso = Module.newDSO(speedups_path, undefined, "loading");
-    dso.refcount = Infinity;
-    dso.global = false;
-    dso.memoryBase = memoryBase;
-    dso.exports = await Module.loadWebAssemblyModule(
-      module,
-      { loadAsync: true },
-      path,
-      undefined,
-      undefined,
-      dso,
-    );
-    for (let handle of handles) {
-      LDSO.loadedLibsByHandle[handle] = dso;
-    }
-  }
 
   if (!memory) {
-    run(`import sys; sys.path.append("/session"); del sys`);
-
-    const imports = [
-      "_pyodide.docstring",
-      "_pyodide._core_docs",
-      "traceback",
-      "collections.abc",
-      "asyncio",
-      "inspect",
-      "tarfile",
-      "importlib.metadata",
-      "re",
-      "shutil",
-      "sysconfig",
-      "importlib.machinery",
-      "pathlib",
-      "site",
-      "tempfile",
-      "typing",
-      "zipfile",
-      "markupsafe._speedups",
-    ];
-    const to_import = imports.join(",");
-    const to_delete = Array.from(
-      new Set(imports.map((x) => x.split(".")[0])),
-    ).join(",");
-    run(`import ${to_import}`);
-    run("sysconfig.get_config_vars()");
-    run(`del ${to_delete}`);
-    const dylinkInfo = {};
-    for (let [libName, { memoryBase }] of Object.entries(
-      LDSO.loadedLibsByName,
-    )) {
-      if (libName === "__main__") {
-        continue;
-      }
-      dylinkInfo[libName] = { memoryBase, handles: [] };
-    }
-
-    for (let [handle, { name }] of Object.entries(LDSO.loadedLibsByHandle)) {
-      if (handle == 0) {
-        continue;
-      }
-      dylinkInfo[name].handles.push(handle);
-    }
-
-    const { writeFile } = await import("fs/promises");
-    await writeFile("dylinkInfo.json", JSON.stringify(dylinkInfo));
-    await writeFile("memory.dat", Module.HEAP8);
-    return;
+    await makeSnapshot(Module, run);
+    process.exit(0);
   }
-
   Module.HEAP8.set(new Uint8Array(memory));
+
   run("import markupsafe._speedups");
 
   let [err, captured_stderr] = API.rawRun("import _pyodide_core");
