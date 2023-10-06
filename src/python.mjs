@@ -2,6 +2,7 @@ import { createPython } from "./python.asm.mjs";
 import module from "./python.asm.wasm";
 import stdlib from "./python_stdlib.zip";
 import memory from "./memory.dat";
+import dylinkInfo from "./dylinkInfo.json";
 import markupsafe_init from "./markupsafe/__init__.py";
 import markupsafe_speedups from "./markupsafe/_speedups.cpython-311-wasm32-emscripten.so";
 
@@ -29,14 +30,11 @@ function finalizeBootstrap(API, config) {
   // First make internal dict so that we can use runPythonInternal.
   // runPythonInternal uses a separate namespace, so we don't pollute the main
   // environment with variables from our setup.
-  const t1 = performance.now();
   API.runPythonInternal_dict = API._pyodide._base.eval_code("{}");
   API.importlib = API.runPythonInternal("import importlib; importlib");
-  const t2 = performance.now();
   let import_module = API.importlib.import_module;
 
   API.sys = import_module("sys");
-  API.sys.path.insert(0, "/session");
   API.os = import_module("os");
 
   // Set up globals
@@ -64,28 +62,15 @@ function finalizeBootstrap(API, config) {
 
   let pyodide = API.makePublicAPI();
   importhook.register_js_module("pyodide_js", pyodide);
-  const t3 = performance.now();
 
   // import pyodide_py. We want to ensure that as much stuff as possible is
   // already set up before importing pyodide_py to simplify development of
   // pyodide_py code (Otherwise it's very hard to keep track of which things
   // aren't set up yet.)
   API.pyodide_py = import_module("pyodide");
-  const t4 = performance.now();
   API.pyodide_code = import_module("pyodide.code");
-  const t5 = performance.now();
   API.pyodide_ffi = import_module("pyodide.ffi");
-  const t6 = performance.now();
   API.package_loader = import_module("pyodide._package_loader");
-  const t7 = performance.now();
-  console.log("");
-  console.log("importlib", t2 - t1);
-  console.log("tasks", t3 - t2);
-  console.log("pyodide ", t4 - t3);
-  console.log("pyodide.code ", t5 - t4);
-  console.log("pyodide.ffi ", t6 - t5);
-  console.log("_package_loader ", t7 - t6);
-  console.log("");
   API.sitepackages = API.package_loader.SITE_PACKAGES.__str__();
   API.dsodir = API.package_loader.DSO_DIR.__str__();
   API.defaultLdLibraryPath = [API.dsodir, API.sitepackages];
@@ -125,7 +110,7 @@ export async function loadPyodide() {
         Module.FS.writeFile(
           `/lib/python${pymajor}${pyminor}.zip`,
           new Uint8Array(stdlib),
-          {canOwn: true}
+          { canOwn: true },
         );
         Module.FS.mkdir("/session");
       },
@@ -138,19 +123,54 @@ export async function loadPyodide() {
   } catch (e) {
     e.stack.split("\n").forEach(console.log.bind(console));
   }
+  function run(code) {
+    const [status, err] = API.rawRun(code);
+    if (status) {
+      console.warn("Command failed:", code);
+      console.warn("Error was:");
+      for(const line of err.split("\n")) {
+        console.warn(line);
+      }
+      throw new Error("Failed");
+    }
+  }
+
+
   Module.FS.mkdir("/session/markupsafe");
-  console.log(1);
-  Module.FS.writeFile("/session/markupsafe/__init__.py",new Uint8Array(markupsafe_init),{canOwn: true});
-  console.log(2);
-  const speedups_path = "/session/markupsafe/_speedups.cpython-311-wasm32-emscripten.so";
-  console.log(3);
+  Module.FS.writeFile(
+    "/session/markupsafe/__init__.py",
+    new Uint8Array(markupsafe_init),
+    { canOwn: true },
+  );
+  const speedups_path =
+    "/session/markupsafe/_speedups.cpython-311-wasm32-emscripten.so";
   Module.FS.writeFile(speedups_path, "");
-  console.log(4);
-
-
 
   const t2 = performance.now();
+  const LDSO = Module.LDSO;
+
+  for (let [path, module] of [[speedups_path, markupsafe_speedups]]) {
+    const { memoryBase, handles } = dylinkInfo[path] || { handles: [] };
+    const dso = Module.newDSO(speedups_path, undefined, "loading");
+    dso.refcount = Infinity;
+    dso.global = false;
+    dso.memoryBase = memoryBase;
+    dso.exports = await Module.loadWebAssemblyModule(
+      module,
+      { loadAsync: true },
+      path,
+      undefined,
+      undefined,
+      dso,
+    );
+    for (let handle of handles) {
+      LDSO.loadedLibsByHandle[handle] = dso;
+    }
+  }
+
   if (!memory) {
+    run(`import sys; sys.path.append("/session"); del sys`);
+
     const imports = [
       "_pyodide.docstring",
       "_pyodide._core_docs",
@@ -169,17 +189,41 @@ export async function loadPyodide() {
       "tempfile",
       "typing",
       "zipfile",
+      "markupsafe._speedups",
     ];
     const to_import = imports.join(",");
-    const to_delete = imports.map((x) => x.split(".")[0]).join(",");
-    API.rawRun(`import ${to_import}; del ${to_delete}`);
-    API.rawRun("sysconfig.get_config_vars()");
+    const to_delete = Array.from(
+      new Set(imports.map((x) => x.split(".")[0])),
+    ).join(",");
+    run(`import ${to_import}`);
+    run("sysconfig.get_config_vars()");
+    run(`del ${to_delete}`);
+    const dylinkInfo = {};
+    for (let [libName, { memoryBase }] of Object.entries(
+      LDSO.loadedLibsByName,
+    )) {
+      if (libName === "__main__") {
+        continue;
+      }
+      dylinkInfo[libName] = { memoryBase, handles: [] };
+    }
+
+    for (let [handle, { name }] of Object.entries(LDSO.loadedLibsByHandle)) {
+      if (handle == 0) {
+        continue;
+      }
+      dylinkInfo[name].handles.push(handle);
+    }
+
     const { writeFile } = await import("fs/promises");
+    await writeFile("dylinkInfo.json", JSON.stringify(dylinkInfo));
     await writeFile("memory.dat", Module.HEAP8);
     return;
   }
 
   Module.HEAP8.set(new Uint8Array(memory));
+  run("import markupsafe._speedups");
+
   let [err, captured_stderr] = API.rawRun("import _pyodide_core");
   const t3 = performance.now();
   if (err) {
@@ -190,16 +234,6 @@ export async function loadPyodide() {
   }
   finalizeBootstrap(API, config);
   const t4 = performance.now();
-
-  const dso = Module.newDSO(speedups_path, undefined, "loading");
-  dso.refcount = Infinity;
-  dso.global = false;
-  dso.exports = await Module.loadWebAssemblyModule(
-    markupsafe_speedups,
-    { loadAsync: true },
-    speedups_path,
-  );
-
   console.log("createPython", t2 - t1);
   console.log("import _pyodide_core", t3 - t2);
   console.log("finalizeBootstrap ", t4 - t3);

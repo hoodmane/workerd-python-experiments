@@ -8,9 +8,11 @@ export async function load(url, context, nextLoad) {
     const source = `export default Buffer.from("${b64}", "base64");`
     return {format: 'module', shortCircuit: true, source};
   }
+  if (path.endsWith("/dylinkInfo.json")) {
+    const source = `export default {dsoMemoryBases: {}, dsoHandles: []};`
+    return {format: 'module', shortCircuit: true, source};
+  }
   if(path.endsWith(".dat")) {
-    const bin = await readFile(path);
-    const b64 = bin.toString('base64');
     const source = `export default undefined;`
     return {format: 'module', shortCircuit: true, source};
   }

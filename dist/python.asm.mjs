@@ -484,7 +484,6 @@ var wasmTable = new WebAssembly.Table({
 // Initializes the stack cookie. Called at the startup of main and at the startup of each thread in pthreads mode.
 function writeStackCookie() {
   var max = _emscripten_stack_get_end();
-  dbg(`writeStackCookie: ${ptrToString(max)}`);
   assert((max & 3) == 0);
   // If the stack ends at address zero we write our cookies 4 bytes into the
   // stack.  This prevents interference with SAFE_HEAP and ASAN which also
@@ -504,7 +503,6 @@ function writeStackCookie() {
 function checkStackCookie() {
   if (ABORT) return;
   var max = _emscripten_stack_get_end();
-  dbg(`checkStackCookie: ${ptrToString(max)}`);
   // See writeStackCookie().
   if (max == 0) {
     max += 4;
@@ -557,7 +555,6 @@ function preRun() {
 }
 
 function initRuntime() {
-  dbg('initRuntime');
   assert(!runtimeInitialized);
   runtimeInitialized = true;
 
@@ -933,7 +930,6 @@ function createWasm() {
     }
   }
 
-  dbg('asynchronously preparing wasm');
   // If instantiation fails, reject the module ready promise.
   instantiateAsync(wasmBinary, wasmBinaryFile, info, receiveInstantiationResult).catch(readyPromiseReject);
   return {}; // no exports yet; we'll fill them in later
@@ -1031,33 +1027,6 @@ function unexportedRuntimeSymbol(sym) {
   }
 }
 
-var runtimeDebug = true; // Switch to false at runtime to disable logging at the right times
-
-var printObjectList = [];
-
-function prettyPrint(arg) {
-  if (typeof arg == 'undefined') return '!UNDEFINED!';
-  if (typeof arg == 'boolean') arg = arg + 0;
-  if (!arg) return arg;
-  var index = printObjectList.indexOf(arg);
-  if (index >= 0) return '<' + arg + '|' + index + '>';
-  if (arg.toString() == '[object HTMLImageElement]') {
-    return arg + '\n\n';
-  }
-  if (arg.byteLength) {
-    return '{' + Array.prototype.slice.call(arg, 0, Math.min(arg.length, 400)) + '}';
-  }
-  if (typeof arg == 'function') {
-    return '<function>';
-  } else if (typeof arg == 'object') {
-    printObjectList.push(arg);
-    return '<' + arg + '|' + (printObjectList.length-1) + '>';
-  } else if (typeof arg == 'number') {
-    if (arg > 0) return ptrToString(arg) + ' (' + arg + ')';
-  }
-  return arg;
-}
-
 // Used by XXXXX_DEBUG settings to output debug messages.
 function dbg(text) {
   // TODO(sbc): Make this configurable somehow.  Its not always convenient for
@@ -1068,10 +1037,10 @@ function dbg(text) {
 // === Body ===
 
 var ASM_CONSTS = {
-  3529333: () => { throw new Error("intentionally triggered fatal error!"); },  
- 3529390: ($0) => { Hiwire.get_value($0)() },  
- 3529413: () => { wasmImports["open64"] = wasmImports["open"]; },  
- 3529462: ($0) => { API._pyodide = Hiwire.pop_value($0); }
+  3529341: () => { throw new Error("intentionally triggered fatal error!"); },  
+ 3529398: ($0) => { Hiwire.get_value($0)() },  
+ 3529421: () => { wasmImports["open64"] = wasmImports["open"]; },  
+ 3529470: ($0) => { API._pyodide = Hiwire.pop_value($0); }
 };
 function descr_set_trampoline_call(set,obj,value,closure) { return wasmTable.get(set)(obj, value, closure); }
 descr_set_trampoline_call.sig = 'iiiii';
@@ -1659,8 +1628,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       assert(tableAlign === 1, `invalid tableAlign ${tableAlign}`);
       assert(offset == end);
   
-      dbg(`dylink needed:${customSection.neededDynlibs}`);
-  
       return customSection;
     };
 
@@ -1714,7 +1681,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   
   
   
-  var ___heap_base = 8801920;
+  var ___heap_base = 8801936;
   
   var zeroMemory = (address, size) => {
       HEAPU8.fill(0, address, address + size);
@@ -1728,7 +1695,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   
   var getMemory = (size) => {
       // After the runtime is initialized, we must only use sbrk() normally.
-      dbg("getMemory: " + size + " runtimeInitialized=" + runtimeInitialized);
       if (runtimeInitialized) {
         // Currently we don't support freeing of static data when modules are
         // unloaded via dlclose.  This function is tagged as `noleakcheck` to
@@ -1959,7 +1925,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     };
   
   var updateGOT = (exports, replace) => {
-      dbg("updateGOT: adding " + Object.keys(exports).length + " symbols");
       for (var symName in exports) {
         if (isInternalSym(symName)) {
           continue;
@@ -1979,11 +1944,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
             err(`unhandled export type for '${symName}': ${typeof value}`);
           }
         }
-        else if (GOT[symName].value != value) {
-          dbg(`udateGOT: EXISTING SYMBOL: ${symName} : ${GOT[symName].value} (${value})`);
-        }
       }
-      dbg("done updateGOT");
     };
   /** @param {boolean=} replace */
   var relocateExports = (exports, memoryBase, replace) => {
@@ -2083,8 +2044,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       * @param {Object=} localScope
       * @param {number=} handle
       */
-  var loadWebAssemblyModule = (binary, flags, libName, localScope, handle, memoryBaseArg) => {
-      dbg(`loadWebAssemblyModule: ${libName}`);
+  var loadWebAssemblyModule = (binary, flags, libName, localScope, handle, dso) => {
       var metadata = getDylinkMetadata(binary);
       currentModuleWeakSymbols = metadata.weakImports;
       var originalTable = wasmTable;
@@ -2092,7 +2052,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       // loadModule loads the wasm module after all its dependencies have been loaded.
       // can be called both sync/async.
       function loadModule() {
-        console.log("loadModule!!!!!!!", handle);
         // The first thread to load a given module needs to allocate the static
         // table and memory regions.  Later threads re-use the same table region
         // and can ignore the memory region (since memory is shared between
@@ -2106,17 +2065,16 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
           var memAlign = Math.pow(2, metadata.memoryAlign);
           // prepare memory
           var memoryBase;
-          if(typeof memoryBaseArg === "number") {
-            memoryBase = memoryBaseArg;
+          if (dso && dso.memoryBase) {
+            memoryBase = dso.memoryBase;
           } else {
             memoryBase = metadata.memorySize ? alignMemory(getMemory(metadata.memorySize + memAlign), memAlign) : 0; // TODO: add to cleanups
           }
-          if(Array.isArray(memoryBaseArg)) {
-            memoryBaseArg.push(memoryBase);
+          if (dso) {
+            dso.memoryBase = memoryBase;
           }
           var tableBase = metadata.tableSize ? wasmTable.length : 0;
           if (handle) {
-            console.log("storing info into handle??", handle);
             HEAP8[(((handle)+(8))>>0)] = 1;
             HEAPU32[(((handle)+(12))>>2)] = memoryBase;
             HEAP32[(((handle)+(16))>>2)] = metadata.memorySize;
@@ -2130,11 +2088,8 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   
         var tableGrowthNeeded = tableBase + metadata.tableSize - wasmTable.length;
         if (tableGrowthNeeded > 0) {
-          dbg("loadModule: growing table: " + tableGrowthNeeded);
           wasmTable.grow(tableGrowthNeeded);
         }
-        dbg("loadModule: memory[" + memoryBase + ":" + (memoryBase + metadata.memorySize) + "]" +
-                       " table[" + tableBase + ":" + (tableBase + metadata.tableSize) + "]");
   
         // This is the export map that we ultimately return.  We declare it here
         // so it can be used within resolveSymbol.  We resolve symbols against
@@ -2221,7 +2176,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
             }
             args = args.join(',');
             var func = `(${args}) => { ${body} };`;
-            dbg(`adding new EM_ASM constant at: ${ptrToString(start)}`);
             ASM_CONSTS[start] = eval(func);
           }
   
@@ -2252,7 +2206,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
               }
             }
             var func = `(${jsArgs}) => ${body};`;
-            dbg(`adding new EM_JS function: ${jsArgs} = ${func}`);
             moduleExports[name] = eval(func);
           }
   
@@ -2273,7 +2226,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
             var applyRelocs = moduleExports['__wasm_apply_data_relocs'];
             if (applyRelocs) {
               if (runtimeInitialized) {
-                dbg('applyRelocs');
                 applyRelocs();
               } else {
                 __RELOC_FUNCS__.push(applyRelocs);
@@ -2391,7 +2343,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
           wasmPlugin['promiseChainEnd'] = wasmPlugin['promiseChainEnd'].then(
             () => loadWebAssemblyModule(byteArray, {loadAsync: true, nodelete: true}, name)).then(
               (exports) => {
-                dbg(`registering preloadedWasm: ${name}`);
                 preloadedWasm[name] = exports;
                 onload(byteArray);
               },
@@ -2411,8 +2362,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
        * @param {Object=} localScope
        */
   function loadDynamicLibrary(libName, flags = {global: true, nodelete: true}, localScope, handle) {
-      dbg(`loadDynamicLibrary: ${libName} handle: ${handle}`);
-      dbg(`existing: ${Object.keys(LDSO.loadedLibsByName)}`);
       // when loadDynamicLibrary did not have flags, libraries were loaded
       // globally & permanently
   
@@ -2444,6 +2393,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       dso = newDSO(libName, handle, 'loading');
       dso.refcount = flags.nodelete ? Infinity : 1;
       dso.global = flags.global;
+      dso.memoryBase = flags.memoryBase;
   
       // libName -> libData
       function loadLibData() {
@@ -2476,17 +2426,16 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       function getExports() {
         // lookup preloaded cache first
         var preloaded = preloadedWasm[libName];
-        dbg(`checking preloadedWasm: ${libName}: ${preloaded ? 'found' : 'not found'}`);
         if (preloaded) {
           return flags.loadAsync ? Promise.resolve(preloaded) : preloaded;
         }
   
         // module not preloaded - load lib data and create new module from it
         if (flags.loadAsync) {
-          return loadLibData().then((libData) => loadWebAssemblyModule(libData, flags, libName, localScope, handle));
+          return loadLibData().then((libData) => loadWebAssemblyModule(libData, flags, libName, localScope, handle, dso));
         }
   
-        return loadWebAssemblyModule(loadLibData(), flags, libName, localScope, handle);
+        return loadWebAssemblyModule(loadLibData(), flags, libName, localScope, handle, dso);
       }
   
       // module for lib is loaded - update the dso & global namespace
@@ -2500,7 +2449,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       }
   
       if (flags.loadAsync) {
-        dbg("loadDynamicLibrary: done (async)");
         return getExports().then((exports) => {
           moduleLoaded(exports);
           return true;
@@ -2508,19 +2456,16 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       }
   
       moduleLoaded(getExports());
-      dbg("loadDynamicLibrary: done");
       return true;
     }
   
   
   var reportUndefinedSymbols = () => {
-      dbg('reportUndefinedSymbols');
       for (var symName in GOT) {
         if (GOT[symName].value == 0) {
           var value = resolveGlobalSymbol(symName, true).sym;
           if (!value && !GOT[symName].required) {
             // Ignore undefined symbols that are imported as weak.
-            dbg(`ignoring undefined weak symbol: ${symName}`);
             continue;
           }
           assert(value, `undefined symbol '${symName}'. perhaps a side module was not linked in? if this global was expected to arrive from a system library, try to build the MAIN_MODULE with EMCC_FORCE_STDLIBS=1 in the environment`);
@@ -2534,16 +2479,12 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
           }
         }
       }
-      dbg('done reportUndefinedSymbols');
     };
   var loadDylibs = () => {
       if (!dynamicLibraries.length) {
-        dbg('loadDylibs: no libraries to preload');
         reportUndefinedSymbols();
         return;
       }
-  
-      dbg(`loadDylibs: ${dynamicLibraries}`);
   
       // Load binaries asynchronously
       addRunDependency('loadDylibs');
@@ -2555,7 +2496,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
         // we got them all, wonderful
         reportUndefinedSymbols();
         removeRunDependency('loadDylibs');
-        dbg('loadDylibs done!');
       });
     };
 
@@ -2610,11 +2550,11 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
 
   var ___memory_base = new WebAssembly.Global({'value': 'i32', 'mutable': false}, 1024);
 
-  var ___stack_high = 8801920;
+  var ___stack_high = 8801936;
 
-  var ___stack_low = 3559040;
+  var ___stack_low = 3559056;
 
-  var ___stack_pointer = new WebAssembly.Global({'value': 'i32', 'mutable': true}, 8801920);
+  var ___stack_pointer = new WebAssembly.Global({'value': 'i32', 'mutable': true}, 8801936);
 
   var PATH = {
   isAbs:(path) => path.charAt(0) === '/',
@@ -8134,7 +8074,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       return ret;
     };
   var dlSetError = (msg) => {
-      dbg(`dlSetError: ${msg}`);
       withStackSave(() => {
         var cmsg = stringToUTF8OnStack(msg);
         ___dl_seterr(cmsg, 0);
@@ -8147,7 +8086,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       // http://pubs.opengroup.org/onlinepubs/009695399/functions/dlopen.html
       var filename = UTF8ToString(handle + 36);
       var flags = HEAP32[(((handle)+(4))>>2)];
-      dbg(`dlopenInternal: ${filename}`);
       filename = PATH.normalize(filename);
       var searchpaths = [];
   
@@ -8185,7 +8123,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       // void *dlsym(void *restrict handle, const char *restrict name);
       // http://pubs.opengroup.org/onlinepubs/009695399/functions/dlsym.html
       symbol = UTF8ToString(symbol);
-      dbg(`dlsym_js: ${symbol}`);
       var result;
       var newSymIndex;
   
@@ -8199,11 +8136,9 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       result = lib.exports[symbol];
   
       if (typeof result == 'function') {
-        dbg(`dlsym_js: ${symbol} getting table slot for: ${result}`);
   
         var addr = getFunctionAddress(result);
         if (addr) {
-          dbg(`symbol already exists in table: ${symbol}`);
           result = addr;
         } else {
           // Insert the function into the wasm table.  If its a direct wasm
@@ -8211,19 +8146,9 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
           // function we rely on the `sig` attribute being set based on the
           // `<func>__sig` specified in library JS file.
           result = addFunction(result, result.sig);
-          dbg(`adding symbol to table: ${symbol}`);
           HEAPU32[((symbolIndex)>>2)] = newSymIndex;
         }
       }
-      const dlname = LDSO.loadedLibsByHandle[handle].name;
-      if (!LDSO.dlnameToSymbols) {
-        LDSO
-      }
-      if(!LDSO.libNameToSymbols[dlname]) {
-        LDSO.libNameToSymbols[dlname] = [];
-      }
-      LDSO.libNameToSymbols[dlname].push([result, symbol]);
-      dbg(`dlsym_js: ${symbol} -> ${result}`);
       return result;
     };
   __dlsym_js.sig = 'pppp';
@@ -8419,7 +8344,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       // 2. "unwind", which is thrown by emscripten_unwind_to_js_event_loop() and others
       //    that wish to return to JS event loop.
       if (e instanceof ExitStatus || e == 'unwind') {
-        dbg(`handleException: unwinding: EXITSTATUS=${EXITSTATUS}`);
         return EXITSTATUS;
       }
       checkStackCookie();
@@ -8433,7 +8357,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   
   
   var _proc_exit = (code) => {
-      dbg(`proc_exit: ${code}`);
       EXITSTATUS = code;
       if (!keepRuntimeAlive()) {
         if (Module['onExit']) Module['onExit'](code);
@@ -8462,9 +8385,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   _exit.sig = 'vi';
   
   var maybeExit = () => {
-      dbg(`maybeExit: user callback done: runtimeKeepaliveCounter=${runtimeKeepaliveCounter}`);
       if (!keepRuntimeAlive()) {
-        dbg(`maybeExit: calling exit() implicitly after user callback completed: ${EXITSTATUS}`);
         try {
           _exit(EXITSTATUS);
         } catch (e) {
@@ -8494,7 +8415,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   ;
   _emscripten_get_now.sig = 'd';
   var __setitimer_js = (which, timeout_ms) => {
-      dbg(`setitimer_js ${which} timeout=${timeout_ms}`);
       // First, clear any existing timer.
       if (timers[which]) {
         clearTimeout(timers[which].id);
@@ -8508,7 +8428,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       var id = setTimeout(() => {
         assert(which in timers);
         delete timers[which];
-        dbg(`itimer fired: ${which}`);
         callUserCallback(() => __emscripten_timeout(which, _emscripten_get_now()));
       }, timeout_ms);
       timers[which] = { id, timeout_ms };
@@ -8647,7 +8566,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   var growMemory = (size) => {
       var b = wasmMemory.buffer;
       var pages = (size - b.byteLength + 65535) / 65536;
-      dbg(`growMemory: ${size} (+${size - b.byteLength} bytes / ${pages} pages)`);
       try {
         // round size grow request up to wasm page size (fixed 64KB per spec)
         wasmMemory.grow(pages); // .grow() takes a delta compared to the previous size
@@ -9671,7 +9589,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
 
 
 
-
       registerWasmPlugin();
       ;
 
@@ -10531,7 +10448,7 @@ var __Py_FalseStruct = Module['__Py_FalseStruct'] = 2451820;
 var __Py_TrueStruct = Module['__Py_TrueStruct'] = 2451804;
 var _PyBool_Type = Module['_PyBool_Type'] = 2451980;
 var _PyByteArray_Type = Module['_PyByteArray_Type'] = 2430500;
-var __PyByteArray_empty_string = Module['__PyByteArray_empty_string'] = 3532288;
+var __PyByteArray_empty_string = Module['__PyByteArray_empty_string'] = 3532304;
 var _PyBytes_Type = Module['_PyBytes_Type'] = 2432452;
 var _PyExc_TypeError = Module['_PyExc_TypeError'] = 2453420;
 var _PyExc_UnicodeDecodeError = Module['_PyExc_UnicodeDecodeError'] = 2461940;
@@ -10563,30 +10480,28 @@ var _PySlice_Type = Module['_PySlice_Type'] = 2416564;
 var _PyTuple_Type = Module['_PyTuple_Type'] = 2452184;
 var _PyUnicode_Type = Module['_PyUnicode_Type'] = 2468296;
 var __Py_ctype_tolower = Module['__Py_ctype_tolower'] = 2048;
-var _Py_EMSCRIPTEN_SIGNAL_HANDLING = Module['_Py_EMSCRIPTEN_SIGNAL_HANDLING'] = 3529504;
+var _Py_EMSCRIPTEN_SIGNAL_HANDLING = Module['_Py_EMSCRIPTEN_SIGNAL_HANDLING'] = 3529520;
 var _Js_true = Module['_Js_true'] = 2371424;
 var _Js_false = Module['_Js_false'] = 2371428;
 var _Js_undefined = Module['_Js_undefined'] = 2371432;
 var _Js_null = Module['_Js_null'] = 2371436;
 var _buffer_struct_size = Module['_buffer_struct_size'] = 3409392;
-var _stderr = Module['_stderr'] = 3413400;
-var ___start_em_js = Module['___start_em_js'] = 3413860;
-var ___stop_em_js = Module['___stop_em_js'] = 3529217;
+var _stderr = Module['_stderr'] = 3413408;
+var ___start_em_js = Module['___start_em_js'] = 3413868;
+var ___stop_em_js = Module['___stop_em_js'] = 3529225;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
 
 Module['wasmMemory'] = wasmMemory;
-Module['wasmTable'] = wasmTable;
 Module['ERRNO_CODES'] = ERRNO_CODES;
-Module['setWasmTableEntry'] = setWasmTableEntry;
 Module['STACK_SIZE'] = STACK_SIZE;
 Module['PATH'] = PATH;
 Module['stringToNewUTF8'] = stringToNewUTF8;
-Module['GOT'] = GOT;
 Module['LDSO'] = LDSO;
 Module['loadWebAssemblyModule'] = loadWebAssemblyModule;
 Module['newDSO'] = newDSO;
+Module['loadDynamicLibrary'] = loadDynamicLibrary;
 Module['preloadPlugins'] = preloadPlugins;
 Module['FS'] = FS;
 Module['LZ4'] = LZ4;
@@ -10693,7 +10608,6 @@ var missingLibrarySymbols = [
   'ExceptionInfo',
   'findMatchingCatch',
   'setMainLoop',
-  'dumpTable',
   '_setNetworkCallback',
   'heapObjectForWebGLType',
   'heapAccessShiftForWebGLHeap',
@@ -10749,6 +10663,7 @@ var unexportedSymbols = [
   'callMain',
   'abort',
   'keepRuntimeAlive',
+  'wasmTable',
   'wasmExports',
   'stackAlloc',
   'stackSave',
@@ -10757,7 +10672,6 @@ var unexportedSymbols = [
   'setTempRet0',
   'writeStackCookie',
   'checkStackCookie',
-  'prettyPrint',
   'readI53FromI64',
   'MAX_INT53',
   'MIN_INT53',
@@ -10799,6 +10713,7 @@ var unexportedSymbols = [
   'jstoi_q',
   'getExecutableName',
   'dynCall',
+  'setWasmTableEntry',
   'handleException',
   'callUserCallback',
   'maybeExit',
@@ -10851,10 +10766,10 @@ var unexportedSymbols = [
   'registerWasmPlugin',
   'preloadedWasm',
   'isSymbolDefined',
+  'GOT',
   'currentModuleWeakSymbols',
   'getMemory',
   'mergeLibSymbols',
-  'loadDynamicLibrary',
   'dlopenInternal',
   'FS_createPreloadedFile',
   'FS_modeStringToFlags',
@@ -10931,7 +10846,7 @@ function stackCheckInit() {
   // This is normally called automatically during __wasm_call_ctors but need to
   // get these values before even running any of the ctors so we call it redundantly
   // here.
-  _emscripten_stack_set_limits(8801920 , 3559040);
+  _emscripten_stack_set_limits(8801936 , 3559056);
   // TODO(sbc): Move writeStackCookie to native to to avoid this.
   writeStackCookie();
 }
@@ -10939,7 +10854,6 @@ function stackCheckInit() {
 function run(args = arguments_) {
 
   if (runDependencies > 0) {
-    dbg('run() called, but dependencies remain, so not running');
     return;
   }
 
@@ -10949,7 +10863,6 @@ function run(args = arguments_) {
 
   // a preRun added a dependency, run will be called later
   if (runDependencies > 0) {
-    dbg('run() called, but dependencies remain, so not running');
     return;
   }
 

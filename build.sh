@@ -21,7 +21,7 @@ readarray -d '' SO_FILES < <(find .venv-pyodide/ -name '*.so' -print0)
 
 emcc -c ./src/main.c -o ./build/main.o -O2 -Iartifacts/include -fPIC
 emcc -Lartifacts/ -lpython3.11 -lpyodide -lhiwire -lffi ./build/main.o -o ./build/python.asm.js \
-    -sEXPORTED_FUNCTIONS=_memcmp,$EXPORTS,$MORE_EXPORTS\
+    -sEXPORTED_FUNCTIONS=_memcmp,_memcpy,$EXPORTS,$MORE_EXPORTS\
  \
 -sEXPORTED_RUNTIME_METHODS=\
 stringToNewUTF8,\
@@ -32,7 +32,9 @@ preloadPlugins,\
 PATH,\
 ERRNO_CODES,\
 loadWebAssemblyModule,\
-newDSO \
+loadDynamicLibrary,\
+newDSO,\
+LDSO \
     -sMODULARIZE=1 -sWASM_BIGINT \
     -sEXPORT_NAME="createPython" \
     -sENVIRONMENT=web,node \
@@ -65,6 +67,7 @@ cp src/*.py dist
 cp artifacts/python_stdlib.zip dist
 cp build/python.asm.* dist
 touch dist/memory.dat
+touch dist/dylinkInfo.json
 cp -r .venv-pyodide/lib/python3.11/site-packages/markupsafe dist
 cd dist
 node --import ../register-hooks.mjs python.mjs

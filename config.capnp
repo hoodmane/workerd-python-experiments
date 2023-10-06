@@ -24,6 +24,7 @@ const mainWorker :Workerd.Worker = (
     (name = "python.asm.wasm", wasm = embed "./dist/python.asm.wasm"),
     (name = "python_stdlib.zip", data = embed "./dist/python_stdlib.zip"),
     (name = "memory.dat", data = embed "./dist/memory.dat"),
+    (name = "dylinkInfo.json", json = embed "./dist/dylinkInfo.json"),
 
     (name = "markupsafe/__init__.py", data = embed ".venv-pyodide/lib/python3.11/site-packages/markupsafe/__init__.py"),
     (name = "markupsafe/_speedups.cpython-311-wasm32-emscripten.so", wasm = embed ".venv-pyodide/lib/python3.11/site-packages/markupsafe/_speedups.cpython-311-wasm32-emscripten.so")
