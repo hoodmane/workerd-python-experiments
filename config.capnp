@@ -30,7 +30,6 @@ const mainWorker :Workerd.Worker = (
     (name = "markupsafe/_speedups.cpython-311-wasm32-emscripten.so", wasm = embed ".venv-pyodide/lib/python3.11/site-packages/markupsafe/_speedups.cpython-311-wasm32-emscripten.so")
   ],
   compatibilityDate = "2023-02-28",
-  compatibilityFlags = ["nodejs_compat"]
   # Learn more about compatibility dates at:
   # https://developers.cloudflare.com/workers/platform/compatibility-dates/
 );
