@@ -20,7 +20,7 @@ EXPORTS=`cat main_exports.list`
 readarray -d '' SO_FILES < <(find .venv-pyodide/ -name '*.so' -print0)
 
 emcc -c ./src/main.c -o ./build/main.o -O2 -Iartifacts/include -fPIC
-emcc -Lartifacts/ -lpython3.11 -lpyodide -lhiwire -lffi ./build/main.o -o ./build/python.asm.js \
+emcc -Lartifacts/ -lpython3.11 -lpyodide -lhiwire -lffi -lnodefs.js ./build/main.o -o ./build/python.asm.js \
     -sEXPORTED_FUNCTIONS=_memcmp,_memcpy,$EXPORTS,$MORE_EXPORTS\
  \
 -sEXPORTED_RUNTIME_METHODS=\

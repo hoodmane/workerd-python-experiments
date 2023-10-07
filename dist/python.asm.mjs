@@ -339,7 +339,7 @@ var ICASEFS = 'ICASEFS is no longer included by default; build with -licasefs.js
 var JSFILEFS = 'JSFILEFS is no longer included by default; build with -ljsfilefs.js';
 var OPFS = 'OPFS is no longer included by default; build with -lopfs.js';
 
-var NODEFS = 'NODEFS is no longer included by default; build with -lnodefs.js';
+
 
 assert(!ENVIRONMENT_IS_WORKER, "worker environment detected but not enabled at build time.  Add 'worker' to `-sENVIRONMENT` to enable.");
 
@@ -1745,6 +1745,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
         'j': 'i64',
         'f': 'f32',
         'd': 'f64',
+        'e': 'externref',
         'p': 'i32',
       };
       var type = {
@@ -2130,6 +2131,9 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
               var resolved;
               stubs[prop] = function() {
                 if (!resolved) resolved = resolveSymbol(prop);
+                if (!resolved) {
+                  throw new Error(`Dynamic linking error: cannot resolve symbol ${prop}`);
+                }
                 return resolved.apply(null, arguments);
               };
             }
@@ -2388,13 +2392,22 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       function loadLibData() {
   
         // for wasm, we can use fetch for async, but for fs mode we can only imitate it
+        var libData;
         if (handle) {
           var data = HEAPU32[(((handle)+(28))>>2)];
           var dataSize = HEAPU32[(((handle)+(32))>>2)];
           if (data && dataSize) {
-            var libData = HEAP8.slice(data, data + dataSize);
-            return flags.loadAsync ? Promise.resolve(libData) : libData;
+            libData = HEAP8.slice(data, data + dataSize);
           }
+        }
+        if (!libData && flags.fs && flags.fs.findObject(libName)) {
+          libData = flags.fs.readFile(libName, {encoding: 'binary'});
+          if (!(libData instanceof Uint8Array)) {
+            libData = new Uint8Array(libData);
+          }
+        }
+        if (libData) {
+          return flags.loadAsync ? Promise.resolve(libData) : libData;
         }
   
         var libFile = locateFile(libName);
@@ -3402,6 +3415,388 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   
   
   
+  
+  
+  var ERRNO_CODES = {
+  };
+  let origFS = fs;
+  var NODEFS = (() => {
+    let fs = new Proxy({
+
+
+      lstatSync(path) {
+        if (path === "/nodemount") {
+          return {
+              dev: 64769,
+              mode: 16893,
+              nlink: 2,
+              uid: 1000,
+              gid: 1000,
+              rdev: 0,
+              blksize: 4096,
+              ino: 26534077,
+              size: 4096,
+              blocks: 8,
+              atime: new Date("2023-10-07T14:42:36.844Z"),
+              mtime: new Date("2023-10-07T14:42:46.376Z"),
+              ctime: new Date("2023-10-07T14:42:46.376Z"),
+          };
+        }
+        if (path === "/nodemount/xx.py") {
+          return {
+            dev: 64769,
+            mode: 33204,
+            nlink: 1,
+            uid: 1000,
+            gid: 1000,
+            rdev: 0,
+            blksize: 4096,
+            ino: 26482512,
+            size: 21,
+            blocks: 8,
+            atime: new Date("2023-10-07T14:42:46.376Z"),
+            mtime: new Date("2023-10-07T14:42:48.968Z"),
+            ctime: new Date("2023-10-07T14:42:48.968Z"),
+          }
+        }
+        throw new Error("lstatSync " + path);
+      },
+      readdirSync(path) {
+        if (path === "/nodemount") {
+          return [ "xx.py" ]
+        }
+        throw new Error("readdirSync " + path);
+      },
+      openSync(path) {
+        if (path === "/nodemount/xx.py") {
+          return 0;
+        }
+        throw new Error("openSync " + path);
+      },
+      readSync(fd, buffer, {position}) {
+        console.warn("readFileSync ", [fd, buffer, {position}]);
+        if (fd === 0 && position === 0) {
+          console.log("readFileSync");
+          const buf = origFS.readFileSync("./nodemount/xx.py");
+          buffer.set(buf);
+          return buf.length;
+        }
+        if (fd === 0 && position === 21) {
+          return 0;
+        }
+        throw new Error("readFileSync ", [fd, buffer, {position}]);
+      }
+
+    }, {get(target, p) {
+      const result = Reflect.get(target, p);
+      if (result) {
+        return result;
+      }
+      return function(...args) {
+        console.warn("Not implemented " + p, args);
+        throw new Error("Not implemented " + p, args);
+      }
+    }});
+    return {
+  isWindows:false,
+  staticInit() {
+        NODEFS.isWindows = !!process.platform.match(/^win/);
+        var flags = process.binding("constants");
+        // Node.js 4 compatibility: it has no namespaces for constants
+        if (flags["fs"]) {
+          flags = flags["fs"];
+        }
+        NODEFS.flagsForNodeMap = {
+          "1024": flags["O_APPEND"],
+          "64": flags["O_CREAT"],
+          "128": flags["O_EXCL"],
+          "256": flags["O_NOCTTY"],
+          "0": flags["O_RDONLY"],
+          "2": flags["O_RDWR"],
+          "4096": flags["O_SYNC"],
+          "512": flags["O_TRUNC"],
+          "1": flags["O_WRONLY"],
+          "131072": flags["O_NOFOLLOW"],
+        };
+        // The 0 define must match on both sides, as otherwise we would not
+        // know to add it.
+        assert(NODEFS.flagsForNodeMap["0"] === 0);
+      },
+  convertNodeCode(e) {
+        var code = e.code;
+        assert(code in ERRNO_CODES, `unexpected node error code: ${code} (${e})`);
+        return ERRNO_CODES[code];
+      },
+  mount(mount) {
+        assert(ENVIRONMENT_IS_NODE);
+        return NODEFS.createNode(null, '/', NODEFS.getMode(mount.opts.root), 0);
+      },
+  createNode(parent, name, mode, dev) {
+        if (!FS.isDir(mode) && !FS.isFile(mode) && !FS.isLink(mode)) {
+          throw new FS.ErrnoError(28);
+        }
+        var node = FS.createNode(parent, name, mode);
+        node.node_ops = NODEFS.node_ops;
+        node.stream_ops = NODEFS.stream_ops;
+        return node;
+      },
+  getMode(path) {
+        var stat;
+        try {
+          stat = fs.lstatSync(path);
+          if (NODEFS.isWindows) {
+            // Node.js on Windows never represents permission bit 'x', so
+            // propagate read bits to execute bits
+            stat.mode = stat.mode | ((stat.mode & 292) >> 2);
+          }
+        } catch (e) {
+          if (!e.code) throw e;
+          throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+        }
+        return stat.mode;
+      },
+  realPath(node) {
+        var parts = [];
+        while (node.parent !== node) {
+          parts.push(node.name);
+          node = node.parent;
+        }
+        parts.push(node.mount.opts.root);
+        parts.reverse();
+        return PATH.join.apply(null, parts);
+      },
+  flagsForNode(flags) {
+        flags &= ~2097152; // Ignore this flag from musl, otherwise node.js fails to open the file.
+        flags &= ~2048; // Ignore this flag from musl, otherwise node.js fails to open the file.
+        flags &= ~32768; // Ignore this flag from musl, otherwise node.js fails to open the file.
+        flags &= ~524288; // Some applications may pass it; it makes no sense for a single process.
+        flags &= ~65536; // Node.js doesn't need this passed in, it errors.
+        var newFlags = 0;
+        for (var k in NODEFS.flagsForNodeMap) {
+          if (flags & k) {
+            newFlags |= NODEFS.flagsForNodeMap[k];
+            flags ^= k;
+          }
+        }
+        if (flags) {
+          throw new FS.ErrnoError(28);
+        }
+        return newFlags;
+      },
+  node_ops:{
+  getattr(node) {
+          var path = NODEFS.realPath(node);
+          var stat;
+          try {
+            stat = fs.lstatSync(path);
+          } catch (e) {
+            if (!e.code) throw e;
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+          // node.js v0.10.20 doesn't report blksize and blocks on Windows. Fake them with default blksize of 4096.
+          // See http://support.microsoft.com/kb/140365
+          if (NODEFS.isWindows && !stat.blksize) {
+            stat.blksize = 4096;
+          }
+          if (NODEFS.isWindows && !stat.blocks) {
+            stat.blocks = (stat.size+stat.blksize-1)/stat.blksize|0;
+          }
+          return {
+            dev: stat.dev,
+            ino: stat.ino,
+            mode: stat.mode,
+            nlink: stat.nlink,
+            uid: stat.uid,
+            gid: stat.gid,
+            rdev: stat.rdev,
+            size: stat.size,
+            atime: stat.atime,
+            mtime: stat.mtime,
+            ctime: stat.ctime,
+            blksize: stat.blksize,
+            blocks: stat.blocks
+          };
+        },
+  setattr(node, attr) {
+          var path = NODEFS.realPath(node);
+          try {
+            if (attr.mode !== undefined) {
+              fs.chmodSync(path, attr.mode);
+              // update the common node structure mode as well
+              node.mode = attr.mode;
+            }
+            if (attr.timestamp !== undefined) {
+              var date = new Date(attr.timestamp);
+              fs.utimesSync(path, date, date);
+            }
+            if (attr.size !== undefined) {
+              fs.truncateSync(path, attr.size);
+            }
+          } catch (e) {
+            if (!e.code) throw e;
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+        },
+  lookup(parent, name) {
+          var path = PATH.join2(NODEFS.realPath(parent), name);
+          var mode = NODEFS.getMode(path);
+          return NODEFS.createNode(parent, name, mode);
+        },
+  mknod(parent, name, mode, dev) {
+          var node = NODEFS.createNode(parent, name, mode, dev);
+          // create the backing node for this in the fs root as well
+          var path = NODEFS.realPath(node);
+          try {
+            if (FS.isDir(node.mode)) {
+              fs.mkdirSync(path, node.mode);
+            } else {
+              fs.writeFileSync(path, '', { mode: node.mode });
+            }
+          } catch (e) {
+            if (!e.code) throw e;
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+          return node;
+        },
+  rename(oldNode, newDir, newName) {
+          var oldPath = NODEFS.realPath(oldNode);
+          var newPath = PATH.join2(NODEFS.realPath(newDir), newName);
+          try {
+            fs.renameSync(oldPath, newPath);
+          } catch (e) {
+            if (!e.code) throw e;
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+          oldNode.name = newName;
+        },
+  unlink(parent, name) {
+          var path = PATH.join2(NODEFS.realPath(parent), name);
+          try {
+            fs.unlinkSync(path);
+          } catch (e) {
+            if (!e.code) throw e;
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+        },
+  rmdir(parent, name) {
+          var path = PATH.join2(NODEFS.realPath(parent), name);
+          try {
+            fs.rmdirSync(path);
+          } catch (e) {
+            if (!e.code) throw e;
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+        },
+  readdir(node) {
+          var path = NODEFS.realPath(node);
+          try {
+            return fs.readdirSync(path);
+          } catch (e) {
+            if (!e.code) throw e;
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+        },
+  symlink(parent, newName, oldPath) {
+          var newPath = PATH.join2(NODEFS.realPath(parent), newName);
+          try {
+            fs.symlinkSync(oldPath, newPath);
+          } catch (e) {
+            if (!e.code) throw e;
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+        },
+  readlink(node) {
+          var path = NODEFS.realPath(node);
+          try {
+            path = fs.readlinkSync(path);
+            path = nodePath.relative(nodePath.resolve(node.mount.opts.root), path);
+            return path;
+          } catch (e) {
+            if (!e.code) throw e;
+            // node under windows can return code 'UNKNOWN' here:
+            // https://github.com/emscripten-core/emscripten/issues/15468
+            if (e.code === 'UNKNOWN') throw new FS.ErrnoError(28);
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+        },
+  },
+  stream_ops:{
+  open(stream) {
+          var path = NODEFS.realPath(stream.node);
+          try {
+            if (FS.isFile(stream.node.mode)) {
+              stream.nfd = fs.openSync(path, NODEFS.flagsForNode(stream.flags));
+            }
+          } catch (e) {
+            if (!e.code) throw e;
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+        },
+  close(stream) {
+          try {
+            if (FS.isFile(stream.node.mode) && stream.nfd) {
+              fs.closeSync(stream.nfd);
+            }
+          } catch (e) {
+            if (!e.code) throw e;
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+        },
+  read(stream, buffer, offset, length, position) {
+          // Node.js < 6 compatibility: node errors on 0 length reads
+          if (length === 0) return 0;
+          try {
+            return fs.readSync(stream.nfd, new Int8Array(buffer.buffer, offset, length), { position: position });
+          } catch (e) {
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+        },
+  write(stream, buffer, offset, length, position) {
+          try {
+            return fs.writeSync(stream.nfd, new Int8Array(buffer.buffer, offset, length), { position: position });
+          } catch (e) {
+            throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+          }
+        },
+  llseek(stream, offset, whence) {
+          var position = offset;
+          if (whence === 1) {
+            position += stream.position;
+          } else if (whence === 2) {
+            if (FS.isFile(stream.node.mode)) {
+              try {
+                var stat = fs.fstatSync(stream.nfd);
+                position += stat.size;
+              } catch (e) {
+                throw new FS.ErrnoError(NODEFS.convertNodeCode(e));
+              }
+            }
+          }
+  
+          if (position < 0) {
+            throw new FS.ErrnoError(28);
+          }
+  
+          return position;
+        },
+  mmap(stream, length, position, prot, flags) {
+          if (!FS.isFile(stream.node.mode)) {
+            throw new FS.ErrnoError(43);
+          }
+  
+          var ptr = mmapAlloc(length);
+  
+          NODEFS.stream_ops.read(stream, HEAP8, ptr, length, position);
+          return { ptr, allocated: true };
+        },
+  msync(stream, buffer, offset, length, mmapFlags) {
+          NODEFS.stream_ops.write(stream, buffer, 0, length, offset, false);
+          // should we check if bytesWritten and length are the same?
+          return 0;
+        },
+  },
+  }})();
+  
   var ERRNO_MESSAGES = {
   0:"Success",
   1:"Arg list too long",
@@ -3524,8 +3919,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   156:"Level 2 not synchronized",
   };
   
-  var ERRNO_CODES = {
-  };
   
   var demangle = (func) => {
       warnOnce('warning: build with -sDEMANGLE_SUPPORT to link in libcxxabi demangling');
@@ -5301,6 +5694,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   
         FS.filesystems = {
           'MEMFS': MEMFS,
+          'NODEFS': NODEFS,
         };
       },
   init(input, output, error) {
@@ -9641,6 +10035,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   FS.FSNode = FSNode;
   FS.createPreloadedFile = FS_createPreloadedFile;
   FS.staticInit();;
+if (ENVIRONMENT_IS_NODE) { NODEFS.staticInit(); };
 ERRNO_CODES = {
       'EPERM': 63,
       'ENOENT': 44,
@@ -11188,6 +11583,7 @@ var unexportedSymbols = [
   'GLFW',
   'allocateUTF8',
   'allocateUTF8OnStack',
+  'NODEFS',
 ];
 unexportedSymbols.forEach(unexportedRuntimeSymbol);
 

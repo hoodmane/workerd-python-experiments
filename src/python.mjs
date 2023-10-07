@@ -159,7 +159,7 @@ async function makeSnapshot(Module, run) {
     "tempfile",
     "typing",
     "zipfile",
-    "numpy",
+    // "numpy",
   ];
   const to_import = imports.join(",");
   const to_delete = Array.from(
@@ -187,12 +187,12 @@ async function makeSnapshot(Module, run) {
 export async function loadPyodide() {
   const API = {};
   const config = { jsglobals: globalThis };
-  const soFiles = await Promise.all(
-    findSoFiles(numpy[0]).map(async (file) => [
-      "/session/" + file,
-      (await import("./" + file)).default,
-    ]),
-  );
+  // const soFiles = await Promise.all(
+  //   findSoFiles(numpy[0]).map(async (file) => [
+  //     "/session/" + file,
+  //     (await import("./" + file)).default,
+  //   ]),
+  // );
 
   const Module = {
     noInitialRun: !!memory,
@@ -206,16 +206,16 @@ export async function loadPyodide() {
     },
     preRun: [
       prepareFileSystem,
-      () => {
-        soFiles.forEach(([path, wasmModule]) => {
-          try {
-            loadDynlib(Module, path, wasmModule);
-          } catch (e) {
-            console.log(path);
-            process.exit(1);
-          }
-        });
-      },
+      // () => {
+      //   soFiles.forEach(([path, wasmModule]) => {
+      //     try {
+      //       loadDynlib(Module, path, wasmModule);
+      //     } catch (e) {
+      //       console.log(path);
+      //       process.exit(1);
+      //     }
+      //   });
+      // },
     ],
   };
 
@@ -236,7 +236,7 @@ export async function loadPyodide() {
       throw new Error("Failed");
     }
   }
-  await makeDirs(Module, "/session/", numpy[0]);
+  // await makeDirs(Module, "/session/", numpy[0]);
 
   const t2 = performance.now();
 
@@ -256,9 +256,9 @@ export async function loadPyodide() {
   }
   finalizeBootstrap(API, config);
   const t4 = performance.now();
-  console.log("createPython", t2 - t1);
-  console.log("import _pyodide_core", t3 - t2);
-  console.log("finalizeBootstrap ", t4 - t3);
+  // console.log("createPython", t2 - t1);
+  // console.log("import _pyodide_core", t3 - t2);
+  // console.log("finalizeBootstrap ", t4 - t3);
   return API.public_api;
 }
 

@@ -159,7 +159,7 @@ async function makeSnapshot(Module, run) {
     "tempfile",
     "typing",
     "zipfile",
-    "numpy",
+    // "numpy",
   ];
   const to_import = imports.join(",");
   const to_delete = Array.from(
@@ -187,12 +187,12 @@ async function makeSnapshot(Module, run) {
 export async function loadPyodide() {
   const API = {};
   const config = { jsglobals: globalThis };
-  const soFiles = await Promise.all(
-    findSoFiles(numpy[0]).map(async (file) => [
-      "/session/" + file,
-      (await import("./" + file)).default,
-    ]),
-  );
+  // const soFiles = await Promise.all(
+  //   findSoFiles(numpy[0]).map(async (file) => [
+  //     "/session/" + file,
+  //     (await import("./" + file)).default,
+  //   ]),
+  // );
 
   const Module = {
     noInitialRun: !!memory,
@@ -206,16 +206,16 @@ export async function loadPyodide() {
     },
     preRun: [
       prepareFileSystem,
-      () => {
-        soFiles.forEach(([path, wasmModule]) => {
-          try {
-            loadDynlib(Module, path, wasmModule);
-          } catch (e) {
-            console.log(path);
-            process.exit(1);
-          }
-        });
-      },
+      // () => {
+      //   soFiles.forEach(([path, wasmModule]) => {
+      //     try {
+      //       loadDynlib(Module, path, wasmModule);
+      //     } catch (e) {
+      //       console.log(path);
+      //       process.exit(1);
+      //     }
+      //   });
+      // },
     ],
   };
 
@@ -236,7 +236,15 @@ export async function loadPyodide() {
       throw new Error("Failed");
     }
   }
-  await makeDirs(Module, "/session/", numpy[0]);
+
+  const nodemount = "/nodemount";
+  Module.FS.mkdir(nodemount);
+  Module.FS.mount(Module.FS.filesystems.NODEFS, { root: nodemount }, nodemount);
+
+
+  run("import sys; sys.path.append('nodemount')");
+  run("import xx");
+  // await makeDirs(Module, "/session/", numpy[0]);
 
   const t2 = performance.now();
 
