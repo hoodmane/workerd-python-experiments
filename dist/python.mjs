@@ -256,9 +256,9 @@ export async function loadPyodide() {
   }
   finalizeBootstrap(API, config);
   const t4 = performance.now();
-  console.log("createPython", t2 - t1);
-  console.log("import _pyodide_core", t3 - t2);
-  console.log("finalizeBootstrap ", t4 - t3);
+  // console.log("createPython", t2 - t1);
+  // console.log("import _pyodide_core", t3 - t2);
+  // console.log("finalizeBootstrap ", t4 - t3);
   return API.public_api;
 }
 

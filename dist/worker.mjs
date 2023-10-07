@@ -12,8 +12,8 @@ export default {
     });
     const result = await pyodide.pyimport("worker").onfetch(request);
     const t3 = performance.now();
-    console.log("bootstrap", t2 - t1);
-    console.log("handle", t3 - t2);
+    console.log(request.url, "bootstrap", t2 - t1);
+    console.log(request.url, "handle", t3 - t2);
     // pyodide.runPython("import sys; print(list(sys.modules))")
     return result;
   },
