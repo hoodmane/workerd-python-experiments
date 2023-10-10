@@ -7,7 +7,7 @@ export async function load(url, context, nextLoad) {
   }
   const path = url.slice("file://".length);
   const extension = (path.match(/\.[^.]*$/) || [""])[0];
-  if ([".zip", ".py", ".pyc", ".pyi", ".pyx", ".txt", ".typed", ".ini"].includes(extension)) {
+  if ([".zip", ".py", ".pyc", ".pyi", ".pyx", ".txt", ".typed", ".ini", ".tar"].includes(extension)) {
     if (extension === ".pyc") {
       // console.log(path);
     }

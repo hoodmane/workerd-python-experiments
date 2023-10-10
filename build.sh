@@ -34,7 +34,8 @@ ERRNO_CODES,\
 loadWebAssemblyModule,\
 loadDynamicLibrary,\
 newDSO,\
-LDSO \
+LDSO,\
+growMemory \
     -sMODULARIZE=1 -sWASM_BIGINT \
     -sEXPORT_NAME="createPython" \
     -sENVIRONMENT=web,node \
@@ -70,12 +71,8 @@ cp build/python.asm.* dist
 touch dist/memory.dat
 touch dist/dylinkInfo.json
 
-pushd .venv-pyodide/lib/python3.11/site-packages/
-tree -Jf numpy > ../../../../dist/numpy.json
-popd
-
-
 cp -r .venv-pyodide/lib/python3.11/site-packages/{numpy,markupsafe} dist
 cd dist
+tar -cf numpy.tar numpy
 node --import ../register-hooks.mjs python.mjs
 # npx prettier -w python.asm.mjs

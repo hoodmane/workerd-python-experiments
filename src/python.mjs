@@ -3,7 +3,9 @@ import module from "./python.asm.wasm";
 import stdlib from "./python_stdlib.zip";
 import memory from "./memory.dat";
 import dylinkInfo from "./dylinkInfo.json";
-import numpy from "./numpy.json";
+import { createTarFS } from "./tarfs.mjs";
+import { tarInfo } from "./tar.mjs";
+import numpyTar from "./numpy.tar";
 
 function wrapPythonGlobals(globals_dict, builtins_dict) {
   return new Proxy(globals_dict, {
@@ -159,7 +161,7 @@ async function makeSnapshot(Module, run) {
     "tempfile",
     "typing",
     "zipfile",
-    // "numpy",
+    "numpy",
   ];
   const to_import = imports.join(",");
   const to_delete = Array.from(
@@ -187,12 +189,19 @@ async function makeSnapshot(Module, run) {
 export async function loadPyodide() {
   const API = {};
   const config = { jsglobals: globalThis };
-  // const soFiles = await Promise.all(
-  //   findSoFiles(numpy[0]).map(async (file) => [
-  //     "/session/" + file,
-  //     (await import("./" + file)).default,
-  //   ]),
-  // );
+  let tar, soPaths;
+  try {
+    [tar, soPaths] = tarInfo(new Uint8Array(numpyTar));
+  } catch (e) {
+    console.log(e);
+    throw e;
+  }
+  const wasmModules = await Promise.all(
+    soPaths.map(async (file) => [
+      "/session/" + file,
+      (await import("./" + file)).default,
+    ]),
+  );
 
   const Module = {
     noInitialRun: !!memory,
@@ -206,20 +215,19 @@ export async function loadPyodide() {
     },
     preRun: [
       prepareFileSystem,
-      // () => {
-      //   soFiles.forEach(([path, wasmModule]) => {
-      //     try {
-      //       loadDynlib(Module, path, wasmModule);
-      //     } catch (e) {
-      //       console.log(path);
-      //       process.exit(1);
-      //     }
-      //   });
-      // },
+      () => {
+        wasmModules.forEach(([path, wasmModule]) => {
+          try {
+            loadDynlib(Module, path, wasmModule);
+          } catch (e) {
+            console.log(path);
+            process.exit(1);
+          }
+        });
+      },
     ],
   };
 
-  const t1 = performance.now();
   try {
     await createPython(Module);
   } catch (e) {
@@ -236,18 +244,22 @@ export async function loadPyodide() {
       throw new Error("Failed");
     }
   }
-  // await makeDirs(Module, "/session/", numpy[0]);
 
-  const t2 = performance.now();
+  Module.FS.mkdir("/session/numpy");
+  Module.FS.mount(
+    createTarFS(Module),
+    { info: tar.get("numpy") },
+    "/session/numpy",
+  );
 
   if (!memory) {
     await makeSnapshot(Module, run);
     process.exit(0);
   }
+  Module.growMemory(memory.byteLength);
   Module.HEAP8.set(new Uint8Array(memory));
 
   let [err, captured_stderr] = API.rawRun("import _pyodide_core");
-  const t3 = performance.now();
   if (err) {
     Module.API.fatal_loading_error(
       "Failed to import _pyodide_core\n",
@@ -255,10 +267,6 @@ export async function loadPyodide() {
     );
   }
   finalizeBootstrap(API, config);
-  const t4 = performance.now();
-  // console.log("createPython", t2 - t1);
-  // console.log("import _pyodide_core", t3 - t2);
-  // console.log("finalizeBootstrap ", t4 - t3);
   return API.public_api;
 }
 

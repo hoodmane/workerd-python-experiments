@@ -3419,85 +3419,8 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   
   var ERRNO_CODES = {
   };
-  let origFS = fs;
-  var NODEFS = (() => {
-    let fs = new Proxy({
-
-
-      lstatSync(path) {
-        if (path === "/nodemount") {
-          return {
-              dev: 64769,
-              mode: 16893,
-              nlink: 2,
-              uid: 1000,
-              gid: 1000,
-              rdev: 0,
-              blksize: 4096,
-              ino: 26534077,
-              size: 4096,
-              blocks: 8,
-              atime: new Date("2023-10-07T14:42:36.844Z"),
-              mtime: new Date("2023-10-07T14:42:46.376Z"),
-              ctime: new Date("2023-10-07T14:42:46.376Z"),
-          };
-        }
-        if (path === "/nodemount/xx.py") {
-          return {
-            dev: 64769,
-            mode: 33204,
-            nlink: 1,
-            uid: 1000,
-            gid: 1000,
-            rdev: 0,
-            blksize: 4096,
-            ino: 26482512,
-            size: 21,
-            blocks: 8,
-            atime: new Date("2023-10-07T14:42:46.376Z"),
-            mtime: new Date("2023-10-07T14:42:48.968Z"),
-            ctime: new Date("2023-10-07T14:42:48.968Z"),
-          }
-        }
-        throw new Error("lstatSync " + path);
-      },
-      readdirSync(path) {
-        if (path === "/nodemount") {
-          return [ "xx.py" ]
-        }
-        throw new Error("readdirSync " + path);
-      },
-      openSync(path) {
-        if (path === "/nodemount/xx.py") {
-          return 0;
-        }
-        throw new Error("openSync " + path);
-      },
-      readSync(fd, buffer, {position}) {
-        console.warn("readFileSync ", [fd, buffer, {position}]);
-        if (fd === 0 && position === 0) {
-          console.log("readFileSync");
-          const buf = origFS.readFileSync("./nodemount/xx.py");
-          buffer.set(buf);
-          return buf.length;
-        }
-        if (fd === 0 && position === 21) {
-          return 0;
-        }
-        throw new Error("readFileSync ", [fd, buffer, {position}]);
-      }
-
-    }, {get(target, p) {
-      const result = Reflect.get(target, p);
-      if (result) {
-        return result;
-      }
-      return function(...args) {
-        console.warn("Not implemented " + p, args);
-        throw new Error("Not implemented " + p, args);
-      }
-    }});
-    return {
+  
+  var NODEFS = {
   isWindows:false,
   staticInit() {
         NODEFS.isWindows = !!process.platform.match(/^win/);
@@ -3795,7 +3718,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
           return 0;
         },
   },
-  }})();
+  };
   
   var ERRNO_MESSAGES = {
   0:"Success",
@@ -9985,6 +9908,7 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
 
 
 
+
       registerWasmPlugin();
       ;
 
@@ -11282,6 +11206,7 @@ var ___stop_em_js = Module['___stop_em_js'] = 3533801;
 // === Auto-generated postamble setup entry stuff ===
 
 Module['wasmMemory'] = wasmMemory;
+Module['growMemory'] = growMemory;
 Module['ERRNO_CODES'] = ERRNO_CODES;
 Module['STACK_SIZE'] = STACK_SIZE;
 Module['PATH'] = PATH;
@@ -11468,7 +11393,6 @@ var unexportedSymbols = [
   'zeroMemory',
   'exitJS',
   'getHeapMax',
-  'growMemory',
   'ENV',
   'MONTH_DAYS_REGULAR',
   'MONTH_DAYS_LEAP',
