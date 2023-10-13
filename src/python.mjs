@@ -1,4 +1,4 @@
-import { createPython } from "./python.asm.mjs";
+import createPython from "./python.asm.mjs";
 import module from "./python.asm.wasm";
 import stdlib from "./python_stdlib.zip";
 import memory from "./memory.dat";
@@ -87,35 +87,6 @@ function finalizeBootstrap(API, config) {
   return pyodide;
 }
 
-async function makeDirs(Module, prefix, dir) {
-  Module.FS.mkdir(prefix + dir.name);
-  for (let entry of dir.contents) {
-    if (entry.type === "directory") {
-      await makeDirs(Module, prefix, entry);
-    } else {
-      let contents;
-      if (entry.name.endsWith(".so")) {
-        contents = new Uint8Array([0]);
-      } else {
-        contents = new Uint8Array((await import("./" + entry.name)).default);
-      }
-      Module.FS.writeFile(prefix + entry.name, contents);
-    }
-  }
-}
-
-function findSoFiles(dir) {
-  return dir.contents.flatMap((entry) => {
-    if (entry.type === "directory") {
-      return findSoFiles(entry);
-    }
-    if (entry.name.endsWith(".so")) {
-      return entry.name;
-    }
-    return [];
-  });
-}
-
 function prepareFileSystem(Module) {
   const pymajor = 3;
   const pyminor = 11;
@@ -182,7 +153,7 @@ async function makeSnapshot(Module, run) {
     dylinkInfo[name].handles.push(handle);
   }
   const { writeFile } = await import("fs/promises");
-  await writeFile("dylinkInfo.json", JSON.stringify(dylinkInfo));
+  await writeFile("dylinkInfo.json", JSON.stringify(dylinkInfo) + "\n");
   await writeFile("memory.dat", Module.HEAP8);
 }
 
@@ -206,6 +177,7 @@ export async function loadPyodide() {
   const Module = {
     noInitialRun: !!memory,
     API,
+    locateFile: (x) => x,
     instantiateWasm(info, receiveInstance) {
       (async function () {
         const instance = await WebAssembly.instantiate(module, info);
@@ -229,7 +201,12 @@ export async function loadPyodide() {
   };
 
   try {
+    // Force Emscripten to feature detect the way we want
+    globalThis.window = {};       // makes ENVIRONMENT_IS_WEB    = true
+    globalThis.importScripts = 1; // makes ENVIRONMENT_IS_WORKER = false
     await createPython(Module);
+    delete globalThis.window;
+    delete globalThis.importScripts;
   } catch (e) {
     e.stack.split("\n").forEach(console.log.bind(console));
   }
