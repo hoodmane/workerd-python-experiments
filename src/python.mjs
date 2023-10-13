@@ -143,9 +143,7 @@ export async function loadPyodide() {
       })();
       return {};
     },
-    preRun: [
-      prepareFileSystem,
-    ],
+    preRun: [prepareFileSystem],
   };
 
   try {
