@@ -27,7 +27,7 @@ Module['ready'] = new Promise((resolve, reject) => {
   readyPromiseResolve = resolve;
   readyPromiseReject = reject;
 });
-["_memcmp","_memcpy","_main","_free","_hiwire_new","_hiwire_intern","_hiwire_num_refs","_hiwire_get","_hiwire_incref","_hiwire_decref","_hiwire_pop","_PyBuffer_Release","_Py_DecRef","_PyDict_New","_PyDict_SetItem","__PyErr_CheckSignals","_PyErr_CheckSignals","_PyErr_Clear","_PyErr_Occurred","_PyErr_Print","_PyErr_SetString","_PyEval_SaveThread","_PyEval_RestoreThread","_PyFloat_FromDouble","_PyGILState_Check","_Py_IncRef","_PyList_New","_PyList_SetItem","__PyLong_FromByteArray","_PyLong_FromDouble","_PyMem_Free","_PyObject_GetAIter","_PyObject_GetIter","_PyObject_Size","_PyRun_SimpleString","_PySet_Add","_PySet_New","__PyTraceback_Add","_PyUnicode_Data","_PyUnicode_New","_PyArg_ParseTuple","_PyArg_ParseTupleAndKeywords","_PyArg_UnpackTuple","_PyAsyncGen_Type","_PyBaseObject_Type","_PyBool_FromLong","_PyBool_Type","_PyBuffer_FillInfo","_PyBuffer_IsContiguous","_PyByteArray_FromStringAndSize","_PyByteArray_Type","_PyBytes_AsString","_PyBytes_AsStringAndSize","_PyBytes_FromString","_PyBytes_FromStringAndSize","_PyBytes_Size","_PyBytes_Type","_PyCFunction_Type","_PyCMethod_New","_PyCallable_Check","_PyCapsule_GetContext","_PyCapsule_GetName","_PyCapsule_GetPointer","_PyCapsule_Import","_PyCapsule_IsValid","_PyCapsule_New","_PyCapsule_SetContext","_PyCapsule_SetName","_PyCapsule_Type","_PyCode_NewEmpty","_PyComplex_AsCComplex","_PyComplex_FromCComplex","_PyComplex_FromDoubles","_PyComplex_ImagAsDouble","_PyComplex_RealAsDouble","_PyComplex_Type","_PyContextVar_Get","_PyContextVar_New","_PyContextVar_Set","_PyCoro_Type","_PyDescr_IsData","_PyDictProxy_New","_PyDictProxy_Type","_PyDict_Contains","_PyDict_Copy","_PyDict_DelItem","_PyDict_DelItemString","_PyDict_GetItem","_PyDict_GetItemString","_PyDict_GetItemWithError","_PyDict_Merge","_PyDict_Next","_PyDict_SetItemString","_PyDict_Size","_PyDict_Type","_PyErr_BadArgument","_PyErr_ExceptionMatches","_PyErr_Fetch","_PyErr_Format","_PyErr_FormatV","_PyErr_GetExcInfo","_PyErr_GivenExceptionMatches","_PyErr_NewException","_PyErr_NewExceptionWithDoc","_PyErr_NoMemory","_PyErr_NormalizeException","_PyErr_PrintEx","_PyErr_Restore","_PyErr_SetExcInfo","_PyErr_SetFromErrno","_PyErr_SetFromErrnoWithFilenameObject","_PyErr_SetNone","_PyErr_SetObject","_PyErr_WarnEx","_PyErr_WarnFormat","_PyErr_WriteUnraisable","_PyEval_GetBuiltins","_PyExc_AssertionError","_PyExc_AttributeError","_PyExc_BufferError","_PyExc_DeprecationWarning","_PyExc_EOFError","_PyExc_Exception","_PyExc_FloatingPointError","_PyExc_FutureWarning","_PyExc_GeneratorExit","_PyExc_IOError","_PyExc_ImportError","_PyExc_ImportWarning","_PyExc_IndexError","_PyExc_KeyError","_PyExc_LookupError","_PyExc_MemoryError","_PyExc_NameError","_PyExc_NotImplementedError","_PyExc_OSError","_PyExc_OverflowError","_PyExc_RecursionError","_PyExc_RuntimeError","_PyExc_RuntimeWarning","_PyExc_StopAsyncIteration","_PyExc_StopIteration","_PyExc_SystemError","_PyExc_TimeoutError","_PyExc_TypeError","_PyExc_UnboundLocalError","_PyExc_UnicodeDecodeError","_PyExc_UnicodeEncodeError","_PyExc_UserWarning","_PyExc_ValueError","_PyExc_ZeroDivisionError","_PyException_SetCause","_PyException_SetContext","_PyException_SetTraceback","_PyFloat_AsDouble","_PyFloat_Type","_PyFrame_New","_PyFrozenSet_New","_PyFrozenSet_Type","_PyFunction_Type","_PyGILState_Ensure","_PyGILState_Release","_PyGen_Type","_PyGetSetDescr_Type","_PyImport_AddModule","_PyImport_GetModuleDict","_PyImport_Import","_PyImport_ImportModule","_PyImport_ImportModuleLevelObject","_PyIndex_Check","_PyInterpreterState_GetID","_PyInterpreterState_Main","_PyIter_Check","_PyIter_Next","_PyIter_Send","_PyList_Append","_PyList_AsTuple","_PyList_GetItem","_PyList_Insert","_PyList_Size","_PyList_Type","_PyLong_AsLong","_PyLong_AsLongAndOverflow","_PyLong_AsLongLong","_PyLong_AsLongLongAndOverflow","_PyLong_AsSsize_t","_PyLong_AsUnsignedLong","_PyLong_AsUnsignedLongLong","_PyLong_AsVoidPtr","_PyLong_FromLong","_PyLong_FromLongLong","_PyLong_FromSize_t","_PyLong_FromSsize_t","_PyLong_FromString","_PyLong_FromUnsignedLong","_PyLong_FromUnsignedLongLong","_PyLong_FromVoidPtr","_PyLong_Type","_PyMapping_Check","_PyMapping_GetItemString","_PyMem_Calloc","_PyMem_Malloc","_PyMem_RawFree","_PyMem_RawMalloc","_PyMem_RawRealloc","_PyMem_Realloc","_PyMemberDescr_Type","_PyMemoryView_FromObject","_PyMemoryView_Type","_PyMethodDescr_Type","_PyMethod_New","_PyMethod_Type","_PyModuleDef_Init","_PyModule_AddIntConstant","_PyModule_AddObject","_PyModule_AddObjectRef","_PyModule_AddStringConstant","_PyModule_AddType","_PyModule_Create2","_PyModule_GetDef","_PyModule_GetDict","_PyModule_GetName","_PyModule_GetState","_PyModule_NewObject","_PyNumber_Absolute","_PyNumber_Add","_PyNumber_And","_PyNumber_AsSsize_t","_PyNumber_Check","_PyNumber_Float","_PyNumber_FloorDivide","_PyNumber_InPlaceAdd","_PyNumber_InPlaceFloorDivide","_PyNumber_InPlaceMultiply","_PyNumber_InPlaceRshift","_PyNumber_InPlaceSubtract","_PyNumber_InPlaceTrueDivide","_PyNumber_Index","_PyNumber_Invert","_PyNumber_Long","_PyNumber_Lshift","_PyNumber_MatrixMultiply","_PyNumber_Multiply","_PyNumber_Negative","_PyNumber_Or","_PyNumber_Positive","_PyNumber_Power","_PyNumber_Remainder","_PyNumber_Rshift","_PyNumber_Subtract","_PyNumber_TrueDivide","_PyNumber_Xor","_PyOS_mystrnicmp","_PyOS_setsig","_PyOS_snprintf","_PyOS_string_to_double","_PyOS_strtol","_PyOS_strtoul","_PyObject_AsFileDescriptor","_PyObject_Bytes","_PyObject_Call","_PyObject_CallFinalizerFromDealloc","_PyObject_CallFunctionObjArgs","_PyObject_CallMethodObjArgs","_PyObject_CallNoArgs","_PyObject_CallObject","_PyObject_CallOneArg","_PyObject_Calloc","_PyObject_CheckBuffer","_PyObject_ClearWeakRefs","_PyObject_Format","_PyObject_Free","_PyObject_GC_Del","_PyObject_GC_IsFinalized","_PyObject_GC_Track","_PyObject_GC_UnTrack","_PyObject_GenericGetAttr","_PyObject_GenericGetDict","_PyObject_GenericSetAttr","_PyObject_GetAttr","_PyObject_GetAttrString","_PyObject_GetBuffer","_PyObject_GetItem","_PyObject_HasAttrString","_PyObject_Hash","_PyObject_Init","_PyObject_InitVar","_PyObject_IsInstance","_PyObject_IsSubclass","_PyObject_IsTrue","_PyObject_LengthHint","_PyObject_Malloc","_PyObject_Not","_PyObject_Print","_PyObject_Realloc","_PyObject_Repr","_PyObject_RichCompare","_PyObject_RichCompareBool","_PyObject_SelfIter","_PyObject_SetAttr","_PyObject_SetAttrString","_PyObject_SetItem","_PyObject_Str","_PyObject_Type","_PyObject_Vectorcall","_PyObject_VectorcallMethod","_PyRun_StringFlags","_PySeqIter_New","_PySequence_Check","_PySequence_Concat","_PySequence_Contains","_PySequence_Fast","_PySequence_GetItem","_PySequence_InPlaceConcat","_PySequence_InPlaceRepeat","_PySequence_List","_PySequence_Repeat","_PySequence_SetItem","_PySequence_Size","_PySequence_Tuple","_PySet_Type","_PySlice_AdjustIndices","_PySlice_New","_PySlice_Type","_PySlice_Unpack","_PyStructSequence_InitType2","_PyStructSequence_New","_PySys_Audit","_PyThreadState_Get","_PyThreadState_GetDict","_PyThreadState_GetFrame","_PyThread_acquire_lock","_PyThread_allocate_lock","_PyThread_free_lock","_PyThread_get_thread_ident","_PyThread_release_lock","_PyTraceBack_Here","_PyTraceBack_Type","_PyTraceMalloc_Track","_PyTraceMalloc_Untrack","_PyTuple_GetItem","_PyTuple_GetSlice","_PyTuple_New","_PyTuple_Pack","_PyTuple_SetItem","_PyTuple_Size","_PyTuple_Type","_PyType_FromModuleAndSpec","_PyType_FromSpec","_PyType_FromSpecWithBases","_PyType_GenericNew","_PyType_GetFlags","_PyType_GetModule","_PyType_GetModuleByDef","_PyType_GetModuleState","_PyType_IsSubtype","_PyType_Modified","_PyType_Ready","_PyType_Type","_PyUnicode_AsASCIIString","_PyUnicode_AsEncodedString","_PyUnicode_AsLatin1String","_PyUnicode_AsUCS4","_PyUnicode_AsUCS4Copy","_PyUnicode_AsUTF8","_PyUnicode_AsUTF8AndSize","_PyUnicode_AsUTF8String","_PyUnicode_Compare","_PyUnicode_CompareWithASCIIString","_PyUnicode_Concat","_PyUnicode_Decode","_PyUnicode_DecodeASCII","_PyUnicode_DecodeFSDefault","_PyUnicode_DecodeUTF8","_PyUnicode_FSConverter","_PyUnicode_Format","_PyUnicode_FromEncodedObject","_PyUnicode_FromFormat","_PyUnicode_FromKindAndData","_PyUnicode_FromOrdinal","_PyUnicode_FromString","_PyUnicode_FromStringAndSize","_PyUnicode_GetLength","_PyUnicode_InternFromString","_PyUnicode_Join","_PyUnicode_Replace","_PyUnicode_Substring","_PyUnicode_Tailmatch","_PyUnicode_Type","_PyVectorcall_Call","_PyWeakref_GetObject","_PyWeakref_NewRef","_Py_BuildValue","_Py_EnterRecursiveCall","_Py_GenericAlias","_Py_GetVersion","_Py_IsInitialized","_Py_LeaveRecursiveCall","_Py_OptimizeFlag","__PyArg_BadArgument","__PyArg_CheckPositional","__PyArg_NoKeywords","__PyArg_NoPositional","__PyArg_ParseTupleAndKeywords_SizeT","__PyArg_ParseTuple_SizeT","__PyArg_Parse_SizeT","__PyArg_UnpackKeywords","__PyArg_VaParseTupleAndKeywords_SizeT","__PyByteArray_empty_string","__PyBytes_Resize","__PyDeadline_Get","__PyDeadline_Init","__PyDict_GetItemStringWithError","__PyDict_GetItem_KnownHash","__PyDict_NewPresized","__PyDict_SetItem_KnownHash","__PyErr_BadInternalCall","__PyErr_ChainExceptions","__PyErr_FormatFromCause","__PyGen_SetStopIterationValue","__PyInterpreterState_GetConfig","__PyList_Extend","__PyLong_AsInt","__PyLong_Copy","__PyNumber_Index","__PyObject_CallFunction_SizeT","__PyObject_CallMethod_SizeT","__PyObject_GC_New","__PyObject_GenericGetAttrWithDict","__PyObject_GetDictPtr","__PyObject_LookupAttr","__PyObject_New","__PyObject_NextNotImplemented","__PyTime_AsMilliseconds","__PyType_Lookup","__PyUnicode_FastCopyCharacters","__PyUnicode_IsWhitespace","__PyUnicode_Ready","__Py_BuildValue_SizeT","__Py_Dealloc","__Py_EllipsisObject","__Py_FalseStruct","__Py_FatalErrorFunc","__Py_HashBytes","__Py_HashDouble","__Py_NoneStruct","__Py_NotImplementedStruct","__Py_TrueStruct","__Py_ascii_whitespace","__Py_ctype_tolower","__Py_fopen_obj","__Py_hashtable_destroy","__Py_hashtable_get","__Py_hashtable_new_full","__Py_hashtable_set","__Py_strhex","___addtf3","___assert_fail","___divtf3","___eqtf2","___errno_location","___extenddftf2","___extendsftf2","___fixtfdi","___fixtfsi","___fixunstfdi","___fixunstfsi","___floatditf","___floatsitf","___floatunditf","___floatunsitf","___fpclassifyl","___getf2","___gttf2","___letf2","___lttf2","___memory_base","___multf3","___multi3","___netf2","___signbitl","___small_printf","___stack_pointer","___subtf3","___table_base","___trunctfdf2","___trunctfsf2","___udivti3","___unordtf2","_abort","_accept","_access","_acos","_acosf","_acosh","_acoshf","_acoshl","_acosl","_asin","_asinf","_asinh","_asinhf","_asinhl","_asinl","_atan","_atan2","_atan2f","_atan2l","_atanf","_atanh","_atanhf","_atanhl","_atanl","_atexit","_atoi","_bind","_cabs","_cabsf","_cabsl","_cacos","_cacosf","_cacosh","_cacoshf","_cacoshl","_cacosl","_calloc","_carg","_cargf","_cargl","_casin","_casinf","_casinh","_casinhf","_casinhl","_casinl","_catan","_catanf","_catanh","_catanhf","_catanhl","_catanl","_cbrt","_cbrtf","_cbrtl","_ccos","_ccosf","_ccosh","_ccoshf","_ccoshl","_ccosl","_ceil","_ceilf","_ceill","_cexp","_cexpf","_cexpl","_chmod","_clearerr","_clock_gettime","_clog","_clogf","_clogl","_close","_closedir","_connect","_cos","_cosf","_cosh","_coshf","_coshl","_cosl","_cpow","_cpowf","_cpowl","_csin","_csinf","_csinh","_csinhf","_csinhl","_csinl","_csqrt","_csqrtf","_csqrtl","_ctan","_ctanf","_ctanh","_ctanhf","_ctanhl","_ctanl","_emscripten_longjmp","_exp","_exp2","_exp2f","_exp2l","_expf","_expl","_expm1","_expm1f","_expm1l","_fabs","_fabsf","_fabsl","_fchmod","_fchown","_fclose","_fcntl","_fdatasync","_fdopen","_feof","_feraiseexcept","_ferror","_fetestexcept","_fflush","_fgetc","_fgets","_fileno","_fiprintf","_floor","_floorf","_floorl","_fma","_fmax","_fmaxf","_fmaxl","_fmin","_fminf","_fminl","_fmod","_fmodf","_fmodl","_fopen","_fputs","_fread","_freeaddrinfo","_freelocale","_frexp","_frexpf","_frexpl","_fscanf","_fseek","_fseeko","_fstat","_ftell","_ftello","_ftruncate","_fwrite","_gai_strerror","_getaddrinfo","_getc","_getcwd","_getegid","_getenv","_geteuid","_getgid","_gethostbyname","_getnameinfo","_getpid","_getsockname","_getsockopt","_gettimeofday","_getuid","_gmtime","_hypot","_hypotf","_hypotl","_ioctl","_iprintf","_isalpha","_isspace","_ldexp","_ldexpf","_ldexpl","_listen","_localeconv","_localtime_r","_log","_log10","_log10f","_log10l","_log1p","_log1pf","_log1pl","_log2","_log2f","_log2l","_logf","_logl","_lseek","_lstat","_malloc","_memchr","_memmove","_memset","_mkdir","_mmap","_modf","_modff","_modfl","_munmap","_newlocale","_nextafter","_nextafterf","_nextafterl","_ntohs","_open","_opendir","_perror","_poll","_posix_fallocate","_pow","_powf","_powl","_printf","_pthread_cond_destroy","_pthread_cond_init","_pthread_cond_signal","_pthread_cond_timedwait","_pthread_cond_wait","_pthread_condattr_destroy","_pthread_condattr_init","_pthread_condattr_setclock","_pthread_create","_pthread_join","_pthread_mutex_destroy","_pthread_mutex_init","_pthread_mutex_lock","_pthread_mutex_unlock","_pthread_sigmask","_putchar","_puts","_qsort","_read","_readdir","_readlink","_realloc","_recvfrom","_rint","_rintf","_rintl","_rmdir","_sendto","_setbuf","_setsockopt","_shutdown","_sigfillset","_sin","_sinf","_sinh","_sinhf","_sinhl","_sinl","_siprintf","_sleep","_snprintf","_socket","_sqrt","_sqrtl","_sscanf","_stat","_stderr","_stdout","_strcasecmp","_strcat","_strchr","_strcmp","_strcpy","_strcspn","_strdup","_strerror","_strerror_r","_strlen","_strncasecmp","_strncat","_strncmp","_strncpy","_strpbrk","_strrchr","_strspn","_strstr","_strtok","_strtol","_strtold_l","_strtoll","_strtoul","_strtoull","_sysconf","_tan","_tanf","_tanh","_tanhf","_tanhl","_tanl","_time","_tolower","_trunc","_truncf","_truncl","_ungetc","_unlink","_usleep","_utimes","_vfprintf","_vprintf","_vsnprintf","_wcslen","_write","___wasm_apply_data_relocs","_descr_set_trampoline_call","_descr_get_trampoline_call","__PyCFunctionWithKeywords_TrampolineCall","__PyImport_InitFunc_TrampolineCall","__Py_emscripten_runtime","_Py_EMSCRIPTEN_SIGNAL_HANDLING","__Py_CheckEmscriptenSignals_Helper","_dump_traceback","_set_error","_restore_sys_last_exception","_wrap_exception","_pythonexc2js","_console_error","_console_error_obj","_new_error","_fail_test","_JsString_FromId","_hiwire_init_js","_hiwire_invalid_ref","_Js_true","_Js_false","_hiwire_to_bool","_hiwire_int","_hiwire_int_from_digits","_hiwire_double","_hiwire_string_utf8","_hiwire_throw_error","_hiwire_call","_hiwire_call_OneArg","_hiwire_call_bound","_hiwire_HasMethod","_hiwire_CallMethodString","_hiwire_CallMethod","_hiwire_CallMethod_NoArgs","_hiwire_CallMethod_OneArg","_hiwire_construct","_hiwire_has_length","_hiwire_get_length_helper","_hiwire_get_length_string","_hiwire_get_bool","_hiwire_is_function","_hiwire_is_generator","_hiwire_is_async_generator","_hiwire_is_comlink_proxy","_hiwire_is_error","_hiwire_is_promise","_hiwire_resolve_promise","_hiwire_to_string","_hiwire_typeof","_hiwire_constructor_name","_hiwire_less_than","_hiwire_less_than_equal","_hiwire_equal","_hiwire_not_equal","_hiwire_greater_than","_hiwire_greater_than_equal","_hiwire_reversed_iterator","_hiwire_assign_to_ptr","_hiwire_assign_from_ptr","_hiwire_read_from_file","_hiwire_write_to_file","_hiwire_into_file","_hiwire_get_buffer_info","_hiwire_subarray","_JsArray_Check","_JsArray_New","_JsArray_Push","_JsArray_Push_unchecked","_JsArray_Extend","_JsArray_Get","_JsArray_Set","_JsArray_Delete","_JsArray_Splice","_JsArray_slice","_JsArray_slice_assign","_JsArray_Clear","_JsArray_ShallowCopy","_JsObject_New","_isReservedWord","_normalizeReservedWords","_JsObject_GetString","_JsObject_SetString","_JsObject_DeleteString","_JsObject_Dir","_JsObject_Entries","_JsObject_Keys","_JsObject_Values","_JsString_InternFromCString","_JsMap_New","_JsMap_Set","_JsSet_New","_JsSet_Add","_Js_undefined","_Js_null","___em_lib_deps_pyodide_core_deps","__js2python_none","__js2python_true","__js2python_false","__js2python_pyproxy","_js2python_immutable","_js2python","_js2python_immutable_js","_js2python_js","_js2python_convert","_js2python_init","__agen_handle_result_js_c","_JsBuffer_CopyIntoMemoryView","_JsProxy_create","_JsProxy_Check","_JsProxy_GetIter_js","_handle_next_result_js","_JsException_new_helper","_JsProxy_GetAsyncIter_js","__agen_handle_result_js","_destroy_jsarray_entries","_JsArray_repeat_js","_JsArray_inplace_repeat_js","_JsArray_index_helper","_JsArray_count_helper","_JsArray_reverse_helper","_JsProxy_subscript_js","_JsMap_GetIter_js","_JsMap_clear_js","_JsObjMap_GetIter_js","_JsObjMap_length_js","_JsObjMap_subscript_js","_JsObjMap_ass_subscript_js","_JsObjMap_contains_js","_get_async_js_call_done_callback","_wrap_generator","_wrap_async_generator","_JsBuffer_DecodeString_js","_JsDoubleProxy_unwrap_helper","_JsProxy_compute_typeflags","_check_gil","_pyproxy_getflags","__pyproxy_repr","__pyproxy_type","__pyproxy_hasattr","__pyproxy_getattr","__pyproxy_setattr","__pyproxy_delattr","__pyproxy_getitem","__pyproxy_setitem","__pyproxy_delitem","__pyproxy_slice_assign","__pyproxy_pop","__pyproxy_contains","__pyproxy_ownKeys","__pyproxy_apply","__iscoroutinefunction","__pyproxy_iter_next","__pyproxyGen_Send","__pyproxyGen_return","__pyproxyGen_throw","__pyproxyGen_asend","__pyproxyGen_areturn","__pyproxyGen_athrow","__pyproxy_aiter_next","__pyproxy_ensure_future","__pyproxy_get_buffer","_throw_no_gil","_pyproxy_Check","_pyproxy_AsPyObject","_destroy_proxies","_gc_register_proxies","_destroy_proxy","_proxy_cache_get","_proxy_cache_set","_array_to_js","_buffer_struct_size","_pyproxy_new_ex","_pyproxy_new","_create_once_callable","_create_promise_handles","__python2js_buffer_inner","_python2js_buffer_init","__python2js","_python2js","_python2js_with_depth","_python2js_custom","__python2js_addto_postprocess_list","__python2js_handle_postprocess_list","__python2js_ucs1","__python2js_ucs2","__python2js_ucs4","__python2js_add_to_cache","__python2js_destroy_cache","__python2js_cache_lookup","__JsArray_PushEntry_helper","__JsArray_PostProcess_helper","_python2js__default_converter_js","_python2js_custom__create_jscontext","_destroy_proxies_js","_pyodide_export","_pyodide_js_init","_py_version_major","_py_version_minor","_py_version_micro","___hiwire_deduplicate_new","___hiwire_deduplicate_get","___hiwire_deduplicate_set","___hiwire_deduplicate_delete","___em_lib_deps_libffi","_unbox_small_structs","_ffi_call_js","_ffi_closure_alloc_js","_ffi_closure_free_js","_ffi_prep_closure_loc_js","___start_em_js","___stop_em_js","___start_em_lib_deps","___stop_em_lib_deps","___start_em_asm","___stop_em_asm","onRuntimeInitialized"].forEach((prop) => {
+["_main","_free","_hiwire_new","_hiwire_intern","_hiwire_num_refs","_hiwire_get","_hiwire_incref","_hiwire_decref","_hiwire_pop","_PyBuffer_Release","_Py_DecRef","_PyDict_New","_PyDict_SetItem","__PyErr_CheckSignals","_PyErr_CheckSignals","_PyErr_Clear","_PyErr_Occurred","_PyErr_Print","_PyErr_SetString","_PyEval_SaveThread","_PyEval_RestoreThread","_PyFloat_FromDouble","_PyGILState_Check","_Py_IncRef","_PyList_New","_PyList_SetItem","__PyLong_FromByteArray","_PyLong_FromDouble","_PyMem_Free","_PyObject_GetAIter","_PyObject_GetIter","_PyObject_Size","_PyRun_SimpleString","_PySet_Add","_PySet_New","__PyTraceback_Add","_PyUnicode_Data","_PyUnicode_New","_memory","_descr_set_trampoline_call","_descr_get_trampoline_call","__PyCFunctionWithKeywords_TrampolineCall","__PyImport_InitFunc_TrampolineCall","__Py_emscripten_runtime","_Py_EMSCRIPTEN_SIGNAL_HANDLING","__Py_CheckEmscriptenSignals_Helper","_dump_traceback","_set_error","_restore_sys_last_exception","_wrap_exception","_pythonexc2js","_console_error","_console_error_obj","_new_error","_fail_test","_JsString_FromId","_hiwire_init_js","_hiwire_invalid_ref","_Js_true","_Js_false","_hiwire_to_bool","_hiwire_int","_hiwire_int_from_digits","_hiwire_double","_hiwire_string_utf8","_hiwire_throw_error","_hiwire_call","_hiwire_call_OneArg","_hiwire_call_bound","_hiwire_HasMethod","_hiwire_CallMethodString","_hiwire_CallMethod","_hiwire_CallMethod_NoArgs","_hiwire_CallMethod_OneArg","_hiwire_construct","_hiwire_has_length","_hiwire_get_length_helper","_hiwire_get_length_string","_hiwire_get_bool","_hiwire_is_function","_hiwire_is_generator","_hiwire_is_async_generator","_hiwire_is_comlink_proxy","_hiwire_is_error","_hiwire_is_promise","_hiwire_resolve_promise","_hiwire_to_string","_hiwire_typeof","_hiwire_constructor_name","_hiwire_less_than","_hiwire_less_than_equal","_hiwire_equal","_hiwire_not_equal","_hiwire_greater_than","_hiwire_greater_than_equal","_hiwire_reversed_iterator","_hiwire_assign_to_ptr","_hiwire_assign_from_ptr","_hiwire_read_from_file","_hiwire_write_to_file","_hiwire_into_file","_hiwire_get_buffer_info","_hiwire_subarray","_JsArray_Check","_JsArray_New","_JsArray_Push","_JsArray_Push_unchecked","_JsArray_Extend","_JsArray_Get","_JsArray_Set","_JsArray_Delete","_JsArray_Splice","_JsArray_slice","_JsArray_slice_assign","_JsArray_Clear","_JsArray_ShallowCopy","_JsObject_New","_isReservedWord","_normalizeReservedWords","_JsObject_GetString","_JsObject_SetString","_JsObject_DeleteString","_JsObject_Dir","_JsObject_Entries","_JsObject_Keys","_JsObject_Values","_JsString_InternFromCString","_JsMap_New","_JsMap_Set","_JsSet_New","_JsSet_Add","_Js_undefined","_Js_null","___em_lib_deps_pyodide_core_deps","__js2python_none","__js2python_true","__js2python_false","__js2python_pyproxy","_js2python_immutable","_js2python","_js2python_immutable_js","_js2python_js","_js2python_convert","_js2python_init","__agen_handle_result_js_c","_JsBuffer_CopyIntoMemoryView","_JsProxy_create","_JsProxy_Check","_JsProxy_GetIter_js","_handle_next_result_js","_JsException_new_helper","_JsProxy_GetAsyncIter_js","__agen_handle_result_js","_destroy_jsarray_entries","_JsArray_repeat_js","_JsArray_inplace_repeat_js","_JsArray_index_helper","_JsArray_count_helper","_JsArray_reverse_helper","_JsProxy_subscript_js","_JsMap_GetIter_js","_JsMap_clear_js","_JsObjMap_GetIter_js","_JsObjMap_length_js","_JsObjMap_subscript_js","_JsObjMap_ass_subscript_js","_JsObjMap_contains_js","_get_async_js_call_done_callback","_wrap_generator","_wrap_async_generator","_JsBuffer_DecodeString_js","_JsDoubleProxy_unwrap_helper","_JsProxy_compute_typeflags","_check_gil","_pyproxy_getflags","__pyproxy_repr","__pyproxy_type","__pyproxy_hasattr","__pyproxy_getattr","__pyproxy_setattr","__pyproxy_delattr","__pyproxy_getitem","__pyproxy_setitem","__pyproxy_delitem","__pyproxy_slice_assign","__pyproxy_pop","__pyproxy_contains","__pyproxy_ownKeys","__pyproxy_apply","__iscoroutinefunction","__pyproxy_iter_next","__pyproxyGen_Send","__pyproxyGen_return","__pyproxyGen_throw","__pyproxyGen_asend","__pyproxyGen_areturn","__pyproxyGen_athrow","__pyproxy_aiter_next","__pyproxy_ensure_future","__pyproxy_get_buffer","_throw_no_gil","_pyproxy_Check","_pyproxy_AsPyObject","_destroy_proxies","_gc_register_proxies","_destroy_proxy","_proxy_cache_get","_proxy_cache_set","_array_to_js","_buffer_struct_size","_pyproxy_new_ex","_pyproxy_new","_create_once_callable","_create_promise_handles","__python2js_buffer_inner","_python2js_buffer_init","__python2js","_python2js","_python2js_with_depth","_python2js_custom","__python2js_addto_postprocess_list","__python2js_handle_postprocess_list","__python2js_ucs1","__python2js_ucs2","__python2js_ucs4","__python2js_add_to_cache","__python2js_destroy_cache","__python2js_cache_lookup","__JsArray_PushEntry_helper","__JsArray_PostProcess_helper","_python2js__default_converter_js","_python2js_custom__create_jscontext","_destroy_proxies_js","_pyodide_export","_pyodide_js_init","_py_version_major","_py_version_minor","_py_version_micro","___hiwire_deduplicate_new","___hiwire_deduplicate_get","___hiwire_deduplicate_set","___hiwire_deduplicate_delete","___em_lib_deps_libffi","_unbox_small_structs","_ffi_call_js","_ffi_closure_alloc_js","_ffi_closure_free_js","_ffi_prep_closure_loc_js","_fflush","___indirect_function_table","___start_em_js","___stop_em_js","___start_em_lib_deps","___stop_em_lib_deps","___start_em_asm","___stop_em_asm","onRuntimeInitialized"].forEach((prop) => {
   if (!Object.getOwnPropertyDescriptor(Module['ready'], prop)) {
     Object.defineProperty(Module['ready'], prop, {
       get: () => abort('You are getting ' + prop + ' on the Promise object, instead of the instance. Use .then() to get called back with the instance, see the MODULARIZE docs in src/settings.js'),
@@ -364,8 +364,6 @@ assert(!ENVIRONMENT_IS_SHELL, "shell environment detected but not enabled at bui
 // An online HTML version (which may be of a different version of Emscripten)
 //    is up at http://kripken.github.io/emscripten-site/docs/api_reference/preamble.js.html
 
-var dynamicLibraries = Module['dynamicLibraries'] || [];
-
 var wasmBinary;
 if (Module['wasmBinary']) wasmBinary = Module['wasmBinary'];legacyModuleProp('wasmBinary', 'wasmBinary');
 var noExitRuntime = Module['noExitRuntime'] || true;legacyModuleProp('noExitRuntime', 'noExitRuntime');
@@ -446,45 +444,15 @@ assert(!Module['STACK_SIZE'], 'STACK_SIZE can no longer be set at runtime.  Use 
 assert(typeof Int32Array != 'undefined' && typeof Float64Array !== 'undefined' && Int32Array.prototype.subarray != undefined && Int32Array.prototype.set != undefined,
        'JS engine does not provide full typed array support');
 
-// In non-standalone/normal mode, we create the memory here.
-// include: runtime_init_memory.js
-// Create the wasm memory. (Note: this only applies if IMPORTED_MEMORY is defined)
-
-var INITIAL_MEMORY = Module['INITIAL_MEMORY'] || 25165824;legacyModuleProp('INITIAL_MEMORY', 'INITIAL_MEMORY');
-
-assert(INITIAL_MEMORY >= 5242880, 'INITIAL_MEMORY should be larger than STACK_SIZE, was ' + INITIAL_MEMORY + '! (STACK_SIZE=' + 5242880 + ')');
-
-// check for full engine support (use string 'subarray' to avoid closure compiler confusion)
-
-  if (Module['wasmMemory']) {
-    wasmMemory = Module['wasmMemory'];
-  } else
-  {
-    wasmMemory = new WebAssembly.Memory({
-      'initial': INITIAL_MEMORY / 65536,
-      // In theory we should not need to emit the maximum if we want "unlimited"
-      // or 4GB of memory, but VMs error on that atm, see
-      // https://github.com/emscripten-core/emscripten/issues/14130
-      // And in the pthreads case we definitely need to emit a maximum. So
-      // always emit one.
-      'maximum': 2147483648 / 65536
-    });
-  }
-
-updateMemoryViews();
-
-// If the user provides an incorrect length, just use that length instead rather than providing the user to
-// specifically provide the memory length with Module['INITIAL_MEMORY'].
-INITIAL_MEMORY = wasmMemory.buffer.byteLength;
-assert(INITIAL_MEMORY % 65536 === 0);
-// end include: runtime_init_memory.js
+// If memory is defined in wasm, the user can't provide it, or set INITIAL_MEMORY
+assert(!Module['wasmMemory'], 'Use of `wasmMemory` detected.  Use -sIMPORTED_MEMORY to define wasmMemory externally');
+assert(!Module['INITIAL_MEMORY'], 'Detected runtime INITIAL_MEMORY setting.  Use -sIMPORTED_MEMORY to define wasmMemory dynamically');
 
 // include: runtime_init_table.js
-// In RELOCATABLE mode we create the table in JS.
-var wasmTable = new WebAssembly.Table({
-  'initial': 4687,
-  'element': 'anyfunc'
-});
+// In regular non-RELOCATABLE mode the table is exported
+// from the wasm module and this will be assigned once
+// the exports are available.
+var wasmTable;
 // end include: runtime_init_table.js
 // include: runtime_stack_check.js
 // Initializes the stack cookie. Called at the startup of main and at the startup of each thread in pthreads mode.
@@ -540,8 +508,6 @@ var __ATMAIN__    = []; // functions called when main() is to be run
 var __ATEXIT__    = []; // functions called during shutdown
 var __ATPOSTRUN__ = []; // functions called after the main() is called
 
-var __RELOC_FUNCS__ = [];
-
 var runtimeInitialized = false;
 
 var runtimeKeepaliveCounter = 0;
@@ -566,7 +532,6 @@ function initRuntime() {
 
   checkStackCookie();
 
-  callRuntimeCallbacks(__RELOC_FUNCS__);
   
 if (!Module["noFSInit"] && !FS.init.initialized)
   FS.init();
@@ -878,8 +843,6 @@ function createWasm() {
   var info = {
     'env': wasmImports,
     'wasi_snapshot_preview1': wasmImports,
-    'GOT.mem': new Proxy(wasmImports, GOTHandler),
-    'GOT.func': new Proxy(wasmImports, GOTHandler),
   };
   // Load the wasm module and create an instance of using native support in the JS engine.
   // handle a generated wasm instance, receiving its exports and
@@ -888,22 +851,23 @@ function createWasm() {
   function receiveInstance(instance, module) {
     var exports = instance.exports;
 
-    exports = relocateExports(exports, 1024);
-
-    var metadata = getDylinkMetadata(module);
-    if (metadata.neededDynlibs) {
-      dynamicLibraries = metadata.neededDynlibs.concat(dynamicLibraries);
-    }
-    mergeLibSymbols(exports, 'main')
-    LDSO.init();
-    loadDylibs();
-
     wasmExports = exports;
     
 
-    addOnInit(wasmExports['__wasm_call_ctors']);
+    wasmMemory = wasmExports['memory'];
+    Module['wasmMemory'] = wasmMemory;
+    assert(wasmMemory, "memory not found in wasm exports");
+    // This assertion doesn't hold when emscripten is run in --post-link
+    // mode.
+    // TODO(sbc): Read INITIAL_MEMORY out of the wasm file in post-link mode.
+    //assert(wasmMemory.buffer.byteLength === 25165824);
+    updateMemoryViews();
 
-    __RELOC_FUNCS__.push(wasmExports['__wasm_apply_data_relocs']);
+    wasmTable = wasmExports['__indirect_function_table'];
+    
+    assert(wasmTable, "table not found in wasm exports");
+
+    addOnInit(wasmExports['__wasm_call_ctors']);
 
     removeRunDependency('wasm-instantiate');
     return exports;
@@ -921,7 +885,9 @@ function createWasm() {
     // receiveInstance() will swap in the exports (to Module.asm) so they can be called
     assert(Module === trueModule, 'the Module object should not be replaced during async compilation - perhaps the order of HTML elements is wrong?');
     trueModule = null;
-    receiveInstance(result['instance'], result['module']);
+    // TODO: Due to Closure regression https://github.com/google/closure-compiler/issues/3193, the above line no longer optimizes out down to the following line.
+    // When the regression is fixed, can restore the above PTHREADS-enabled path.
+    receiveInstance(result['instance']);
   }
 
   // User shell pages can write their own Module.instantiateWasm = function(imports, successCallback) callback
@@ -1048,281 +1014,151 @@ function dbg(text) {
 // === Body ===
 
 var ASM_CONSTS = {
-  3533917: () => { throw new Error("intentionally triggered fatal error!"); },  
- 3533974: ($0) => { Hiwire.get_value($0)() },  
- 3533997: () => { wasmImports["open64"] = wasmImports["open"]; },  
- 3534046: ($0) => { API._pyodide = Hiwire.pop_value($0); }
+  8770913: () => { throw new Error("intentionally triggered fatal error!"); },  
+ 8770970: ($0) => { Hiwire.get_value($0)() },  
+ 8770993: () => { wasmImports["open64"] = wasmImports["open"]; },  
+ 8771042: ($0) => { API._pyodide = Hiwire.pop_value($0); }
 };
 function descr_set_trampoline_call(set,obj,value,closure) { return wasmTable.get(set)(obj, value, closure); }
-descr_set_trampoline_call.sig = 'iiiii';
 function descr_get_trampoline_call(get,obj,closure) { return wasmTable.get(get)(obj, closure); }
-descr_get_trampoline_call.sig = 'iiii';
 function _PyCFunctionWithKeywords_TrampolineCall(func,self,args,kw) { return wasmTable.get(func)(self, args, kw); }
-_PyCFunctionWithKeywords_TrampolineCall.sig = 'iiiii';
 function _PyImport_InitFunc_TrampolineCall(func) { return wasmTable.get(func)(); }
-_PyImport_InitFunc_TrampolineCall.sig = 'ii';
 function _Py_emscripten_runtime() { var info; if (typeof navigator == 'object') { info = navigator.userAgent; } else if (typeof process == 'object') { info = "Node.js ".concat(process.version); } else { info = "UNKNOWN"; } var len = lengthBytesUTF8(info) + 1; var res = _malloc(len); if (res) stringToUTF8(info, res, len); return res; }
-_Py_emscripten_runtime.sig = 'i';
 function _Py_CheckEmscriptenSignals_Helper() { if (!Module.Py_EmscriptenSignalBuffer) { return 0; } try { let result = Module.Py_EmscriptenSignalBuffer[0]; Module.Py_EmscriptenSignalBuffer[0] = 0; return result; } catch(e) { return 0; } }
-_Py_CheckEmscriptenSignals_Helper.sig = 'i';
 function console_error(msg) { let jsmsg = UTF8ToString(msg); console.error(jsmsg); }
 function console_error_obj(obj) { console.error(Hiwire.get_value(obj)); }
-console_error_obj.sig = 'vi';
 function new_error(type,msg,err) { try { return Hiwire.new_value( new API.PythonError(UTF8ToString(type), UTF8ToString(msg), err)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-new_error.sig = 'iiii';
 function fail_test() { API.fail_test = true; }
-fail_test.sig = 'v';
 function hiwire_init_js() { try { HEAP32[_Js_undefined / 4] = _hiwire_intern(undefined); HEAP32[_Js_null / 4] = _hiwire_intern(null); HEAP32[_Js_true / 4] = _hiwire_intern((!!1)); HEAP32[_Js_false / 4] = _hiwire_intern((!!0));; Hiwire.new_value = _hiwire_new; Hiwire.new_stack = _hiwire_new; Hiwire.intern_object = _hiwire_intern; Hiwire.num_keys = _hiwire_num_refs; Hiwire.stack_length = () => 0; Hiwire.get_value = _hiwire_get; Hiwire.incref = (x) => { _hiwire_incref(x); return x; }; Hiwire.decref = _hiwire_decref; Hiwire.pop_value = _hiwire_pop; Hiwire.isPromise = function(obj) { try { return !!obj && typeof obj.then === "function"; } catch (e) { return (!!0); } }; API.typedArrayAsUint8Array = function(arg) { if (ArrayBuffer.isView(arg)) { return new Uint8Array(arg.buffer, arg.byteOffset, arg.byteLength); } else { return new Uint8Array(arg); } }; { let dtypes_str = [ "b", "B", "h", "H", "i", "I", "f", "d" ].join(String.fromCharCode(0), ); let dtypes_ptr = stringToNewUTF8(dtypes_str); let dtypes_map = {}; for (let[idx, val] of Object.entries(dtypes_str)) { dtypes_map[val] = dtypes_ptr + Number(idx); } let buffer_datatype_map = new Map([ [ "Int8Array", [ dtypes_map["b"], 1, (!!1) ] ], [ "Uint8Array", [ dtypes_map["B"], 1, (!!1) ] ], [ "Uint8ClampedArray", [ dtypes_map["B"], 1, (!!1) ] ], [ "Int16Array", [ dtypes_map["h"], 2, (!!1) ] ], [ "Uint16Array", [ dtypes_map["H"], 2, (!!1) ] ], [ "Int32Array", [ dtypes_map["i"], 4, (!!1) ] ], [ "Uint32Array", [ dtypes_map["I"], 4, (!!1) ] ], [ "Float32Array", [ dtypes_map["f"], 4, (!!1) ] ], [ "Float64Array", [ dtypes_map["d"], 8, (!!1) ] ], [ "DataView", [ dtypes_map["B"], 1, (!!0) ] ], [ "ArrayBuffer", [ dtypes_map["B"], 1, (!!0) ] ], ]); Module.get_buffer_datatype = function(jsobj) { return buffer_datatype_map.get(jsobj.constructor.name) || [ 0, 0, (!!0) ]; }; } Module.iterObject = function * (object) { for (let k in object) { if (Object.prototype.hasOwnProperty.call(object, k)) { yield k; } } }; return 0; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-hiwire_init_js.sig = 'i';
 function hiwire_invalid_ref(type,ref) { API.fail_test = (!!1); if (type === 1 && !ref) { if (_PyErr_Occurred()) { let exc = _wrap_exception(); let e = Hiwire.pop_value(exc); console.error( "Pyodide internal error: Argument to hiwire_get is falsy. This was " + "probably because the Python error indicator was set when get_value was " + "called. The Python error that caused this was:", e ); throw e; } else { const msg = ( "Pyodide internal error: Argument to hiwire_get is falsy (but error " + "indicator is not set)." ); console.error(msg); throw new Error(msg); } } const typestr = { [1]: "get", [2]: "incref", [3]: "decref", }[type]; const msg = ( `hiwire_${typestr} on invalid reference ${ref}. This is most likely due ` + "to use after free. It may also be due to memory corruption." ); console.error(msg); throw new Error(msg); }
-hiwire_invalid_ref.sig = 'vii';
 function hiwire_to_bool(val) { return !!Hiwire.get_value(val); }
-hiwire_to_bool.sig = 'ii';
 function hiwire_int(val) { try { return Hiwire.new_stack(val); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_int.sig = 'ii';
 function hiwire_int_from_digits(digits,ndigits) { try { let result = BigInt(0); for (let i = 0; i < ndigits; i++) { result += BigInt(HEAPU32[(digits >> 2) + i]) << BigInt(32 * i); } result += BigInt(HEAPU32[(digits >> 2) + ndigits - 1] & 0x80000000) << BigInt(1 + 32 * (ndigits - 1)); if (-Number.MAX_SAFE_INTEGER < result && result < Number.MAX_SAFE_INTEGER) { result = Number(result); } return Hiwire.new_stack(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_int_from_digits.sig = 'iii';
 function hiwire_double(val) { try { return Hiwire.new_stack(val); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_double.sig = 'id';
 function hiwire_string_utf8(ptr) { try { return Hiwire.new_stack(UTF8ToString(ptr)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_string_utf8.sig = 'ii';
 function hiwire_throw_error(iderr) { throw Hiwire.pop_value(iderr); }
-hiwire_throw_error.sig = 'vi';
 function hiwire_call(idfunc,idargs) { try { let jsfunc = Hiwire.get_value(idfunc); let jsargs = Hiwire.get_value(idargs); return Hiwire.new_value(jsfunc(... jsargs)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
 function hiwire_call_OneArg(idfunc,idarg) { try { let jsfunc = Hiwire.get_value(idfunc); let jsarg = Hiwire.get_value(idarg); return Hiwire.new_value(jsfunc(jsarg)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_call_OneArg.sig = 'iii';
 function hiwire_call_bound(idfunc,idthis,idargs) { try { let func = Hiwire.get_value(idfunc); let this_; if (idthis === 0) { this_ = null; } else { this_ = Hiwire.get_value(idthis); } let args = Hiwire.get_value(idargs); return Hiwire.new_value(func.apply(this_, args)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_call_bound.sig = 'iiii';
 function hiwire_HasMethod(obj_id,name) { try { let obj = Hiwire.get_value(obj_id); return obj && typeof obj[Hiwire.get_value(name)] === "function"; } catch (e) { ; return (!!0); } }
 function hiwire_CallMethodString(idobj,name,idargs) { try { let jsobj = Hiwire.get_value(idobj); let jsname = UTF8ToString(name); let jsargs = Hiwire.get_value(idargs); return Hiwire.new_value(jsobj[jsname](...jsargs)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
 function hiwire_CallMethod(idobj,name,idargs) { try { let jsobj = Hiwire.get_value(idobj); let jsname = Hiwire.get_value(name); let jsargs = Hiwire.get_value(idargs); return Hiwire.new_value(jsobj[jsname](... jsargs)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_CallMethod.sig = 'iiii';
 function hiwire_CallMethod_NoArgs(idobj,name) { try { let jsobj = Hiwire.get_value(idobj); let jsname = Hiwire.get_value(name); return Hiwire.new_value(jsobj[jsname]()); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_CallMethod_NoArgs.sig = 'iii';
 function hiwire_CallMethod_OneArg(idobj,name,idarg) { try { let jsobj = Hiwire.get_value(idobj); let jsname = Hiwire.get_value(name); let jsarg = Hiwire.get_value(idarg); return Hiwire.new_value(jsobj[jsname](jsarg)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_CallMethod_OneArg.sig = 'iiii';
 function hiwire_construct(idobj,idargs) { try { let jsobj = Hiwire.get_value(idobj); let jsargs = Hiwire.get_value(idargs); return Hiwire.new_value(Reflect.construct(jsobj, jsargs)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_construct.sig = 'iii';
 function hiwire_has_length(idobj) { try { let val = Hiwire.get_value(idobj); return (typeof val.size === "number") || (typeof val.length === "number" && typeof val !== "function"); } catch (e) { ; return (!!0); } }
 function hiwire_get_length_helper(idobj) { try { let val = Hiwire.get_value(idobj); let result; if (typeof val.size === "number") { result = val.size; } else if (typeof val.length === "number") { result = val.length; } else { return -2; } if(result < 0){ return -3; } if(result > 2147483647){ return -4; } return result; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-hiwire_get_length_helper.sig = 'ii';
 function hiwire_get_length_string(idobj) { try { const val = Hiwire.get_value(idobj); let result; if (typeof val.size === "number") { result = val.size; } else if (typeof val.length === "number") { result = val.length; } return stringToNewUTF8(" " + result.toString()) } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_get_length_string.sig = 'ii';
 function hiwire_get_bool(idobj) { try { let val = Hiwire.get_value(idobj); if (!val) { return (!!0); } if (val.size === 0) { if(/HTML[A-Za-z]*Element/.test(getTypeTag(val))){ return (!!1); } return (!!0); } if (val.length === 0 && JsArray_Check(idobj)) { return (!!0); } if (val.byteLength === 0) { return (!!0); } return (!!1); } catch (e) { ; return (!!0); } }
-hiwire_get_bool.sig = 'ii';
 function hiwire_is_function(idobj) { try { return typeof Hiwire.get_value(idobj) === 'function'; } catch (e) { ; return (!!0); } }
-hiwire_is_function.sig = 'ii';
 function hiwire_is_generator(idobj) { try { return getTypeTag(Hiwire.get_value(idobj)) === "[object Generator]"; } catch (e) { ; return (!!0); } }
-hiwire_is_generator.sig = 'ii';
 function hiwire_is_async_generator(idobj) { try { return getTypeTag(Hiwire.get_value(idobj)) === "[object AsyncGenerator]"; } catch (e) { ; return (!!0); } }
-hiwire_is_async_generator.sig = 'ii';
 function hiwire_is_comlink_proxy(idobj) { try { let value = Hiwire.get_value(idobj); return !!(API.Comlink && value[API.Comlink.createEndpoint]); } catch (e) { ; return (!!0); } }
-hiwire_is_comlink_proxy.sig = 'ii';
 function hiwire_is_error(idobj) { try { let value = Hiwire.get_value(idobj); return !!(value && typeof value.stack === "string" && typeof value.message === "string"); } catch (e) { ; return (!!0); } }
 function hiwire_is_promise(idobj) { try { let obj = Hiwire.get_value(idobj); return Hiwire.isPromise(obj); } catch (e) { ; return (!!0); } }
-hiwire_is_promise.sig = 'ii';
 function hiwire_resolve_promise(idobj) { try { let obj = Hiwire.get_value(idobj); let result = Promise.resolve(obj); return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_resolve_promise.sig = 'ii';
 function hiwire_to_string(idobj) { try { return Hiwire.new_value(Hiwire.get_value(idobj).toString()); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_to_string.sig = 'ii';
 function hiwire_typeof(idobj) { return Hiwire.new_value(typeof Hiwire.get_value(idobj)); }
-hiwire_typeof.sig = 'ii';
 function hiwire_constructor_name(idobj) { try { return stringToNewUTF8(Hiwire.get_value(idobj).constructor.name); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_constructor_name.sig = 'ii';
 function hiwire_less_than(ida,idb) { try { return !!(Hiwire.get_value(ida) < Hiwire.get_value(idb)); } catch (e) { ; return (!!0); } }
-hiwire_less_than.sig = 'iii';
 function hiwire_less_than_equal(ida,idb) { try { return !!(Hiwire.get_value(ida) <= Hiwire.get_value(idb)); } catch (e) { ; return (!!0); } }
-hiwire_less_than_equal.sig = 'iii';
 function hiwire_equal(ida,idb) { try { return !!(Hiwire.get_value(ida) === Hiwire.get_value(idb)); } catch (e) { ; return (!!0); } }
-hiwire_equal.sig = 'iii';
 function hiwire_not_equal(ida,idb) { try { return !!(Hiwire.get_value(ida) !== Hiwire.get_value(idb)); } catch (e) { ; return (!!0); } }
-hiwire_not_equal.sig = 'iii';
 function hiwire_greater_than(ida,idb) { try { return !!(Hiwire.get_value(ida) > Hiwire.get_value(idb)); } catch (e) { ; return (!!0); } }
-hiwire_greater_than.sig = 'iii';
 function hiwire_greater_than_equal(ida,idb) { try { return !!(Hiwire.get_value(ida) >= Hiwire.get_value(idb)); } catch (e) { ; return (!!0); } }
-hiwire_greater_than_equal.sig = 'iii';
 function hiwire_reversed_iterator(idarray) { try { if (!Module._reversedIterator) { Module._reversedIterator = class ReversedIterator { constructor(array) { this._array = array; this._i = array.length - 1; } __length_hint__() { return this._array.length; } [Symbol.toStringTag]() { return "ReverseIterator"; } next() { const i = this._i; const a = this._array; const done = i < 0; const value = done ? undefined : a[i]; this._i--; return { done, value }; } }; } let array = Hiwire.get_value(idarray); return Hiwire.new_value(new Module._reversedIterator(array)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-hiwire_reversed_iterator.sig = 'ii';
 function hiwire_assign_to_ptr(idobj,ptr) { try { let jsobj = Hiwire.get_value(idobj); Module.HEAPU8.set(API.typedArrayAsUint8Array(jsobj), ptr); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-hiwire_assign_to_ptr.sig = 'iii';
 function hiwire_assign_from_ptr(idobj,ptr) { try { let jsobj = Hiwire.get_value(idobj); API.typedArrayAsUint8Array(jsobj).set( Module.HEAPU8.subarray(ptr, ptr + jsobj.byteLength)); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-hiwire_assign_from_ptr.sig = 'iii';
 function hiwire_read_from_file(idobj,fd) { try { let jsobj = Hiwire.get_value(idobj); let uint8_buffer = API.typedArrayAsUint8Array(jsobj); let stream = Module.FS.streams[fd]; Module.FS.read(stream, uint8_buffer, 0, uint8_buffer.byteLength); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-hiwire_read_from_file.sig = 'iii';
 function hiwire_write_to_file(idobj,fd) { try { let jsobj = Hiwire.get_value(idobj); let uint8_buffer = API.typedArrayAsUint8Array(jsobj); let stream = Module.FS.streams[fd]; Module.FS.write(stream, uint8_buffer, 0, uint8_buffer.byteLength); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-hiwire_write_to_file.sig = 'iii';
 function hiwire_into_file(idobj,fd) { try { let jsobj = Hiwire.get_value(idobj); let uint8_buffer = API.typedArrayAsUint8Array(jsobj); let stream = Module.FS.streams[fd]; Module.FS.write( stream, uint8_buffer, 0, uint8_buffer.byteLength, undefined, (!!1)); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-hiwire_into_file.sig = 'iii';
 function hiwire_get_buffer_info(idobj,byteLength_ptr,format_ptr,size_ptr,checked_ptr) { let jsobj = Hiwire.get_value(idobj); let byteLength = jsobj.byteLength; let [format_utf8, size, checked] = Module.get_buffer_datatype(jsobj); HEAPU32[(byteLength_ptr >> 2) + 0] = byteLength; HEAPU32[(format_ptr >> 2) + 0] = format_utf8; HEAPU32[(size_ptr >> 2) + 0] = size; HEAPU8[checked_ptr + 0] = checked; }
-hiwire_get_buffer_info.sig = 'viiiii';
 function hiwire_subarray(idarr,start,end) { try { let jsarr = Hiwire.get_value(idarr); let jssub = jsarr.subarray(start, end); return Hiwire.new_value(jssub); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
 function JsArray_Check(idobj) { try { let obj = Hiwire.get_value(idobj); if (Array.isArray(obj)) { return (!!1); } let typeTag = getTypeTag(obj); if(typeTag === "[object HTMLCollection]" || typeTag === "[object NodeList]"){ return (!!1); } if (ArrayBuffer.isView(obj) && obj.constructor.name !== "DataView") { return (!!1); } return (!!0); } catch (e) { ; return (!!0); } }
-JsArray_Check.sig = 'ii';
 function JsArray_New() { try { return Hiwire.new_value([]); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsArray_New.sig = 'i';
 function JsArray_Push(idarr,idval) { try { Hiwire.get_value(idarr).push(Hiwire.get_value(idval)); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsArray_Push.sig = 'iii';
 function JsArray_Push_unchecked(idarr,idval) { const arr = Hiwire.get_value(idarr); arr.push(Hiwire.get_value(idval)); return arr.length - 1; }
-JsArray_Push_unchecked.sig = 'iii';
 function JsArray_Extend(idarr,idvals) { try { Hiwire.get_value(idarr).push(... Hiwire.get_value(idvals)); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsArray_Extend.sig = 'iii';
 function JsArray_Get(idobj,idx) { try { let obj = Hiwire.get_value(idobj); let result = obj[idx]; if (result === undefined && !(idx in obj)) { return (0); } return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsArray_Get.sig = 'iii';
 function JsArray_Set(idobj,idx,idval) { try { Hiwire.get_value(idobj)[idx] = Hiwire.get_value(idval); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsArray_Set.sig = 'iiii';
 function JsArray_Delete(idobj,idx) { try { let obj = Hiwire.get_value(idobj); if (idx < 0 || idx >= obj.length) { return (-1); } obj.splice(idx, 1); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsArray_Delete.sig = 'iii';
 function JsArray_Splice(idobj,idx) { try { let obj = Hiwire.get_value(idobj); if (idx < 0 || idx >= obj.length) { return 0; } return Hiwire.new_value(obj.splice(idx, 1)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsArray_Splice.sig = 'iii';
 function JsArray_slice(idobj,length,start,stop,step) { try { let obj = Hiwire.get_value(idobj); let result; if (step === 1) { result = obj.slice(start, stop); } else { result = Array.from({ length }, (_, i) => obj[start + i * step]); } return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsArray_slice.sig = 'iiiiii';
 function JsArray_slice_assign(idobj,slicelength,start,stop,step,values_length,values) { try { let obj = Hiwire.get_value(idobj); let jsvalues = []; for(let i = 0; i < values_length; i++){ let ref = _python2js(HEAPU32[(values >> 2) + i]); if(ref === 0){ return -1; } jsvalues.push(Hiwire.pop_value(ref)); } if (step === 1) { obj.splice(start, slicelength, ...jsvalues); } else { if(values !== 0) { for(let i = 0; i < slicelength; i ++){ obj.splice(start + i * step, 1, jsvalues[i]); } } else { for(let i = slicelength - 1; i >= 0; i --){ obj.splice(start + i * step, 1); } } } } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsArray_slice_assign.sig = 'iiiiiiii';
 function JsArray_Clear(idobj) { try { let obj = Hiwire.get_value(idobj); obj.splice(0, obj.length); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
 function JsArray_ShallowCopy(idobj) { try { const obj = Hiwire.get_value(idobj); const res = ("slice" in obj) ? obj.slice() : Array.from(obj); return Hiwire.new_value(res); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsArray_ShallowCopy.sig = 'ii';
 function JsObject_New() { try { return Hiwire.new_value({}); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsObject_New.sig = 'i';
 function isReservedWord(word) { if (!Module.pythonReservedWords) { Module.pythonReservedWords = new Set([ "False", "await", "else", "import", "pass", "None", "break", "except", "in", "raise", "True", "class", "finally", "is", "return", "and", "continue", "for", "lambda", "try", "as", "def", "from", "nonlocal", "while", "assert", "del", "global", "not", "with", "async", "elif", "if", "or", "yield", ]) } return Module.pythonReservedWords.has(word); }
 function normalizeReservedWords(word) { const noTrailing_ = word.replace(/_*$/, ""); if (!isReservedWord(noTrailing_)) { return word; } if (noTrailing_ !== word) { return word.slice(0, -1); } return word; }
 function JsObject_GetString(idobj,ptrkey) { try { const jsobj = Hiwire.get_value(idobj); const jskey = normalizeReservedWords(UTF8ToString(ptrkey)); const result = jsobj[jskey]; if (result === undefined && !(jskey in jsobj)) { return (0); } return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsObject_GetString.sig = 'iii';
 function JsObject_SetString(idobj,ptrkey,idval) { try { let jsobj = Hiwire.get_value(idobj); let jskey = normalizeReservedWords(UTF8ToString(ptrkey)); let jsval = Hiwire.get_value(idval); jsobj[jskey] = jsval; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsObject_SetString.sig = 'iiii';
 function JsObject_DeleteString(idobj,ptrkey) { try { let jsobj = Hiwire.get_value(idobj); let jskey = normalizeReservedWords(UTF8ToString(ptrkey)); delete jsobj[jskey]; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsObject_DeleteString.sig = 'iii';
 function JsObject_Dir(idobj) { try { let jsobj = Hiwire.get_value(idobj); let result = []; do { const names = Object.getOwnPropertyNames(jsobj); result.push(...names.filter( s => { let c = s.charCodeAt(0); return c < 48 || c > 57; } ) .map(word => isReservedWord(word.replace(/_*$/, "")) ? word + "_" : word)); } while (jsobj = Object.getPrototypeOf(jsobj)); return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsObject_Dir.sig = 'ii';
 function JsObject_Entries(idobj) { try { let jsobj = Hiwire.get_value(idobj); return Hiwire.new_value(Object.entries(jsobj)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsObject_Entries.sig = 'ii';
 function JsObject_Keys(idobj) { try { let jsobj = Hiwire.get_value(idobj); return Hiwire.new_value(Object.keys(jsobj)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsObject_Keys.sig = 'ii';
 function JsObject_Values(idobj) { try { let jsobj = Hiwire.get_value(idobj); return Hiwire.new_value(Object.values(jsobj)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsObject_Values.sig = 'ii';
 function JsString_InternFromCString(str) { try { let jsstring = UTF8ToString(str); return Hiwire.intern_object(jsstring); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsString_InternFromCString.sig = 'ii';
 function JsMap_New() { try { return Hiwire.new_value(new Map()); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsMap_New.sig = 'i';
 function JsMap_Set(mapid,keyid,valueid) { try { let map = Hiwire.get_value(mapid); let key = Hiwire.get_value(keyid); let value = Hiwire.get_value(valueid); map.set(key, value); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsMap_Set.sig = 'iiii';
 function JsSet_New() { try { return Hiwire.new_value(new Set()); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsSet_New.sig = 'i';
 function JsSet_Add(mapid,keyid) { try { let set = Hiwire.get_value(mapid); let key = Hiwire.get_value(keyid); set.add(key); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsSet_Add.sig = 'iii';
 function js2python_immutable_js(id) { try { let value = Hiwire.get_value(id); let result = Module.js2python_convertImmutable(value, id); if (result !== undefined) { return result; } return 0; } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-js2python_immutable_js.sig = 'ii';
 function js2python_js(id) { try { let value = Hiwire.get_value(id); let result = Module.js2python_convertImmutable(value, id); if (result !== undefined) { return result; } return _JsProxy_create(id); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-js2python_js.sig = 'ii';
 function js2python_convert(id,depth,default_converter) { try { let defaultConverter = default_converter ? Module.hiwire.get_value(default_converter) : undefined; return Module.js2python_convert(id, { depth, defaultConverter }); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-js2python_convert.sig = 'iiii';
 function js2python_init() { try { { 0; let PropagateError = Module._PropagatePythonError; function js2python_string(value) { let max_code_point = 0; let num_code_points = 0; for (let c of value) { num_code_points++; let code_point = c.codePointAt(0); max_code_point = code_point > max_code_point ? code_point : max_code_point; } let result = _PyUnicode_New(num_code_points, max_code_point); if (result === 0) { throw new PropagateError(); } let ptr = _PyUnicode_Data(result); if (max_code_point > 0xffff) { for (let c of value) { HEAPU32[ptr / 4] = c.codePointAt(0); ptr += 4; } } else if (max_code_point > 0xff) { for (let c of value) { HEAPU16[ptr / 2] = c.codePointAt(0); ptr += 2; } } else { for (let c of value) { HEAPU8[ptr] = c.codePointAt(0); ptr += 1; } } return result; } function js2python_bigint(value) { let value_orig = value; let length = 0; if (value < 0) { value = -value; } value <<= BigInt(1); while (value) { length++; value >>= BigInt(32); } let stackTop = stackSave(); let ptr = stackAlloc(length * 4); value = value_orig; for (let i = 0; i < length; i++) { HEAPU32[(ptr >> 2) + i] = Number(value & BigInt(0xffffffff)); value >>= BigInt(32); } let result = __PyLong_FromByteArray( ptr, length * 4 , (!!1) , (!!1) , ); stackRestore(stackTop); return result; } function js2python_convertImmutable(value, id) { let result = js2python_convertImmutableInner(value, id); if (result === 0) { throw new PropagateError(); } return result; } Module.js2python_convertImmutable = js2python_convertImmutable; function js2python_convertImmutableInner(value, id) { let type = typeof value; if (type === "string") { return js2python_string(value); } else if (type === "number") { if (Number.isSafeInteger(value)) { return _PyLong_FromDouble(value); } else { return _PyFloat_FromDouble(value); } } else if (type === "bigint") { return js2python_bigint(value); } else if (value === undefined || value === null) { return __js2python_none(); } else if (value === (!!1)) { return __js2python_true(); } else if (value === (!!0)) { return __js2python_false(); } else if (API.isPyProxy(value)) { const { props, shared } = Module.PyProxy_getAttrs(value); if (props.roundtrip) { if (id === undefined) { id = Hiwire.new_value(value); } return _JsProxy_create(id); } else { return __js2python_pyproxy(shared.ptr); } } return undefined; } function js2python_convertList(obj, context) { let list = _PyList_New(obj.length); if (list === 0) { return 0; } let entryid = 0; let item = 0; try { context.cache.set(obj, list); for (let i = 0; i < obj.length; i++) { entryid = Hiwire.new_value(obj[i]); item = js2python_convert_with_context(entryid, context); _Py_IncRef(item); if (_PyList_SetItem(list, i, item) === -1) { throw new PropagateError(); } Hiwire.decref(entryid); entryid = 0; _Py_DecRef(item); item = 0; } } catch (e) { Hiwire.decref(entryid); _Py_DecRef(item); _Py_DecRef(list); throw e; } return list; } function js2python_convertMap(obj, entries, context) { let dict = _PyDict_New(); if (dict === 0) { return 0; } let key_py = 0; let value_id = 0; let value_py = 0; try { context.cache.set(obj, dict); for (let [key_js, value_js] of entries) { key_py = js2python_convertImmutable(key_js); if (key_py === undefined) { let key_type = (key_js.constructor && key_js.constructor.name) || typeof key_js; throw new Error( `Cannot use key of type ${key_type} as a key to a Python dict`, ); } value_id = Hiwire.new_value(value_js); value_py = js2python_convert_with_context(value_id, context); if (_PyDict_SetItem(dict, key_py, value_py) === -1) { throw new PropagateError(); } _Py_DecRef(key_py); key_py = 0; Hiwire.decref(value_id); value_id = 0; _Py_DecRef(value_py); value_py = 0; } } catch (e) { _Py_DecRef(key_py); Hiwire.decref(value_id); _Py_DecRef(value_py); _Py_DecRef(dict); throw e; } return dict; } function js2python_convertSet(obj, context) { let set = _PySet_New(0); if (set === 0) { return 0; } let key_py = 0; try { context.cache.set(obj, set); for (let key_js of obj) { key_py = js2python_convertImmutable(key_js); if (key_py === undefined) { let key_type = (key_js.constructor && key_js.constructor.name) || typeof key_js; throw new Error( `Cannot use key of type ${key_type} as a key to a Python set`, ); } let errcode = _PySet_Add(set, key_py); if (errcode === -1) { throw new PropagateError(); } _Py_DecRef(key_py); key_py = 0; } } catch (e) { _Py_DecRef(key_py); _Py_DecRef(set); throw e; } return set; } function checkBoolIntCollision(obj, ty) { if (obj.has(1) && obj.has((!!1))) { throw new Error( `Cannot faithfully convert ${ty} into Python since it ` + "contains both 1 and true as keys.", ); } if (obj.has(0) && obj.has((!!0))) { throw new Error( `Cannot faithfully convert ${ty} into Python since it ` + "contains both 0 and false as keys.", ); } } function js2python_convertOther(id, value, context) { let typeTag = getTypeTag(value); if ( Array.isArray(value) || value === "[object HTMLCollection]" || value === "[object NodeList]" ) { return js2python_convertList(value, context); } if (typeTag === "[object Map]" || value instanceof Map) { checkBoolIntCollision(value, "Map"); return js2python_convertMap(value, value.entries(), context); } if (typeTag === "[object Set]" || value instanceof Set) { checkBoolIntCollision(value, "Set"); return js2python_convertSet(value, context); } if ( typeTag === "[object Object]" && (value.constructor === undefined || value.constructor.name === "Object") ) { return js2python_convertMap(value, Object.entries(value), context); } if (typeTag === "[object ArrayBuffer]" || ArrayBuffer.isView(value)) { let [format_utf8, itemsize] = Module.get_buffer_datatype(value); return _JsBuffer_CopyIntoMemoryView( id, value.byteLength, format_utf8, itemsize, ); } return undefined; } function js2python_convert_with_context(id, context) { let value = Hiwire.get_value(id); let result; result = js2python_convertImmutable(value, id); if (result !== undefined) { return result; } if (context.depth === 0) { return _JsProxy_create(id); } result = context.cache.get(value); if (result !== undefined) { return result; } context.depth--; try { result = js2python_convertOther(id, value, context); if (result !== undefined) { return result; } if (context.defaultConverter === undefined) { return _JsProxy_create(id); } let result_js = context.defaultConverter( value, context.converter, context.cacheConversion, ); result = js2python_convertImmutable(result_js); if (API.isPyProxy(result_js)) { Module.pyproxy_destroy(result_js, "", (!!0)); } if (result !== undefined) { return result; } let result_id = Module.hiwire.new_value(result_js); result = _JsProxy_create(result_id); Module.hiwire.decref(result_id); return result; } finally { context.depth++; } } function js2python_convert(id, { depth, defaultConverter }) { let context = { cache: new Map(), depth, defaultConverter, converter(x) { let id = Module.hiwire.new_value(x); try { return Module.pyproxy_new( js2python_convert_with_context(id, context), ); } finally { Module.hiwire.decref(id); } }, cacheConversion(input, output) { if (API.isPyProxy(output)) { context.cache.set(input, Module.PyProxy_getPtr(output)); } else { throw new Error("Second argument should be a PyProxy!"); } }, }; return js2python_convert_with_context(id, context); } Module.js2python_convert = js2python_convert; } return 0; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-js2python_init.sig = 'i';
 function JsProxy_GetIter_js(idobj) { try { let jsobj = Hiwire.get_value(idobj); return Hiwire.new_value(jsobj[Symbol.iterator]()); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsProxy_GetIter_js.sig = 'ii';
 function handle_next_result_js(resid,result_ptr,msg) { try { let errmsg; const res = Hiwire.get_value(resid); if(typeof res !== "object") { errmsg = `Result should have type "object" not "${typeof res}"`; } else if(typeof res.done === "undefined") { if (typeof res.then === "function") { errmsg = `Result was a promise, use anext() / asend() / athrow() instead.`; } else { errmsg = `Result has no "done" field.`; } } if (errmsg) { HEAPU32[(msg >> 2) + 0] = stringToNewUTF8(errmsg); return -1; } let result_id = Hiwire.new_value(res.value); HEAPU32[(result_ptr >> 2) + 0] = result_id; return res.done; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-handle_next_result_js.sig = 'iiii';
 function JsException_new_helper(name_ptr,message_ptr,stack_ptr) { try { let name = UTF8ToString(name_ptr); let message = UTF8ToString(message_ptr); let stack = UTF8ToString(stack_ptr); return Hiwire.new_value(API.deserializeError(name, message, stack)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsException_new_helper.sig = 'iiii';
 function JsProxy_GetAsyncIter_js(idobj) { try { let jsobj = Hiwire.get_value(idobj); return Hiwire.new_value(jsobj[Symbol.asyncIterator]()); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsProxy_GetAsyncIter_js.sig = 'ii';
 function _agen_handle_result_js(promiseid,msg,set_result,set_exception,closing) { try { let p = Hiwire.get_value(promiseid); let errmsg; if(typeof p !== "object") { errmsg = `Result of anext() should be object not ${typeof p}`; } else if(typeof p.then !== "function") { if (typeof p.done === "boolean") { errmsg = `Result of anext() was not a promise, use next() instead.`; } else { errmsg = `Result of anext() was not a promise.`; } } if (errmsg) { HEAPU32[(msg >> 2) + 0] = stringToNewUTF8(errmsg); return -1; } _Py_IncRef(set_result); _Py_IncRef(set_exception); p.then(({done, value}) => { let id = Hiwire.new_value(value); __agen_handle_result_js_c(set_result, set_exception, done, id, closing); Hiwire.decref(id); }, (err) => { let id = Hiwire.new_value(err); __agen_handle_result_js_c(set_result, set_exception, -1, id, closing); Hiwire.decref(id); }).finally(() => { _Py_DecRef(set_result); _Py_DecRef(set_exception); }); return 0; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-_agen_handle_result_js.sig = 'iiiiii';
 function destroy_jsarray_entries(idarray) { for (let v of Hiwire.get_value(idarray)) { try { if(typeof v.destroy === "function"){ v.destroy(); } } catch(e) { console.warn("Weird error:", e); } } }
-destroy_jsarray_entries.sig = 'vi';
 function JsArray_repeat_js(oid,count) { try { const o = Hiwire.get_value(oid); return Hiwire.new_value(Array.from({ length : count }, () => o).flat()) } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsArray_repeat_js.sig = 'iii';
 function JsArray_inplace_repeat_js(oid,count) { try { const o = Hiwire.get_value(oid); o.splice(0, o.length, ... Array.from({ length : count }, () => o).flat()); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsArray_inplace_repeat_js.sig = 'iii';
 function JsArray_index_helper(list,value,start,stop) { try { let o = Hiwire.get_value(list); let v = Hiwire.get_value(value); for (let i = start; i < stop; i++) { if (o[i] === v) { return i; } } return -1; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsArray_index_helper.sig = 'iiiii';
 function JsArray_count_helper(list,value) { try { let o = Hiwire.get_value(list); let v = Hiwire.get_value(value); let result = 0; for (let i = 0; i < o.length; i++) { if (o[i] === v) { result++; } } return result; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsArray_count_helper.sig = 'iii';
 function JsArray_reverse_helper(arrayid) { try { Hiwire.get_value(arrayid).reverse(); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsArray_reverse_helper.sig = 'ii';
 function JsProxy_subscript_js(idobj,idkey) { try { let obj = Hiwire.get_value(idobj); let key = Hiwire.get_value(idkey); let result = obj.get(key); if (result === undefined) { if (obj.has && typeof obj.has === "function" && !obj.has(key)) { return 0; } } return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsProxy_subscript_js.sig = 'iii';
 function JsMap_GetIter_js(idobj) { try { let jsobj = Hiwire.get_value(idobj); let result; if(typeof jsobj.keys === 'function') { result = jsobj.keys(); } else { result = jsobj[Symbol.iterator](); } return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsMap_GetIter_js.sig = 'ii';
 function JsMap_clear_js(idmap) { try { const map = Hiwire.get_value(idmap); if(idmap && typeof idmap.clear === "function") { idmap.clear(); return 1; } return 0; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsMap_clear_js.sig = 'ii';
 function JsObjMap_GetIter_js(idobj) { try { let jsobj = Hiwire.get_value(idobj); return Hiwire.new_value(Module.iterObject(jsobj)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsObjMap_GetIter_js.sig = 'ii';
 function JsObjMap_length_js(idobj) { try { let jsobj = Hiwire.get_value(idobj); let length = 0; for (let _ of Module.iterObject(jsobj)) { length++; } return length; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsObjMap_length_js.sig = 'ii';
 function JsObjMap_subscript_js(idobj,idkey) { try { let obj = Hiwire.get_value(idobj); let key = Hiwire.get_value(idkey); if (!Object.prototype.hasOwnProperty.call(obj, key)) { return 0; } return Hiwire.new_value(obj[key]); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsObjMap_subscript_js.sig = 'iii';
 function JsObjMap_ass_subscript_js(idobj,idkey,idvalue) { try { let obj = Hiwire.get_value(idobj); let key = Hiwire.get_value(idkey); if(idvalue === 0) { if (!Object.prototype.hasOwnProperty.call(obj, key)) { return -1; } delete obj[key]; } else { obj[key] = Hiwire.get_value(idvalue); } return 0; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsObjMap_ass_subscript_js.sig = 'iiii';
 function JsObjMap_contains_js(idobj,idkey) { try { let obj = Hiwire.get_value(idobj); let key = Hiwire.get_value(idkey); return Object.prototype.hasOwnProperty.call(obj, key); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsObjMap_contains_js.sig = 'iii';
 function get_async_js_call_done_callback(proxies_id) { try { let proxies = Hiwire.get_value(proxies_id); return Hiwire.new_value(function(result) { let msg = "This borrowed proxy was automatically destroyed " + "at the end of an asynchronous function call. Try " + "using create_proxy or create_once_callable."; for (let px of proxies) { Module.pyproxy_destroy(px, msg, (!!0)); } if (API.isPyProxy(result)) { Module.pyproxy_destroy(result, msg, (!!0)); } }); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-get_async_js_call_done_callback.sig = 'ii';
 function wrap_generator(genid,proxiesid) { try { const proxies = new Set(Hiwire.get_value(proxiesid)); const gen = Hiwire.get_value(genid); const msg = "This borrowed proxy was automatically destroyed " + "when a generator completed execution. Try " + "using create_proxy or create_once_callable."; function cleanup() { proxies.forEach((px) => Module.pyproxy_destroy(px, msg)); } function wrap(funcname) { return function (val) { if(API.isPyProxy(val)) { val = val.copy(); proxies.add(val); } let res; try { res = gen[funcname](val); } catch (e) { cleanup(); throw e; } if (res.done) { proxies.delete(res.value); cleanup(); } return res; }; } return Hiwire.new_value({ get [Symbol.toStringTag]() { return "Generator"; }, [Symbol.iterator]() { return this; }, next: wrap("next"), throw: wrap("throw"), return: wrap("return"), }); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-wrap_generator.sig = 'iii';
 function wrap_async_generator(genid,proxiesid) { try { const proxies = new Set(Hiwire.get_value(proxiesid)); const gen = Hiwire.get_value(genid); const msg = "This borrowed proxy was automatically destroyed " + "when an asynchronous generator completed execution. Try " + "using create_proxy or create_once_callable."; function cleanup() { proxies.forEach((px) => Module.pyproxy_destroy(px, msg)); } function wrap(funcname) { return async function (val) { if(API.isPyProxy(val)) { val = val.copy(); proxies.add(val); } let res; try { res = await gen[funcname](val); } catch (e) { cleanup(); throw e; } if (res.done) { proxies.delete(res.value); cleanup(); } return res; }; } return Hiwire.new_value({ get [Symbol.toStringTag]() { return "AsyncGenerator"; }, [Symbol.asyncIterator]() { return this; }, next: wrap("next"), throw: wrap("throw"), return: wrap("return"), }); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-wrap_async_generator.sig = 'iii';
 function JsBuffer_DecodeString_js(jsbuffer_id,encoding) { try { let buffer = Hiwire.get_value(jsbuffer_id); let encoding_js; if (encoding) { encoding_js = UTF8ToString(encoding); } let decoder = new TextDecoder(encoding_js, {fatal : (!!1), ignoreBOM: (!!1)}); let res; try { res = decoder.decode(buffer); } catch(e){ if(e instanceof TypeError) { return 0; } throw e; } return Hiwire.new_value(res); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsBuffer_DecodeString_js.sig = 'iii';
 function JsDoubleProxy_unwrap_helper(id) { try { return Module.PyProxy_getPtr(Hiwire.get_value(id)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-JsDoubleProxy_unwrap_helper.sig = 'ii';
 function JsProxy_compute_typeflags(idobj) { try { let obj = Hiwire.get_value(idobj); let type_flags = 0; if (API.isPyProxy(obj) && !pyproxyIsAlive(obj)) { return 0; } const typeTag = getTypeTag(obj); function safeBool(cb) { try { return cb(); } catch(e) { return (!!0); } } const isBufferView = safeBool(() => ArrayBuffer.isView(obj)); const isArray = safeBool(() => Array.isArray(obj)); const constructorName = safeBool(() => obj.constructor.name) || ""; if (typeof obj === "function") { type_flags |= (1 << 9); }; if (hasMethod(obj, "then")) { type_flags |= (1 << 7); }; if (hasMethod(obj, Symbol.iterator)) { type_flags |= (1 << 0); }; if (hasMethod(obj, Symbol.asyncIterator)) { type_flags |= (1 << 15); }; if (hasMethod(obj, "next") && (hasMethod(obj, Symbol.iterator) || !hasMethod(obj, Symbol.asyncIterator))) { type_flags |= (1 << 1); }; if (hasMethod(obj, "next") && (!hasMethod(obj, Symbol.iterator) || hasMethod(obj, Symbol.asyncIterator))) { type_flags |= (1 << 18); }; if ((hasProperty(obj, "size")) || (hasProperty(obj, "length") && typeof obj !== "function")) { type_flags |= (1 << 2); }; if (hasMethod(obj, "get")) { type_flags |= (1 << 3); }; if (hasMethod(obj, "set")) { type_flags |= (1 << 4); }; if (hasMethod(obj, "has")) { type_flags |= (1 << 5); }; if (hasMethod(obj, "includes")) { type_flags |= (1 << 6); }; if ((isBufferView || (typeTag === '[object ArrayBuffer]')) && !(type_flags & (1 << 9))) { type_flags |= (1 << 8); }; if (API.isPyProxy(obj)) { type_flags |= (1 << 13); }; if (isArray) { type_flags |= (1 << 10); }; if (typeTag === "[object HTMLCollection]" || typeTag === "[object NodeList]") { type_flags |= (1 << 11); }; if (isBufferView && typeTag !== '[object DataView]') { type_flags |= (1 << 12); }; if (typeTag === "[object Generator]") { type_flags |= (1 << 16); }; if (typeTag === "[object AsyncGenerator]") { type_flags |= (1 << 17); }; if (( hasProperty(obj, "name") && hasProperty(obj, "message") && ( hasProperty(obj, "stack") || constructorName === "DOMException" ) ) && !(type_flags & ((1 << 9) | (1 << 8)))) { type_flags |= (1 << 19); }; return type_flags; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-JsProxy_compute_typeflags.sig = 'ii';
 function throw_no_gil() { throw new API.NoGilError("Attempted to use PyProxy when Python GIL not held"); }
-throw_no_gil.sig = 'v';
 function pyproxy_Check(x) { if (x == 0) { return false; } let val = Hiwire.get_value(x); return API.isPyProxy(val); }
-pyproxy_Check.sig = 'ii';
 function pyproxy_AsPyObject(x) { if (x == 0) { return 0; } let val = Hiwire.get_value(x); if (!API.isPyProxy(val)) { return 0; } return Module.PyProxy_getPtr(val); }
-pyproxy_AsPyObject.sig = 'ii';
 function destroy_proxies(proxies_id,msg_ptr) { let msg = undefined; if (msg_ptr) { msg = Hiwire.get_value(_JsString_FromId(msg_ptr)); } let proxies = Hiwire.get_value(proxies_id); for (let px of proxies) { Module.pyproxy_destroy(px, msg, false); } }
-destroy_proxies.sig = 'vii';
 function gc_register_proxies(proxies_id) { let proxies = Hiwire.get_value(proxies_id); for (let px of proxies) { Module.gc_register_proxy(Module.PyProxy_getAttrs(px).shared); } }
-gc_register_proxies.sig = 'vi';
 function destroy_proxy(proxy_id,msg_ptr) { const px = Module.hiwire.get_value(proxy_id); const { shared, props } = Module.PyProxy_getAttrsQuiet(px); if (!shared.ptr) { return; } if (props.roundtrip) { return; } let msg = undefined; if (msg_ptr) { msg = Hiwire.get_value(_JsString_FromId(msg_ptr)); } Module.pyproxy_destroy(px, msg, false); }
-destroy_proxy.sig = 'vii';
 function proxy_cache_get(proxyCacheId,descr) { let proxyCache = Hiwire.get_value(proxyCacheId); let proxyId = proxyCache.get(descr); if (!proxyId) { return undefined; } if (pyproxyIsAlive(Hiwire.get_value(proxyId))) { return proxyId; } else { proxyCache.delete(descr); Hiwire.decref(proxyId); return undefined; } }
-proxy_cache_get.sig = 'iii';
 function proxy_cache_set(proxyCacheId,descr,proxy) { let proxyCache = Hiwire.get_value(proxyCacheId); proxyCache.set(descr, proxy); }
-proxy_cache_set.sig = 'viii';
 function array_to_js(array,len) { return Hiwire.new_value( Array.from(HEAP32.subarray(array / 4, array / 4 + len))); }
-array_to_js.sig = 'iii';
 function pyproxy_new_ex(ptrobj,capture_this,roundtrip,gcRegister) { try { return Hiwire.new_value( Module.pyproxy_new(ptrobj, { props: { captureThis: !!capture_this, roundtrip: !!roundtrip }, gcRegister, }) ); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-pyproxy_new_ex.sig = 'iiiii';
 function pyproxy_new(ptrobj) { try { return Hiwire.new_value(Module.pyproxy_new(ptrobj)); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-pyproxy_new.sig = 'ii';
 function create_once_callable(obj) { try { _Py_IncRef(obj); let alreadyCalled = (!!0); function wrapper(... args) { if (alreadyCalled) { throw new Error("OnceProxy can only be called once"); } try { return Module.callPyObject(obj, args); } finally { wrapper.destroy(); } } wrapper.destroy = function() { if (alreadyCalled) { throw new Error("OnceProxy has already been destroyed"); } alreadyCalled = (!!1); Module.finalizationRegistry.unregister(wrapper); _Py_DecRef(obj); }; Module.finalizationRegistry.register(wrapper, [ obj, undefined ], wrapper); return Hiwire.new_value(wrapper); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-create_once_callable.sig = 'ii';
 function create_promise_handles(handle_result,handle_exception,done_callback_id) { try { if (handle_result) { _Py_IncRef(handle_result); } if (handle_exception) { _Py_IncRef(handle_exception); } let done_callback = (x) => {}; if(done_callback_id){ done_callback = Hiwire.get_value(done_callback_id); } let used = (!!0); function checkUsed(){ if (used) { throw new Error("One of the promise handles has already been called."); } } function destroy(){ checkUsed(); used = (!!1); if(handle_result){ _Py_DecRef(handle_result); } if(handle_exception){ _Py_DecRef(handle_exception) } } function onFulfilled(res) { checkUsed(); try { if(handle_result){ return Module.callPyObject(handle_result, [res]); } } finally { done_callback(res); destroy(); } } function onRejected(err) { checkUsed(); try { if(handle_exception){ return Module.callPyObject(handle_exception, [err]); } } finally { done_callback(undefined); destroy(); } } onFulfilled.destroy = destroy; onRejected.destroy = destroy; return Hiwire.new_value( [onFulfilled, onRejected] ); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-create_promise_handles.sig = 'iiii';
 function _python2js_buffer_inner(buf,itemsize,ndim,format,shape,strides,suboffsets) { try { let converter = Module.get_converter(format, itemsize); let result = Module._python2js_buffer_recursive(buf, 0, { ndim, format, itemsize, shape, strides, suboffsets, converter, }); return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-_python2js_buffer_inner.sig = 'iiiiiiii';
 function python2js_buffer_init() { try { { 0; Module.processBufferFormatString = function (formatStr, errorMessage = "") { if (formatStr.length > 2) { throw new Error( "Expected format string to have length <= 2, " + `got '${formatStr}'.` + errorMessage, ); } let formatChar = formatStr.slice(-1); let alignChar = formatStr.slice(0, -1); let bigEndian; switch (alignChar) { case "!": case ">": bigEndian = (!!1); break; case "<": case "@": case "=": case "": bigEndian = (!!0); break; default: throw new Error( `Unrecognized alignment character ${alignChar}.` + errorMessage, ); } let arrayType; switch (formatChar) { case "b": arrayType = Int8Array; break; case "s": case "p": case "c": case "B": case "?": arrayType = Uint8Array; break; case "h": arrayType = Int16Array; break; case "H": arrayType = Uint16Array; break; case "i": case "l": case "n": arrayType = Int32Array; break; case "I": case "L": case "N": case "P": arrayType = Uint32Array; break; case "q": if (globalThis.BigInt64Array === undefined) { throw new Error( "BigInt64Array is not supported on this browser." + errorMessage, ); } arrayType = BigInt64Array; break; case "Q": if (globalThis.BigUint64Array === undefined) { throw new Error( "BigUint64Array is not supported on this browser." + errorMessage, ); } arrayType = BigUint64Array; break; case "f": arrayType = Float32Array; break; case "d": arrayType = Float64Array; break; case "e": throw new Error("Javascript has no Float16 support."); default: throw new Error( `Unrecognized format character '${formatChar}'.` + errorMessage, ); } return [arrayType, bigEndian]; }; Module.python2js_buffer_1d_contiguous = function (ptr, stride, n) { let byteLength = stride * n; return HEAP8.slice(ptr, ptr + byteLength).buffer; }; Module.python2js_buffer_1d_noncontiguous = function ( ptr, stride, suboffset, n, itemsize, ) { let byteLength = itemsize * n; let buffer = new Uint8Array(byteLength); for (let i = 0; i < n; ++i) { let curptr = ptr + i * stride; if (suboffset >= 0) { curptr = HEAPU32[(curptr >> 2) + 0] + suboffset; } buffer.set(HEAP8.subarray(curptr, curptr + itemsize), i * itemsize); } return buffer.buffer; }; Module._python2js_buffer_recursive = function (ptr, curdim, bufferData) { let n = HEAPU32[(bufferData.shape >> 2) + curdim]; let stride = HEAP32[(bufferData.strides >> 2) + curdim]; let suboffset = -1; if (bufferData.suboffsets !== 0) { suboffset = HEAP32[(bufferData.suboffsets >> 2) + curdim]; } if (curdim === bufferData.ndim - 1) { let arraybuffer; if (stride === bufferData.itemsize && suboffset < 0) { arraybuffer = Module.python2js_buffer_1d_contiguous(ptr, stride, n); } else { arraybuffer = Module.python2js_buffer_1d_noncontiguous( ptr, stride, suboffset, n, bufferData.itemsize, ); } return bufferData.converter(arraybuffer); } let result = []; for (let i = 0; i < n; ++i) { let curPtr = ptr + i * stride; if (suboffset >= 0) { curptr = HEAPU32[(curptr >> 2) + 0] + suboffset; } result.push( Module._python2js_buffer_recursive(curPtr, curdim + 1, bufferData), ); } return result; }; Module.get_converter = function (format, itemsize) { let formatStr = UTF8ToString(format); let [ArrayType, bigEndian] = Module.processBufferFormatString(formatStr); let formatChar = formatStr.slice(-1); switch (formatChar) { case "s": let decoder = new TextDecoder("utf8", { ignoreBOM: (!!1) }); return (buff) => decoder.decode(buff); case "?": return (buff) => Array.from(new Uint8Array(buff), (x) => !!x); } if (!bigEndian) { return (buff) => new ArrayType(buff); } let getFuncName; let setFuncName; switch (itemsize) { case 2: getFuncName = "getUint16"; setFuncName = "setUint16"; break; case 4: getFuncName = "getUint32"; setFuncName = "setUint32"; break; case 8: getFuncName = "getFloat64"; setFuncName = "setFloat64"; break; default: throw new Error(`Unexpected size ${itemsize}`); } function swapFunc(buff) { let dataview = new DataView(buff); let getFunc = dataview[getFuncName].bind(dataview); let setFunc = dataview[setFuncName].bind(dataview); for (let byte = 0; byte < dataview.byteLength; byte += itemsize) { setFunc(byte, getFunc(byte, (!!1)), (!!0)); } return buff; } return (buff) => new ArrayType(swapFunc(buff)); }; } return 0; } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-python2js_buffer_init.sig = 'i';
 function _python2js_addto_postprocess_list(idlist,idparent,idkey,value) { const list = Hiwire.get_value(idlist); const parent = Hiwire.get_value(idparent); const key = Hiwire.get_value(idkey); list.push([ parent, key, value ]); }
-_python2js_addto_postprocess_list.sig = 'viiii';
 function _python2js_handle_postprocess_list(idlist,idcache) { const list = Hiwire.get_value(idlist); const cache = Hiwire.get_value(idcache); for (const[parent, key, value] of list) { let out_value = Hiwire.get_value(cache.get(value)); if(parent.constructor.name === "Map"){ parent.set(key, out_value) } else { parent[key] = out_value; } } }
-_python2js_handle_postprocess_list.sig = 'vii';
 function _python2js_ucs1(ptr,len) { try { let jsstr = ""; for (let i = 0; i < len; ++i) { jsstr += String.fromCharCode(HEAPU8[ptr + i]); } return Hiwire.new_value(jsstr); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-_python2js_ucs1.sig = 'iii';
 function _python2js_ucs2(ptr,len) { try { let jsstr = ""; for (let i = 0; i < len; ++i) { jsstr += String.fromCharCode(HEAPU16[(ptr >> 1) + i]); } return Hiwire.new_value(jsstr); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-_python2js_ucs2.sig = 'iii';
 function _python2js_ucs4(ptr,len) { try { let jsstr = ""; for (let i = 0; i < len; ++i) { jsstr += String.fromCodePoint(HEAPU32[(ptr >> 2) + i]); } return Hiwire.new_value(jsstr); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-_python2js_ucs4.sig = 'iii';
 function _python2js_add_to_cache(cacheid,pyparent,jsparent) { try { const cache = Hiwire.get_value(cacheid); const old_value = cache.get(pyparent); if (old_value !== undefined) { Hiwire.decref(old_value); } cache.set(pyparent, Hiwire.incref(jsparent)); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-_python2js_add_to_cache.sig = 'iiii';
 function _python2js_destroy_cache(cacheid) { const cache = Hiwire.get_value(cacheid); for (const[k, v] of cache.entries()) { Hiwire.decref(v); } }
-_python2js_destroy_cache.sig = 'vi';
 function _python2js_cache_lookup(cacheid,pyparent) { return Hiwire.get_value(cacheid).get(pyparent); }
-_python2js_cache_lookup.sig = 'iii';
 function _JsArray_PushEntry_helper(array,key,value) { try { Hiwire.get_value(array).push( [ Hiwire.get_value(key), Hiwire.get_value(value) ]); } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-_JsArray_PushEntry_helper.sig = 'iiii';
 function _JsArray_PostProcess_helper(jscontext,array) { try { return Hiwire.new_value( Hiwire.get_value(jscontext).dict_converter(Hiwire.get_value(array))); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-_JsArray_PostProcess_helper.sig = 'iii';
 function python2js__default_converter_js(jscontext,object) { try { let context = Hiwire.get_value(jscontext); let proxy = Module.pyproxy_new(object); let result = context.default_converter( proxy, context.converter, context.cacheConversion ); proxy.destroy(); return Hiwire.new_value(result); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-python2js__default_converter_js.sig = 'iii';
 function python2js_custom__create_jscontext(context,idcache,dict_converter,default_converter) { try { let jscontext = {}; if (dict_converter !== 0) { jscontext.dict_converter = Hiwire.get_value(dict_converter); } if (default_converter !== 0) { jscontext.default_converter = Hiwire.get_value(default_converter); jscontext.cacheConversion = function (input, output) { if (!API.isPyProxy(input)) { throw new TypeError("The first argument to cacheConversion must be a PyProxy."); } let input_ptr = Module.PyProxy_getPtr(input); let output_key = Hiwire.new_value(output); Hiwire.get_value(idcache).set(input_ptr, output_key); }; jscontext.converter = function (x) { if (!API.isPyProxy(x)) { return x; } let ptr = Module.PyProxy_getPtr(x); let res = __python2js(context, ptr); return Hiwire.pop_value(res); }; } return Hiwire.new_value(jscontext); } catch (e) { ; Module.handle_js_error(e); return 0; } errNoRet(); }
-python2js_custom__create_jscontext.sig = 'iiiii';
 function destroy_proxies_js(proxies_id) { try { for (let proxy of Hiwire.get_value(proxies_id)) { proxy.destroy(); } } catch (e) { ; Module.handle_js_error(e); return -1; } return 0; }
-destroy_proxies_js.sig = 'ii';
 function pyodide_js_init() {
 "use strict";(()=>{var Vr=Object.create;var ue=Object.defineProperty;var sr=Object.getOwnPropertyDescriptor;var Kr=Object.getOwnPropertyNames;var qr=Object.getPrototypeOf,Jr=Object.prototype.hasOwnProperty;var a=(r,e)=>ue(r,"name",{value:e,configurable:!0}),je=(r=>typeof require<"u"?require:typeof Proxy<"u"?new Proxy(r,{get:(e,t)=>(typeof require<"u"?require:e)[t]}):r)(function(r){if(typeof require<"u")return require.apply(this,arguments);throw new Error('Dynamic require of "'+r+'" is not supported')});var lr=(r,e)=>()=>(e||r((e={exports:{}}).exports,e),e.exports);var Yr=(r,e,t,n)=>{if(e&&typeof e=="object"||typeof e=="function")for(let o of Kr(e))!Jr.call(r,o)&&o!==t&&ue(r,o,{get:()=>e[o],enumerable:!(n=sr(e,o))||n.enumerable});return r};var Xr=(r,e,t)=>(t=r!=null?Vr(qr(r)):{},Yr(e||!r||!r.__esModule?ue(t,"default",{value:r,enumerable:!0}):t,r));var S=(r,e,t,n)=>{for(var o=n>1?void 0:n?sr(e,t):e,s=r.length-1,i;s>=0;s--)(i=r[s])&&(o=(n?i(e,t,o):i(o))||o);return n&&o&&ue(e,t,o),o};var wr=lr((Ye,xr)=>{(function(r,e){"use strict";typeof define=="function"&&define.amd?define("stackframe",[],e):typeof Ye=="object"?xr.exports=e():r.StackFrame=e()})(Ye,function(){"use strict";function r(d){return!isNaN(parseFloat(d))&&isFinite(d)}a(r,"_isNumber");function e(d){return d.charAt(0).toUpperCase()+d.substring(1)}a(e,"_capitalize");function t(d){return function(){return this[d]}}a(t,"_getter");var n=["isConstructor","isEval","isNative","isToplevel"],o=["columnNumber","lineNumber"],s=["fileName","functionName","source"],i=["args"],u=["evalOrigin"],l=n.concat(o,s,i,u);function c(d){if(d)for(var m=0;m<l.length;m++)d[l[m]]!==void 0&&this["set"+e(l[m])](d[l[m]])}a(c,"StackFrame"),c.prototype={getArgs:function(){return this.args},setArgs:function(d){if(Object.prototype.toString.call(d)!=="[object Array]")throw new TypeError("Args must be an Array");this.args=d},getEvalOrigin:function(){return this.evalOrigin},setEvalOrigin:function(d){if(d instanceof c)this.evalOrigin=d;else if(d instanceof Object)this.evalOrigin=new c(d);else throw new TypeError("Eval Origin must be an Object or StackFrame")},toString:function(){var d=this.getFileName()||"",m=this.getLineNumber()||"",w=this.getColumnNumber()||"",T=this.getFunctionName()||"";return this.getIsEval()?d?"[eval] ("+d+":"+m+":"+w+")":"[eval]:"+m+":"+w:T?T+" ("+d+":"+m+":"+w+")":d+":"+m+":"+w}},c.fromString=a(function(m){var w=m.indexOf("("),T=m.lastIndexOf(")"),Le=m.substring(0,w),ce=m.substring(w+1,T).split(","),L=m.substring(T+1);if(L.indexOf("@")===0)var A=/@(.+?)(?::(\d+))?(?::(\d+))?$/.exec(L,""),k=A[1],R=A[2],$e=A[3];return new c({functionName:Le,args:ce||void 0,fileName:k,lineNumber:R||void 0,columnNumber:$e||void 0})},"StackFrame$$fromString");for(var y=0;y<n.length;y++)c.prototype["get"+e(n[y])]=t(n[y]),c.prototype["set"+e(n[y])]=function(d){return function(m){this[d]=!!m}}(n[y]);for(var p=0;p<o.length;p++)c.prototype["get"+e(o[p])]=t(o[p]),c.prototype["set"+e(o[p])]=function(d){return function(m){if(!r(m))throw new TypeError(d+" must be a Number");this[d]=Number(m)}}(o[p]);for(var _=0;_<s.length;_++)c.prototype["get"+e(s[_])]=t(s[_]),c.prototype["set"+e(s[_])]=function(d){return function(m){this[d]=String(m)}}(s[_]);return c})});var Ar=lr((Xe,vr)=>{(function(r,e){"use strict";typeof define=="function"&&define.amd?define("error-stack-parser",["stackframe"],e):typeof Xe=="object"?vr.exports=e(wr()):r.ErrorStackParser=e(r.StackFrame)})(Xe,a(function(e){"use strict";var t=/(^|@)\S+:\d+/,n=/^\s*at .*(\S+:\d+|\(native\))/m,o=/^(eval@)?(\[native code])?$/;return{parse:a(function(i){if(typeof i.stacktrace<"u"||typeof i["opera#sourceloc"]<"u")return this.parseOpera(i);if(i.stack&&i.stack.match(n))return this.parseV8OrIE(i);if(i.stack)return this.parseFFOrSafari(i);throw new Error("Cannot parse given Error object")},"ErrorStackParser$$parse"),extractLocation:a(function(i){if(i.indexOf(":")===-1)return[i];var u=/(.+?)(?::(\d+))?(?::(\d+))?$/,l=u.exec(i.replace(/[()]/g,""));return[l[1],l[2]||void 0,l[3]||void 0]},"ErrorStackParser$$extractLocation"),parseV8OrIE:a(function(i){var u=i.stack.split(`
 `).filter(function(l){return!!l.match(n)},this);return u.map(function(l){l.indexOf("(eval ")>-1&&(l=l.replace(/eval code/g,"eval").replace(/(\(eval at [^()]*)|(,.*$)/g,""));var c=l.replace(/^\s+/,"").replace(/\(eval code/g,"(").replace(/^.*?\s+/,""),y=c.match(/ (\(.+\)$)/);c=y?c.replace(y[0],""):c;var p=this.extractLocation(y?y[1]:c),_=y&&c||void 0,d=["eval","<anonymous>"].indexOf(p[0])>-1?void 0:p[0];return new e({functionName:_,fileName:d,lineNumber:p[1],columnNumber:p[2],source:l})},this)},"ErrorStackParser$$parseV8OrIE"),parseFFOrSafari:a(function(i){var u=i.stack.split(`
@@ -1409,24 +1245,15 @@ const errNoRet = () => {
 Module.reportUndefinedSymbols = () => {};
 pyodide_js_init();
 
-pyodide_js_init.sig = 'v';
 function __hiwire_deduplicate_new() { return new Map(); }
-__hiwire_deduplicate_new.sig = 'e';
 function __hiwire_deduplicate_get(map,value) { return map.get(value); }
-__hiwire_deduplicate_get.sig = 'iee';
 function __hiwire_deduplicate_set(map,value,ref) { map.set(value, ref); }
-__hiwire_deduplicate_set.sig = 'veei';
 function __hiwire_deduplicate_delete(map,value) { map.delete(value); }
-__hiwire_deduplicate_delete.sig = 'vee';
 function unbox_small_structs(type_ptr) { var type_id = HEAPU16[(type_ptr + 6 >> 1) + 0]; while (type_id === 13) { var elements = HEAPU32[(type_ptr + 8 >> 2) + 0]; var first_element = HEAPU32[(elements >> 2) + 0]; if (first_element === 0) { type_id = 0; break; } else if (HEAPU32[(elements >> 2) + 1] === 0) { type_ptr = first_element; type_id = HEAPU16[(first_element + 6 >> 1) + 0]; } else { break; } } return [type_ptr, type_id]; }
 function ffi_call_js(cif,fn,rvalue,avalue) { var abi = HEAPU32[(cif >> 2) + 0]; var nargs = HEAPU32[(cif >> 2) + 1]; var nfixedargs = HEAPU32[(cif >> 2) + 6]; var arg_types_ptr = HEAPU32[(cif >> 2) + 2]; var rtype_unboxed = unbox_small_structs(HEAPU32[(cif >> 2) + 3]); var rtype_ptr = rtype_unboxed[0]; var rtype_id = rtype_unboxed[1]; var orig_stack_ptr = stackSave(); var cur_stack_ptr = orig_stack_ptr; var args = []; var ret_by_arg = false; if (rtype_id === 15) { throw new Error('complex ret marshalling nyi'); } if (rtype_id < 0 || rtype_id > 15) { throw new Error('Unexpected rtype ' + rtype_id); } if (rtype_id === 4 || rtype_id === 13) { args.push(rvalue); ret_by_arg = true; } ; for (var i = 0; i < nfixedargs; i++) { var arg_ptr = HEAPU32[(avalue >> 2) + i]; var arg_unboxed = unbox_small_structs(HEAPU32[(arg_types_ptr >> 2) + i]); var arg_type_ptr = arg_unboxed[0]; var arg_type_id = arg_unboxed[1]; switch (arg_type_id) { case 1: case 10: case 9: case 14: args.push(HEAPU32[(arg_ptr >> 2) + 0]); ; break; case 2: args.push(HEAPF32[(arg_ptr >> 2) + 0]); ; break; case 3: args.push(HEAPF64[(arg_ptr >> 3) + 0]); ; break; case 5: args.push(HEAPU8[arg_ptr + 0]); ; break; case 6: args.push(HEAP8[arg_ptr + 0]); ; break; case 7: args.push(HEAPU16[(arg_ptr >> 1) + 0]); ; break; case 8: args.push(HEAP16[(arg_ptr >> 1) + 0]); ; break; case 11: case 12: args.push(HEAPU64[(arg_ptr >> 3) + 0]); ; break; case 4: args.push(HEAPU64[(arg_ptr >> 3) + 0]); args.push(HEAPU64[(arg_ptr >> 3) + 1]); ; break; case 13: var size = HEAPU32[(arg_type_ptr >> 2) + 0]; var align = HEAPU16[(arg_type_ptr + 4 >> 1) + 0]; ((cur_stack_ptr -= (size)), (cur_stack_ptr &= (~((align) - 1)))); HEAP8.subarray(cur_stack_ptr, cur_stack_ptr+size).set(HEAP8.subarray(arg_ptr, arg_ptr + size)); args.push(cur_stack_ptr); ; break; case 15: throw new Error('complex marshalling nyi'); default: throw new Error('Unexpected type ' + arg_type_id); } } if (nfixedargs != nargs) { ; var struct_arg_info = []; for (var i = nargs - 1; i >= nfixedargs; i--) { var arg_ptr = HEAPU32[(avalue >> 2) + i]; var arg_unboxed = unbox_small_structs(HEAPU32[(arg_types_ptr >> 2) + i]); var arg_type_ptr = arg_unboxed[0]; var arg_type_id = arg_unboxed[1]; switch (arg_type_id) { case 5: case 6: ((cur_stack_ptr -= (1)), (cur_stack_ptr &= (~((1) - 1)))); HEAPU8[cur_stack_ptr + 0] = HEAPU8[arg_ptr + 0]; break; case 7: case 8: ((cur_stack_ptr -= (2)), (cur_stack_ptr &= (~((2) - 1)))); HEAPU16[(cur_stack_ptr >> 1) + 0] = HEAPU16[(arg_ptr >> 1) + 0]; break; case 1: case 9: case 10: case 14: case 2: ((cur_stack_ptr -= (4)), (cur_stack_ptr &= (~((4) - 1)))); HEAPU32[(cur_stack_ptr >> 2) + 0] = HEAPU32[(arg_ptr >> 2) + 0]; break; case 3: case 11: case 12: ((cur_stack_ptr -= (8)), (cur_stack_ptr &= (~((8) - 1)))); HEAPU32[(cur_stack_ptr >> 2) + 0] = HEAPU32[(arg_ptr >> 2) + 0]; HEAPU32[(cur_stack_ptr >> 2) + 1] = HEAPU32[(arg_ptr >> 2) + 1]; break; case 4: ((cur_stack_ptr -= (16)), (cur_stack_ptr &= (~((8) - 1)))); HEAPU32[(cur_stack_ptr >> 2) + 0] = HEAPU32[(arg_ptr >> 2) + 0]; HEAPU32[(cur_stack_ptr >> 2) + 1] = HEAPU32[(arg_ptr >> 2) + 1]; HEAPU32[(cur_stack_ptr >> 2) + 2] = HEAPU32[(arg_ptr >> 2) + 2]; HEAPU32[(cur_stack_ptr >> 2) + 3] = HEAPU32[(arg_ptr >> 2) + 3]; break; case 13: ((cur_stack_ptr -= (4)), (cur_stack_ptr &= (~((4) - 1)))); struct_arg_info.push([cur_stack_ptr, arg_ptr, HEAPU32[(arg_type_ptr >> 2) + 0], HEAPU16[(arg_type_ptr + 4 >> 1) + 0]]); break; case 15: throw new Error('complex arg marshalling nyi'); default: throw new Error('Unexpected argtype ' + arg_type_id); } } args.push(cur_stack_ptr); for (var i = 0; i < struct_arg_info.length; i++) { var struct_info = struct_arg_info[i]; var arg_target = struct_info[0]; var arg_ptr = struct_info[1]; var size = struct_info[2]; var align = struct_info[3]; ((cur_stack_ptr -= (size)), (cur_stack_ptr &= (~((align) - 1)))); HEAP8.subarray(cur_stack_ptr, cur_stack_ptr+size).set(HEAP8.subarray(arg_ptr, arg_ptr + size)); HEAPU32[(arg_target >> 2) + 0] = cur_stack_ptr; } } stackRestore(cur_stack_ptr); stackAlloc(0); var result = (0, getWasmTableEntry(fn).apply(null, args)); stackRestore(orig_stack_ptr); if (ret_by_arg) { return; } switch (rtype_id) { case 0: break; case 1: case 9: case 10: case 14: HEAPU32[(rvalue >> 2) + 0] = result; break; case 2: HEAPF32[(rvalue >> 2) + 0] = result; break; case 3: HEAPF64[(rvalue >> 3) + 0] = result; break; case 5: case 6: HEAPU8[rvalue + 0] = result; break; case 7: case 8: HEAPU16[(rvalue >> 1) + 0] = result; break; case 11: case 12: HEAPU64[(rvalue >> 3) + 0] = result; break; case 15: throw new Error('complex ret marshalling nyi'); default: throw new Error('Unexpected rtype ' + rtype_id); } }
-ffi_call_js.sig = 'viiii';
 function ffi_closure_alloc_js(size,code) { var closure = _malloc(size); var index = getEmptyTableSlot(); HEAPU32[(code >> 2) + 0] = index; HEAPU32[(closure >> 2) + 0] = index; return closure; }
-ffi_closure_alloc_js.sig = 'iii';
 function ffi_closure_free_js(closure) { var index = HEAPU32[(closure >> 2) + 0]; freeTableIndexes.push(index); _free(closure); }
-ffi_closure_free_js.sig = 'vi';
 function ffi_prep_closure_loc_js(closure,cif,fun,user_data,codeloc) { var abi = HEAPU32[(cif >> 2) + 0]; var nargs = HEAPU32[(cif >> 2) + 1]; var nfixedargs = HEAPU32[(cif >> 2) + 6]; var arg_types_ptr = HEAPU32[(cif >> 2) + 2]; var rtype_unboxed = unbox_small_structs(HEAPU32[(cif >> 2) + 3]); var rtype_ptr = rtype_unboxed[0]; var rtype_id = rtype_unboxed[1]; var sig; var ret_by_arg = false; switch (rtype_id) { case 0: sig = 'v'; break; case 13: case 4: sig = 'vi'; ret_by_arg = true; break; case 1: case 5: case 6: case 7: case 8: case 9: case 10: case 14: sig = 'i'; break; case 2: sig = 'f'; break; case 3: sig = 'd'; break; case 11: case 12: sig = 'j'; break; case 15: throw new Error('complex ret marshalling nyi'); default: throw new Error('Unexpected rtype ' + rtype_id); } var unboxed_arg_type_id_list = []; var unboxed_arg_type_info_list = []; for (var i = 0; i < nargs; i++) { var arg_unboxed = unbox_small_structs(HEAPU32[(arg_types_ptr >> 2) + i]); var arg_type_ptr = arg_unboxed[0]; var arg_type_id = arg_unboxed[1]; unboxed_arg_type_id_list.push(arg_type_id); unboxed_arg_type_info_list.push([HEAPU32[(arg_type_ptr >> 2) + 0], HEAPU16[(arg_type_ptr + 4 >> 1) + 0]]); } for (var i = 0; i < nfixedargs; i++) { switch (unboxed_arg_type_id_list[i]) { case 1: case 5: case 6: case 7: case 8: case 9: case 10: case 14: case 13: sig += 'i'; break; case 2: sig += 'f'; break; case 3: sig += 'd'; break; case 4: sig += 'jj'; break; case 11: case 12: sig += 'j'; break; case 15: throw new Error('complex marshalling nyi'); default: throw new Error('Unexpected argtype ' + arg_type_id); } } if (nfixedargs < nargs) { sig += "i"; } 0; function trampoline() { var args = Array.prototype.slice.call(arguments); var size = 0; var orig_stack_ptr = stackSave(); var cur_ptr = orig_stack_ptr; var ret_ptr; var jsarg_idx = 0; if (ret_by_arg) { ret_ptr = args[jsarg_idx++]; } else { ((cur_ptr -= (8)), (cur_ptr &= (~((8) - 1)))); ret_ptr = cur_ptr; } cur_ptr -= 4 * nargs; var args_ptr = cur_ptr; var carg_idx = 0; for (; carg_idx < nfixedargs; carg_idx++) { var cur_arg = args[jsarg_idx++]; var arg_type_info = unboxed_arg_type_info_list[carg_idx]; var arg_size = arg_type_info[0]; var arg_align = arg_type_info[1]; var arg_type_id = unboxed_arg_type_id_list[carg_idx]; switch (arg_type_id) { case 5: case 6: ((cur_ptr -= (1)), (cur_ptr &= (~((4) - 1)))); HEAPU32[(args_ptr >> 2) + carg_idx] = cur_ptr; HEAPU8[cur_ptr + 0] = cur_arg; break; case 7: case 8: ((cur_ptr -= (2)), (cur_ptr &= (~((4) - 1)))); HEAPU32[(args_ptr >> 2) + carg_idx] = cur_ptr; HEAPU16[(cur_ptr >> 1) + 0] = cur_arg; break; case 1: case 9: case 10: case 14: ((cur_ptr -= (4)), (cur_ptr &= (~((4) - 1)))); HEAPU32[(args_ptr >> 2) + carg_idx] = cur_ptr; HEAPU32[(cur_ptr >> 2) + 0] = cur_arg; break; case 13: ((cur_ptr -= (arg_size)), (cur_ptr &= (~((arg_align) - 1)))); HEAP8.subarray(cur_ptr, cur_ptr + arg_size).set(HEAP8.subarray(cur_arg, cur_arg + arg_size)); HEAPU32[(args_ptr >> 2) + carg_idx] = cur_ptr; break; case 2: ((cur_ptr -= (4)), (cur_ptr &= (~((4) - 1)))); HEAPU32[(args_ptr >> 2) + carg_idx] = cur_ptr; HEAPF32[(cur_ptr >> 2) + 0] = cur_arg; break; case 3: ((cur_ptr -= (8)), (cur_ptr &= (~((8) - 1)))); HEAPU32[(args_ptr >> 2) + carg_idx] = cur_ptr; HEAPF64[(cur_ptr >> 3) + 0] = cur_arg; break; case 11: case 12: ((cur_ptr -= (8)), (cur_ptr &= (~((8) - 1)))); HEAPU32[(args_ptr >> 2) + carg_idx] = cur_ptr; HEAPU64[(cur_ptr >> 3) + 0] = cur_arg; break; case 4: ((cur_ptr -= (16)), (cur_ptr &= (~((8) - 1)))); HEAPU32[(args_ptr >> 2) + carg_idx] = cur_ptr; HEAPU64[(cur_ptr >> 3) + 0] = cur_arg; cur_arg = args[jsarg_idx++]; HEAPU64[(cur_ptr >> 3) + 1] = cur_arg; break; } } var varargs = args[args.length - 1]; for (; carg_idx < nargs; carg_idx++) { var arg_type_id = unboxed_arg_type_id_list[carg_idx]; var arg_type_info = unboxed_arg_type_info_list[carg_idx]; var arg_size = arg_type_info[0]; var arg_align = arg_type_info[1]; if (arg_type_id === 13) { var struct_ptr = HEAPU32[(varargs >> 2) + 0]; ((cur_ptr -= (arg_size)), (cur_ptr &= (~((arg_align) - 1)))); HEAP8.subarray(cur_ptr, cur_ptr + arg_size).set(HEAP8.subarray(struct_ptr, struct_ptr + arg_size)); HEAPU32[(args_ptr >> 2) + carg_idx] = cur_ptr; } else { HEAPU32[(args_ptr >> 2) + carg_idx] = varargs; } varargs += 4; } stackRestore(cur_ptr); stackAlloc(0); 0; getWasmTableEntry(HEAPU32[(closure >> 2) + 2])( HEAPU32[(closure >> 2) + 1], ret_ptr, args_ptr, HEAPU32[(closure >> 2) + 3] ); stackRestore(orig_stack_ptr); if (!ret_by_arg) { switch (sig[0]) { case "i": return HEAPU32[(ret_ptr >> 2) + 0]; case "j": return HEAPU64[(ret_ptr >> 3) + 0]; case "d": return HEAPF64[(ret_ptr >> 3) + 0]; case "f": return HEAPF32[(ret_ptr >> 2) + 0]; } } } try { var wasm_trampoline = convertJsFunctionToWasm(trampoline, sig); } catch(e) { return 1; } setWasmTableEntry(codeloc, wasm_trampoline); HEAPU32[(closure >> 2) + 1] = cif; HEAPU32[(closure >> 2) + 2] = fun; HEAPU32[(closure >> 2) + 3] = user_data; return 0; }
-ffi_prep_closure_loc_js.sig = 'iiiiii';
 
 
 // end include: preamble.js
@@ -1438,30 +1265,67 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       this.status = status;
     }
 
-  var GOT = {
-  };
-  
-  var currentModuleWeakSymbols = new Set([]);
-  var GOTHandler = {
-  get(obj, symName) {
-        var rtn = GOT[symName];
-        if (!rtn) {
-          rtn = GOT[symName] = new WebAssembly.Global({'value': 'i32', 'mutable': true});
-        }
-        if (!currentModuleWeakSymbols.has(symName)) {
-          // Any non-weak reference to a symbol marks it as `required`, which
-          // enabled `reportUndefinedSymbols` to report undefeind symbol errors
-          // correctly.
-          rtn.required = true;
-        }
-        return rtn;
-      },
-  };
-
   var callRuntimeCallbacks = (callbacks) => {
       while (callbacks.length > 0) {
         // Pass the module as the first argument.
         callbacks.shift()(Module);
+      }
+    };
+
+  
+    /**
+     * @param {number} ptr
+     * @param {string} type
+     */
+  function getValue(ptr, type = 'i8') {
+    if (type.endsWith('*')) type = '*';
+    switch (type) {
+      case 'i1': return HEAP8[((ptr)>>0)];
+      case 'i8': return HEAP8[((ptr)>>0)];
+      case 'i16': return HEAP16[((ptr)>>1)];
+      case 'i32': return HEAP32[((ptr)>>2)];
+      case 'i64': return HEAP64[((ptr)>>3)];
+      case 'float': return HEAPF32[((ptr)>>2)];
+      case 'double': return HEAPF64[((ptr)>>3)];
+      case '*': return HEAPU32[((ptr)>>2)];
+      default: abort(`invalid type for getValue: ${type}`);
+    }
+  }
+
+  var ptrToString = (ptr) => {
+      assert(typeof ptr === 'number');
+      // With CAN_ADDRESS_2GB or MEMORY64, pointers are already unsigned.
+      ptr >>>= 0;
+      return '0x' + ptr.toString(16).padStart(8, '0');
+    };
+
+  
+    /**
+     * @param {number} ptr
+     * @param {number} value
+     * @param {string} type
+     */
+  function setValue(ptr, value, type = 'i8') {
+    if (type.endsWith('*')) type = '*';
+    switch (type) {
+      case 'i1': HEAP8[((ptr)>>0)] = value; break;
+      case 'i8': HEAP8[((ptr)>>0)] = value; break;
+      case 'i16': HEAP16[((ptr)>>1)] = value; break;
+      case 'i32': HEAP32[((ptr)>>2)] = value; break;
+      case 'i64': HEAP64[((ptr)>>3)] = BigInt(value); break;
+      case 'float': HEAPF32[((ptr)>>2)] = value; break;
+      case 'double': HEAPF64[((ptr)>>3)] = value; break;
+      case '*': HEAPU32[((ptr)>>2)] = value; break;
+      default: abort(`invalid type for setValue: ${type}`);
+    }
+  }
+
+  var warnOnce = (text) => {
+      if (!warnOnce.shown) warnOnce.shown = {};
+      if (!warnOnce.shown[text]) {
+        warnOnce.shown[text] = 1;
+        if (ENVIRONMENT_IS_NODE) text = 'warning: ' + text;
+        err(text);
       }
     };
 
@@ -1518,516 +1382,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       }
       return str;
     };
-  var getDylinkMetadata = (binary) => {
-      var offset = 0;
-      var end = 0;
-  
-      function getU8() {
-        return binary[offset++];
-      }
-  
-      function getLEB() {
-        var ret = 0;
-        var mul = 1;
-        while (1) {
-          var byte = binary[offset++];
-          ret += ((byte & 0x7f) * mul);
-          mul *= 0x80;
-          if (!(byte & 0x80)) break;
-        }
-        return ret;
-      }
-  
-      function getString() {
-        var len = getLEB();
-        offset += len;
-        return UTF8ArrayToString(binary, offset - len, len);
-      }
-  
-      /** @param {string=} message */
-      function failIf(condition, message) {
-        if (condition) throw new Error(message);
-      }
-  
-      var name = 'dylink.0';
-      if (binary instanceof WebAssembly.Module) {
-        var dylinkSection = WebAssembly.Module.customSections(binary, name);
-        if (dylinkSection.length === 0) {
-          name = 'dylink'
-          dylinkSection = WebAssembly.Module.customSections(binary, name);
-        }
-        failIf(dylinkSection.length === 0, 'need dylink section');
-        binary = new Uint8Array(dylinkSection[0]);
-        end = binary.length
-      } else {
-        var int32View = new Uint32Array(new Uint8Array(binary.subarray(0, 24)).buffer);
-        var magicNumberFound = int32View[0] == 0x6d736100;
-        failIf(!magicNumberFound, 'need to see wasm magic number'); // \0asm
-        // we should see the dylink custom section right after the magic number and wasm version
-        failIf(binary[8] !== 0, 'need the dylink section to be first')
-        offset = 9;
-        var section_size = getLEB(); //section size
-        end = offset + section_size;
-        name = getString();
-      }
-  
-      var customSection = { neededDynlibs: [], tlsExports: new Set(), weakImports: new Set() };
-      if (name == 'dylink') {
-        customSection.memorySize = getLEB();
-        customSection.memoryAlign = getLEB();
-        customSection.tableSize = getLEB();
-        customSection.tableAlign = getLEB();
-        // shared libraries this module needs. We need to load them first, so that
-        // current module could resolve its imports. (see tools/shared.py
-        // WebAssembly.make_shared_library() for "dylink" section extension format)
-        var neededDynlibsCount = getLEB();
-        for (var i = 0; i < neededDynlibsCount; ++i) {
-          var libname = getString();
-          customSection.neededDynlibs.push(libname);
-        }
-      } else {
-        failIf(name !== 'dylink.0');
-        var WASM_DYLINK_MEM_INFO = 0x1;
-        var WASM_DYLINK_NEEDED = 0x2;
-        var WASM_DYLINK_EXPORT_INFO = 0x3;
-        var WASM_DYLINK_IMPORT_INFO = 0x4;
-        var WASM_SYMBOL_TLS = 0x100;
-        var WASM_SYMBOL_BINDING_MASK = 0x3;
-        var WASM_SYMBOL_BINDING_WEAK = 0x1;
-        while (offset < end) {
-          var subsectionType = getU8();
-          var subsectionSize = getLEB();
-          if (subsectionType === WASM_DYLINK_MEM_INFO) {
-            customSection.memorySize = getLEB();
-            customSection.memoryAlign = getLEB();
-            customSection.tableSize = getLEB();
-            customSection.tableAlign = getLEB();
-          } else if (subsectionType === WASM_DYLINK_NEEDED) {
-            var neededDynlibsCount = getLEB();
-            for (var i = 0; i < neededDynlibsCount; ++i) {
-              libname = getString();
-              customSection.neededDynlibs.push(libname);
-            }
-          } else if (subsectionType === WASM_DYLINK_EXPORT_INFO) {
-            var count = getLEB();
-            while (count--) {
-              var symname = getString();
-              var flags = getLEB();
-              if (flags & WASM_SYMBOL_TLS) {
-                customSection.tlsExports.add(symname);
-              }
-            }
-          } else if (subsectionType === WASM_DYLINK_IMPORT_INFO) {
-            var count = getLEB();
-            while (count--) {
-              var modname = getString();
-              var symname = getString();
-              var flags = getLEB();
-              if ((flags & WASM_SYMBOL_BINDING_MASK) == WASM_SYMBOL_BINDING_WEAK) {
-                customSection.weakImports.add(symname);
-              }
-            }
-          } else {
-            err(`unknown dylink.0 subsection: ${subsectionType}`)
-            // unknown subsection
-            offset += subsectionSize;
-          }
-        }
-      }
-  
-      var tableAlign = Math.pow(2, customSection.tableAlign);
-      assert(tableAlign === 1, `invalid tableAlign ${tableAlign}`);
-      assert(offset == end);
-  
-      return customSection;
-    };
-
-  
-    /**
-     * @param {number} ptr
-     * @param {string} type
-     */
-  function getValue(ptr, type = 'i8') {
-    if (type.endsWith('*')) type = '*';
-    switch (type) {
-      case 'i1': return HEAP8[((ptr)>>0)];
-      case 'i8': return HEAP8[((ptr)>>0)];
-      case 'i16': return HEAP16[((ptr)>>1)];
-      case 'i32': return HEAP32[((ptr)>>2)];
-      case 'i64': return HEAP64[((ptr)>>3)];
-      case 'float': return HEAPF32[((ptr)>>2)];
-      case 'double': return HEAPF64[((ptr)>>3)];
-      case '*': return HEAPU32[((ptr)>>2)];
-      default: abort(`invalid type for getValue: ${type}`);
-    }
-  }
-
-  var newDSO = (name, handle, syms) => {
-      var dso = {
-        refcount: Infinity,
-        name,
-        exports: syms,
-        global: true,
-      };
-      LDSO.loadedLibsByName[name] = dso;
-      if (handle != undefined) {
-        LDSO.loadedLibsByHandle[handle] = dso;
-      }
-      return dso;
-    };
-  var LDSO = {
-  loadedLibsByName:{
-  },
-  loadedLibsByHandle:{
-  },
-  init() {
-        // This function needs to run after the initial wasmImports object
-        // as been created.
-        assert(wasmImports);
-        newDSO('__main__', 0, wasmImports);
-      },
-  };
-  
-  
-  
-  var ___heap_base = 8806576;
-  
-  var zeroMemory = (address, size) => {
-      HEAPU8.fill(0, address, address + size);
-      return address;
-    };
-  
-  var alignMemory = (size, alignment) => {
-      assert(alignment, "alignment argument is required");
-      return Math.ceil(size / alignment) * alignment;
-    };
-  
-  var getMemory = (size) => {
-      // After the runtime is initialized, we must only use sbrk() normally.
-      if (runtimeInitialized) {
-        // Currently we don't support freeing of static data when modules are
-        // unloaded via dlclose.  This function is tagged as `noleakcheck` to
-        // avoid having this reported as leak.
-        return zeroMemory(_malloc(size), size);
-      }
-      var ret = ___heap_base;
-      // Keep __heap_base stack aligned.
-      var end = ret + alignMemory(size, 16);
-      assert(end <= HEAP8.length, 'failure to getMemory - memory growth etc. is not supported there, call malloc/sbrk directly or increase INITIAL_MEMORY');
-      ___heap_base = end;
-      GOT['__heap_base'].value = end;
-      return ret;
-    };
-  
-  
-  var isInternalSym = (symName) => {
-      // TODO: find a way to mark these in the binary or avoid exporting them.
-      return [
-        '__cpp_exception',
-        '__c_longjmp',
-        '__wasm_apply_data_relocs',
-        '__dso_handle',
-        '__tls_size',
-        '__tls_align',
-        '__set_stack_limits',
-        '_emscripten_tls_init',
-        '__wasm_init_tls',
-        '__wasm_call_ctors',
-        '__start_em_asm',
-        '__stop_em_asm',
-        '__start_em_js',
-        '__stop_em_js',
-      ].includes(symName) || symName.startsWith('__em_js__')
-      ;
-    };
-  
-  var uleb128Encode = (n, target) => {
-      assert(n < 16384);
-      if (n < 128) {
-        target.push(n);
-      } else {
-        target.push((n % 128) | 128, n >> 7);
-      }
-    };
-  
-  var sigToWasmTypes = (sig) => {
-      var typeNames = {
-        'i': 'i32',
-        'j': 'i64',
-        'f': 'f32',
-        'd': 'f64',
-        'e': 'externref',
-        'p': 'i32',
-      };
-      var type = {
-        parameters: [],
-        results: sig[0] == 'v' ? [] : [typeNames[sig[0]]]
-      };
-      for (var i = 1; i < sig.length; ++i) {
-        assert(sig[i] in typeNames, 'invalid signature char: ' + sig[i]);
-        type.parameters.push(typeNames[sig[i]]);
-      }
-      return type;
-    };
-  
-  var generateFuncType = (sig, target) => {
-      var sigRet = sig.slice(0, 1);
-      var sigParam = sig.slice(1);
-      var typeCodes = {
-        'i': 0x7f, // i32
-        'p': 0x7f, // i32
-        'j': 0x7e, // i64
-        'f': 0x7d, // f32
-        'd': 0x7c, // f64
-      };
-  
-      // Parameters, length + signatures
-      target.push(0x60 /* form: func */);
-      uleb128Encode(sigParam.length, target);
-      for (var i = 0; i < sigParam.length; ++i) {
-        assert(sigParam[i] in typeCodes, 'invalid signature char: ' + sigParam[i]);
-    target.push(typeCodes[sigParam[i]]);
-      }
-    
-      // Return values, length + signatures
-      // With no multi-return in MVP, either 0 (void) or 1 (anything else)
-      if (sigRet == 'v') {
-        target.push(0x00);
-      } else {
-        target.push(0x01, typeCodes[sigRet]);
-      }
-    };
-  var convertJsFunctionToWasm = (func, sig) => {
-  
-      // If the type reflection proposal is available, use the new
-      // "WebAssembly.Function" constructor.
-      // Otherwise, construct a minimal wasm module importing the JS function and
-      // re-exporting it.
-      if (typeof WebAssembly.Function == "function") {
-        return new WebAssembly.Function(sigToWasmTypes(sig), func);
-      }
-  
-      // The module is static, with the exception of the type section, which is
-      // generated based on the signature passed in.
-      var typeSectionBody = [
-        0x01, // count: 1
-      ];
-      generateFuncType(sig, typeSectionBody);
-  
-      // Rest of the module is static
-      var bytes = [
-        0x00, 0x61, 0x73, 0x6d, // magic ("\0asm")
-        0x01, 0x00, 0x00, 0x00, // version: 1
-        0x01, // Type section code
-      ];
-      // Write the overall length of the type section followed by the body
-      uleb128Encode(typeSectionBody.length, bytes);
-      bytes.push.apply(bytes, typeSectionBody);
-  
-      // The rest of the module is static
-      bytes.push(
-        0x02, 0x07, // import section
-          // (import "e" "f" (func 0 (type 0)))
-          0x01, 0x01, 0x65, 0x01, 0x66, 0x00, 0x00,
-        0x07, 0x05, // export section
-          // (export "f" (func 0 (type 0)))
-          0x01, 0x01, 0x66, 0x00, 0x00,
-      );
-  
-      // We can compile this wasm module synchronously because it is very small.
-      // This accepts an import (at "e.f"), that it reroutes to an export (at "f")
-      var module = new WebAssembly.Module(new Uint8Array(bytes));
-      var instance = new WebAssembly.Instance(module, { 'e': { 'f': func } });
-      var wrappedFunc = instance.exports['f'];
-      return wrappedFunc;
-    };
-  
-  var wasmTableMirror = [];
-  var getWasmTableEntry = (funcPtr) => {
-      var func = wasmTableMirror[funcPtr];
-      if (!func) {
-        if (funcPtr >= wasmTableMirror.length) wasmTableMirror.length = funcPtr + 1;
-        wasmTableMirror[funcPtr] = func = wasmTable.get(funcPtr);
-      }
-      assert(wasmTable.get(funcPtr) == func, "JavaScript-side Wasm function table mirror is out of date!");
-      return func;
-    };
-  
-  var updateTableMap = (offset, count) => {
-      if (functionsInTableMap) {
-        for (var i = offset; i < offset + count; i++) {
-          var item = getWasmTableEntry(i);
-          // Ignore null values.
-          if (item) {
-            functionsInTableMap.set(item, i);
-          }
-        }
-      }
-    };
-  
-  var functionsInTableMap = undefined;
-  var getFunctionAddress = (func) => {
-      // First, create the map if this is the first use.
-      if (!functionsInTableMap) {
-        functionsInTableMap = new WeakMap();
-        updateTableMap(0, wasmTable.length);
-      }
-      return functionsInTableMap.get(func) || 0;
-    };
-  
-  
-  var freeTableIndexes = [];
-  var getEmptyTableSlot = () => {
-      // Reuse a free index if there is one, otherwise grow.
-      if (freeTableIndexes.length) {
-        return freeTableIndexes.pop();
-      }
-      // Grow the table
-      try {
-        wasmTable.grow(1);
-      } catch (err) {
-        if (!(err instanceof RangeError)) {
-          throw err;
-        }
-        throw 'Unable to grow wasm table. Set ALLOW_TABLE_GROWTH.';
-      }
-      return wasmTable.length - 1;
-    };
-  
-  
-  var setWasmTableEntry = (idx, func) => {
-      wasmTable.set(idx, func);
-      // With ABORT_ON_WASM_EXCEPTIONS wasmTable.get is overriden to return wrapped
-      // functions so we need to call it here to retrieve the potential wrapper correctly
-      // instead of just storing 'func' directly into wasmTableMirror
-      wasmTableMirror[idx] = wasmTable.get(idx);
-    };
-  /** @param {string=} sig */
-  var addFunction = (func, sig) => {
-      assert(typeof func != 'undefined');
-      // Check if the function is already in the table, to ensure each function
-      // gets a unique index.
-      var rtn = getFunctionAddress(func);
-      if (rtn) {
-        return rtn;
-      }
-  
-      // It's not in the table, add it now.
-  
-      var ret = getEmptyTableSlot();
-  
-      // Set the new value.
-      try {
-        // Attempting to call this with JS function will cause of table.set() to fail
-        setWasmTableEntry(ret, func);
-      } catch (err) {
-        if (!(err instanceof TypeError)) {
-          throw err;
-        }
-        assert(typeof sig != 'undefined', 'Missing signature argument to addFunction: ' + func);
-        var wrapped = convertJsFunctionToWasm(func, sig);
-        setWasmTableEntry(ret, wrapped);
-      }
-  
-      functionsInTableMap.set(func, ret);
-  
-      return ret;
-    };
-  
-  var updateGOT = (exports, replace) => {
-      for (var symName in exports) {
-        if (isInternalSym(symName)) {
-          continue;
-        }
-  
-        var value = exports[symName];
-  
-        if (!GOT[symName]) {
-          GOT[symName] = new WebAssembly.Global({'value': 'i32', 'mutable': true});
-        }
-        if (replace || GOT[symName].value == 0) {
-          if (typeof value == 'function') {
-            GOT[symName].value = addFunction(value);
-          } else if (typeof value == 'number') {
-            GOT[symName].value = value;
-          } else {
-            err(`unhandled export type for '${symName}': ${typeof value}`);
-          }
-        }
-      }
-    };
-  /** @param {boolean=} replace */
-  var relocateExports = (exports, memoryBase, replace) => {
-      var relocated = {};
-  
-      for (var e in exports) {
-        var value = exports[e];
-        if (typeof value == 'object') {
-          // a breaking change in the wasm spec, globals are now objects
-          // https://github.com/WebAssembly/mutable-global/issues/1
-          value = value.value;
-        }
-        if (typeof value == 'number') {
-          value += memoryBase;
-        }
-        relocated[e] = value;
-      }
-      updateGOT(relocated, replace);
-      return relocated;
-    };
-  
-  var isSymbolDefined = (symName) => {
-      // Ignore 'stub' symbols that are auto-generated as part of the original
-      // `wasmImports` used to instantate the main module.
-      var existing = wasmImports[symName];
-      if (!existing || existing.stub) {
-        return false;
-      }
-      return true;
-    };
-  
-  /** @param {Object=} args */
-  var dynCall = (sig, ptr, args) => {
-      assert(getWasmTableEntry(ptr), `missing table entry in dynCall: ${ptr}`);
-      var rtn = getWasmTableEntry(ptr).apply(null, args);
-      return rtn;
-    };
-  
-  var createInvokeFunction = (sig) => {
-      return function() {
-        var sp = stackSave();
-        try {
-          return dynCall(sig, arguments[0], Array.prototype.slice.call(arguments, 1));
-        } catch(e) {
-          stackRestore(sp);
-          // Create a try-catch guard that rethrows the Emscripten EH exception.
-          // Exceptions thrown from C++ will be a pointer (number) and longjmp
-          // will throw the number Infinity. Use the compact and fast "e !== e+0"
-          // test to check if e was not a Number.
-          if (e !== e+0) throw e;
-          _setThrew(1, 0);
-        }
-      }
-    };
-  var resolveGlobalSymbol = (symName, direct = false) => {
-      var sym;
-      if (isSymbolDefined(symName)) {
-        sym = wasmImports[symName];
-      }
-      // Asm.js-style exception handling: invoke wrapper generation
-      else if (symName.startsWith('invoke_')) {
-        // Create (and cache) new invoke_ functions on demand.
-        sym = wasmImports[symName] = createInvokeFunction(symName.split('_')[1]);
-      }
-      return {sym, name: symName};
-    };
-  
-  
-  
-  
-  
-  
-  
   
     /**
      * Given a pointer 'ptr' to a null-terminated UTF8-encoded string in the
@@ -2048,529 +1402,30 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       assert(typeof ptr == 'number');
       return ptr ? UTF8ArrayToString(HEAPU8, ptr, maxBytesToRead) : '';
     };
-  
-     /**
-      * @param {string=} libName
-      * @param {Object=} localScope
-      * @param {number=} handle
-      */
-  var loadWebAssemblyModule = (binary, flags, libName, localScope, handle) => {
-      var metadata = getDylinkMetadata(binary);
-      currentModuleWeakSymbols = metadata.weakImports;
-      var originalTable = wasmTable;
-  
-      // loadModule loads the wasm module after all its dependencies have been loaded.
-      // can be called both sync/async.
-      function loadModule() {
-        // The first thread to load a given module needs to allocate the static
-        // table and memory regions.  Later threads re-use the same table region
-        // and can ignore the memory region (since memory is shared between
-        // threads already).
-        // If `handle` is specified than it is assumed that the calling thread has
-        // exclusive access to it for the duration of this function.  See the
-        // locking in `dynlink.c`.
-        var firstLoad = !handle || !HEAP8[(((handle)+(8))>>0)];
-        if (firstLoad) {
-          // alignments are powers of 2
-          var memAlign = Math.pow(2, metadata.memoryAlign);
-          // prepare memory
-          var memoryBase = metadata.memorySize ? alignMemory(getMemory(metadata.memorySize + memAlign), memAlign) : 0; // TODO: add to cleanups
-          var tableBase = metadata.tableSize ? wasmTable.length : 0;
-          if (handle) {
-            HEAP8[(((handle)+(8))>>0)] = 1;
-            HEAPU32[(((handle)+(12))>>2)] = memoryBase;
-            HEAP32[(((handle)+(16))>>2)] = metadata.memorySize;
-            HEAPU32[(((handle)+(20))>>2)] = tableBase;
-            HEAP32[(((handle)+(24))>>2)] = metadata.tableSize;
-          }
-        } else {
-          memoryBase = HEAPU32[(((handle)+(12))>>2)];
-          tableBase = HEAPU32[(((handle)+(20))>>2)];
-        }
-  
-        var tableGrowthNeeded = tableBase + metadata.tableSize - wasmTable.length;
-        if (tableGrowthNeeded > 0) {
-          wasmTable.grow(tableGrowthNeeded);
-        }
-  
-        // This is the export map that we ultimately return.  We declare it here
-        // so it can be used within resolveSymbol.  We resolve symbols against
-        // this local symbol map in the case there they are not present on the
-        // global Module object.  We need this fallback because Modules sometime
-        // need to import their own symbols
-        var moduleExports;
-  
-        function resolveSymbol(sym) {
-          var resolved = resolveGlobalSymbol(sym).sym;
-          if (!resolved && localScope) {
-            resolved = localScope[sym];
-          }
-          if (!resolved) {
-            resolved = moduleExports[sym];
-          }
-          assert(resolved, `undefined symbol '${sym}'. perhaps a side module was not linked in? if this global was expected to arrive from a system library, try to build the MAIN_MODULE with EMCC_FORCE_STDLIBS=1 in the environment`);
-          return resolved;
-        }
-  
-        // TODO kill ↓↓↓ (except "symbols local to this module", it will likely be
-        // not needed if we require that if A wants symbols from B it has to link
-        // to B explicitly: similarly to -Wl,--no-undefined)
-        //
-        // wasm dynamic libraries are pure wasm, so they cannot assist in
-        // their own loading. When side module A wants to import something
-        // provided by a side module B that is loaded later, we need to
-        // add a layer of indirection, but worse, we can't even tell what
-        // to add the indirection for, without inspecting what A's imports
-        // are. To do that here, we use a JS proxy (another option would
-        // be to inspect the binary directly).
-        var proxyHandler = {
-          get(stubs, prop) {
-            // symbols that should be local to this module
-            switch (prop) {
-              case '__memory_base':
-                return memoryBase;
-              case '__table_base':
-                return tableBase;
-            }
-            if (prop in wasmImports && !wasmImports[prop].stub) {
-              // No stub needed, symbol already exists in symbol table
-              return wasmImports[prop];
-            }
-            // Return a stub function that will resolve the symbol
-            // when first called.
-            if (!(prop in stubs)) {
-              var resolved;
-              stubs[prop] = function() {
-                if (!resolved) resolved = resolveSymbol(prop);
-                if (!resolved) {
-                  throw new Error(`Dynamic linking error: cannot resolve symbol ${prop}`);
-                }
-                return resolved.apply(null, arguments);
-              };
-            }
-            return stubs[prop];
-          }
-        };
-        var proxy = new Proxy({}, proxyHandler);
-        var info = {
-          'GOT.mem': new Proxy({}, GOTHandler),
-          'GOT.func': new Proxy({}, GOTHandler),
-          'env': proxy,
-          'wasi_snapshot_preview1': proxy,
-        };
-  
-        function postInstantiation(module, instance) {
-          // the table should be unchanged
-          assert(wasmTable === originalTable);
-          // add new entries to functionsInTableMap
-          updateTableMap(tableBase, metadata.tableSize);
-          moduleExports = relocateExports(instance.exports, memoryBase);
-          if (!flags.allowUndefined) {
-            reportUndefinedSymbols();
-          }
-  
-          function addEmAsm(addr, body) {
-            var args = [];
-            var arity = 0;
-            for (; arity < 16; arity++) {
-              if (body.indexOf('$' + arity) != -1) {
-                args.push('$' + arity);
-              } else {
-                break;
-              }
-            }
-            args = args.join(',');
-            var func = `(${args}) => { ${body} };`;
-            ASM_CONSTS[start] = eval(func);
-          }
-  
-          // Add any EM_ASM function that exist in the side module
-          if ('__start_em_asm' in moduleExports) {
-            var start = moduleExports['__start_em_asm'];
-            var stop = moduleExports['__stop_em_asm'];
-            
-            
-            while (start < stop) {
-              var jsString = UTF8ToString(start);
-              addEmAsm(start, jsString);
-              start = HEAPU8.indexOf(0, start) + 1;
-            }
-          }
-  
-          function addEmJs(name, cSig, body) {
-            // The signature here is a C signature (e.g. "(int foo, char* bar)").
-            // See `create_em_js` in emcc.py` for the build-time version of this
-            // code.
-            var jsArgs = [];
-            cSig = cSig.slice(1, -1)
-            if (cSig != 'void') {
-              cSig = cSig.split(',');
-              for (var i in cSig) {
-                var jsArg = cSig[i].split(' ').pop();
-                jsArgs.push(jsArg.replace('*', ''));
-              }
-            }
-            var func = `(${jsArgs}) => ${body};`;
-            moduleExports[name] = eval(func);
-          }
-  
-          for (var name in moduleExports) {
-            if (name.startsWith('__em_js__')) {
-              var start = moduleExports[name]
-              
-              var jsString = UTF8ToString(start);
-              // EM_JS strings are stored in the data section in the form
-              // SIG<::>BODY.
-              var parts = jsString.split('<::>');
-              addEmJs(name.replace('__em_js__', ''), parts[0], parts[1]);
-              delete moduleExports[name];
-            }
-          }
-  
-          // initialize the module
-            var applyRelocs = moduleExports['__wasm_apply_data_relocs'];
-            if (applyRelocs) {
-              if (runtimeInitialized) {
-                applyRelocs();
-              } else {
-                __RELOC_FUNCS__.push(applyRelocs);
-              }
-            }
-            var init = moduleExports['__wasm_call_ctors'];
-            if (init) {
-              if (runtimeInitialized) {
-                init();
-              } else {
-                // we aren't ready to run compiled code yet
-                __ATINIT__.push(init);
-              }
-            }
-          return moduleExports;
-        }
-  
-        if (flags.loadAsync) {
-          if (binary instanceof WebAssembly.Module) {
-            var instance = new WebAssembly.Instance(binary, info);
-            return Promise.resolve(postInstantiation(binary, instance));
-          }
-          return WebAssembly.instantiate(binary, info).then(
-            (result) => postInstantiation(result.module, result.instance)
-          );
-        }
-  
-        var module = binary instanceof WebAssembly.Module ? binary : new WebAssembly.Module(binary);
-        var instance = new WebAssembly.Instance(module, info);
-        return postInstantiation(module, instance);
-      }
-  
-      // now load needed libraries and the module itself.
-      if (flags.loadAsync) {
-        return metadata.neededDynlibs.reduce((chain, dynNeeded) => {
-          return chain.then(() => {
-            return loadDynamicLibrary(dynNeeded, flags);
-          });
-        }, Promise.resolve()).then(loadModule);
-      }
-  
-      metadata.neededDynlibs.forEach((needed) => loadDynamicLibrary(needed, flags, localScope));
-      return loadModule();
-    };
-  
-  
-  var mergeLibSymbols = (exports, libName) => {
-      // add symbols into global namespace TODO: weak linking etc.
-      for (var sym in exports) {
-        if (!exports.hasOwnProperty(sym)) {
-          continue;
-        }
-  
-        // When RTLD_GLOBAL is enabled, the symbols defined by this shared object
-        // will be made available for symbol resolution of subsequently loaded
-        // shared objects.
-        //
-        // We should copy the symbols (which include methods and variables) from
-        // SIDE_MODULE to MAIN_MODULE.
-        const setImport = (target) => {
-          if (!isSymbolDefined(target)) {
-            wasmImports[target] = exports[sym];
-          }
-        }
-        setImport(sym);
-  
-        // Special case for handling of main symbol:  If a side module exports
-        // `main` that also acts a definition for `__main_argc_argv` and vice
-        // versa.
-        const main_alias = '__main_argc_argv';
-        if (sym == 'main') {
-          setImport(main_alias)
-        }
-        if (sym == main_alias) {
-          setImport('main')
-        }
-  
-        if (sym.startsWith('dynCall_') && !Module.hasOwnProperty(sym)) {
-          Module[sym] = exports[sym];
-        }
-      }
-    };
-  
-  
-  /** @param {boolean=} noRunDep */
-  var asyncLoad = (url, onload, onerror, noRunDep) => {
-      var dep = !noRunDep ? getUniqueRunDependency(`al ${url}`) : '';
-      readAsync(url, (arrayBuffer) => {
-        assert(arrayBuffer, `Loading data file "${url}" failed (no arrayBuffer).`);
-        onload(new Uint8Array(arrayBuffer));
-        if (dep) removeRunDependency(dep);
-      }, (event) => {
-        if (onerror) {
-          onerror();
-        } else {
-          throw `Loading data file "${url}" failed.`;
-        }
-      });
-      if (dep) addRunDependency(dep);
-    };
-  
-  var preloadPlugins = Module['preloadPlugins'] || [];
-  var registerWasmPlugin = () => {
-      // Use string keys here to avoid minification since the plugin consumer
-      // also uses string keys.
-      var wasmPlugin = {
-        'promiseChainEnd': Promise.resolve(),
-        'canHandle': (name) => {
-          return !Module.noWasmDecoding && name.endsWith('.so')
-        },
-        'handle': (byteArray, name, onload, onerror) => {
-          // loadWebAssemblyModule can not load modules out-of-order, so rather
-          // than just running the promises in parallel, this makes a chain of
-          // promises to run in series.
-          wasmPlugin['promiseChainEnd'] = wasmPlugin['promiseChainEnd'].then(
-            () => loadWebAssemblyModule(byteArray, {loadAsync: true, nodelete: true}, name)).then(
-              (exports) => {
-                preloadedWasm[name] = exports;
-                onload(byteArray);
-              },
-              (error) => {
-                err(`failed to instantiate wasm: ${name}: ${error}`);
-                onerror();
-              });
-        }
-      };
-      preloadPlugins.push(wasmPlugin);
-    };
-  var preloadedWasm = {
-  };
-  
-      /**
-       * @param {number=} handle
-       * @param {Object=} localScope
-       */
-  function loadDynamicLibrary(libName, flags = {global: true, nodelete: true}, localScope, handle) {
-      // when loadDynamicLibrary did not have flags, libraries were loaded
-      // globally & permanently
-  
-      var dso = LDSO.loadedLibsByName[libName];
-      if (dso) {
-        // the library is being loaded or has been loaded already.
-        //
-        // however it could be previously loaded only locally and if we get
-        // load request with global=true we have to make it globally visible now.
-        if (flags.global && !dso.global) {
-          dso.global = true;
-          if (dso.exports !== 'loading') {
-            // ^^^ if module is 'loading' - symbols merging will be eventually done by the loader.
-            mergeLibSymbols(dso.exports, libName)
-          }
-        }
-        // same for "nodelete"
-        if (flags.nodelete && dso.refcount !== Infinity) {
-          dso.refcount = Infinity;
-        }
-        dso.refcount++
-        if (handle) {
-          LDSO.loadedLibsByHandle[handle] = dso;
-        }
-        return flags.loadAsync ? Promise.resolve(true) : true;
-      }
-  
-      // allocate new DSO
-      dso = newDSO(libName, handle, 'loading');
-      dso.refcount = flags.nodelete ? Infinity : 1;
-      dso.global = flags.global;
-  
-      // libName -> libData
-      function loadLibData() {
-  
-        // for wasm, we can use fetch for async, but for fs mode we can only imitate it
-        var libData;
-        if (handle) {
-          var data = HEAPU32[(((handle)+(28))>>2)];
-          var dataSize = HEAPU32[(((handle)+(32))>>2)];
-          if (data && dataSize) {
-            libData = HEAP8.slice(data, data + dataSize);
-          }
-        }
-        if (!libData && flags.fs && flags.fs.findObject(libName)) {
-          libData = flags.fs.readFile(libName, {encoding: 'binary'});
-          if (!(libData instanceof Uint8Array)) {
-            libData = new Uint8Array(libData);
-          }
-        }
-        if (libData) {
-          return flags.loadAsync ? Promise.resolve(libData) : libData;
-        }
-  
-        var libFile = locateFile(libName);
-        if (flags.loadAsync) {
-          return new Promise(function(resolve, reject) {
-            asyncLoad(libFile, (data) => resolve(data), reject);
-          });
-        }
-  
-        // load the binary synchronously
-        if (!readBinary) {
-          throw new Error(`${libFile}: file not found, and synchronous loading of external files is not available`);
-        }
-        return readBinary(libFile);
-      }
-  
-      // libName -> exports
-      function getExports() {
-        // lookup preloaded cache first
-        var preloaded = preloadedWasm[libName];
-        if (preloaded) {
-          return flags.loadAsync ? Promise.resolve(preloaded) : preloaded;
-        }
-  
-        // module not preloaded - load lib data and create new module from it
-        if (flags.loadAsync) {
-          return loadLibData().then((libData) => loadWebAssemblyModule(libData, flags, libName, localScope, handle));
-        }
-  
-        return loadWebAssemblyModule(loadLibData(), flags, libName, localScope, handle);
-      }
-  
-      // module for lib is loaded - update the dso & global namespace
-      function moduleLoaded(exports) {
-        if (dso.global) {
-          mergeLibSymbols(exports, libName);
-        } else if (localScope) {
-          Object.assign(localScope, exports);
-        }
-        dso.exports = exports;
-      }
-  
-      if (flags.loadAsync) {
-        return getExports().then((exports) => {
-          moduleLoaded(exports);
-          return true;
-        });
-      }
-  
-      moduleLoaded(getExports());
-      return true;
-    }
-  
-  
-  var reportUndefinedSymbols = () => {
-      for (var symName in GOT) {
-        if (GOT[symName].value == 0) {
-          var value = resolveGlobalSymbol(symName, true).sym;
-          if (!value && !GOT[symName].required) {
-            // Ignore undefined symbols that are imported as weak.
-            continue;
-          }
-          assert(value, `undefined symbol '${symName}'. perhaps a side module was not linked in? if this global was expected to arrive from a system library, try to build the MAIN_MODULE with EMCC_FORCE_STDLIBS=1 in the environment`);
-          if (typeof value == 'function') {
-            /** @suppress {checkTypes} */
-            GOT[symName].value = addFunction(value, value.sig);
-          } else if (typeof value == 'number') {
-            GOT[symName].value = value;
-          } else {
-            throw new Error(`bad export type for '${symName}': ${typeof value}`);
-          }
-        }
-      }
-    };
-  var loadDylibs = () => {
-      if (!dynamicLibraries.length) {
-        reportUndefinedSymbols();
-        return;
-      }
-  
-      // Load binaries asynchronously
-      addRunDependency('loadDylibs');
-      dynamicLibraries.reduce((chain, lib) => {
-        return chain.then(() => {
-          return loadDynamicLibrary(lib, {loadAsync: true, global: true, nodelete: true, allowUndefined: true});
-        });
-      }, Promise.resolve()).then(() => {
-        // we got them all, wonderful
-        reportUndefinedSymbols();
-        removeRunDependency('loadDylibs');
-      });
-    };
-
-
-  var ptrToString = (ptr) => {
-      assert(typeof ptr === 'number');
-      // With CAN_ADDRESS_2GB or MEMORY64, pointers are already unsigned.
-      ptr >>>= 0;
-      return '0x' + ptr.toString(16).padStart(8, '0');
-    };
-
-
-
-  
-    /**
-     * @param {number} ptr
-     * @param {number} value
-     * @param {string} type
-     */
-  function setValue(ptr, value, type = 'i8') {
-    if (type.endsWith('*')) type = '*';
-    switch (type) {
-      case 'i1': HEAP8[((ptr)>>0)] = value; break;
-      case 'i8': HEAP8[((ptr)>>0)] = value; break;
-      case 'i16': HEAP16[((ptr)>>1)] = value; break;
-      case 'i32': HEAP32[((ptr)>>2)] = value; break;
-      case 'i64': HEAP64[((ptr)>>3)] = BigInt(value); break;
-      case 'float': HEAPF32[((ptr)>>2)] = value; break;
-      case 'double': HEAPF64[((ptr)>>3)] = value; break;
-      case '*': HEAPU32[((ptr)>>2)] = value; break;
-      default: abort(`invalid type for setValue: ${type}`);
-    }
-  }
-
-  var warnOnce = (text) => {
-      if (!warnOnce.shown) warnOnce.shown = {};
-      if (!warnOnce.shown[text]) {
-        warnOnce.shown[text] = 1;
-        if (ENVIRONMENT_IS_NODE) text = 'warning: ' + text;
-        err(text);
-      }
-    };
-
   var ___assert_fail = (condition, filename, line, func) => {
       abort(`Assertion failed: ${UTF8ToString(condition)}, at: ` + [filename ? UTF8ToString(filename) : 'unknown filename', line, func ? UTF8ToString(func) : 'unknown function']);
     };
-  Module['___assert_fail'] = ___assert_fail;
-  ___assert_fail.sig = 'vppip';
 
+  var wasmTableMirror = [];
+  var getWasmTableEntry = (funcPtr) => {
+      var func = wasmTableMirror[funcPtr];
+      if (!func) {
+        if (funcPtr >= wasmTableMirror.length) wasmTableMirror.length = funcPtr + 1;
+        wasmTableMirror[funcPtr] = func = wasmTable.get(funcPtr);
+      }
+      assert(wasmTable.get(funcPtr) == func, "JavaScript-side Wasm function table mirror is out of date!");
+      return func;
+    };
   var ___call_sighandler = (fp, sig) => getWasmTableEntry(fp)(sig);
-  ___call_sighandler.sig = 'vpi';
 
-
-  var ___memory_base = new WebAssembly.Global({'value': 'i32', 'mutable': false}, 1024);
-  Module['___memory_base'] = ___memory_base;
-
-  var ___stack_high = 8806576;
-
-  var ___stack_low = 3563696;
-
-  var ___stack_pointer = new WebAssembly.Global({'value': 'i32', 'mutable': true}, 8806576);
-  Module['___stack_pointer'] = ___stack_pointer;
+  var ___emscripten_atomics_sleep = (ms) => {
+      try {
+        Atomics.wait(waitBuffer, 0, 0, ms);
+        return 1;
+      } catch (_) {
+        return 0;
+      }
+    };
 
   var PATH = {
   isAbs:(path) => path.charAt(0) === '/',
@@ -3012,7 +1867,15 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   };
   
   
+  var zeroMemory = (address, size) => {
+      HEAPU8.fill(0, address, address + size);
+      return address;
+    };
   
+  var alignMemory = (size, alignment) => {
+      assert(alignment, "alignment argument is required");
+      return Math.ceil(size / alignment) * alignment;
+    };
   var mmapAlloc = (size) => {
       size = alignMemory(size, 65536);
       var ptr = _emscripten_builtin_memalign(65536, size);
@@ -3256,13 +2119,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   write(stream, buffer, offset, length, position, canOwn) {
           // The data buffer should be a typed array view
           assert(!(buffer instanceof ArrayBuffer));
-          // If the buffer is located in main memory (HEAP), and if
-          // memory can grow, we can't hold on to references of the
-          // memory buffer, as they may get invalidated. That means we
-          // need to do copy its contents.
-          if (buffer.buffer === HEAP8.buffer) {
-            canOwn = false;
-          }
   
           if (!length) return 0;
           var node = stream.node;
@@ -3354,8 +2210,25 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   },
   };
   
+  /** @param {boolean=} noRunDep */
+  var asyncLoad = (url, onload, onerror, noRunDep) => {
+      var dep = !noRunDep ? getUniqueRunDependency(`al ${url}`) : '';
+      readAsync(url, (arrayBuffer) => {
+        assert(arrayBuffer, `Loading data file "${url}" failed (no arrayBuffer).`);
+        onload(new Uint8Array(arrayBuffer));
+        if (dep) removeRunDependency(dep);
+      }, (event) => {
+        if (onerror) {
+          onerror();
+        } else {
+          throw `Loading data file "${url}" failed.`;
+        }
+      });
+      if (dep) addRunDependency(dep);
+    };
   
   
+  var preloadPlugins = Module['preloadPlugins'] || [];
   var FS_handledByPreloadPlugin = (byteArray, fullname, finish, onerror) => {
       // Ensure plugins are ready.
       if (typeof Browser != 'undefined') Browser.init();
@@ -6167,7 +5040,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall__newselect.sig = 'iipppp';
 
   var SOCKFS = {
   mount(mount) {
@@ -6989,7 +5861,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_accept4.sig = 'iippiii';
 
   
   
@@ -7150,7 +6021,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_bind.sig = 'iippiii';
 
   function ___syscall_chdir(path) {
   try {
@@ -7163,7 +6033,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_chdir.sig = 'ip';
 
   function ___syscall_chmod(path, mode) {
   try {
@@ -7176,7 +6045,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_chmod.sig = 'ipi';
 
   
   
@@ -7192,7 +6060,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_connect.sig = 'iippiii';
 
   function ___syscall_dup(fd) {
   try {
@@ -7204,7 +6071,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_dup.sig = 'ii';
 
   function ___syscall_dup3(fd, newfd, flags) {
   try {
@@ -7220,7 +6086,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_dup3.sig = 'iiii';
 
   function ___syscall_faccessat(dirfd, path, amode, flags) {
   try {
@@ -7250,39 +6115,10 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_faccessat.sig = 'iipii';
 
   var ___syscall_fadvise64 = (fd, offset, len, advice) => {
       return 0; // your advice is important to us (but we can't use it)
     };
-  ___syscall_fadvise64.sig = 'iijji';
-
-  
-  var MAX_INT53 = 9007199254740992;
-  
-  var MIN_INT53 = -9007199254740992;
-  var bigintToI53Checked = (num) => {
-      return (num < MIN_INT53 || num > MAX_INT53) ? NaN : Number(num);
-    };
-  function ___syscall_fallocate(fd, mode, offset, len) {
-    offset = bigintToI53Checked(offset);;
-    len = bigintToI53Checked(len);;
-  
-    
-  try {
-  
-      if (isNaN(offset)) return 61;
-      var stream = SYSCALLS.getStreamFromFD(fd)
-      assert(mode === 0);
-      FS.allocate(stream, offset, len);
-      return 0;
-    } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e;
-    return -e.errno;
-  }
-  ;
-  }
-  ___syscall_fallocate.sig = 'iiijj';
 
   function ___syscall_fchdir(fd) {
   try {
@@ -7295,7 +6131,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_fchdir.sig = 'ii';
 
   function ___syscall_fchmod(fd, mode) {
   try {
@@ -7307,7 +6142,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_fchmod.sig = 'iii';
 
   function ___syscall_fchmodat(dirfd, path, mode, varargs) {
   SYSCALLS.varargs = varargs;
@@ -7322,7 +6156,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_fchmodat.sig = 'iipip';
 
   function ___syscall_fchown32(fd, owner, group) {
   try {
@@ -7334,7 +6167,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_fchown32.sig = 'iiii';
 
   function ___syscall_fchownat(dirfd, path, owner, group, flags) {
   try {
@@ -7351,7 +6183,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_fchownat.sig = 'iipiii';
 
   
   function ___syscall_fcntl64(fd, cmd, varargs) {
@@ -7408,7 +6239,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_fcntl64.sig = 'iiip';
 
   function ___syscall_fdatasync(fd) {
   try {
@@ -7420,7 +6250,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_fdatasync.sig = 'ii';
 
   function ___syscall_fstat64(fd, buf) {
   try {
@@ -7432,7 +6261,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_fstat64.sig = 'iip';
 
   function ___syscall_statfs64(path, size, buf) {
   try {
@@ -7457,7 +6285,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_statfs64.sig = 'ippp';
   
   function ___syscall_fstatfs64(fd, size, buf) {
   try {
@@ -7469,9 +6296,14 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_fstatfs64.sig = 'iipp';
 
   
+  var MAX_INT53 = 9007199254740992;
+  
+  var MIN_INT53 = -9007199254740992;
+  var bigintToI53Checked = (num) => {
+      return (num < MIN_INT53 || num > MAX_INT53) ? NaN : Number(num);
+    };
   function ___syscall_ftruncate64(fd, length) {
     length = bigintToI53Checked(length);;
   
@@ -7487,7 +6319,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   }
   ;
   }
-  ___syscall_ftruncate64.sig = 'iij';
 
   
   var stringToUTF8 = (str, outPtr, maxBytesToWrite) => {
@@ -7509,7 +6340,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_getcwd.sig = 'ipp';
 
   
   function ___syscall_getdents64(fd, dirp, count) {
@@ -7563,7 +6393,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_getdents64.sig = 'iipp';
 
   
   
@@ -7583,7 +6412,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_getpeername.sig = 'iippiii';
 
   
   
@@ -7601,7 +6429,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_getsockname.sig = 'iippiii';
 
   
   function ___syscall_getsockopt(fd, level, optname, optval, optlen, d1) {
@@ -7624,7 +6451,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_getsockopt.sig = 'iiiippi';
 
   function ___syscall_ioctl(fd, op, varargs) {
   SYSCALLS.varargs = varargs;
@@ -7720,7 +6546,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_ioctl.sig = 'iiip';
 
   
   function ___syscall_listen(fd, backlog) {
@@ -7734,7 +6559,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_listen.sig = 'iiiiiii';
 
   function ___syscall_lstat64(path, buf) {
   try {
@@ -7746,7 +6570,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_lstat64.sig = 'ipp';
 
   function ___syscall_mkdirat(dirfd, path, mode) {
   try {
@@ -7764,7 +6587,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_mkdirat.sig = 'iipi';
 
   function ___syscall_newfstatat(dirfd, path, buf, flags) {
   try {
@@ -7781,7 +6603,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_newfstatat.sig = 'iippi';
 
   function ___syscall_openat(dirfd, path, flags, varargs) {
   SYSCALLS.varargs = varargs;
@@ -7796,7 +6617,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_openat.sig = 'iipip';
 
   var PIPEFS = {
   BUCKET_BUFFER_SIZE:8192,
@@ -8030,7 +6850,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_pipe.sig = 'ip';
 
   function ___syscall_poll(fds, nfds, timeout) {
   try {
@@ -8058,7 +6877,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_poll.sig = 'ipii';
 
   
   
@@ -8082,7 +6900,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_readlinkat.sig = 'iippp';
 
   
   
@@ -8104,7 +6921,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_recvfrom.sig = 'iippipp';
 
   
   
@@ -8169,7 +6985,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_recvmsg.sig = 'iipiiii';
 
   function ___syscall_renameat(olddirfd, oldpath, newdirfd, newpath) {
   try {
@@ -8185,7 +7000,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_renameat.sig = 'iipip';
 
   function ___syscall_rmdir(path) {
   try {
@@ -8198,7 +7012,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_rmdir.sig = 'ip';
 
   
   
@@ -8240,7 +7053,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_sendmsg.sig = 'iipippi';
 
   
   
@@ -8260,7 +7072,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_sendto.sig = 'iippipp';
 
   
   function ___syscall_socket(domain, type, protocol) {
@@ -8274,7 +7085,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_socket.sig = 'iiiiiii';
 
   function ___syscall_stat64(path, buf) {
   try {
@@ -8286,7 +7096,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_stat64.sig = 'ipp';
 
 
   function ___syscall_symlink(target, linkpath) {
@@ -8301,7 +7110,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_symlink.sig = 'ipp';
 
   
   function ___syscall_truncate64(path, length) {
@@ -8320,7 +7128,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   }
   ;
   }
-  ___syscall_truncate64.sig = 'ipj';
 
   function ___syscall_unlinkat(dirfd, path, flags) {
   try {
@@ -8340,7 +7147,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_unlinkat.sig = 'iipi';
 
   var readI53FromI64 = (ptr) => {
       return HEAPU32[((ptr)>>2)] + HEAP32[(((ptr)+(4))>>2)] * 4294967296;
@@ -8371,117 +7177,9 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return -e.errno;
   }
   }
-  ___syscall_utimensat.sig = 'iippi';
-
-  var ___table_base = new WebAssembly.Global({'value': 'i32', 'mutable': false}, 1);
-  Module['___table_base'] = ___table_base;
-
-  var ENV = {
-  };
-  
-  
-  
-  var stringToUTF8OnStack = (str) => {
-      var size = lengthBytesUTF8(str) + 1;
-      var ret = stackAlloc(size);
-      stringToUTF8(str, ret, size);
-      return ret;
-    };
-  
-  var withStackSave = (f) => {
-      var stack = stackSave();
-      var ret = f();
-      stackRestore(stack);
-      return ret;
-    };
-  var dlSetError = (msg) => {
-      withStackSave(() => {
-        var cmsg = stringToUTF8OnStack(msg);
-        ___dl_seterr(cmsg, 0);
-      });
-    };
-  
-  
-  var dlopenInternal = (handle, jsflags) => {
-      // void *dlopen(const char *file, int mode);
-      // http://pubs.opengroup.org/onlinepubs/009695399/functions/dlopen.html
-      var filename = UTF8ToString(handle + 36);
-      var flags = HEAP32[(((handle)+(4))>>2)];
-      filename = PATH.normalize(filename);
-      var searchpaths = [];
-  
-      var global = Boolean(flags & 256);
-      var localScope = global ? null : {};
-  
-      // We don't care about RTLD_NOW and RTLD_LAZY.
-      var combinedFlags = {
-        global,
-        nodelete:  Boolean(flags & 4096),
-        loadAsync: jsflags.loadAsync,
-      }
-  
-      if (jsflags.loadAsync) {
-        return loadDynamicLibrary(filename, combinedFlags, localScope, handle);
-      }
-  
-      try {
-        return loadDynamicLibrary(filename, combinedFlags, localScope, handle)
-      } catch (e) {
-        err(`Error in loading dynamic library ${filename}: ${e}`);
-        dlSetError(`Could not load dynamic lib: ${filename}\n${e}`);
-        return 0;
-      }
-    };
-  var __dlopen_js = (handle) => {
-      return dlopenInternal(handle, { loadAsync: false });
-    };
-  __dlopen_js.sig = 'pp';
-
-  
-  
-  
-  var __dlsym_js = (handle, symbol, symbolIndex) => {
-      // void *dlsym(void *restrict handle, const char *restrict name);
-      // http://pubs.opengroup.org/onlinepubs/009695399/functions/dlsym.html
-      symbol = UTF8ToString(symbol);
-      var result;
-      var newSymIndex;
-  
-      var lib = LDSO.loadedLibsByHandle[handle];
-      assert(lib, `Tried to dlsym() from an unopened handle: ${handle}`);
-      if (!lib.exports.hasOwnProperty(symbol) || lib.exports[symbol].stub) {
-        dlSetError(`Tried to lookup unknown symbol "${symbol}" in dynamic lib: ${lib.name}`)
-        return 0;
-      }
-      newSymIndex = Object.keys(lib.exports).indexOf(symbol);
-      result = lib.exports[symbol];
-  
-      if (typeof result == 'function') {
-  
-        var addr = getFunctionAddress(result);
-        if (addr) {
-          result = addr;
-        } else {
-          // Insert the function into the wasm table.  If its a direct wasm
-          // function the second argument will not be needed.  If its a JS
-          // function we rely on the `sig` attribute being set based on the
-          // `<func>__sig` specified in library JS file.
-          result = addFunction(result, result.sig);
-          HEAPU32[((symbolIndex)>>2)] = newSymIndex;
-        }
-      }
-      return result;
-    };
-  __dlsym_js.sig = 'pppp';
 
   var nowIsMonotonic = true;;
   var __emscripten_get_now_is_monotonic = () => nowIsMonotonic;
-  __emscripten_get_now_is_monotonic.sig = 'i';
-
-  var __emscripten_throw_longjmp = () => {
-      throw Infinity;
-    };
-  __emscripten_throw_longjmp.sig = 'v';
 
   function __gmtime_js(time, tmPtr) {
     time = bigintToI53Checked(time);;
@@ -8500,7 +7198,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       HEAP32[(((tmPtr)+(28))>>2)] = yday;
     ;
   }
-  __gmtime_js.sig = 'vjp';
 
   var isLeapYear = (year) => {
         return year%4 === 0 && (year%100 !== 0 || year%400 === 0);
@@ -8542,7 +7239,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       HEAP32[(((tmPtr)+(32))>>2)] = dst;
     ;
   }
-  __localtime_js.sig = 'vjp';
 
   
   var __mktime_js = function(tmPtr) {
@@ -8590,7 +7286,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
      })();
     return BigInt(ret);
   };
-  __mktime_js.sig = 'jp';
 
   
   
@@ -8616,7 +7311,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   }
   ;
   }
-  __mmap_js.sig = 'ipiiijpp';
 
   
   function __msync_js(addr, len, prot, flags, fd, offset) {
@@ -8634,7 +7328,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   }
   ;
   }
-  __msync_js.sig = 'ippiiij';
 
   
   
@@ -8658,7 +7351,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   }
   ;
   }
-  __munmap_js.sig = 'ippiiij';
 
   var timers = {
   };
@@ -8690,7 +7382,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       }
       quit_(code, new ExitStatus(code));
     };
-  _proc_exit.sig = 'vi';
   /** @suppress {duplicate } */
   /** @param {boolean|number=} implicit */
   var exitJS = (status, implicit) => {
@@ -8708,7 +7399,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       _proc_exit(status);
     };
   var _exit = exitJS;
-  _exit.sig = 'vi';
   
   var maybeExit = () => {
       if (!keepRuntimeAlive()) {
@@ -8739,7 +7429,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       // unfortunately not allowed even in current browsers (e.g. FF Nightly 75).
       _emscripten_get_now = () => performance.now();
   ;
-  _emscripten_get_now.sig = 'd';
   var __setitimer_js = (which, timeout_ms) => {
       // First, clear any existing timer.
       if (timers[which]) {
@@ -8759,7 +7448,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       timers[which] = { id, timeout_ms };
       return 0;
     };
-  __setitimer_js.sig = 'iid';
 
   
   
@@ -8808,13 +7496,10 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
         HEAPU32[(((tzname)+(4))>>2)] = winterNamePtr;
       }
     };
-  __tzset_js.sig = 'vppp';
 
   var _abort = () => {
       abort('native code called abort()');
     };
-  Module['_abort'] = _abort;
-  _abort.sig = 'v';
 
   var readEmAsmArgsArray = [];
   var readEmAsmArgs = (sigPtr, buf) => {
@@ -8853,28 +7538,19 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   var _emscripten_asm_const_int = (code, sigPtr, argbuf) => {
       return runEmAsmFunction(code, sigPtr, argbuf);
     };
-  _emscripten_asm_const_int.sig = 'ippp';
 
   var _emscripten_date_now = () => Date.now();
-  _emscripten_date_now.sig = 'd';
 
   var _emscripten_err = (str) => err(UTF8ToString(str));
-  _emscripten_err.sig = 'vp';
 
   var _emscripten_exit_with_live_runtime = () => {
       
       throw 'unwind';
     };
-  _emscripten_exit_with_live_runtime.sig = 'v';
 
   var getHeapMax = () =>
-      // Stay one Wasm page short of 4GB: while e.g. Chrome is able to allocate
-      // full 4GB Wasm memories, the size will wrap back to 0 bytes in Wasm side
-      // for any code that deals with heap sizes, which would require special
-      // casing all heap size related code to treat 0 specially.
-      2147483648;
+      HEAPU8.length;
   var _emscripten_get_heap_max = () => getHeapMax();
-  _emscripten_get_heap_max.sig = 'p';
 
 
   var _emscripten_get_now_res = () => { // return resolution of get_now, in nanoseconds
@@ -8884,82 +7560,22 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       // Modern environment where performance.now() is supported:
       return 1000; // microseconds (1/1000 of a millisecond)
     };
-  _emscripten_get_now_res.sig = 'd';
 
   var _emscripten_memcpy_big = (dest, src, num) => HEAPU8.copyWithin(dest, src, src + num);
-  _emscripten_memcpy_big.sig = 'vppp';
 
   
-  var growMemory = (size) => {
-      var b = wasmMemory.buffer;
-      var pages = (size - b.byteLength + 65535) / 65536;
-      try {
-        // round size grow request up to wasm page size (fixed 64KB per spec)
-        wasmMemory.grow(pages); // .grow() takes a delta compared to the previous size
-        updateMemoryViews();
-        return 1 /*success*/;
-      } catch(e) {
-        err(`growMemory: Attempted to grow heap from ${b.byteLength} bytes to ${size} bytes, but got error: ${e}`);
-      }
-      // implicit 0 return to save code size (caller will cast "undefined" into 0
-      // anyhow)
+  var abortOnCannotGrowMemory = (requestedSize) => {
+      abort(`Cannot enlarge memory arrays to size ${requestedSize} bytes (OOM). Either (1) compile with -sINITIAL_MEMORY=X with X higher than the current value ${HEAP8.length}, (2) compile with -sALLOW_MEMORY_GROWTH which allows increasing the size at runtime, or (3) if you want malloc to return NULL (0) instead of this abort, compile with -sABORTING_MALLOC=0`);
     };
   var _emscripten_resize_heap = (requestedSize) => {
       var oldSize = HEAPU8.length;
       // With CAN_ADDRESS_2GB or MEMORY64, pointers are already unsigned.
       requestedSize >>>= 0;
-      // With multithreaded builds, races can happen (another thread might increase the size
-      // in between), so return a failure, and let the caller retry.
-      assert(requestedSize > oldSize);
-  
-      // Memory resize rules:
-      // 1.  Always increase heap size to at least the requested size, rounded up
-      //     to next page multiple.
-      // 2a. If MEMORY_GROWTH_LINEAR_STEP == -1, excessively resize the heap
-      //     geometrically: increase the heap size according to
-      //     MEMORY_GROWTH_GEOMETRIC_STEP factor (default +20%), At most
-      //     overreserve by MEMORY_GROWTH_GEOMETRIC_CAP bytes (default 96MB).
-      // 2b. If MEMORY_GROWTH_LINEAR_STEP != -1, excessively resize the heap
-      //     linearly: increase the heap size by at least
-      //     MEMORY_GROWTH_LINEAR_STEP bytes.
-      // 3.  Max size for the heap is capped at 2048MB-WASM_PAGE_SIZE, or by
-      //     MAXIMUM_MEMORY, or by ASAN limit, depending on which is smallest
-      // 4.  If we were unable to allocate as much memory, it may be due to
-      //     over-eager decision to excessively reserve due to (3) above.
-      //     Hence if an allocation fails, cut down on the amount of excess
-      //     growth, in an attempt to succeed to perform a smaller allocation.
-  
-      // A limit is set for how much we can grow. We should not exceed that
-      // (the wasm binary specifies it, so if we tried, we'd fail anyhow).
-      var maxHeapSize = getHeapMax();
-      if (requestedSize > maxHeapSize) {
-        err(`Cannot enlarge memory, requested ${requestedSize} bytes, but the limit is ${maxHeapSize} bytes!`);
-        return false;
-      }
-  
-      var alignUp = (x, multiple) => x + (multiple - x % multiple) % multiple;
-  
-      // Loop through potential heap size increases. If we attempt a too eager
-      // reservation that fails, cut down on the attempted size and reserve a
-      // smaller bump instead. (max 3 times, chosen somewhat arbitrarily)
-      for (var cutDown = 1; cutDown <= 4; cutDown *= 2) {
-        var overGrownHeapSize = oldSize * (1 + 0.2 / cutDown); // ensure geometric growth
-        // but limit overreserving (default to capping at +96MB overgrowth at most)
-        overGrownHeapSize = Math.min(overGrownHeapSize, requestedSize + 100663296 );
-  
-        var newSize = Math.min(maxHeapSize, alignUp(Math.max(requestedSize, overGrownHeapSize), 65536));
-  
-        var replacement = growMemory(newSize);
-        if (replacement) {
-  
-          return true;
-        }
-      }
-      err(`Failed to grow the heap from ${oldSize} bytes to ${newSize} bytes, not enough memory!`);
-      return false;
+      abortOnCannotGrowMemory(requestedSize);
     };
-  _emscripten_resize_heap.sig = 'ip';
 
+  var ENV = {
+  };
   
   var getExecutableName = () => {
       return thisProgram || './this.program';
@@ -9014,7 +7630,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       });
       return 0;
     };
-  _environ_get.sig = 'ipp';
 
   
   var _environ_sizes_get = (penviron_count, penviron_buf_size) => {
@@ -9025,7 +7640,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       HEAPU32[((penviron_buf_size)>>2)] = bufSize;
       return 0;
     };
-  _environ_sizes_get.sig = 'ipp';
 
 
   function _fd_close(fd) {
@@ -9039,7 +7653,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return e.errno;
   }
   }
-  _fd_close.sig = 'ii';
 
   function _fd_fdstat_get(fd, pbuf) {
   try {
@@ -9066,7 +7679,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return e.errno;
   }
   }
-  _fd_fdstat_get.sig = 'iip';
 
   /** @param {number=} offset */
   var doReadv = (stream, iov, iovcnt, offset) => {
@@ -9104,7 +7716,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   }
   ;
   }
-  _fd_pread.sig = 'iippjp';
 
   /** @param {number=} offset */
   var doWritev = (stream, iov, iovcnt, offset) => {
@@ -9141,7 +7752,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   }
   ;
   }
-  _fd_pwrite.sig = 'iippjp';
 
   
   function _fd_read(fd, iov, iovcnt, pnum) {
@@ -9156,7 +7766,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return e.errno;
   }
   }
-  _fd_read.sig = 'iippp';
 
   
   function _fd_seek(fd, offset, whence, newOffset) {
@@ -9177,7 +7786,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   }
   ;
   }
-  _fd_seek.sig = 'iijip';
 
   function _fd_sync(fd) {
   try {
@@ -9192,7 +7800,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return e.errno;
   }
   }
-  _fd_sync.sig = 'ii';
 
   
   function _fd_write(fd, iov, iovcnt, pnum) {
@@ -9207,7 +7814,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
     return e.errno;
   }
   }
-  _fd_write.sig = 'iippp';
 
   
   
@@ -9386,14 +7992,11 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       HEAPU32[((out)>>2)] = ai;
       return 0;
     };
-  Module['_getaddrinfo'] = _getaddrinfo;
-  _getaddrinfo.sig = 'ipppp';
 
   var _getentropy = (buffer, size) => {
       randomFill(HEAPU8.subarray(buffer, buffer + size));
       return 0;
     };
-  _getentropy.sig = 'ipp';
 
   
   
@@ -9433,14 +8036,11 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       }
       return getHostByName(host);
     };
-  _gethostbyaddr.sig = 'ppii';
 
   
   var _gethostbyname = (name) => {
       return getHostByName(UTF8ToString(name));
     };
-  Module['_gethostbyname'] = _gethostbyname;
-  _gethostbyname.sig = 'pp';
 
   
   
@@ -9487,8 +8087,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   
       return 0;
     };
-  Module['_getnameinfo'] = _getnameinfo;
-  _getnameinfo.sig = 'ipipipii';
 
   var Protocols = {
   list:[],
@@ -9542,7 +8140,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
   
       _setprotoent.index = 0;
     };
-  _setprotoent.sig = 'vi';
   
   
   var _getprotobyname = (name) => {
@@ -9552,7 +8149,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       var result = Protocols.map[name];
       return result;
     };
-  _getprotobyname.sig = 'pp';
 
 
   
@@ -9852,7 +8448,6 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       writeArrayToMemory(bytes, s);
       return bytes.length-1;
     };
-  _strftime.sig = 'ppppp';
 
   
   var _system = (command) => {
@@ -9895,14 +8490,144 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
       setErrNo(52);
       return -1;
     };
-  _system.sig = 'ip';
 
 
 
+  
+  var stringToUTF8OnStack = (str) => {
+      var size = lengthBytesUTF8(str) + 1;
+      var ret = stackAlloc(size);
+      stringToUTF8(str, ret, size);
+      return ret;
+    };
 
 
+  var setWasmTableEntry = (idx, func) => {
+      wasmTable.set(idx, func);
+      // With ABORT_ON_WASM_EXCEPTIONS wasmTable.get is overriden to return wrapped
+      // functions so we need to call it here to retrieve the potential wrapper correctly
+      // instead of just storing 'func' directly into wasmTableMirror
+      wasmTableMirror[idx] = wasmTable.get(idx);
+    };
 
+  var freeTableIndexes = [];
+  var getEmptyTableSlot = () => {
+      // Reuse a free index if there is one, otherwise grow.
+      if (freeTableIndexes.length) {
+        return freeTableIndexes.pop();
+      }
+      // Grow the table
+      try {
+        wasmTable.grow(1);
+      } catch (err) {
+        if (!(err instanceof RangeError)) {
+          throw err;
+        }
+        throw 'Unable to grow wasm table. Set ALLOW_TABLE_GROWTH.';
+      }
+      return wasmTable.length - 1;
+    };
 
+  var uleb128Encode = (n, target) => {
+      assert(n < 16384);
+      if (n < 128) {
+        target.push(n);
+      } else {
+        target.push((n % 128) | 128, n >> 7);
+      }
+    };
+  
+  var sigToWasmTypes = (sig) => {
+      var typeNames = {
+        'i': 'i32',
+        'j': 'i64',
+        'f': 'f32',
+        'd': 'f64',
+        'e': 'externref',
+        'p': 'i32',
+      };
+      var type = {
+        parameters: [],
+        results: sig[0] == 'v' ? [] : [typeNames[sig[0]]]
+      };
+      for (var i = 1; i < sig.length; ++i) {
+        assert(sig[i] in typeNames, 'invalid signature char: ' + sig[i]);
+        type.parameters.push(typeNames[sig[i]]);
+      }
+      return type;
+    };
+  
+  var generateFuncType = (sig, target) => {
+      var sigRet = sig.slice(0, 1);
+      var sigParam = sig.slice(1);
+      var typeCodes = {
+        'i': 0x7f, // i32
+        'p': 0x7f, // i32
+        'j': 0x7e, // i64
+        'f': 0x7d, // f32
+        'd': 0x7c, // f64
+      };
+  
+      // Parameters, length + signatures
+      target.push(0x60 /* form: func */);
+      uleb128Encode(sigParam.length, target);
+      for (var i = 0; i < sigParam.length; ++i) {
+        assert(sigParam[i] in typeCodes, 'invalid signature char: ' + sigParam[i]);
+    target.push(typeCodes[sigParam[i]]);
+      }
+    
+      // Return values, length + signatures
+      // With no multi-return in MVP, either 0 (void) or 1 (anything else)
+      if (sigRet == 'v') {
+        target.push(0x00);
+      } else {
+        target.push(0x01, typeCodes[sigRet]);
+      }
+    };
+  var convertJsFunctionToWasm = (func, sig) => {
+  
+      // If the type reflection proposal is available, use the new
+      // "WebAssembly.Function" constructor.
+      // Otherwise, construct a minimal wasm module importing the JS function and
+      // re-exporting it.
+      if (typeof WebAssembly.Function == "function") {
+        return new WebAssembly.Function(sigToWasmTypes(sig), func);
+      }
+  
+      // The module is static, with the exception of the type section, which is
+      // generated based on the signature passed in.
+      var typeSectionBody = [
+        0x01, // count: 1
+      ];
+      generateFuncType(sig, typeSectionBody);
+  
+      // Rest of the module is static
+      var bytes = [
+        0x00, 0x61, 0x73, 0x6d, // magic ("\0asm")
+        0x01, 0x00, 0x00, 0x00, // version: 1
+        0x01, // Type section code
+      ];
+      // Write the overall length of the type section followed by the body
+      uleb128Encode(typeSectionBody.length, bytes);
+      bytes.push.apply(bytes, typeSectionBody);
+  
+      // The rest of the module is static
+      bytes.push(
+        0x02, 0x07, // import section
+          // (import "e" "f" (func 0 (type 0)))
+          0x01, 0x01, 0x65, 0x01, 0x66, 0x00, 0x00,
+        0x07, 0x05, // export section
+          // (export "f" (func 0 (type 0)))
+          0x01, 0x01, 0x66, 0x00, 0x00,
+      );
+  
+      // We can compile this wasm module synchronously because it is very small.
+      // This accepts an import (at "e.f"), that it reroutes to an export (at "f")
+      var module = new WebAssembly.Module(new Uint8Array(bytes));
+      var instance = new WebAssembly.Instance(module, { 'e': { 'f': func } });
+      var wrappedFunc = instance.exports['f'];
+      return wrappedFunc;
+    };
 
 
 
@@ -9914,14 +8639,28 @@ ffi_prep_closure_loc_js.sig = 'iiiiii';
 
 
 
+  var growMemory = (size) => {
+      var b = wasmMemory.buffer;
+      var pages = (size - b.byteLength + 65535) / 65536;
+      try {
+        // round size grow request up to wasm page size (fixed 64KB per spec)
+        wasmMemory.grow(pages); // .grow() takes a delta compared to the previous size
+        updateMemoryViews();
+        return 1 /*success*/;
+      } catch(e) {
+        err(`growMemory: Attempted to grow heap from ${b.byteLength} bytes to ${size} bytes, but got error: ${e}`);
+      }
+      // implicit 0 return to save code size (caller will cast "undefined" into 0
+      // anyhow)
+    };
 
 
-
-
-
-
-      registerWasmPlugin();
-      ;
+      var waitBuffer;
+      try {
+        var SharedArrayBuffer = new WebAssembly.Memory({"shared":true,"initial":0,"maximum":0}).buffer.constructor;
+        waitBuffer = new Int32Array(new SharedArrayBuffer(4));
+      } catch(_) { }
+    ;
 
   var FSNode = /** @constructor */ function(parent, name, mode, rdev) {
     if (!parent) {
@@ -10150,16 +8889,11 @@ var wasmImports = {
   _Py_emscripten_runtime: _Py_emscripten_runtime,
   __assert_fail: ___assert_fail,
   __call_sighandler: ___call_sighandler,
-  __heap_base: ___heap_base,
+  __emscripten_atomics_sleep: ___emscripten_atomics_sleep,
   __hiwire_deduplicate_delete: __hiwire_deduplicate_delete,
   __hiwire_deduplicate_get: __hiwire_deduplicate_get,
   __hiwire_deduplicate_new: __hiwire_deduplicate_new,
   __hiwire_deduplicate_set: __hiwire_deduplicate_set,
-  __indirect_function_table: wasmTable,
-  __memory_base: ___memory_base,
-  __stack_high: ___stack_high,
-  __stack_low: ___stack_low,
-  __stack_pointer: ___stack_pointer,
   __syscall__newselect: ___syscall__newselect,
   __syscall_accept4: ___syscall_accept4,
   __syscall_bind: ___syscall_bind,
@@ -10170,7 +8904,6 @@ var wasmImports = {
   __syscall_dup3: ___syscall_dup3,
   __syscall_faccessat: ___syscall_faccessat,
   __syscall_fadvise64: ___syscall_fadvise64,
-  __syscall_fallocate: ___syscall_fallocate,
   __syscall_fchdir: ___syscall_fchdir,
   __syscall_fchmod: ___syscall_fchmod,
   __syscall_fchmodat: ___syscall_fchmodat,
@@ -10208,12 +8941,8 @@ var wasmImports = {
   __syscall_truncate64: ___syscall_truncate64,
   __syscall_unlinkat: ___syscall_unlinkat,
   __syscall_utimensat: ___syscall_utimensat,
-  __table_base: ___table_base,
   _agen_handle_result_js: _agen_handle_result_js,
-  _dlopen_js: __dlopen_js,
-  _dlsym_js: __dlsym_js,
   _emscripten_get_now_is_monotonic: __emscripten_get_now_is_monotonic,
-  _emscripten_throw_longjmp: __emscripten_throw_longjmp,
   _gmtime_js: __gmtime_js,
   _localtime_js: __localtime_js,
   _mktime_js: __mktime_js,
@@ -10319,7 +9048,6 @@ var wasmImports = {
   js2python_immutable_js: js2python_immutable_js,
   js2python_init: js2python_init,
   js2python_js: js2python_js,
-  memory: wasmMemory,
   new_error: new_error,
   proc_exit: _proc_exit,
   proxy_cache_get: proxy_cache_get,
@@ -10340,380 +9068,34 @@ var wasmImports = {
 };
 var wasmExports = createWasm();
 var ___wasm_call_ctors = createExportWrapper('__wasm_call_ctors');
-var ___wasm_apply_data_relocs = Module['___wasm_apply_data_relocs'] = createExportWrapper('__wasm_apply_data_relocs');
-var _PyObject_Type = Module['_PyObject_Type'] = createExportWrapper('PyObject_Type');
 var _PyObject_Size = Module['_PyObject_Size'] = createExportWrapper('PyObject_Size');
-var _PyObject_LengthHint = Module['_PyObject_LengthHint'] = createExportWrapper('PyObject_LengthHint');
-var _PyObject_GetItem = Module['_PyObject_GetItem'] = createExportWrapper('PyObject_GetItem');
-var _PyNumber_AsSsize_t = Module['_PyNumber_AsSsize_t'] = createExportWrapper('PyNumber_AsSsize_t');
-var _PySequence_GetItem = Module['_PySequence_GetItem'] = createExportWrapper('PySequence_GetItem');
-var __PyNumber_Index = Module['__PyNumber_Index'] = createExportWrapper('_PyNumber_Index');
-var _PyObject_SetItem = Module['_PyObject_SetItem'] = createExportWrapper('PyObject_SetItem');
-var _PySequence_SetItem = Module['_PySequence_SetItem'] = createExportWrapper('PySequence_SetItem');
-var _PyObject_CheckBuffer = Module['_PyObject_CheckBuffer'] = createExportWrapper('PyObject_CheckBuffer');
 var _PyBuffer_Release = Module['_PyBuffer_Release'] = createExportWrapper('PyBuffer_Release');
-var _PyObject_GetBuffer = Module['_PyObject_GetBuffer'] = createExportWrapper('PyObject_GetBuffer');
-var _PyBuffer_IsContiguous = Module['_PyBuffer_IsContiguous'] = createExportWrapper('PyBuffer_IsContiguous');
-var _PyBuffer_FillInfo = Module['_PyBuffer_FillInfo'] = createExportWrapper('PyBuffer_FillInfo');
-var _PyObject_Format = Module['_PyObject_Format'] = createExportWrapper('PyObject_Format');
-var _PyNumber_Check = Module['_PyNumber_Check'] = createExportWrapper('PyNumber_Check');
-var _PyNumber_Or = Module['_PyNumber_Or'] = createExportWrapper('PyNumber_Or');
-var _PyNumber_Xor = Module['_PyNumber_Xor'] = createExportWrapper('PyNumber_Xor');
-var _PyNumber_And = Module['_PyNumber_And'] = createExportWrapper('PyNumber_And');
-var _PyNumber_Lshift = Module['_PyNumber_Lshift'] = createExportWrapper('PyNumber_Lshift');
-var _PyNumber_Rshift = Module['_PyNumber_Rshift'] = createExportWrapper('PyNumber_Rshift');
-var _PyNumber_Subtract = Module['_PyNumber_Subtract'] = createExportWrapper('PyNumber_Subtract');
-var _PyNumber_Add = Module['_PyNumber_Add'] = createExportWrapper('PyNumber_Add');
-var _PyNumber_Multiply = Module['_PyNumber_Multiply'] = createExportWrapper('PyNumber_Multiply');
-var _PyNumber_MatrixMultiply = Module['_PyNumber_MatrixMultiply'] = createExportWrapper('PyNumber_MatrixMultiply');
-var _PyNumber_FloorDivide = Module['_PyNumber_FloorDivide'] = createExportWrapper('PyNumber_FloorDivide');
-var _PyNumber_TrueDivide = Module['_PyNumber_TrueDivide'] = createExportWrapper('PyNumber_TrueDivide');
-var _PyNumber_Remainder = Module['_PyNumber_Remainder'] = createExportWrapper('PyNumber_Remainder');
-var _PyNumber_Power = Module['_PyNumber_Power'] = createExportWrapper('PyNumber_Power');
-var _PyNumber_InPlaceRshift = Module['_PyNumber_InPlaceRshift'] = createExportWrapper('PyNumber_InPlaceRshift');
-var _PyNumber_InPlaceSubtract = Module['_PyNumber_InPlaceSubtract'] = createExportWrapper('PyNumber_InPlaceSubtract');
-var _PyNumber_InPlaceFloorDivide = Module['_PyNumber_InPlaceFloorDivide'] = createExportWrapper('PyNumber_InPlaceFloorDivide');
-var _PyNumber_InPlaceTrueDivide = Module['_PyNumber_InPlaceTrueDivide'] = createExportWrapper('PyNumber_InPlaceTrueDivide');
-var _PyNumber_InPlaceAdd = Module['_PyNumber_InPlaceAdd'] = createExportWrapper('PyNumber_InPlaceAdd');
-var _PyNumber_InPlaceMultiply = Module['_PyNumber_InPlaceMultiply'] = createExportWrapper('PyNumber_InPlaceMultiply');
-var _PyNumber_Negative = Module['_PyNumber_Negative'] = createExportWrapper('PyNumber_Negative');
-var _PyNumber_Positive = Module['_PyNumber_Positive'] = createExportWrapper('PyNumber_Positive');
-var _PyNumber_Invert = Module['_PyNumber_Invert'] = createExportWrapper('PyNumber_Invert');
-var _PyNumber_Absolute = Module['_PyNumber_Absolute'] = createExportWrapper('PyNumber_Absolute');
-var _PyIndex_Check = Module['_PyIndex_Check'] = createExportWrapper('PyIndex_Check');
-var _PyNumber_Index = Module['_PyNumber_Index'] = createExportWrapper('PyNumber_Index');
-var _PyNumber_Long = Module['_PyNumber_Long'] = createExportWrapper('PyNumber_Long');
-var _PyNumber_Float = Module['_PyNumber_Float'] = createExportWrapper('PyNumber_Float');
-var _PySequence_Check = Module['_PySequence_Check'] = createExportWrapper('PySequence_Check');
-var _PySequence_Size = Module['_PySequence_Size'] = createExportWrapper('PySequence_Size');
-var _PySequence_Concat = Module['_PySequence_Concat'] = createExportWrapper('PySequence_Concat');
-var _PySequence_Repeat = Module['_PySequence_Repeat'] = createExportWrapper('PySequence_Repeat');
-var _PySequence_InPlaceConcat = Module['_PySequence_InPlaceConcat'] = createExportWrapper('PySequence_InPlaceConcat');
-var _PySequence_InPlaceRepeat = Module['_PySequence_InPlaceRepeat'] = createExportWrapper('PySequence_InPlaceRepeat');
-var _PySequence_Tuple = Module['_PySequence_Tuple'] = createExportWrapper('PySequence_Tuple');
 var _PyObject_GetIter = Module['_PyObject_GetIter'] = createExportWrapper('PyObject_GetIter');
-var _PyIter_Next = Module['_PyIter_Next'] = createExportWrapper('PyIter_Next');
-var _PySequence_List = Module['_PySequence_List'] = createExportWrapper('PySequence_List');
-var _PySequence_Fast = Module['_PySequence_Fast'] = createExportWrapper('PySequence_Fast');
-var _PySequence_Contains = Module['_PySequence_Contains'] = createExportWrapper('PySequence_Contains');
-var _PyMapping_Check = Module['_PyMapping_Check'] = createExportWrapper('PyMapping_Check');
-var _PyMapping_GetItemString = Module['_PyMapping_GetItemString'] = createExportWrapper('PyMapping_GetItemString');
-var _PyObject_IsInstance = Module['_PyObject_IsInstance'] = createExportWrapper('PyObject_IsInstance');
-var _PyObject_IsSubclass = Module['_PyObject_IsSubclass'] = createExportWrapper('PyObject_IsSubclass');
-var _PyIter_Check = Module['_PyIter_Check'] = createExportWrapper('PyIter_Check');
 var _PyObject_GetAIter = Module['_PyObject_GetAIter'] = createExportWrapper('PyObject_GetAIter');
-var _PyIter_Send = Module['_PyIter_Send'] = createExportWrapper('PyIter_Send');
-var _PyBool_FromLong = Module['_PyBool_FromLong'] = createExportWrapper('PyBool_FromLong');
-var _PyByteArray_FromStringAndSize = Module['_PyByteArray_FromStringAndSize'] = createExportWrapper('PyByteArray_FromStringAndSize');
-var _PyBytes_FromStringAndSize = Module['_PyBytes_FromStringAndSize'] = createExportWrapper('PyBytes_FromStringAndSize');
-var _PyBytes_FromString = Module['_PyBytes_FromString'] = createExportWrapper('PyBytes_FromString');
-var __PyBytes_Resize = Module['__PyBytes_Resize'] = createExportWrapper('_PyBytes_Resize');
-var _PyBytes_Size = Module['_PyBytes_Size'] = createExportWrapper('PyBytes_Size');
-var _PyBytes_AsString = Module['_PyBytes_AsString'] = createExportWrapper('PyBytes_AsString');
-var _PyBytes_AsStringAndSize = Module['_PyBytes_AsStringAndSize'] = createExportWrapper('PyBytes_AsStringAndSize');
-var _PyObject_CallNoArgs = Module['_PyObject_CallNoArgs'] = createExportWrapper('PyObject_CallNoArgs');
-var _PyVectorcall_Call = Module['_PyVectorcall_Call'] = createExportWrapper('PyVectorcall_Call');
-var _PyObject_Vectorcall = Module['_PyObject_Vectorcall'] = createExportWrapper('PyObject_Vectorcall');
-var _PyObject_Call = Module['_PyObject_Call'] = createExportWrapper('PyObject_Call');
-var _PyObject_CallOneArg = Module['_PyObject_CallOneArg'] = createExportWrapper('PyObject_CallOneArg');
-var _PyObject_CallObject = Module['_PyObject_CallObject'] = createExportWrapper('PyObject_CallObject');
-var __PyObject_CallFunction_SizeT = Module['__PyObject_CallFunction_SizeT'] = createExportWrapper('_PyObject_CallFunction_SizeT');
-var __PyObject_CallMethod_SizeT = Module['__PyObject_CallMethod_SizeT'] = createExportWrapper('_PyObject_CallMethod_SizeT');
-var _PyObject_VectorcallMethod = Module['_PyObject_VectorcallMethod'] = createExportWrapper('PyObject_VectorcallMethod');
-var _PyObject_CallMethodObjArgs = Module['_PyObject_CallMethodObjArgs'] = createExportWrapper('PyObject_CallMethodObjArgs');
-var _PyObject_CallFunctionObjArgs = Module['_PyObject_CallFunctionObjArgs'] = createExportWrapper('PyObject_CallFunctionObjArgs');
-var _PyCapsule_New = Module['_PyCapsule_New'] = createExportWrapper('PyCapsule_New');
-var _PyCapsule_IsValid = Module['_PyCapsule_IsValid'] = createExportWrapper('PyCapsule_IsValid');
-var _PyCapsule_GetPointer = Module['_PyCapsule_GetPointer'] = createExportWrapper('PyCapsule_GetPointer');
-var _PyCapsule_GetName = Module['_PyCapsule_GetName'] = createExportWrapper('PyCapsule_GetName');
-var _PyCapsule_GetContext = Module['_PyCapsule_GetContext'] = createExportWrapper('PyCapsule_GetContext');
-var _PyCapsule_SetName = Module['_PyCapsule_SetName'] = createExportWrapper('PyCapsule_SetName');
-var _PyCapsule_SetContext = Module['_PyCapsule_SetContext'] = createExportWrapper('PyCapsule_SetContext');
-var _PyCapsule_Import = Module['_PyCapsule_Import'] = createExportWrapper('PyCapsule_Import');
-var _PyMethod_New = Module['_PyMethod_New'] = createExportWrapper('PyMethod_New');
-var _PyCode_NewEmpty = Module['_PyCode_NewEmpty'] = createExportWrapper('PyCode_NewEmpty');
-var _PyComplex_FromCComplex = Module['_PyComplex_FromCComplex'] = createExportWrapper('PyComplex_FromCComplex');
-var _PyComplex_FromDoubles = Module['_PyComplex_FromDoubles'] = createExportWrapper('PyComplex_FromDoubles');
-var _PyComplex_RealAsDouble = Module['_PyComplex_RealAsDouble'] = createExportWrapper('PyComplex_RealAsDouble');
-var _PyComplex_ImagAsDouble = Module['_PyComplex_ImagAsDouble'] = createExportWrapper('PyComplex_ImagAsDouble');
-var _PyComplex_AsCComplex = Module['_PyComplex_AsCComplex'] = createExportWrapper('PyComplex_AsCComplex');
-var _PyDescr_IsData = Module['_PyDescr_IsData'] = createExportWrapper('PyDescr_IsData');
-var _PyDictProxy_New = Module['_PyDictProxy_New'] = createExportWrapper('PyDictProxy_New');
-var _PyException_SetTraceback = Module['_PyException_SetTraceback'] = createExportWrapper('PyException_SetTraceback');
-var _PyException_SetCause = Module['_PyException_SetCause'] = createExportWrapper('PyException_SetCause');
-var _PyException_SetContext = Module['_PyException_SetContext'] = createExportWrapper('PyException_SetContext');
-var _Py_GenericAlias = Module['_Py_GenericAlias'] = createExportWrapper('Py_GenericAlias');
-var __PyGen_SetStopIterationValue = Module['__PyGen_SetStopIterationValue'] = createExportWrapper('_PyGen_SetStopIterationValue');
-var _PyObject_AsFileDescriptor = Module['_PyObject_AsFileDescriptor'] = createExportWrapper('PyObject_AsFileDescriptor');
 var _PyFloat_FromDouble = Module['_PyFloat_FromDouble'] = createExportWrapper('PyFloat_FromDouble');
-var _PyFloat_AsDouble = Module['_PyFloat_AsDouble'] = createExportWrapper('PyFloat_AsDouble');
-var _PyFrame_New = Module['_PyFrame_New'] = createExportWrapper('PyFrame_New');
-var _PySeqIter_New = Module['_PySeqIter_New'] = createExportWrapper('PySeqIter_New');
 var _PyList_New = Module['_PyList_New'] = createExportWrapper('PyList_New');
-var _PyList_Size = Module['_PyList_Size'] = createExportWrapper('PyList_Size');
-var _PyList_GetItem = Module['_PyList_GetItem'] = createExportWrapper('PyList_GetItem');
 var _PyList_SetItem = Module['_PyList_SetItem'] = createExportWrapper('PyList_SetItem');
-var _PyList_Insert = Module['_PyList_Insert'] = createExportWrapper('PyList_Insert');
-var _PyList_Append = Module['_PyList_Append'] = createExportWrapper('PyList_Append');
-var __PyList_Extend = Module['__PyList_Extend'] = createExportWrapper('_PyList_Extend');
-var _PyList_AsTuple = Module['_PyList_AsTuple'] = createExportWrapper('PyList_AsTuple');
-var __PyLong_Copy = Module['__PyLong_Copy'] = createExportWrapper('_PyLong_Copy');
-var _PyLong_FromLong = Module['_PyLong_FromLong'] = createExportWrapper('PyLong_FromLong');
-var _PyLong_FromUnsignedLong = Module['_PyLong_FromUnsignedLong'] = createExportWrapper('PyLong_FromUnsignedLong');
-var _PyLong_FromUnsignedLongLong = Module['_PyLong_FromUnsignedLongLong'] = createExportWrapper('PyLong_FromUnsignedLongLong');
-var _PyLong_FromSize_t = Module['_PyLong_FromSize_t'] = createExportWrapper('PyLong_FromSize_t');
 var _PyLong_FromDouble = Module['_PyLong_FromDouble'] = createExportWrapper('PyLong_FromDouble');
-var _PyLong_AsLongAndOverflow = Module['_PyLong_AsLongAndOverflow'] = createExportWrapper('PyLong_AsLongAndOverflow');
-var _PyLong_AsLong = Module['_PyLong_AsLong'] = createExportWrapper('PyLong_AsLong');
-var __PyLong_AsInt = Module['__PyLong_AsInt'] = createExportWrapper('_PyLong_AsInt');
-var _PyLong_AsSsize_t = Module['_PyLong_AsSsize_t'] = createExportWrapper('PyLong_AsSsize_t');
-var _PyLong_AsUnsignedLong = Module['_PyLong_AsUnsignedLong'] = createExportWrapper('PyLong_AsUnsignedLong');
 var __PyLong_FromByteArray = Module['__PyLong_FromByteArray'] = createExportWrapper('_PyLong_FromByteArray');
-var _PyLong_FromVoidPtr = Module['_PyLong_FromVoidPtr'] = createExportWrapper('PyLong_FromVoidPtr');
-var _PyLong_AsVoidPtr = Module['_PyLong_AsVoidPtr'] = createExportWrapper('PyLong_AsVoidPtr');
-var _PyLong_FromLongLong = Module['_PyLong_FromLongLong'] = createExportWrapper('PyLong_FromLongLong');
-var _PyLong_FromSsize_t = Module['_PyLong_FromSsize_t'] = createExportWrapper('PyLong_FromSsize_t');
-var _PyLong_AsLongLong = Module['_PyLong_AsLongLong'] = createExportWrapper('PyLong_AsLongLong');
-var _PyLong_AsUnsignedLongLong = Module['_PyLong_AsUnsignedLongLong'] = createExportWrapper('PyLong_AsUnsignedLongLong');
-var _PyLong_AsLongLongAndOverflow = Module['_PyLong_AsLongLongAndOverflow'] = createExportWrapper('PyLong_AsLongLongAndOverflow');
-var _PyLong_FromString = Module['_PyLong_FromString'] = createExportWrapper('PyLong_FromString');
 var _PyDict_New = Module['_PyDict_New'] = createExportWrapper('PyDict_New');
-var _PyDict_Next = Module['_PyDict_Next'] = createExportWrapper('PyDict_Next');
-var __PyDict_NewPresized = Module['__PyDict_NewPresized'] = createExportWrapper('_PyDict_NewPresized');
 var _PyDict_SetItem = Module['_PyDict_SetItem'] = createExportWrapper('PyDict_SetItem');
-var _PyDict_GetItem = Module['_PyDict_GetItem'] = createExportWrapper('PyDict_GetItem');
-var __PyDict_GetItem_KnownHash = Module['__PyDict_GetItem_KnownHash'] = createExportWrapper('_PyDict_GetItem_KnownHash');
-var _PyDict_GetItemWithError = Module['_PyDict_GetItemWithError'] = createExportWrapper('PyDict_GetItemWithError');
-var __PyDict_GetItemStringWithError = Module['__PyDict_GetItemStringWithError'] = createExportWrapper('_PyDict_GetItemStringWithError');
-var __PyDict_SetItem_KnownHash = Module['__PyDict_SetItem_KnownHash'] = createExportWrapper('_PyDict_SetItem_KnownHash');
-var _PyDict_DelItem = Module['_PyDict_DelItem'] = createExportWrapper('PyDict_DelItem');
-var _PyDict_Merge = Module['_PyDict_Merge'] = createExportWrapper('PyDict_Merge');
-var _PyDict_Copy = Module['_PyDict_Copy'] = createExportWrapper('PyDict_Copy');
-var _PyDict_Size = Module['_PyDict_Size'] = createExportWrapper('PyDict_Size');
-var _PyDict_Contains = Module['_PyDict_Contains'] = createExportWrapper('PyDict_Contains');
-var _PyDict_GetItemString = Module['_PyDict_GetItemString'] = createExportWrapper('PyDict_GetItemString');
-var _PyDict_SetItemString = Module['_PyDict_SetItemString'] = createExportWrapper('PyDict_SetItemString');
-var _PyDict_DelItemString = Module['_PyDict_DelItemString'] = createExportWrapper('PyDict_DelItemString');
-var _PyObject_GenericGetDict = Module['_PyObject_GenericGetDict'] = createExportWrapper('PyObject_GenericGetDict');
-var _PyMemoryView_FromObject = Module['_PyMemoryView_FromObject'] = createExportWrapper('PyMemoryView_FromObject');
-var _PyCMethod_New = Module['_PyCMethod_New'] = createExportWrapper('PyCMethod_New');
-var _PyModuleDef_Init = Module['_PyModuleDef_Init'] = createExportWrapper('PyModuleDef_Init');
-var _PyModule_NewObject = Module['_PyModule_NewObject'] = createExportWrapper('PyModule_NewObject');
-var _PyModule_Create2 = Module['_PyModule_Create2'] = createExportWrapper('PyModule_Create2');
-var _PyModule_GetName = Module['_PyModule_GetName'] = createExportWrapper('PyModule_GetName');
-var _PyModule_GetDict = Module['_PyModule_GetDict'] = createExportWrapper('PyModule_GetDict');
-var _PyModule_GetDef = Module['_PyModule_GetDef'] = createExportWrapper('PyModule_GetDef');
-var _PyModule_GetState = Module['_PyModule_GetState'] = createExportWrapper('PyModule_GetState');
 var _Py_IncRef = Module['_Py_IncRef'] = createExportWrapper('Py_IncRef');
 var _Py_DecRef = Module['_Py_DecRef'] = createExportWrapper('Py_DecRef');
-var _PyObject_Init = Module['_PyObject_Init'] = createExportWrapper('PyObject_Init');
-var _PyObject_InitVar = Module['_PyObject_InitVar'] = createExportWrapper('PyObject_InitVar');
-var __PyObject_New = Module['__PyObject_New'] = createExportWrapper('_PyObject_New');
-var _PyObject_CallFinalizerFromDealloc = Module['_PyObject_CallFinalizerFromDealloc'] = createExportWrapper('PyObject_CallFinalizerFromDealloc');
-var _PyObject_Print = Module['_PyObject_Print'] = createExportWrapper('PyObject_Print');
-var _PyObject_Str = Module['_PyObject_Str'] = createExportWrapper('PyObject_Str');
-var _PyObject_Repr = Module['_PyObject_Repr'] = createExportWrapper('PyObject_Repr');
-var _PyObject_Bytes = Module['_PyObject_Bytes'] = createExportWrapper('PyObject_Bytes');
-var __PyObject_LookupAttr = Module['__PyObject_LookupAttr'] = createExportWrapper('_PyObject_LookupAttr');
-var _PyObject_RichCompare = Module['_PyObject_RichCompare'] = createExportWrapper('PyObject_RichCompare');
-var _PyObject_GenericGetAttr = Module['_PyObject_GenericGetAttr'] = createExportWrapper('PyObject_GenericGetAttr');
-var __PyObject_GenericGetAttrWithDict = Module['__PyObject_GenericGetAttrWithDict'] = createExportWrapper('_PyObject_GenericGetAttrWithDict');
-var _PyObject_RichCompareBool = Module['_PyObject_RichCompareBool'] = createExportWrapper('PyObject_RichCompareBool');
-var _PyObject_IsTrue = Module['_PyObject_IsTrue'] = createExportWrapper('PyObject_IsTrue');
-var _PyObject_Hash = Module['_PyObject_Hash'] = createExportWrapper('PyObject_Hash');
-var _PyObject_GetAttrString = Module['_PyObject_GetAttrString'] = createExportWrapper('PyObject_GetAttrString');
-var _PyObject_GetAttr = Module['_PyObject_GetAttr'] = createExportWrapper('PyObject_GetAttr');
-var _PyObject_HasAttrString = Module['_PyObject_HasAttrString'] = createExportWrapper('PyObject_HasAttrString');
-var _PyObject_SetAttrString = Module['_PyObject_SetAttrString'] = createExportWrapper('PyObject_SetAttrString');
-var _PyObject_SetAttr = Module['_PyObject_SetAttr'] = createExportWrapper('PyObject_SetAttr');
-var __PyObject_GetDictPtr = Module['__PyObject_GetDictPtr'] = createExportWrapper('_PyObject_GetDictPtr');
-var _PyObject_SelfIter = Module['_PyObject_SelfIter'] = createExportWrapper('PyObject_SelfIter');
-var __PyObject_NextNotImplemented = Module['__PyObject_NextNotImplemented'] = createExportWrapper('_PyObject_NextNotImplemented');
-var _PyObject_GenericSetAttr = Module['_PyObject_GenericSetAttr'] = createExportWrapper('PyObject_GenericSetAttr');
-var _PyObject_Not = Module['_PyObject_Not'] = createExportWrapper('PyObject_Not');
-var _PyCallable_Check = Module['_PyCallable_Check'] = createExportWrapper('PyCallable_Check');
-var __Py_Dealloc = Module['__Py_Dealloc'] = createExportWrapper('_Py_Dealloc');
-var _PyMem_RawMalloc = Module['_PyMem_RawMalloc'] = createExportWrapper('PyMem_RawMalloc');
-var _PyMem_RawRealloc = Module['_PyMem_RawRealloc'] = createExportWrapper('PyMem_RawRealloc');
-var _PyMem_RawFree = Module['_PyMem_RawFree'] = createExportWrapper('PyMem_RawFree');
-var _PyMem_Malloc = Module['_PyMem_Malloc'] = createExportWrapper('PyMem_Malloc');
-var _PyMem_Calloc = Module['_PyMem_Calloc'] = createExportWrapper('PyMem_Calloc');
-var _PyMem_Realloc = Module['_PyMem_Realloc'] = createExportWrapper('PyMem_Realloc');
 var _PyMem_Free = Module['_PyMem_Free'] = createExportWrapper('PyMem_Free');
-var _PyObject_Malloc = Module['_PyObject_Malloc'] = createExportWrapper('PyObject_Malloc');
-var _PyObject_Calloc = Module['_PyObject_Calloc'] = createExportWrapper('PyObject_Calloc');
-var _PyObject_Realloc = Module['_PyObject_Realloc'] = createExportWrapper('PyObject_Realloc');
-var _PyObject_Free = Module['_PyObject_Free'] = createExportWrapper('PyObject_Free');
 var _PySet_New = Module['_PySet_New'] = createExportWrapper('PySet_New');
-var _PyFrozenSet_New = Module['_PyFrozenSet_New'] = createExportWrapper('PyFrozenSet_New');
 var _PySet_Add = Module['_PySet_Add'] = createExportWrapper('PySet_Add');
-var _PySlice_New = Module['_PySlice_New'] = createExportWrapper('PySlice_New');
-var _PySlice_Unpack = Module['_PySlice_Unpack'] = createExportWrapper('PySlice_Unpack');
-var _PySlice_AdjustIndices = Module['_PySlice_AdjustIndices'] = createExportWrapper('PySlice_AdjustIndices');
-var _PyStructSequence_New = Module['_PyStructSequence_New'] = createExportWrapper('PyStructSequence_New');
-var _PyStructSequence_InitType2 = Module['_PyStructSequence_InitType2'] = createExportWrapper('PyStructSequence_InitType2');
-var _PyTuple_New = Module['_PyTuple_New'] = createExportWrapper('PyTuple_New');
-var _PyTuple_Size = Module['_PyTuple_Size'] = createExportWrapper('PyTuple_Size');
-var _PyTuple_GetItem = Module['_PyTuple_GetItem'] = createExportWrapper('PyTuple_GetItem');
-var _PyTuple_SetItem = Module['_PyTuple_SetItem'] = createExportWrapper('PyTuple_SetItem');
-var _PyTuple_Pack = Module['_PyTuple_Pack'] = createExportWrapper('PyTuple_Pack');
-var _PyTuple_GetSlice = Module['_PyTuple_GetSlice'] = createExportWrapper('PyTuple_GetSlice');
-var _PyType_Modified = Module['_PyType_Modified'] = createExportWrapper('PyType_Modified');
-var _PyType_GenericNew = Module['_PyType_GenericNew'] = createExportWrapper('PyType_GenericNew');
-var _PyType_IsSubtype = Module['_PyType_IsSubtype'] = createExportWrapper('PyType_IsSubtype');
-var __PyType_Lookup = Module['__PyType_Lookup'] = createExportWrapper('_PyType_Lookup');
-var _PyType_GetFlags = Module['_PyType_GetFlags'] = createExportWrapper('PyType_GetFlags');
-var _PyType_FromSpecWithBases = Module['_PyType_FromSpecWithBases'] = createExportWrapper('PyType_FromSpecWithBases');
-var _PyType_FromModuleAndSpec = Module['_PyType_FromModuleAndSpec'] = createExportWrapper('PyType_FromModuleAndSpec');
-var _PyType_Ready = Module['_PyType_Ready'] = createExportWrapper('PyType_Ready');
-var _PyType_FromSpec = Module['_PyType_FromSpec'] = createExportWrapper('PyType_FromSpec');
-var _PyType_GetModule = Module['_PyType_GetModule'] = createExportWrapper('PyType_GetModule');
-var _PyType_GetModuleState = Module['_PyType_GetModuleState'] = createExportWrapper('PyType_GetModuleState');
-var _PyType_GetModuleByDef = Module['_PyType_GetModuleByDef'] = createExportWrapper('PyType_GetModuleByDef');
 var _PyUnicode_New = Module['_PyUnicode_New'] = createExportWrapper('PyUnicode_New');
-var __PyUnicode_FastCopyCharacters = Module['__PyUnicode_FastCopyCharacters'] = createExportWrapper('_PyUnicode_FastCopyCharacters');
-var __PyUnicode_Ready = Module['__PyUnicode_Ready'] = createExportWrapper('_PyUnicode_Ready');
-var _PyUnicode_FromStringAndSize = Module['_PyUnicode_FromStringAndSize'] = createExportWrapper('PyUnicode_FromStringAndSize');
-var _PyUnicode_FromString = Module['_PyUnicode_FromString'] = createExportWrapper('PyUnicode_FromString');
-var _PyUnicode_FromKindAndData = Module['_PyUnicode_FromKindAndData'] = createExportWrapper('PyUnicode_FromKindAndData');
-var _PyUnicode_AsUCS4 = Module['_PyUnicode_AsUCS4'] = createExportWrapper('PyUnicode_AsUCS4');
-var _PyUnicode_AsUCS4Copy = Module['_PyUnicode_AsUCS4Copy'] = createExportWrapper('PyUnicode_AsUCS4Copy');
-var _PyUnicode_FromFormat = Module['_PyUnicode_FromFormat'] = createExportWrapper('PyUnicode_FromFormat');
-var _PyUnicode_FromOrdinal = Module['_PyUnicode_FromOrdinal'] = createExportWrapper('PyUnicode_FromOrdinal');
-var _PyUnicode_FromEncodedObject = Module['_PyUnicode_FromEncodedObject'] = createExportWrapper('PyUnicode_FromEncodedObject');
-var _PyUnicode_Decode = Module['_PyUnicode_Decode'] = createExportWrapper('PyUnicode_Decode');
-var _PyUnicode_DecodeASCII = Module['_PyUnicode_DecodeASCII'] = createExportWrapper('PyUnicode_DecodeASCII');
-var _PyUnicode_AsEncodedString = Module['_PyUnicode_AsEncodedString'] = createExportWrapper('PyUnicode_AsEncodedString');
-var _PyUnicode_DecodeFSDefault = Module['_PyUnicode_DecodeFSDefault'] = createExportWrapper('PyUnicode_DecodeFSDefault');
-var _PyUnicode_FSConverter = Module['_PyUnicode_FSConverter'] = createExportWrapper('PyUnicode_FSConverter');
-var _PyUnicode_AsUTF8AndSize = Module['_PyUnicode_AsUTF8AndSize'] = createExportWrapper('PyUnicode_AsUTF8AndSize');
-var _PyUnicode_AsUTF8 = Module['_PyUnicode_AsUTF8'] = createExportWrapper('PyUnicode_AsUTF8');
-var _PyUnicode_GetLength = Module['_PyUnicode_GetLength'] = createExportWrapper('PyUnicode_GetLength');
-var _PyUnicode_DecodeUTF8 = Module['_PyUnicode_DecodeUTF8'] = createExportWrapper('PyUnicode_DecodeUTF8');
-var _PyUnicode_AsUTF8String = Module['_PyUnicode_AsUTF8String'] = createExportWrapper('PyUnicode_AsUTF8String');
-var _PyUnicode_AsLatin1String = Module['_PyUnicode_AsLatin1String'] = createExportWrapper('PyUnicode_AsLatin1String');
-var _PyUnicode_AsASCIIString = Module['_PyUnicode_AsASCIIString'] = createExportWrapper('PyUnicode_AsASCIIString');
-var _PyUnicode_Tailmatch = Module['_PyUnicode_Tailmatch'] = createExportWrapper('PyUnicode_Tailmatch');
-var _PyUnicode_Join = Module['_PyUnicode_Join'] = createExportWrapper('PyUnicode_Join');
-var _PyUnicode_Compare = Module['_PyUnicode_Compare'] = createExportWrapper('PyUnicode_Compare');
-var _PyUnicode_CompareWithASCIIString = Module['_PyUnicode_CompareWithASCIIString'] = createExportWrapper('PyUnicode_CompareWithASCIIString');
-var _PyUnicode_Concat = Module['_PyUnicode_Concat'] = createExportWrapper('PyUnicode_Concat');
-var _PyUnicode_Substring = Module['_PyUnicode_Substring'] = createExportWrapper('PyUnicode_Substring');
-var _PyUnicode_Replace = Module['_PyUnicode_Replace'] = createExportWrapper('PyUnicode_Replace');
-var _PyUnicode_Format = Module['_PyUnicode_Format'] = createExportWrapper('PyUnicode_Format');
-var _PyUnicode_InternFromString = Module['_PyUnicode_InternFromString'] = createExportWrapper('PyUnicode_InternFromString');
-var __PyUnicode_IsWhitespace = Module['__PyUnicode_IsWhitespace'] = createExportWrapper('_PyUnicode_IsWhitespace');
-var _PyWeakref_NewRef = Module['_PyWeakref_NewRef'] = createExportWrapper('PyWeakref_NewRef');
-var _PyWeakref_GetObject = Module['_PyWeakref_GetObject'] = createExportWrapper('PyWeakref_GetObject');
-var _PyObject_ClearWeakRefs = Module['_PyObject_ClearWeakRefs'] = createExportWrapper('PyObject_ClearWeakRefs');
-var _PyErr_WarnFormat = Module['_PyErr_WarnFormat'] = createExportWrapper('PyErr_WarnFormat');
-var _PyErr_WarnEx = Module['_PyErr_WarnEx'] = createExportWrapper('PyErr_WarnEx');
 var _PyEval_SaveThread = Module['_PyEval_SaveThread'] = createExportWrapper('PyEval_SaveThread');
 var _PyEval_RestoreThread = Module['_PyEval_RestoreThread'] = createExportWrapper('PyEval_RestoreThread');
-var _PyEval_GetBuiltins = Module['_PyEval_GetBuiltins'] = createExportWrapper('PyEval_GetBuiltins');
-var _Py_EnterRecursiveCall = Module['_Py_EnterRecursiveCall'] = createExportWrapper('Py_EnterRecursiveCall');
-var _Py_LeaveRecursiveCall = Module['_Py_LeaveRecursiveCall'] = createExportWrapper('Py_LeaveRecursiveCall');
-var _PyContextVar_New = Module['_PyContextVar_New'] = createExportWrapper('PyContextVar_New');
-var _PyContextVar_Get = Module['_PyContextVar_Get'] = createExportWrapper('PyContextVar_Get');
-var _PyContextVar_Set = Module['_PyContextVar_Set'] = createExportWrapper('PyContextVar_Set');
-var _PyErr_Restore = Module['_PyErr_Restore'] = createExportWrapper('PyErr_Restore');
-var _PyErr_Format = Module['_PyErr_Format'] = createExportWrapper('PyErr_Format');
-var _PyErr_SetObject = Module['_PyErr_SetObject'] = createExportWrapper('PyErr_SetObject');
-var _PyErr_SetNone = Module['_PyErr_SetNone'] = createExportWrapper('PyErr_SetNone');
 var _PyErr_SetString = Module['_PyErr_SetString'] = createExportWrapper('PyErr_SetString');
 var _PyErr_Occurred = Module['_PyErr_Occurred'] = createExportWrapper('PyErr_Occurred');
-var _PyErr_GivenExceptionMatches = Module['_PyErr_GivenExceptionMatches'] = createExportWrapper('PyErr_GivenExceptionMatches');
-var _PyErr_ExceptionMatches = Module['_PyErr_ExceptionMatches'] = createExportWrapper('PyErr_ExceptionMatches');
-var _PyErr_NormalizeException = Module['_PyErr_NormalizeException'] = createExportWrapper('PyErr_NormalizeException');
-var _PyErr_Fetch = Module['_PyErr_Fetch'] = createExportWrapper('PyErr_Fetch');
 var _PyErr_Clear = Module['_PyErr_Clear'] = createExportWrapper('PyErr_Clear');
-var _PyErr_GetExcInfo = Module['_PyErr_GetExcInfo'] = createExportWrapper('PyErr_GetExcInfo');
-var _PyErr_SetExcInfo = Module['_PyErr_SetExcInfo'] = createExportWrapper('PyErr_SetExcInfo');
-var __PyErr_ChainExceptions = Module['__PyErr_ChainExceptions'] = createExportWrapper('_PyErr_ChainExceptions');
-var __PyErr_FormatFromCause = Module['__PyErr_FormatFromCause'] = createExportWrapper('_PyErr_FormatFromCause');
-var _PyErr_BadArgument = Module['_PyErr_BadArgument'] = createExportWrapper('PyErr_BadArgument');
-var _PyErr_NoMemory = Module['_PyErr_NoMemory'] = createExportWrapper('PyErr_NoMemory');
-var _PyErr_SetFromErrnoWithFilenameObject = Module['_PyErr_SetFromErrnoWithFilenameObject'] = createExportWrapper('PyErr_SetFromErrnoWithFilenameObject');
-var _PyErr_SetFromErrno = Module['_PyErr_SetFromErrno'] = createExportWrapper('PyErr_SetFromErrno');
-var __PyErr_BadInternalCall = Module['__PyErr_BadInternalCall'] = createExportWrapper('_PyErr_BadInternalCall');
-var _PyErr_FormatV = Module['_PyErr_FormatV'] = createExportWrapper('PyErr_FormatV');
-var _PyErr_NewException = Module['_PyErr_NewException'] = createExportWrapper('PyErr_NewException');
-var _PyErr_NewExceptionWithDoc = Module['_PyErr_NewExceptionWithDoc'] = createExportWrapper('PyErr_NewExceptionWithDoc');
-var _PyErr_WriteUnraisable = Module['_PyErr_WriteUnraisable'] = createExportWrapper('PyErr_WriteUnraisable');
-var __PyArg_Parse_SizeT = Module['__PyArg_Parse_SizeT'] = createExportWrapper('_PyArg_Parse_SizeT');
-var _PyArg_ParseTuple = Module['_PyArg_ParseTuple'] = createExportWrapper('PyArg_ParseTuple');
-var __PyArg_ParseTuple_SizeT = Module['__PyArg_ParseTuple_SizeT'] = createExportWrapper('_PyArg_ParseTuple_SizeT');
-var __PyArg_BadArgument = Module['__PyArg_BadArgument'] = createExportWrapper('_PyArg_BadArgument');
-var _PyArg_ParseTupleAndKeywords = Module['_PyArg_ParseTupleAndKeywords'] = createExportWrapper('PyArg_ParseTupleAndKeywords');
-var __PyArg_ParseTupleAndKeywords_SizeT = Module['__PyArg_ParseTupleAndKeywords_SizeT'] = createExportWrapper('_PyArg_ParseTupleAndKeywords_SizeT');
-var __PyArg_VaParseTupleAndKeywords_SizeT = Module['__PyArg_VaParseTupleAndKeywords_SizeT'] = createExportWrapper('_PyArg_VaParseTupleAndKeywords_SizeT');
-var __PyArg_UnpackKeywords = Module['__PyArg_UnpackKeywords'] = createExportWrapper('_PyArg_UnpackKeywords');
-var __PyArg_CheckPositional = Module['__PyArg_CheckPositional'] = createExportWrapper('_PyArg_CheckPositional');
-var _PyArg_UnpackTuple = Module['_PyArg_UnpackTuple'] = createExportWrapper('PyArg_UnpackTuple');
-var __PyArg_NoKeywords = Module['__PyArg_NoKeywords'] = createExportWrapper('_PyArg_NoKeywords');
-var __PyArg_NoPositional = Module['__PyArg_NoPositional'] = createExportWrapper('_PyArg_NoPositional');
-var _Py_GetVersion = Module['_Py_GetVersion'] = createExportWrapper('Py_GetVersion');
-var __Py_hashtable_set = Module['__Py_hashtable_set'] = createExportWrapper('_Py_hashtable_set');
-var __Py_hashtable_get = Module['__Py_hashtable_get'] = createExportWrapper('_Py_hashtable_get');
-var __Py_hashtable_new_full = Module['__Py_hashtable_new_full'] = createExportWrapper('_Py_hashtable_new_full');
-var __Py_hashtable_destroy = Module['__Py_hashtable_destroy'] = createExportWrapper('_Py_hashtable_destroy');
-var _PyImport_Import = Module['_PyImport_Import'] = createExportWrapper('PyImport_Import');
-var _PyImport_ImportModule = Module['_PyImport_ImportModule'] = createExportWrapper('PyImport_ImportModule');
-var _PyImport_GetModuleDict = Module['_PyImport_GetModuleDict'] = createExportWrapper('PyImport_GetModuleDict');
-var _PyImport_AddModule = Module['_PyImport_AddModule'] = createExportWrapper('PyImport_AddModule');
-var _PyImport_ImportModuleLevelObject = Module['_PyImport_ImportModuleLevelObject'] = createExportWrapper('PyImport_ImportModuleLevelObject');
-var _Py_BuildValue = Module['_Py_BuildValue'] = createExportWrapper('Py_BuildValue');
-var __Py_BuildValue_SizeT = Module['__Py_BuildValue_SizeT'] = createExportWrapper('_Py_BuildValue_SizeT');
-var _PyModule_AddObjectRef = Module['_PyModule_AddObjectRef'] = createExportWrapper('PyModule_AddObjectRef');
-var _PyModule_AddObject = Module['_PyModule_AddObject'] = createExportWrapper('PyModule_AddObject');
-var _PyModule_AddIntConstant = Module['_PyModule_AddIntConstant'] = createExportWrapper('PyModule_AddIntConstant');
-var _PyModule_AddStringConstant = Module['_PyModule_AddStringConstant'] = createExportWrapper('PyModule_AddStringConstant');
-var _PyModule_AddType = Module['_PyModule_AddType'] = createExportWrapper('PyModule_AddType');
-var _PyOS_snprintf = Module['_PyOS_snprintf'] = createExportWrapper('PyOS_snprintf');
-var _PyOS_strtoul = Module['_PyOS_strtoul'] = createExportWrapper('PyOS_strtoul');
-var _PyOS_strtol = Module['_PyOS_strtol'] = createExportWrapper('PyOS_strtol');
-var __Py_HashDouble = Module['__Py_HashDouble'] = createExportWrapper('_Py_HashDouble');
-var __Py_HashBytes = Module['__Py_HashBytes'] = createExportWrapper('_Py_HashBytes');
-var _Py_IsInitialized = Module['_Py_IsInitialized'] = createExportWrapper('Py_IsInitialized');
-var __Py_FatalErrorFunc = Module['__Py_FatalErrorFunc'] = createExportWrapper('_Py_FatalErrorFunc');
-var _PyOS_setsig = Module['_PyOS_setsig'] = createExportWrapper('PyOS_setsig');
-var _PyInterpreterState_GetID = Module['_PyInterpreterState_GetID'] = createExportWrapper('PyInterpreterState_GetID');
-var __PyInterpreterState_GetConfig = Module['__PyInterpreterState_GetConfig'] = createExportWrapper('_PyInterpreterState_GetConfig');
-var _PyThreadState_Get = Module['_PyThreadState_Get'] = createExportWrapper('PyThreadState_Get');
-var _PyThreadState_GetDict = Module['_PyThreadState_GetDict'] = createExportWrapper('PyThreadState_GetDict');
-var _PyThreadState_GetFrame = Module['_PyThreadState_GetFrame'] = createExportWrapper('PyThreadState_GetFrame');
-var _PyInterpreterState_Main = Module['_PyInterpreterState_Main'] = createExportWrapper('PyInterpreterState_Main');
 var _PyGILState_Check = Module['_PyGILState_Check'] = createExportWrapper('PyGILState_Check');
-var _PyGILState_Ensure = Module['_PyGILState_Ensure'] = createExportWrapper('PyGILState_Ensure');
-var _PyGILState_Release = Module['_PyGILState_Release'] = createExportWrapper('PyGILState_Release');
 var _PyErr_Print = Module['_PyErr_Print'] = createExportWrapper('PyErr_Print');
-var _PyRun_StringFlags = Module['_PyRun_StringFlags'] = createExportWrapper('PyRun_StringFlags');
-var _PyErr_PrintEx = Module['_PyErr_PrintEx'] = createExportWrapper('PyErr_PrintEx');
 var _PyRun_SimpleString = Module['_PyRun_SimpleString'] = createExportWrapper('PyRun_SimpleString');
-var __PyTime_AsMilliseconds = Module['__PyTime_AsMilliseconds'] = createExportWrapper('_PyTime_AsMilliseconds');
-var __PyDeadline_Init = Module['__PyDeadline_Init'] = createExportWrapper('_PyDeadline_Init');
-var __PyDeadline_Get = Module['__PyDeadline_Get'] = createExportWrapper('_PyDeadline_Get');
-var _PySys_Audit = Module['_PySys_Audit'] = createExportWrapper('PySys_Audit');
-var _PyThread_get_thread_ident = Module['_PyThread_get_thread_ident'] = createExportWrapper('PyThread_get_thread_ident');
-var _PyThread_allocate_lock = Module['_PyThread_allocate_lock'] = createExportWrapper('PyThread_allocate_lock');
-var _PyThread_free_lock = Module['_PyThread_free_lock'] = createExportWrapper('PyThread_free_lock');
-var _PyThread_release_lock = Module['_PyThread_release_lock'] = createExportWrapper('PyThread_release_lock');
-var _PyThread_acquire_lock = Module['_PyThread_acquire_lock'] = createExportWrapper('PyThread_acquire_lock');
-var _PyTraceBack_Here = Module['_PyTraceBack_Here'] = createExportWrapper('PyTraceBack_Here');
 var __PyTraceback_Add = Module['__PyTraceback_Add'] = createExportWrapper('_PyTraceback_Add');
-var _PyOS_mystrnicmp = Module['_PyOS_mystrnicmp'] = createExportWrapper('PyOS_mystrnicmp');
-var _PyOS_string_to_double = Module['_PyOS_string_to_double'] = createExportWrapper('PyOS_string_to_double');
-var __Py_strhex = Module['__Py_strhex'] = createExportWrapper('_Py_strhex');
-var __Py_fopen_obj = Module['__Py_fopen_obj'] = createExportWrapper('_Py_fopen_obj');
-var _PyObject_GC_Track = Module['_PyObject_GC_Track'] = createExportWrapper('PyObject_GC_Track');
-var _PyObject_GC_UnTrack = Module['_PyObject_GC_UnTrack'] = createExportWrapper('PyObject_GC_UnTrack');
-var __PyObject_GC_New = Module['__PyObject_GC_New'] = createExportWrapper('_PyObject_GC_New');
-var _PyObject_GC_Del = Module['_PyObject_GC_Del'] = createExportWrapper('PyObject_GC_Del');
-var _PyObject_GC_IsFinalized = Module['_PyObject_GC_IsFinalized'] = createExportWrapper('PyObject_GC_IsFinalized');
 var _PyErr_CheckSignals = Module['_PyErr_CheckSignals'] = createExportWrapper('PyErr_CheckSignals');
 var __PyErr_CheckSignals = Module['__PyErr_CheckSignals'] = createExportWrapper('_PyErr_CheckSignals');
-var _PyTraceMalloc_Track = Module['_PyTraceMalloc_Track'] = createExportWrapper('PyTraceMalloc_Track');
-var _PyTraceMalloc_Untrack = Module['_PyTraceMalloc_Untrack'] = createExportWrapper('PyTraceMalloc_Untrack');
 var _dump_traceback = Module['_dump_traceback'] = createExportWrapper('dump_traceback');
 var _set_error = Module['_set_error'] = createExportWrapper('set_error');
 var _restore_sys_last_exception = Module['_restore_sys_last_exception'] = createExportWrapper('restore_sys_last_exception');
@@ -10774,352 +9156,16 @@ var _hiwire_num_refs = Module['_hiwire_num_refs'] = createExportWrapper('hiwire_
 var _hiwire_decref = Module['_hiwire_decref'] = createExportWrapper('hiwire_decref');
 var _hiwire_pop = Module['_hiwire_pop'] = createExportWrapper('hiwire_pop');
 var _main = Module['_main'] = createExportWrapper('__main_argc_argv');
-var _strcmp = Module['_strcmp'] = createExportWrapper('strcmp');
-var _malloc = Module['_malloc'] = createExportWrapper('malloc');
-var _calloc = Module['_calloc'] = createExportWrapper('calloc');
-var _realloc = Module['_realloc'] = createExportWrapper('realloc');
+var _malloc = createExportWrapper('malloc');
 var _free = Module['_free'] = createExportWrapper('free');
-var _memcmp = Module['_memcmp'] = createExportWrapper('memcmp');
-var _memset = Module['_memset'] = createExportWrapper('memset');
-var _memcpy = Module['_memcpy'] = createExportWrapper('memcpy');
-var _wcslen = Module['_wcslen'] = createExportWrapper('wcslen');
-var _strlen = Module['_strlen'] = createExportWrapper('strlen');
-var _vsnprintf = Module['_vsnprintf'] = createExportWrapper('vsnprintf');
-var _fputs = Module['_fputs'] = createExportWrapper('fputs');
-var _fiprintf = Module['_fiprintf'] = createExportWrapper('fiprintf');
-var _fwrite = Module['_fwrite'] = createExportWrapper('fwrite');
 var _fflush = Module['_fflush'] = createExportWrapper('fflush');
-var _fileno = Module['_fileno'] = createExportWrapper('fileno');
-var _pthread_condattr_init = Module['_pthread_condattr_init'] = createExportWrapper('pthread_condattr_init');
-var _pthread_condattr_setclock = Module['_pthread_condattr_setclock'] = createExportWrapper('pthread_condattr_setclock');
-var _pthread_cond_init = Module['_pthread_cond_init'] = createExportWrapper('pthread_cond_init');
-var _clock_gettime = Module['_clock_gettime'] = createExportWrapper('clock_gettime');
-var _gettimeofday = Module['_gettimeofday'] = createExportWrapper('gettimeofday');
-var _pthread_create = Module['_pthread_create'] = createExportWrapper('pthread_create');
-var _pthread_mutex_init = Module['_pthread_mutex_init'] = createExportWrapper('pthread_mutex_init');
-var _strerror = Module['_strerror'] = createExportWrapper('strerror');
-var _pthread_cond_destroy = Module['_pthread_cond_destroy'] = createExportWrapper('pthread_cond_destroy');
-var _pthread_mutex_destroy = Module['_pthread_mutex_destroy'] = createExportWrapper('pthread_mutex_destroy');
-var _pthread_mutex_lock = Module['_pthread_mutex_lock'] = createExportWrapper('pthread_mutex_lock');
-var _pthread_cond_timedwait = Module['_pthread_cond_timedwait'] = createExportWrapper('pthread_cond_timedwait');
-var _pthread_cond_wait = Module['_pthread_cond_wait'] = createExportWrapper('pthread_cond_wait');
-var _pthread_mutex_unlock = Module['_pthread_mutex_unlock'] = createExportWrapper('pthread_mutex_unlock');
-var _pthread_cond_signal = Module['_pthread_cond_signal'] = createExportWrapper('pthread_cond_signal');
-var ___errno_location = Module['___errno_location'] = createExportWrapper('__errno_location');
-var _strchr = Module['_strchr'] = createExportWrapper('strchr');
-var _frexp = Module['_frexp'] = createExportWrapper('frexp');
-var _ldexp = Module['_ldexp'] = createExportWrapper('ldexp');
-var _siprintf = Module['_siprintf'] = createExportWrapper('siprintf');
-var _memmove = Module['_memmove'] = createExportWrapper('memmove');
-var _fclose = Module['_fclose'] = createExportWrapper('fclose');
-var _ftell = Module['_ftell'] = createExportWrapper('ftell');
-var _fread = Module['_fread'] = createExportWrapper('fread');
-var _fdopen = Module['_fdopen'] = createExportWrapper('fdopen');
-var _strcpy = Module['_strcpy'] = createExportWrapper('strcpy');
-var _tolower = Module['_tolower'] = createExportWrapper('tolower');
-var _clearerr = Module['_clearerr'] = createExportWrapper('clearerr');
-var _fgets = Module['_fgets'] = createExportWrapper('fgets');
-var _feof = Module['_feof'] = createExportWrapper('feof');
-var _getc = Module['_getc'] = createExportWrapper('getc');
-var _ungetc = Module['_ungetc'] = createExportWrapper('ungetc');
-var _lseek = Module['_lseek'] = createExportWrapper('lseek');
-var _strcspn = Module['_strcspn'] = createExportWrapper('strcspn');
-var _strncpy = Module['_strncpy'] = createExportWrapper('strncpy');
-var _strncmp = Module['_strncmp'] = createExportWrapper('strncmp');
-var _hypot = Module['_hypot'] = createExportWrapper('hypot');
-var _atan2 = Module['_atan2'] = createExportWrapper('atan2');
-var _pow = Module['_pow'] = createExportWrapper('pow');
-var _log = Module['_log'] = createExportWrapper('log');
-var _exp = Module['_exp'] = createExportWrapper('exp');
-var _sin = Module['_sin'] = createExportWrapper('sin');
-var _cos = Module['_cos'] = createExportWrapper('cos');
-var _modf = Module['_modf'] = createExportWrapper('modf');
-var _fmod = Module['_fmod'] = createExportWrapper('fmod');
-var _strtol = Module['_strtol'] = createExportWrapper('strtol');
-var _localeconv = Module['_localeconv'] = createExportWrapper('localeconv');
-var _snprintf = Module['_snprintf'] = createExportWrapper('snprintf');
-var _memchr = Module['_memchr'] = createExportWrapper('memchr');
-var _strstr = Module['_strstr'] = createExportWrapper('strstr');
-var _access = Module['_access'] = createExportWrapper('access');
-var _sysconf = Module['_sysconf'] = createExportWrapper('sysconf');
-var _fchmod = Module['_fchmod'] = createExportWrapper('fchmod');
-var _chmod = Module['_chmod'] = createExportWrapper('chmod');
-var _fchown = Module['_fchown'] = createExportWrapper('fchown');
-var _opendir = Module['_opendir'] = createExportWrapper('opendir');
-var _close = Module['_close'] = createExportWrapper('close');
-var _readdir = Module['_readdir'] = createExportWrapper('readdir');
-var _closedir = Module['_closedir'] = createExportWrapper('closedir');
-var _mkdir = Module['_mkdir'] = createExportWrapper('mkdir');
-var _readlink = Module['_readlink'] = createExportWrapper('readlink');
-var _rmdir = Module['_rmdir'] = createExportWrapper('rmdir');
-var _localtime_r = Module['_localtime_r'] = createExportWrapper('localtime_r');
-var _getgid = Module['_getgid'] = createExportWrapper('getgid');
-var _getpid = Module['_getpid'] = createExportWrapper('getpid');
-var _getuid = Module['_getuid'] = createExportWrapper('getuid');
-var _open = Module['_open'] = createExportWrapper('open');
-var _fstat = Module['_fstat'] = createExportWrapper('fstat');
-var _fdatasync = Module['_fdatasync'] = createExportWrapper('fdatasync');
-var _read = Module['_read'] = createExportWrapper('read');
-var _lstat = Module['_lstat'] = createExportWrapper('lstat');
-var _stat = Module['_stat'] = createExportWrapper('stat');
-var _getcwd = Module['_getcwd'] = createExportWrapper('getcwd');
-var _unlink = Module['_unlink'] = createExportWrapper('unlink');
-var _utimes = Module['_utimes'] = createExportWrapper('utimes');
-var _ftruncate = Module['_ftruncate'] = createExportWrapper('ftruncate');
-var _qsort = Module['_qsort'] = createExportWrapper('qsort');
-var _pthread_sigmask = Module['_pthread_sigmask'] = createExportWrapper('pthread_sigmask');
-var _sigfillset = Module['_sigfillset'] = createExportWrapper('sigfillset');
-var _getenv = Module['_getenv'] = createExportWrapper('getenv');
-var _puts = Module['_puts'] = createExportWrapper('puts');
-var _iprintf = Module['_iprintf'] = createExportWrapper('iprintf');
-var _strtoul = Module['_strtoul'] = createExportWrapper('strtoul');
-var _strrchr = Module['_strrchr'] = createExportWrapper('strrchr');
-var _ferror = Module['_ferror'] = createExportWrapper('ferror');
-var _fcntl = Module['_fcntl'] = createExportWrapper('fcntl');
-var _fopen = Module['_fopen'] = createExportWrapper('fopen');
-var _write = Module['_write'] = createExportWrapper('write');
-var _vfprintf = Module['_vfprintf'] = createExportWrapper('vfprintf');
-var _strcat = Module['_strcat'] = createExportWrapper('strcat');
-var ___extenddftf2 = Module['___extenddftf2'] = createExportWrapper('__extenddftf2');
-var ___trunctfdf2 = Module['___trunctfdf2'] = createExportWrapper('__trunctfdf2');
-var _isalpha = Module['_isalpha'] = createExportWrapper('isalpha');
-var _acos = Module['_acos'] = createExportWrapper('acos');
-var _acosh = Module['_acosh'] = createExportWrapper('acosh');
-var _asin = Module['_asin'] = createExportWrapper('asin');
-var _asinh = Module['_asinh'] = createExportWrapper('asinh');
-var _atan = Module['_atan'] = createExportWrapper('atan');
-var _atanh = Module['_atanh'] = createExportWrapper('atanh');
-var _cbrt = Module['_cbrt'] = createExportWrapper('cbrt');
-var _cosh = Module['_cosh'] = createExportWrapper('cosh');
-var _exp2 = Module['_exp2'] = createExportWrapper('exp2');
-var _expm1 = Module['_expm1'] = createExportWrapper('expm1');
-var _fabs = Module['_fabs'] = createExportWrapper('fabs');
-var _sinh = Module['_sinh'] = createExportWrapper('sinh');
-var _sqrt = Module['_sqrt'] = createExportWrapper('sqrt');
-var _tan = Module['_tan'] = createExportWrapper('tan');
-var _tanh = Module['_tanh'] = createExportWrapper('tanh');
-var _nextafter = Module['_nextafter'] = createExportWrapper('nextafter');
-var _log1p = Module['_log1p'] = createExportWrapper('log1p');
-var _log10 = Module['_log10'] = createExportWrapper('log10');
-var _log2 = Module['_log2'] = createExportWrapper('log2');
-var _strncat = Module['_strncat'] = createExportWrapper('strncat');
-var _mmap = Module['_mmap'] = createExportWrapper('mmap');
-var _munmap = Module['_munmap'] = createExportWrapper('munmap');
-var _poll = Module['_poll'] = createExportWrapper('poll');
-var _getsockname = Module['_getsockname'] = createExportWrapper('getsockname');
-var _socket = Module['_socket'] = createExportWrapper('socket');
-var _getsockopt = Module['_getsockopt'] = createExportWrapper('getsockopt');
-var _bind = Module['_bind'] = createExportWrapper('bind');
-var _listen = Module['_listen'] = createExportWrapper('listen');
-var _setsockopt = Module['_setsockopt'] = createExportWrapper('setsockopt');
-var _accept = Module['_accept'] = createExportWrapper('accept');
-var _ntohs = Module['_ntohs'] = createExportWrapper('ntohs');
+var ___errno_location = createExportWrapper('__errno_location');
+var _ntohs = createExportWrapper('ntohs');
 var _htons = createExportWrapper('htons');
-var _gai_strerror = Module['_gai_strerror'] = createExportWrapper('gai_strerror');
-var _freeaddrinfo = Module['_freeaddrinfo'] = createExportWrapper('freeaddrinfo');
-var _connect = Module['_connect'] = createExportWrapper('connect');
-var _recvfrom = Module['_recvfrom'] = createExportWrapper('recvfrom');
-var _sendto = Module['_sendto'] = createExportWrapper('sendto');
 var _htonl = createExportWrapper('htonl');
-var _time = Module['_time'] = createExportWrapper('time');
-var _fgetc = Module['_fgetc'] = createExportWrapper('fgetc');
-var _atexit = Module['_atexit'] = createExportWrapper('atexit');
-var ___fpclassifyl = Module['___fpclassifyl'] = createExportWrapper('__fpclassifyl');
-var ___signbitl = Module['___signbitl'] = createExportWrapper('__signbitl');
-var _acosf = Module['_acosf'] = createExportWrapper('acosf');
-var _acoshf = Module['_acoshf'] = createExportWrapper('acoshf');
-var _acoshl = Module['_acoshl'] = createExportWrapper('acoshl');
-var _acosl = Module['_acosl'] = createExportWrapper('acosl');
-var _asinf = Module['_asinf'] = createExportWrapper('asinf');
-var _asinhf = Module['_asinhf'] = createExportWrapper('asinhf');
-var _asinhl = Module['_asinhl'] = createExportWrapper('asinhl');
-var _asinl = Module['_asinl'] = createExportWrapper('asinl');
-var _atan2f = Module['_atan2f'] = createExportWrapper('atan2f');
-var _atan2l = Module['_atan2l'] = createExportWrapper('atan2l');
-var _atanf = Module['_atanf'] = createExportWrapper('atanf');
-var _atanhf = Module['_atanhf'] = createExportWrapper('atanhf');
-var _atanhl = Module['_atanhl'] = createExportWrapper('atanhl');
-var _atanl = Module['_atanl'] = createExportWrapper('atanl');
-var _atoi = Module['_atoi'] = createExportWrapper('atoi');
-var _strcasecmp = Module['_strcasecmp'] = createExportWrapper('strcasecmp');
-var _cabs = Module['_cabs'] = createExportWrapper('cabs');
-var _cabsf = Module['_cabsf'] = createExportWrapper('cabsf');
-var _cabsl = Module['_cabsl'] = createExportWrapper('cabsl');
-var _cacos = Module['_cacos'] = createExportWrapper('cacos');
-var _cacosf = Module['_cacosf'] = createExportWrapper('cacosf');
-var _cacosh = Module['_cacosh'] = createExportWrapper('cacosh');
-var _cacoshf = Module['_cacoshf'] = createExportWrapper('cacoshf');
-var _cacoshl = Module['_cacoshl'] = createExportWrapper('cacoshl');
-var _cacosl = Module['_cacosl'] = createExportWrapper('cacosl');
-var _carg = Module['_carg'] = createExportWrapper('carg');
-var _cargf = Module['_cargf'] = createExportWrapper('cargf');
-var _cargl = Module['_cargl'] = createExportWrapper('cargl');
-var _casin = Module['_casin'] = createExportWrapper('casin');
-var _casinf = Module['_casinf'] = createExportWrapper('casinf');
-var _casinh = Module['_casinh'] = createExportWrapper('casinh');
-var _casinhf = Module['_casinhf'] = createExportWrapper('casinhf');
-var _casinhl = Module['_casinhl'] = createExportWrapper('casinhl');
-var _casinl = Module['_casinl'] = createExportWrapper('casinl');
-var _catan = Module['_catan'] = createExportWrapper('catan');
-var _catanf = Module['_catanf'] = createExportWrapper('catanf');
-var _catanh = Module['_catanh'] = createExportWrapper('catanh');
-var _catanhf = Module['_catanhf'] = createExportWrapper('catanhf');
-var _catanhl = Module['_catanhl'] = createExportWrapper('catanhl');
-var _catanl = Module['_catanl'] = createExportWrapper('catanl');
-var _cbrtf = Module['_cbrtf'] = createExportWrapper('cbrtf');
-var _cbrtl = Module['_cbrtl'] = createExportWrapper('cbrtl');
-var _ccos = Module['_ccos'] = createExportWrapper('ccos');
-var _ccosf = Module['_ccosf'] = createExportWrapper('ccosf');
-var _ccosh = Module['_ccosh'] = createExportWrapper('ccosh');
-var _ccoshf = Module['_ccoshf'] = createExportWrapper('ccoshf');
-var _ccoshl = Module['_ccoshl'] = createExportWrapper('ccoshl');
-var _ccosl = Module['_ccosl'] = createExportWrapper('ccosl');
-var _ceil = Module['_ceil'] = createExportWrapper('ceil');
-var _ceilf = Module['_ceilf'] = createExportWrapper('ceilf');
-var _ceill = Module['_ceill'] = createExportWrapper('ceill');
-var _cexp = Module['_cexp'] = createExportWrapper('cexp');
-var _cexpf = Module['_cexpf'] = createExportWrapper('cexpf');
-var _cexpl = Module['_cexpl'] = createExportWrapper('cexpl');
-var _clog = Module['_clog'] = createExportWrapper('clog');
-var _clogf = Module['_clogf'] = createExportWrapper('clogf');
-var _clogl = Module['_clogl'] = createExportWrapper('clogl');
-var _floor = Module['_floor'] = createExportWrapper('floor');
-var _cosf = Module['_cosf'] = createExportWrapper('cosf');
-var _coshf = Module['_coshf'] = createExportWrapper('coshf');
-var _coshl = Module['_coshl'] = createExportWrapper('coshl');
-var _cosl = Module['_cosl'] = createExportWrapper('cosl');
-var _cpow = Module['_cpow'] = createExportWrapper('cpow');
-var _cpowf = Module['_cpowf'] = createExportWrapper('cpowf');
-var _cpowl = Module['_cpowl'] = createExportWrapper('cpowl');
-var _csin = Module['_csin'] = createExportWrapper('csin');
-var _csinf = Module['_csinf'] = createExportWrapper('csinf');
-var _csinh = Module['_csinh'] = createExportWrapper('csinh');
-var _csinhf = Module['_csinhf'] = createExportWrapper('csinhf');
-var _csinhl = Module['_csinhl'] = createExportWrapper('csinhl');
-var _csinl = Module['_csinl'] = createExportWrapper('csinl');
-var _csqrt = Module['_csqrt'] = createExportWrapper('csqrt');
-var _csqrtf = Module['_csqrtf'] = createExportWrapper('csqrtf');
-var _csqrtl = Module['_csqrtl'] = createExportWrapper('csqrtl');
-var _ctan = Module['_ctan'] = createExportWrapper('ctan');
-var _ctanf = Module['_ctanf'] = createExportWrapper('ctanf');
-var _ctanh = Module['_ctanh'] = createExportWrapper('ctanh');
-var _ctanhf = Module['_ctanhf'] = createExportWrapper('ctanhf');
-var _ctanhl = Module['_ctanhl'] = createExportWrapper('ctanhl');
-var _ctanl = Module['_ctanl'] = createExportWrapper('ctanl');
-var _isspace = Module['_isspace'] = createExportWrapper('isspace');
-var ___dl_seterr = createExportWrapper('__dl_seterr');
-var _strspn = Module['_strspn'] = createExportWrapper('strspn');
-var _exp2f = Module['_exp2f'] = createExportWrapper('exp2f');
-var _exp2l = Module['_exp2l'] = createExportWrapper('exp2l');
-var _expf = Module['_expf'] = createExportWrapper('expf');
-var _expl = Module['_expl'] = createExportWrapper('expl');
-var _expm1f = Module['_expm1f'] = createExportWrapper('expm1f');
-var _expm1l = Module['_expm1l'] = createExportWrapper('expm1l');
-var _fabsf = Module['_fabsf'] = createExportWrapper('fabsf');
-var _fabsl = Module['_fabsl'] = createExportWrapper('fabsl');
-var _feraiseexcept = Module['_feraiseexcept'] = createExportWrapper('feraiseexcept');
-var _fetestexcept = Module['_fetestexcept'] = createExportWrapper('fetestexcept');
-var _floorf = Module['_floorf'] = createExportWrapper('floorf');
-var _floorl = Module['_floorl'] = createExportWrapper('floorl');
-var _fma = Module['_fma'] = createExportWrapper('fma');
-var _fmax = Module['_fmax'] = createExportWrapper('fmax');
-var _fmaxf = Module['_fmaxf'] = createExportWrapper('fmaxf');
-var _fmaxl = Module['_fmaxl'] = createExportWrapper('fmaxl');
-var _fmin = Module['_fmin'] = createExportWrapper('fmin');
-var _fminf = Module['_fminf'] = createExportWrapper('fminf');
-var _fminl = Module['_fminl'] = createExportWrapper('fminl');
-var _fmodf = Module['_fmodf'] = createExportWrapper('fmodf');
-var _fmodl = Module['_fmodl'] = createExportWrapper('fmodl');
-var _freelocale = Module['_freelocale'] = createExportWrapper('freelocale');
-var _frexpf = Module['_frexpf'] = createExportWrapper('frexpf');
-var _frexpl = Module['_frexpl'] = createExportWrapper('frexpl');
-var _fscanf = Module['_fscanf'] = createExportWrapper('fscanf');
-var _fseek = Module['_fseek'] = createExportWrapper('fseek');
-var _fseeko = Module['_fseeko'] = createExportWrapper('fseeko');
-var _ftello = Module['_ftello'] = createExportWrapper('ftello');
-var _strdup = Module['_strdup'] = createExportWrapper('strdup');
-var _getegid = Module['_getegid'] = createExportWrapper('getegid');
-var _geteuid = Module['_geteuid'] = createExportWrapper('geteuid');
-var _gmtime = Module['_gmtime'] = createExportWrapper('gmtime');
-var _hypotf = Module['_hypotf'] = createExportWrapper('hypotf');
-var _hypotl = Module['_hypotl'] = createExportWrapper('hypotl');
-var _ioctl = Module['_ioctl'] = createExportWrapper('ioctl');
-var _ldexpf = Module['_ldexpf'] = createExportWrapper('ldexpf');
-var _ldexpl = Module['_ldexpl'] = createExportWrapper('ldexpl');
-var _pthread_condattr_destroy = Module['_pthread_condattr_destroy'] = createExportWrapper('pthread_condattr_destroy');
-var _pthread_join = Module['_pthread_join'] = createExportWrapper('pthread_join');
-var _log10f = Module['_log10f'] = createExportWrapper('log10f');
-var _log10l = Module['_log10l'] = createExportWrapper('log10l');
-var _log1pf = Module['_log1pf'] = createExportWrapper('log1pf');
-var _log1pl = Module['_log1pl'] = createExportWrapper('log1pl');
-var _log2f = Module['_log2f'] = createExportWrapper('log2f');
-var _log2l = Module['_log2l'] = createExportWrapper('log2l');
-var _logf = Module['_logf'] = createExportWrapper('logf');
-var _logl = Module['_logl'] = createExportWrapper('logl');
 var _emscripten_builtin_memalign = createExportWrapper('emscripten_builtin_memalign');
-var _modff = Module['_modff'] = createExportWrapper('modff');
-var _modfl = Module['_modfl'] = createExportWrapper('modfl');
-var _newlocale = Module['_newlocale'] = createExportWrapper('newlocale');
-var _nextafterf = Module['_nextafterf'] = createExportWrapper('nextafterf');
-var _nextafterl = Module['_nextafterl'] = createExportWrapper('nextafterl');
-var _perror = Module['_perror'] = createExportWrapper('perror');
-var _posix_fallocate = Module['_posix_fallocate'] = createExportWrapper('posix_fallocate');
-var _powf = Module['_powf'] = createExportWrapper('powf');
-var _powl = Module['_powl'] = createExportWrapper('powl');
-var _printf = Module['_printf'] = createExportWrapper('printf');
-var ___small_printf = Module['___small_printf'] = createExportWrapper('__small_printf');
-var _putchar = Module['_putchar'] = createExportWrapper('putchar');
-var _rint = Module['_rint'] = createExportWrapper('rint');
-var _rintf = Module['_rintf'] = createExportWrapper('rintf');
-var _rintl = Module['_rintl'] = createExportWrapper('rintl');
-var _setbuf = Module['_setbuf'] = createExportWrapper('setbuf');
 var __emscripten_timeout = createExportWrapper('_emscripten_timeout');
-var _sinf = Module['_sinf'] = createExportWrapper('sinf');
-var _sinhf = Module['_sinhf'] = createExportWrapper('sinhf');
-var _sinhl = Module['_sinhl'] = createExportWrapper('sinhl');
-var _sinl = Module['_sinl'] = createExportWrapper('sinl');
-var _sleep = Module['_sleep'] = createExportWrapper('sleep');
-var _sqrtl = Module['_sqrtl'] = createExportWrapper('sqrtl');
-var _sscanf = Module['_sscanf'] = createExportWrapper('sscanf');
-var _strerror_r = Module['_strerror_r'] = createExportWrapper('strerror_r');
-var _strncasecmp = Module['_strncasecmp'] = createExportWrapper('strncasecmp');
-var _strpbrk = Module['_strpbrk'] = createExportWrapper('strpbrk');
-var _strtold_l = Module['_strtold_l'] = createExportWrapper('strtold_l');
-var _strtok = Module['_strtok'] = createExportWrapper('strtok');
-var _strtoull = Module['_strtoull'] = createExportWrapper('strtoull');
-var _strtoll = Module['_strtoll'] = createExportWrapper('strtoll');
-var ___multi3 = Module['___multi3'] = createExportWrapper('__multi3');
-var _tanf = Module['_tanf'] = createExportWrapper('tanf');
-var _tanhf = Module['_tanhf'] = createExportWrapper('tanhf');
-var _tanhl = Module['_tanhl'] = createExportWrapper('tanhl');
-var _tanl = Module['_tanl'] = createExportWrapper('tanl');
-var _trunc = Module['_trunc'] = createExportWrapper('trunc');
-var _truncf = Module['_truncf'] = createExportWrapper('truncf');
-var _truncl = Module['_truncl'] = createExportWrapper('truncl');
-var _usleep = Module['_usleep'] = createExportWrapper('usleep');
-var _vprintf = Module['_vprintf'] = createExportWrapper('vprintf');
-var ___addtf3 = Module['___addtf3'] = createExportWrapper('__addtf3');
-var ___letf2 = Module['___letf2'] = createExportWrapper('__letf2');
-var ___getf2 = Module['___getf2'] = createExportWrapper('__getf2');
-var ___unordtf2 = Module['___unordtf2'] = createExportWrapper('__unordtf2');
-var ___eqtf2 = Module['___eqtf2'] = createExportWrapper('__eqtf2');
-var ___lttf2 = Module['___lttf2'] = createExportWrapper('__lttf2');
-var ___netf2 = Module['___netf2'] = createExportWrapper('__netf2');
-var ___gttf2 = Module['___gttf2'] = createExportWrapper('__gttf2');
-var ___divtf3 = Module['___divtf3'] = createExportWrapper('__divtf3');
-var _setThrew = createExportWrapper('setThrew');
-var _emscripten_longjmp = Module['_emscripten_longjmp'] = createExportWrapper('emscripten_longjmp');
-var ___extendsftf2 = Module['___extendsftf2'] = createExportWrapper('__extendsftf2');
-var ___fixtfdi = Module['___fixtfdi'] = createExportWrapper('__fixtfdi');
-var ___fixtfsi = Module['___fixtfsi'] = createExportWrapper('__fixtfsi');
-var ___fixunstfdi = Module['___fixunstfdi'] = createExportWrapper('__fixunstfdi');
-var ___fixunstfsi = Module['___fixunstfsi'] = createExportWrapper('__fixunstfsi');
-var ___floatditf = Module['___floatditf'] = createExportWrapper('__floatditf');
-var ___floatsitf = Module['___floatsitf'] = createExportWrapper('__floatsitf');
-var ___floatunditf = Module['___floatunditf'] = createExportWrapper('__floatunditf');
-var ___floatunsitf = Module['___floatunsitf'] = createExportWrapper('__floatunsitf');
-var ___multf3 = Module['___multf3'] = createExportWrapper('__multf3');
-var _emscripten_stack_set_limits = (a0, a1) => (_emscripten_stack_set_limits = wasmExports['emscripten_stack_set_limits'])(a0, a1);
+var _emscripten_stack_init = () => (_emscripten_stack_init = wasmExports['emscripten_stack_init'])();
 var _emscripten_stack_get_free = () => (_emscripten_stack_get_free = wasmExports['emscripten_stack_get_free'])();
 var _emscripten_stack_get_base = () => (_emscripten_stack_get_base = wasmExports['emscripten_stack_get_base'])();
 var _emscripten_stack_get_end = () => (_emscripten_stack_get_end = wasmExports['emscripten_stack_get_end'])();
@@ -11127,91 +9173,14 @@ var stackSave = createExportWrapper('stackSave');
 var stackRestore = createExportWrapper('stackRestore');
 var stackAlloc = createExportWrapper('stackAlloc');
 var _emscripten_stack_get_current = () => (_emscripten_stack_get_current = wasmExports['emscripten_stack_get_current'])();
-var ___subtf3 = Module['___subtf3'] = createExportWrapper('__subtf3');
-var ___trunctfsf2 = Module['___trunctfsf2'] = createExportWrapper('__trunctfsf2');
-var ___udivti3 = Module['___udivti3'] = createExportWrapper('__udivti3');
-var _shutdown = Module['_shutdown'] = createExportWrapper('shutdown');
-var __Py_FalseStruct = Module['__Py_FalseStruct'] = 2456364;
-var __Py_TrueStruct = Module['__Py_TrueStruct'] = 2456348;
-var _PyBool_Type = Module['_PyBool_Type'] = 2456524;
-var _PyByteArray_Type = Module['_PyByteArray_Type'] = 2435044;
-var __PyByteArray_empty_string = Module['__PyByteArray_empty_string'] = 3536880;
-var _PyBytes_Type = Module['_PyBytes_Type'] = 2436996;
-var _PyCapsule_Type = Module['_PyCapsule_Type'] = 2428536;
-var _PyMethod_Type = Module['_PyMethod_Type'] = 2425560;
-var _PyComplex_Type = Module['_PyComplex_Type'] = 2429648;
-var _PyMethodDescr_Type = Module['_PyMethodDescr_Type'] = 2438976;
-var _PyMemberDescr_Type = Module['_PyMemberDescr_Type'] = 2439452;
-var _PyGetSetDescr_Type = Module['_PyGetSetDescr_Type'] = 2439724;
-var _PyDictProxy_Type = Module['_PyDictProxy_Type'] = 2440220;
-var _PyExc_TypeError = Module['_PyExc_TypeError'] = 2457964;
-var _PyExc_UnicodeDecodeError = Module['_PyExc_UnicodeDecodeError'] = 2466484;
-var _PyExc_MemoryError = Module['_PyExc_MemoryError'] = 2468356;
-var _PyExc_TimeoutError = Module['_PyExc_TimeoutError'] = 2462948;
-var _PyExc_Exception = Module['_PyExc_Exception'] = 2457756;
-var _PyExc_OSError = Module['_PyExc_OSError'] = 2459832;
-var _PyExc_IOError = Module['_PyExc_IOError'] = 3538900;
-var _PyExc_ValueError = Module['_PyExc_ValueError'] = 2465860;
-var _PyExc_AttributeError = Module['_PyExc_AttributeError'] = 2464404;
-var _PyExc_StopAsyncIteration = Module['_PyExc_StopAsyncIteration'] = 2458172;
-var _PyExc_StopIteration = Module['_PyExc_StopIteration'] = 2458380;
-var _PyExc_GeneratorExit = Module['_PyExc_GeneratorExit'] = 2458588;
-var _PyExc_ImportError = Module['_PyExc_ImportError'] = 2459420;
-var _PyExc_EOFError = Module['_PyExc_EOFError'] = 2463156;
-var _PyExc_RuntimeError = Module['_PyExc_RuntimeError'] = 2463364;
-var _PyExc_RecursionError = Module['_PyExc_RecursionError'] = 2463572;
-var _PyExc_NotImplementedError = Module['_PyExc_NotImplementedError'] = 2463780;
-var _PyExc_NameError = Module['_PyExc_NameError'] = 2463988;
-var _PyExc_UnboundLocalError = Module['_PyExc_UnboundLocalError'] = 2464196;
-var _PyExc_LookupError = Module['_PyExc_LookupError'] = 2465236;
-var _PyExc_IndexError = Module['_PyExc_IndexError'] = 2465444;
-var _PyExc_KeyError = Module['_PyExc_KeyError'] = 2465652;
-var _PyExc_UnicodeEncodeError = Module['_PyExc_UnicodeEncodeError'] = 2466276;
-var _PyExc_AssertionError = Module['_PyExc_AssertionError'] = 2466900;
-var _PyExc_FloatingPointError = Module['_PyExc_FloatingPointError'] = 2467316;
-var _PyExc_OverflowError = Module['_PyExc_OverflowError'] = 2467524;
-var _PyExc_ZeroDivisionError = Module['_PyExc_ZeroDivisionError'] = 2467732;
-var _PyExc_SystemError = Module['_PyExc_SystemError'] = 2467940;
-var _PyExc_BufferError = Module['_PyExc_BufferError'] = 2468564;
-var _PyExc_UserWarning = Module['_PyExc_UserWarning'] = 2468980;
-var _PyExc_DeprecationWarning = Module['_PyExc_DeprecationWarning'] = 2469188;
-var _PyExc_RuntimeWarning = Module['_PyExc_RuntimeWarning'] = 2469812;
-var _PyExc_FutureWarning = Module['_PyExc_FutureWarning'] = 2470020;
-var _PyExc_ImportWarning = Module['_PyExc_ImportWarning'] = 2470228;
-var _PyAsyncGen_Type = Module['_PyAsyncGen_Type'] = 2432432;
-var _PyCoro_Type = Module['_PyCoro_Type'] = 2433128;
-var _PyGen_Type = Module['_PyGen_Type'] = 2432924;
-var _PyFloat_Type = Module['_PyFloat_Type'] = 2428912;
-var _PyFunction_Type = Module['_PyFunction_Type'] = 2443544;
-var _PyList_Type = Module['_PyList_Type'] = 3275264;
-var _PyLong_Type = Module['_PyLong_Type'] = 2453552;
-var _PyDict_Type = Module['_PyDict_Type'] = 2490488;
-var _PyMemoryView_Type = Module['_PyMemoryView_Type'] = 2430796;
-var _PyCFunction_Type = Module['_PyCFunction_Type'] = 2428128;
-var __Py_NoneStruct = Module['__Py_NoneStruct'] = 2489236;
-var __Py_NotImplementedStruct = Module['__Py_NotImplementedStruct'] = 2490012;
-var _PySet_Type = Module['_PySet_Type'] = 2422272;
-var _PyFrozenSet_Type = Module['_PyFrozenSet_Type'] = 2422832;
-var __Py_EllipsisObject = Module['__Py_EllipsisObject'] = 2421100;
-var _PySlice_Type = Module['_PySlice_Type'] = 2421108;
-var _PyTuple_Type = Module['_PyTuple_Type'] = 2456728;
-var _PyBaseObject_Type = Module['_PyBaseObject_Type'] = 2475836;
-var _PyType_Type = Module['_PyType_Type'] = 2475632;
-var _PyUnicode_Type = Module['_PyUnicode_Type'] = 2472856;
-var __Py_ascii_whitespace = Module['__Py_ascii_whitespace'] = 426704;
-var _Py_OptimizeFlag = Module['_Py_OptimizeFlag'] = 3537860;
-var __Py_ctype_tolower = Module['__Py_ctype_tolower'] = 2048;
-var _PyTraceBack_Type = Module['_PyTraceBack_Type'] = 3276984;
-var _Py_EMSCRIPTEN_SIGNAL_HANDLING = Module['_Py_EMSCRIPTEN_SIGNAL_HANDLING'] = 3534096;
-var _Js_true = Module['_Js_true'] = 2371680;
-var _Js_false = Module['_Js_false'] = 2371684;
-var _Js_undefined = Module['_Js_undefined'] = 2371688;
-var _Js_null = Module['_Js_null'] = 2371692;
-var _buffer_struct_size = Module['_buffer_struct_size'] = 3413952;
-var _stderr = Module['_stderr'] = 3417984;
-var _stdout = Module['_stdout'] = 3418288;
-var ___start_em_js = Module['___start_em_js'] = 3418444;
-var ___stop_em_js = Module['___stop_em_js'] = 3533801;
+var _Py_EMSCRIPTEN_SIGNAL_HANDLING = Module['_Py_EMSCRIPTEN_SIGNAL_HANDLING'] = 8771088;
+var _Js_true = Module['_Js_true'] = 7613168;
+var _Js_false = Module['_Js_false'] = 7613172;
+var _Js_undefined = Module['_Js_undefined'] = 7613176;
+var _Js_null = Module['_Js_null'] = 7613180;
+var _buffer_struct_size = Module['_buffer_struct_size'] = 8651520;
+var ___start_em_js = Module['___start_em_js'] = 8655440;
+var ___stop_em_js = Module['___stop_em_js'] = 8770797;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
@@ -11222,10 +9191,6 @@ Module['ERRNO_CODES'] = ERRNO_CODES;
 Module['STACK_SIZE'] = STACK_SIZE;
 Module['PATH'] = PATH;
 Module['stringToNewUTF8'] = stringToNewUTF8;
-Module['LDSO'] = LDSO;
-Module['loadWebAssemblyModule'] = loadWebAssemblyModule;
-Module['newDSO'] = newDSO;
-Module['loadDynamicLibrary'] = loadDynamicLibrary;
 Module['preloadPlugins'] = preloadPlugins;
 Module['FS'] = FS;
 Module['LZ4'] = LZ4;
@@ -11247,6 +9212,7 @@ var missingLibrarySymbols = [
   'listenOnce',
   'autoResumeAudioContext',
   'getDynCaller',
+  'dynCall',
   'runtimeKeepalivePush',
   'runtimeKeepalivePop',
   'safeSetTimeout',
@@ -11260,6 +9226,9 @@ var missingLibrarySymbols = [
   'getCFunc',
   'ccall',
   'cwrap',
+  'updateTableMap',
+  'getFunctionAddress',
+  'addFunction',
   'removeFunction',
   'reallyNegative',
   'unSign',
@@ -11404,6 +9373,7 @@ var unexportedSymbols = [
   'zeroMemory',
   'exitJS',
   'getHeapMax',
+  'abortOnCannotGrowMemory',
   'ENV',
   'MONTH_DAYS_REGULAR',
   'MONTH_DAYS_LEAP',
@@ -11435,7 +9405,6 @@ var unexportedSymbols = [
   'runEmAsmFunction',
   'jstoi_q',
   'getExecutableName',
-  'dynCall',
   'setWasmTableEntry',
   'handleException',
   'callUserCallback',
@@ -11450,9 +9419,6 @@ var unexportedSymbols = [
   'freeTableIndexes',
   'functionsInTableMap',
   'getEmptyTableSlot',
-  'updateTableMap',
-  'getFunctionAddress',
-  'addFunction',
   'setValue',
   'getValue',
   'PATH_FS',
@@ -11486,14 +9452,6 @@ var unexportedSymbols = [
   'SYSCALLS',
   'getSocketFromFD',
   'getSocketAddress',
-  'registerWasmPlugin',
-  'preloadedWasm',
-  'isSymbolDefined',
-  'GOT',
-  'currentModuleWeakSymbols',
-  'getMemory',
-  'mergeLibSymbols',
-  'dlopenInternal',
   'FS_createPreloadedFile',
   'FS_modeStringToFlags',
   'FS_getMode',
@@ -11536,11 +9494,7 @@ function callMain(args = []) {
   assert(runDependencies == 0, 'cannot call main when async dependencies remain! (listen on Module["onRuntimeInitialized"])');
   assert(__ATPRERUN__.length == 0, 'cannot call main when preRun functions remain to be called');
 
-  var entryFunction = resolveGlobalSymbol('main').sym;;
-
-  // Main modules can't tell if they have main() at compile time, since it may
-  // arrive from a dynamic library.
-  if (!entryFunction) return;
+  var entryFunction = _main;
 
   args.unshift(thisProgram);
 
@@ -11570,7 +9524,7 @@ function stackCheckInit() {
   // This is normally called automatically during __wasm_call_ctors but need to
   // get these values before even running any of the ctors so we call it redundantly
   // here.
-  _emscripten_stack_set_limits(8806576 , 3563696);
+  _emscripten_stack_init();
   // TODO(sbc): Move writeStackCookie to native to to avoid this.
   writeStackCookie();
 }

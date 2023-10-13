@@ -2,10 +2,6 @@ import createPython from "./python.asm.mjs";
 import module from "./python.asm.wasm";
 import stdlib from "./python_stdlib.zip";
 import memory from "./memory.dat";
-import dylinkInfo from "./dylinkInfo.json";
-import { createTarFS } from "./tarfs.mjs";
-import { tarInfo } from "./tar.mjs";
-import numpyTar from "./numpy.tar";
 
 function wrapPythonGlobals(globals_dict, builtins_dict) {
   return new Proxy(globals_dict, {
@@ -100,17 +96,6 @@ function prepareFileSystem(Module) {
   Module.FS.mkdir("/session");
 }
 
-function loadDynlib(Module, path, wasmModule) {
-  const dso = Module.newDSO(path, undefined, "loading");
-  dso.refcount = Infinity;
-  dso.global = false;
-  dso.exports = Module.loadWebAssemblyModule(wasmModule, {}, path);
-  const { handles } = dylinkInfo[path] || { handles: [] };
-  for (let handle of handles) {
-    Module.LDSO.loadedLibsByHandle[handle] = dso;
-  }
-}
-
 async function makeSnapshot(Module, run) {
   run(`import sys; sys.path.append("/session/"); del sys`);
 
@@ -132,7 +117,6 @@ async function makeSnapshot(Module, run) {
     "tempfile",
     "typing",
     "zipfile",
-    "numpy",
   ];
   const to_import = imports.join(",");
   const to_delete = Array.from(
@@ -141,39 +125,13 @@ async function makeSnapshot(Module, run) {
   run(`import ${to_import}`);
   run("sysconfig.get_config_vars()");
   run(`del ${to_delete}`);
-  for (let [handle, { name }] of Object.entries(
-    Module.LDSO.loadedLibsByHandle,
-  )) {
-    if (handle == 0) {
-      continue;
-    }
-    if (!(name in dylinkInfo)) {
-      dylinkInfo[name] = { handles: [] };
-    }
-    dylinkInfo[name].handles.push(handle);
-  }
   const { writeFile } = await import("fs/promises");
-  await writeFile("dylinkInfo.json", JSON.stringify(dylinkInfo) + "\n");
   await writeFile("memory.dat", Module.HEAP8);
 }
 
 export async function loadPyodide() {
   const API = {};
   const config = { jsglobals: globalThis };
-  let tar, soPaths;
-  try {
-    [tar, soPaths] = tarInfo(new Uint8Array(numpyTar));
-  } catch (e) {
-    console.log(e);
-    throw e;
-  }
-  const wasmModules = await Promise.all(
-    soPaths.map(async (file) => [
-      "/session/" + file,
-      (await import("./" + file)).default,
-    ]),
-  );
-
   const Module = {
     noInitialRun: !!memory,
     API,
@@ -187,16 +145,6 @@ export async function loadPyodide() {
     },
     preRun: [
       prepareFileSystem,
-      () => {
-        wasmModules.forEach(([path, wasmModule]) => {
-          try {
-            loadDynlib(Module, path, wasmModule);
-          } catch (e) {
-            console.log(path);
-            process.exit(1);
-          }
-        });
-      },
     ],
   };
 
@@ -222,13 +170,6 @@ export async function loadPyodide() {
       throw new Error("Failed");
     }
   }
-
-  Module.FS.mkdir("/session/numpy");
-  Module.FS.mount(
-    createTarFS(Module),
-    { info: tar.get("numpy") },
-    "/session/numpy",
-  );
 
   if (!memory) {
     await makeSnapshot(Module, run);
