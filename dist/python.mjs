@@ -204,9 +204,10 @@ export async function loadPyodide() {
     // Force Emscripten to feature detect the way we want
     globalThis.window = {};       // makes ENVIRONMENT_IS_WEB    = true
     globalThis.importScripts = 1; // makes ENVIRONMENT_IS_WORKER = false
-    await createPython(Module);
+    const p = createPython(Module);
     delete globalThis.window;
     delete globalThis.importScripts;
+    await p;
   } catch (e) {
     e.stack.split("\n").forEach(console.log.bind(console));
   }
