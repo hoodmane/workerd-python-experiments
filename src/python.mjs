@@ -5,7 +5,8 @@ import memory from "./memory.dat";
 import dylinkInfo from "./dylinkInfo.json";
 import { createTarFS } from "./tarfs.mjs";
 import { tarInfo } from "./tar.mjs";
-import numpyTar from "./numpy.tar";
+import libTar from "./lib.tar";
+import worker from "./worker.py";
 
 function wrapPythonGlobals(globals_dict, builtins_dict) {
   return new Proxy(globals_dict, {
@@ -112,8 +113,10 @@ function loadDynlib(Module, path, wasmModule) {
 }
 
 async function makeSnapshot(Module, run) {
-  run(`import sys; sys.path.append("/session/"); del sys`);
-
+  run(`import sys; sys.path.append("/session"); sys.path.append("/session/lib/python3.11/site-packages"); del sys`);
+  Module.FS.writeFile(`/session/worker.py`, new Uint8Array(worker), {
+    canOwn: true,
+  });
   const imports = [
     "_pyodide.docstring",
     "_pyodide._core_docs",
@@ -132,7 +135,8 @@ async function makeSnapshot(Module, run) {
     "tempfile",
     "typing",
     "zipfile",
-    "numpy",
+    "fastapi",
+    "worker"
   ];
   const to_import = imports.join(",");
   const to_delete = Array.from(
@@ -162,13 +166,13 @@ export async function loadPyodide() {
   const config = { jsglobals: globalThis };
   let tar, soPaths;
   try {
-    [tar, soPaths] = tarInfo(new Uint8Array(numpyTar));
+    [tar, soPaths] = tarInfo(new Uint8Array(libTar));
   } catch (e) {
     console.log(e);
     throw e;
   }
   const wasmModules = await Promise.all(
-    soPaths.map(async (file) => [
+    soPaths.filter(path => path.includes("ssl")).map(async (file) => [
       "/session/" + file,
       (await import("./" + file)).default,
     ]),
@@ -223,11 +227,11 @@ export async function loadPyodide() {
     }
   }
 
-  Module.FS.mkdir("/session/numpy");
+  Module.FS.mkdir("/session/lib");
   Module.FS.mount(
     createTarFS(Module),
-    { info: tar.get("numpy") },
-    "/session/numpy",
+    { info: tar.get("lib") },
+    "/session/lib",
   );
 
   if (!memory) {

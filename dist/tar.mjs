@@ -43,6 +43,12 @@ export function tarInfo(buf) {
     if (info.path === "") {
       return [root.children, soFiles];
     }
+    const contents = buf.subarray(512, 512 + info.size);
+    buf = buf.subarray(512 * Math.ceil(info.size / 512 + 1));
+    if (!info.name.startsWith("lib/")) {
+      continue;
+    }
+
     while (directories.length && !info.name.startsWith(directory.path)) {
       directory = directories.pop();
     }
@@ -55,14 +61,13 @@ export function tarInfo(buf) {
       directory.children.set(info.name, info);
       directory = info;
     } else {
-      info.contents = buf.subarray(512, 512 + info.size);
+      info.contents = contents;
       info.name = info.path.slice(directory.path.length);
       if (info.name.endsWith(".so")) {
         soFiles.push(info.path);
       }
       directory.children.set(info.name, info);
     }
-    buf = buf.subarray(512 * Math.ceil(info.size / 512 + 1));
   }
 }
 

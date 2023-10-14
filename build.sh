@@ -50,8 +50,8 @@ cp artifacts/python_stdlib.zip dist
 touch dist/memory.dat
 touch dist/dylinkInfo.json
 
-cp -r .venv-pyodide/lib/python3.11/site-packages/{numpy,markupsafe} dist
+tar -C .venv-pyodide-fastapi/ -cf dist/lib.tar lib/
+cp -r .venv-pyodide-fastapi/lib dist/lib
 cd dist
-tar -cf numpy.tar numpy
 node --import ../register-hooks.mjs python.mjs
 # npx prettier -w python.asm.mjs
