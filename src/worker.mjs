@@ -10,7 +10,8 @@ export default {
     pyodide.FS.writeFile(`/session/worker.py`, new Uint8Array(worker), {
       canOwn: true,
     });
-    const result = await pyodide.pyimport("worker").onfetch(request);
+    const api = pyodide.pyimport("worker").my_awesome_api;
+    const result = await pyodide.pyimport("asgi").onfetch(api, request);
     const t3 = performance.now();
     console.log("bootstrap", t2 - t1);
     console.log("handle", t3 - t2);

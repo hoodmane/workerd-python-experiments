@@ -7,6 +7,7 @@ import { createTarFS } from "./tarfs.mjs";
 import { tarInfo } from "./tar.mjs";
 import libTar from "./lib.tar";
 import worker from "./worker.py";
+import asgi from "./asgi.py";
 
 function wrapPythonGlobals(globals_dict, builtins_dict) {
   return new Proxy(globals_dict, {
@@ -53,7 +54,7 @@ function finalizeBootstrap(API, config) {
     Object.defineProperty(o, "__all__", {
       get: () =>
         pyodide.toPy(
-          Object.getOwnPropertyNames(o).filter((name) => name !== "__all__"),
+          Object.getOwnPropertyNames(o).filter((name) => name !== "__all__")
         ),
       enumerable: false,
       configurable: true,
@@ -79,7 +80,7 @@ function finalizeBootstrap(API, config) {
 
   API.os.environ.__setitem__(
     "LD_LIBRARY_PATH",
-    API.defaultLdLibraryPath.join(":"),
+    API.defaultLdLibraryPath.join(":")
   );
 
   // copy some last constants onto public API.
@@ -96,7 +97,7 @@ function prepareFileSystem(Module) {
   Module.FS.writeFile(
     `/lib/python${pymajor}${pyminor}.zip`,
     new Uint8Array(stdlib),
-    { canOwn: true },
+    { canOwn: true }
   );
   Module.FS.mkdir("/session");
 }
@@ -113,10 +114,17 @@ function loadDynlib(Module, path, wasmModule) {
 }
 
 async function makeSnapshot(Module, run) {
-  run(`import sys; sys.path.append("/session"); sys.path.append("/session/lib/python3.11/site-packages"); del sys`);
-  Module.FS.writeFile(`/session/worker.py`, new Uint8Array(worker), {
-    canOwn: true,
-  });
+  run(
+    `import sys; sys.path.append("/session"); sys.path.append("/session/lib/python3.11/site-packages"); del sys`
+  );
+  for (let [file, data] of [
+    ["worker", worker],
+    ["asgi", asgi],
+  ]) {
+    Module.FS.writeFile(`/session/${file}.py`, new Uint8Array(data), {
+      canOwn: true,
+    });
+  }
   const imports = [
     "_pyodide.docstring",
     "_pyodide._core_docs",
@@ -136,17 +144,18 @@ async function makeSnapshot(Module, run) {
     "typing",
     "zipfile",
     "fastapi",
-    "worker"
+    "worker",
+    "asgi",
   ];
   const to_import = imports.join(",");
   const to_delete = Array.from(
-    new Set(imports.map((x) => x.split(".")[0])),
+    new Set(imports.map((x) => x.split(".")[0]))
   ).join(",");
   run(`import ${to_import}`);
   run("sysconfig.get_config_vars()");
   run(`del ${to_delete}`);
   for (let [handle, { name }] of Object.entries(
-    Module.LDSO.loadedLibsByHandle,
+    Module.LDSO.loadedLibsByHandle
   )) {
     if (handle == 0) {
       continue;
@@ -172,10 +181,12 @@ export async function loadPyodide() {
     throw e;
   }
   const wasmModules = await Promise.all(
-    soPaths.filter(path => path.includes("ssl")).map(async (file) => [
-      "/session/" + file,
-      (await import("./" + file)).default,
-    ]),
+    soPaths
+      .filter((path) => path.includes("ssl"))
+      .map(async (file) => [
+        "/session/" + file,
+        (await import("./" + file)).default,
+      ])
   );
 
   const Module = {
@@ -231,7 +242,7 @@ export async function loadPyodide() {
   Module.FS.mount(
     createTarFS(Module),
     { info: tar.get("lib") },
-    "/session/lib",
+    "/session/lib"
   );
 
   if (!memory) {
@@ -245,7 +256,7 @@ export async function loadPyodide() {
   if (err) {
     Module.API.fatal_loading_error(
       "Failed to import _pyodide_core\n",
-      captured_stderr,
+      captured_stderr
     );
   }
   finalizeBootstrap(API, config);
