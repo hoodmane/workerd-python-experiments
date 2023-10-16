@@ -1048,10 +1048,10 @@ function dbg(text) {
 // === Body ===
 
 var ASM_CONSTS = {
-  3533925: () => { throw new Error("intentionally triggered fatal error!"); },  
- 3533982: ($0) => { Hiwire.get_value($0)() },  
- 3534005: () => { wasmImports["open64"] = wasmImports["open"]; },  
- 3534054: ($0) => { API._pyodide = Hiwire.pop_value($0); }
+  3533917: () => { throw new Error("intentionally triggered fatal error!"); },  
+ 3533974: ($0) => { Hiwire.get_value($0)() },  
+ 3533997: () => { wasmImports["open64"] = wasmImports["open"]; },  
+ 3534046: ($0) => { API._pyodide = Hiwire.pop_value($0); }
 };
 function descr_set_trampoline_call(set,obj,value,closure) { return wasmTable.get(set)(obj, value, closure); }
 descr_set_trampoline_call.sig = 'iiiii';
@@ -11208,10 +11208,10 @@ var _Js_false = Module['_Js_false'] = 2371684;
 var _Js_undefined = Module['_Js_undefined'] = 2371688;
 var _Js_null = Module['_Js_null'] = 2371692;
 var _buffer_struct_size = Module['_buffer_struct_size'] = 3413952;
-var _stderr = Module['_stderr'] = 3417992;
-var _stdout = Module['_stdout'] = 3418296;
-var ___start_em_js = Module['___start_em_js'] = 3418452;
-var ___stop_em_js = Module['___stop_em_js'] = 3533809;
+var _stderr = Module['_stderr'] = 3417984;
+var _stdout = Module['_stdout'] = 3418288;
+var ___start_em_js = Module['___start_em_js'] = 3418444;
+var ___stop_em_js = Module['___stop_em_js'] = 3533801;
 
 // include: postamble.js
 // === Auto-generated postamble setup entry stuff ===
