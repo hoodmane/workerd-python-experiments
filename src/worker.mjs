@@ -14,7 +14,6 @@ export default {
     const t3 = performance.now();
     console.log("bootstrap", t2 - t1);
     console.log("handle", t3 - t2);
-    // pyodide.runPython("import sys; print(list(sys.modules))")
     return result;
   },
 };

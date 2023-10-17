@@ -7,7 +7,7 @@ async def onfetch(req):
         <title>Hello?</title>
     </head>
     <body>
-        Hi!
+        Hello from python!
     </body>
 </html>
         """,
