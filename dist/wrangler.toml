@@ -1,0 +1,10 @@
+name = "py-hello-world"
+compatibility_date = "2023-10-10"
+main="worker.mjs"
+no_bundle=true
+rules = [
+  { type = "Data", globs = ["*.zip"], fallthrough = true },
+  { type = "Data", globs = ["*.py"], fallthrough = true },
+  { type = "CompiledWasm", globs = ["python.asm.wasm"], fallthrough = true },
+  { type = "ESModule", globs = ["*.mjs"], fallthrough = true },
+]
