@@ -8,7 +8,7 @@ my_awesome_api = FastAPI()
 app = my_awesome_api
 
 
-@my_awesome_api.get("/")
+@my_awesome_api.get("/hello")
 async def root():
     return {"message": "Hello World"}
 
@@ -52,10 +52,10 @@ html = """
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Chat</title>
+        <title>Echo WebSocket</title>
     </head>
     <body>
-        <h1>WebSocket Chat</h1>
+        <h1>Echo WebSocket</h1>
         <form action="" onsubmit="sendMessage(event)">
             <input type="text" id="messageText" autocomplete="off"/>
             <button>Send</button>
@@ -86,6 +86,27 @@ html = """
 @app.get("/ws-example")
 async def get():
     return HTMLResponse(html)
+
+
+index = """
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FastAPI Worker</title>
+    </head>
+    <body>
+        <h1>FastAPI Worker Index</h1>
+        <h3><a href="docs">My Special API Docs</a></h3>
+        <h3><a href="ws-example">Echo WebSocket example</a></h3>
+    </body>
+</html>
+"""
+
+
+
+@app.get("/")
+async def get():
+    return HTMLResponse(index)
 
 
 @app.websocket("/ws")

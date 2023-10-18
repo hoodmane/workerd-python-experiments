@@ -24,18 +24,11 @@ const mainWorker :Workerd.Worker = (
     (name = "python.asm.mjs", esModule = embed "./dist/python.asm.mjs"),
     (name = "python.asm.wasm", wasm = embed "./dist/python.asm.wasm"),
     (name = "python_stdlib.zip", data = embed "./dist/python_stdlib.zip"),
-    (name = "memory.dat", data = embed "./dist/memory.dat"),
-    (name = "dylinkInfo.json", json = embed "./dist/dylinkInfo.json"),
-
-    (name = "lib/libssl.so", wasm = embed "./dist/lib/libssl.so"),
-    (name = "lib/python3.11/site-packages/_ssl.so", wasm = embed "./dist/lib/python3.11/site-packages/_ssl.so"),
 
     (name = "tar.mjs", esModule = embed "./dist/tar.mjs"),
     (name = "tarfs.mjs", esModule = embed "./dist/tarfs.mjs"),
 
     (name = "lib.tar", data = embed "./dist/lib.tar" ),
-
-
   ],
   compatibilityDate = "2023-02-28",
   # Learn more about compatibility dates at:
