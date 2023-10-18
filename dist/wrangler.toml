@@ -1,10 +1,11 @@
-name = "py-hello-world"
+name = "py-fastapi-demo"
 compatibility_date = "2023-10-10"
 main="worker.mjs"
 no_bundle=true
 rules = [
   { type = "Data", globs = ["*.zip"], fallthrough = true },
   { type = "Data", globs = ["*.py"], fallthrough = true },
+  { type = "Data", globs = ["*.tar"], fallthrough = true },
   { type = "CompiledWasm", globs = ["python.asm.wasm"], fallthrough = true },
   { type = "ESModule", globs = ["*.mjs"], fallthrough = true },
 ]

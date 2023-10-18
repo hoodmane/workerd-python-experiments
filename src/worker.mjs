@@ -45,12 +45,6 @@ async function fetch(request) {
               }`,
       })
     );
-    pyodide.runPython(`
-        from pyodide.code import run_js
-        len(run_js("[]"))
-        run_js("({})").object_values()
-
-      `);
     try {
       await asgi.websocket(api, new Request("ws://localhost:8000/ws"));
     } catch (e) {}
