@@ -31,6 +31,7 @@ const mainWorker :Workerd.Worker = (
 
     (name = "tar.mjs", esModule = embed "./dist/tar.mjs"),
     (name = "tarfs.mjs", esModule = embed "./dist/tarfs.mjs"),
+    (name = "mandelbrot.mjs", esModule = embed "./dist/mandelbrot.mjs"),
 
     (name = "numpy.tar", data = embed "./dist/numpy.tar" ),
 

@@ -1,46 +1,32 @@
 import numpy as np
 
-def gradient():
-    x = np.ones((50, 50, 4))
-    x[:, :, 0:4] = [1, 1, 0, 1]
 
-    y = np.ones((50, 50, 4))
-    y[:, :, 0:4] = [0.3, 0, 1, 1]
+def mandelbrot(h, w, maxit=20, r=2):
+    """Returns an image of the Mandelbrot fractal of size (h,w)."""
 
-    c = np.linspace(0, 1, 50)[:, None, None]
-    gradient = x + (y - x) * c
-    return (255 * gradient).astype(np.uint8)
+    x = np.linspace(-2.5, 1.5, h)
+    y = np.linspace(-1.5, 1.5, w)
+    A, B = np.meshgrid(x, y)
+    C = A + B * 1j
+    z = np.zeros_like(C)
+    divtime = maxit + np.zeros(z.shape, dtype=int)
+
+    for i in range(maxit):
+        z = z**2 + C
+        diverge = abs(z) > r  # who is diverging
+        div_now = diverge & (divtime == maxit)  # who is diverging now
+        divtime[div_now] = i  # note when
+        z[diverge] = r  # avoid diverging too much
+    return divtime
 
 
 async def onfetch(req):
-    from js import Response, Object
-    from pyodide.ffi import to_js
+    from js import performance, Response
 
-    print(req.url)
-    if req.url.endswith("gradient"):
-        a = gradient()
-        b = to_js(a.flatten())
-        return Response.new(b)
-    return Response.new(
-        """
-<html>
-    <head>
-        <title>Numpy example</title>
-    </head>
-    <body>
-        <canvas></canvas>
-        <script type="module">
-            let resp, img;
-            resp = await fetch("gradient");
-            globalThis.buf = new Uint8ClampedArray(await resp.arrayBuffer());
-            img = new ImageData(buf, 50, 50);
-            const ctx = document.querySelector("canvas").getContext("2d");
-            globalThis.ctx = ctx;
-            globalThis.img = img;
-            ctx.putImageData(img, 0, 0);
-        </script>
-    </body>
-</html>
-        """,
-        headers=Object.fromEntries([["Content-Type", "html"]]),
-    )
+    t1 = performance.now()
+    print(t1)
+    res = mandelbrot(1600, 1600)
+    print(res[800, 800])
+    t2 = performance.now()
+    print(t2)
+    return Response.new(f"Time: {t2 - t1}", statusText=res[800, 1448])
