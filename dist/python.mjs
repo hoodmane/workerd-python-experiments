@@ -1,11 +1,12 @@
 import createPython from "./python.asm.mjs";
 import module from "./python.asm.wasm";
 import stdlib from "./python_stdlib.zip";
-import memory from "./memory.dat";
-import dylinkInfo from "./dylinkInfo.json";
 import { createTarFS } from "./tarfs.mjs";
 import { tarInfo } from "./tar.mjs";
 import numpyTar from "./numpy.tar";
+
+let dylinkInfo = {};
+let memory = undefined;
 
 function wrapPythonGlobals(globals_dict, builtins_dict) {
   return new Proxy(globals_dict, {
@@ -152,9 +153,7 @@ async function makeSnapshot(Module, run) {
     }
     dylinkInfo[name].handles.push(handle);
   }
-  const { writeFile } = await import("fs/promises");
-  await writeFile("dylinkInfo.json", JSON.stringify(dylinkInfo) + "\n");
-  await writeFile("memory.dat", Module.HEAP8);
+  memory = Module.HEAP8;
 }
 
 export async function loadPyodide() {
@@ -232,10 +231,10 @@ export async function loadPyodide() {
 
   if (!memory) {
     await makeSnapshot(Module, run);
-    process.exit(0);
+  } else {
+    Module.growMemory(memory.byteLength);
+    Module.HEAP8.set(new Uint8Array(memory));
   }
-  Module.growMemory(memory.byteLength);
-  Module.HEAP8.set(new Uint8Array(memory));
 
   let [err, captured_stderr] = API.rawRun("import _pyodide_core");
   if (err) {
